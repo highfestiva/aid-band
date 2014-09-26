@@ -14,7 +14,7 @@ import traceback
 
 proc = None
 start_play_time = time.time()
-caching_name = None
+cache_write_name = None
 gs = None
 listname = None
 playlist = []
@@ -22,21 +22,26 @@ playqueue = []
 playidx = 0
 
 def stop():
-	global proc,caching_name
+	global proc,cache_write_name
 	if proc:
 		proc.kill()
-		if caching_name:
-			os.remove(caching_name)
-			caching_name = None
+		proc.wait()
+		if cache_write_name:
+			try: os.remove(_confixs(cache_write_name))
+			except: pass
+			cache_write_name = None
 
 def play_url(url, cachename):
 	stop()
-	global proc,start_play_time,caching_name
-	caching_name = None
-	cmd = ['mplayer.exe', url]
+	global proc,start_play_time,cache_write_name
+	cache_write_name = None
 	if cachename and url.startswith('http'):
-		cmd += ['-dumpstream', '-dumpfile', cachename]
-		caching_name = cachename
+		cmd = ['mplayer.exe', url, '-dumpstream', '-dumpfile', _confixs(cachename)]
+		cache_write_name = cachename
+	elif not url.startswith('http'):
+		cmd = ['mplayer.exe', _confixs(url)]
+	else:
+		cmd = ['mplayer.exe', url]
 	proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	start_play_time = time.time()
 
@@ -44,10 +49,10 @@ def play_idx():
 	global playqueue,playidx
 	if playidx < len(playqueue):
 		song = playqueue[playidx]
-		print(_pfixs(song.artist), '-', _pfixs(song.name))
+		print(_confixs(song.artist), '-', _confixs(song.name))
 		if song in playlist:
-			fn = ('cache/'+song.artist+'-'+song.name+'.mpeg').lower().replace(' ','_')
-			url = fn if os.path.exists(fn) else song.stream.url
+			fn = 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
+			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
 		else:
 			fn = None
 			url = song.stream.url
@@ -59,8 +64,10 @@ def play_idx():
 def poll():
 	if not proc or proc.poll() == None:
 		return
-	if caching_name:
-		play_idx()	# Play cache.
+	global cache_write_name
+	if cache_write_name and os.path.exists(_confixs(cache_write_name)):
+		cache_write_name = None
+		play_idx()	# Play from cache.
 	elif time.time()-start_play_time < 5.0:	# Stopped after short amount of time? URL probably fucked.
 		if update_url():
 			play_idx()
@@ -75,7 +82,7 @@ def play_list(name):
 	global playlist,playqueue,playidx
 	if listname == hotoptions.Hit:
 		playqueue = list(gs.popular())
-		listname = hotoptions.My
+		listname = hotoptions.Favorites
 		playlist = load_list()
 	else:
 		playlist = playqueue = load_list()
@@ -199,8 +206,8 @@ def save_list(songlist):
 	for song in songlist:
 		f.write('%s, %s,\n' % (song.artist, song.name))
 
-def _pfixs(s):
-	return str(s).encode().decode('cp850', 'ignore')
+def _confixs(s):
+	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
 
 def _match_ratio(s1,s2):
 	return difflib.SequenceMatcher(None,s1.lower(),s2.lower()).ratio()
@@ -210,18 +217,26 @@ try: os.mkdir('cache')
 except: pass
 gs = Client()
 gs.init()
-play_list(hotoptions.My)
+play_list(hotoptions.Favorites)
+stopped = False
 while True:
 	try:
 		print('Enter search term:')
 		cmd = None
 		while not cmd:
-			poll()
-			time.sleep(0.3)
+			if stopped:
+				time.sleep(2)
+			else:
+				time.sleep(0.3)
+				poll()
 			cmd = keypeeker.peekstr()
 		if cmd == '<quit>':
 			stop()
 			sys.exit(0)
+		if cmd == '<F12>':
+			stop()
+			stopped = True
+			continue
 		fkeys = re.findall(r'<F(\d+)>',cmd)
 		if fkeys:
 			fkey_idx = int(fkeys[-1])-1
@@ -243,6 +258,7 @@ while True:
 			searchterm = cmd.rstrip('\r')
 			print(searchterm)
 			play_search(searchterm)
+		stopped = False
 	except Exception as e:
 		traceback.print_exc()
 		print(e)
