@@ -1,4 +1,5 @@
 import re
+import sys
 from time import time
 from threading import Thread
 import tkinter as tk
@@ -39,10 +40,20 @@ def _key(event):
 		keys += '<'+event.keysym+'>'
 	hittime = time()
 
+def _die(root):
+	global keys
+	keys = '<quit>'
+	hittime = time()
+	root.quit()
+
 def main():
 	root = tk.Tk()
 	root.geometry('300x200')
 	root.bind('<KeyPress>', _key)
+	root.attributes("-topmost", True)
+	#root.overrideredirect(1)
+	root.protocol("WM_DELETE_WINDOW", lambda: _die(root))
 	root.mainloop()
+	sys.exit(0)
 
 Thread(target=main).start()
