@@ -1,1 +1,1 @@
-Hit,Favorites,Party,Rock,Pop,Classical = all = 'hit favorites party rock pop classical'.split()
+RadioP1,Hit,RadioP3,Favorites,Party,Rock,Pop,Classical = all = 'radio_p1 hit radio_p3 favorites party rock pop classical'.split()

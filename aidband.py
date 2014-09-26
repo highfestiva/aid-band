@@ -12,6 +12,7 @@ import sys
 import time
 import traceback
 
+
 proc = None
 start_play_time = time.time()
 cache_write_name = None
@@ -20,6 +21,17 @@ listname = None
 playlist = []
 playqueue = []
 playidx = 0
+
+
+class Song:
+	def __init__(self, _name,_artist,_url):
+		self.name = _name
+		self.artist = _artist
+		class Stream:
+			pass
+		self.stream = Stream()
+		self.stream.url = _url
+
 
 def stop():
 	global proc,cache_write_name
@@ -50,7 +62,7 @@ def play_idx():
 	if playidx < len(playqueue):
 		song = playqueue[playidx]
 		print(_confixs(song.artist), '-', _confixs(song.name))
-		if song in playlist:
+		if song in playlist and 'radio_' not in listname:
 			fn = 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
 			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
 		else:
@@ -84,6 +96,10 @@ def play_list(name):
 		playqueue = list(gs.popular())
 		listname = hotoptions.Favorites
 		playlist = load_list()
+	elif listname == hotoptions.RadioP1:
+		playlist = playqueue = [Song('P1', 'Sveriges Radio', 'http://http-live.sr.se/p1-mp3-128')]
+	elif listname == hotoptions.RadioP3:
+		playlist = playqueue = [Song('P3', 'Sveriges Radio', 'http://http-live.sr.se/p3-mp3-128')]
 	else:
 		playlist = playqueue = load_list()
 	playidx = 0
@@ -141,6 +157,7 @@ def drop_song():
 		playqueue = playqueue[:playidx] + playqueue[playidx+1:]
 		playlist = list(filter(lambda s: s!=song, playlist))
 		play_idx()
+		save_list(playlist)
 
 def prev_song():
 	global playlist,playqueue,playidx
@@ -179,15 +196,6 @@ def queue_songs(songs):
 	playqueue = playqueue[:playidx+1] + songs + playqueue[playidx+1:]
 	next_song()
 
-class FileSong:
-	def __init__(self, _name,_artist,_url):
-		self.name = _name
-		self.artist = _artist
-		class Stream:
-			pass
-		self.stream = Stream()
-		self.stream.url = _url
-
 def load_list():
 	songs = []
 	if not os.path.exists(listname+'.txt'):
@@ -195,12 +203,14 @@ def load_list():
 	for line in open(listname+'.txt', 'rt'):
 		try:
 			artist,songname,url = [w.strip() for w in line.split(',')]
-			songs += [FileSong(songname,artist,url)]
+			songs += [Song(songname,artist,url)]
 		except:
 			pass
 	return songs
 
 def save_list(songlist):
+	if radio in listname:
+		return
 	f = open(listname+'.txt', 'wt')
 	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.\n')
 	for song in songlist:
