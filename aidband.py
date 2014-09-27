@@ -7,7 +7,7 @@ from grooveshark import Client
 import hotoptions
 import keypeeker
 import os.path
-#import sr_radio
+import sr_radio
 import re
 import subprocess
 import sys
@@ -55,7 +55,7 @@ def play_idx():
 		song = playqueue[playidx]
 		print(_confixs(song.artist), '-', _confixs(song.name))
 		if song in playlist and 'radio' not in listname:
-			fn = 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
+			fn = ('cache_%s/' % listname)+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
 			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
 		else:
 			fn = None
@@ -218,11 +218,19 @@ def _match_ratio(s1,s2):
 	return difflib.SequenceMatcher(None,s1.lower(),s2.lower()).ratio()
 
 
-try: os.mkdir('cache')
-except: pass
-gs = Client()
-gs.init()
-play_list(hotoptions.Favorites)
+for ch in hotoptions.all:
+	if 'radio' not in ch:
+		try: os.mkdir('cache_'+str(ch))
+		except: pass
+
+try:
+	if 'nogs' not in sys.argv:
+		gs = Client()
+		gs.init()
+	play_list(hotoptions.Favorites)
+except:
+	pass
+
 stopped = False
 while True:
 	try:
@@ -239,8 +247,8 @@ while True:
 			stop()
 			sys.exit(0)
 		if cmd == '<F12>':
-			stop()
-			stopped = True
+			stopped = not stopped
+			stop() if stopped else play_idx()
 			continue
 		fkeys = re.findall(r'<F(\d+)>',cmd)
 		if fkeys:
