@@ -34,7 +34,9 @@ def getstr():
 
 def _key(event):
 	global keys,hittime
-	if event.char:
+	if event.char == '\b':
+		keys = keys[:len(keys)-1] if keys else ''
+	elif event.char:
 		keys += event.char
 	elif '_' not in event.keysym:
 		keys += '<'+event.keysym+'>'

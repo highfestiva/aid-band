@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from absong import ABSong
+import codecs
 import difflib
 from grooveshark import Client
 import hotoptions
@@ -9,6 +10,7 @@ import keypeeker
 import os.path
 import sr_radio
 import re
+import speech
 import subprocess
 import sys
 import time
@@ -19,6 +21,7 @@ proc = None
 start_play_time = time.time()
 cache_write_name = None
 gs = None
+allowcache = False
 listname = None
 playlist = []
 playqueue = []
@@ -39,7 +42,7 @@ def play_url(url, cachename):
 	stop()
 	global proc,start_play_time,cache_write_name
 	cache_write_name = None
-	if cachename and url.startswith('http'):
+	if cachename and url.startswith('http') and allowcache:
 		cmd = ['mplayer.exe', url, '-dumpstream', '-dumpfile', _confixs(cachename)]
 		cache_write_name = cachename
 	elif not url.startswith('http'):
@@ -93,8 +96,10 @@ def play_list(name):
 	playidx = 0
 	if playqueue:
 		play_idx()
+		speech.say(_simple_listname())
 	else:
 		stop()
+		speech.say('%s playlist is empty, nothing to play.' % _simple_listname())
 
 def search_music(search):
 	songs = []
@@ -139,13 +144,19 @@ def play_search(search):
 		songs = sr_radio.search(search)
 	else:
 		songs = search_music(search)
+	if not songs:
+		speech.say('Nothing found, try again.')
 	queue_songs(songs)
 
 def add_song():
 	global playlist,playqueue,playidx
 	if playqueue[playidx:playidx+1]:
-		playlist += playqueue[playidx:playidx+1]
+		song = playqueue[playidx]
+		playlist += [song]
 		save_list(playlist)
+		speech.say('%s added to %s.' % (song.name,_simple_listname()))
+	else:
+		speech.say('Play queue is empty, no song to add.')
 
 def drop_song():
 	global playlist,playqueue,playidx
@@ -155,6 +166,9 @@ def drop_song():
 		playlist = list(filter(lambda s: s!=song, playlist))
 		play_idx()
 		save_list(playlist)
+		speech.say('%s dropped from %s.' % (song.name,_simple_listname()))
+	else:
+		speech.say('Play queue is empty, no song to remove.')
 
 def prev_song():
 	global playlist,playqueue,playidx
@@ -185,6 +199,11 @@ def update_url():
 	except StopIteration:
 		return False
 
+def execute(cmd):
+	cmd,params = cmd.split(':')
+	if cmd == 'say':
+		speech.say(params)
+
 def queue_songs(songs):
 	songs = list(songs)
 	if not songs:
@@ -197,19 +216,22 @@ def load_list():
 	songs = []
 	if not os.path.exists(listname+'.txt'):
 		return songs
-	for line in open(listname+'.txt', 'rt'):
+	for line in codecs.open(listname+'.txt', 'r', 'utf-8'):
 		try:
-			artist,songname,url = [w.strip() for w in line.split(',')]
+			artist,songname,url = [w.strip() for w in line.split('~')]
 			songs += [ABSong(songname,artist,url)]
 		except:
 			pass
 	return songs
 
 def save_list(songlist):
-	f = open(listname+'.txt', 'wt')
+	f = codecs.open(listname+'.txt', 'w', 'utf-8')
 	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.\n')
 	for song in songlist:
-		f.write('%s, %s, %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
+		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
+
+def _simple_listname():
+	return listname.split('_')[-1]
 
 def _confixs(s):
 	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
@@ -262,16 +284,22 @@ while True:
 			print('Song added to %s.' % listname)
 		elif cmd == '-':
 			drop_song()
+			stopped = False
 			print('Song dropped from %s.' % listname)
 		elif cmd == '<Up>':
 			prev_song()
+			stopped = False
 		elif cmd == '<Down>':
 			next_song()
+			stopped = False
 		elif cmd.endswith('\r'):
-			searchterm = cmd.rstrip('\r')
-			print(searchterm)
-			play_search(searchterm)
-		stopped = False
+			cmd = cmd.rstrip('\r')
+			print(cmd)
+			if ':' not in cmd:
+				play_search(cmd)
+				stopped = False
+			else:
+				execute(cmd)
 	except Exception as e:
 		traceback.print_exc()
 		print(e)
