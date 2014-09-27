@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
+from absong import ABSong
 import difflib
 from grooveshark import Client
 import hotoptions
 import keypeeker
 import os.path
+#import sr_radio
 import re
 import subprocess
 import sys
@@ -21,16 +23,6 @@ listname = None
 playlist = []
 playqueue = []
 playidx = 0
-
-
-class Song:
-	def __init__(self, _name,_artist,_url):
-		self.name = _name
-		self.artist = _artist
-		class Stream:
-			pass
-		self.stream = Stream()
-		self.stream.url = _url
 
 
 def stop():
@@ -62,7 +54,7 @@ def play_idx():
 	if playidx < len(playqueue):
 		song = playqueue[playidx]
 		print(_confixs(song.artist), '-', _confixs(song.name))
-		if song in playlist and 'radio_' not in listname:
+		if song in playlist and 'radio' not in listname:
 			fn = 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
 			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
 		else:
@@ -96,10 +88,6 @@ def play_list(name):
 		playqueue = list(gs.popular())
 		listname = hotoptions.Favorites
 		playlist = load_list()
-	elif listname == hotoptions.RadioP1:
-		playlist = playqueue = [Song('P1', 'Sveriges Radio', 'http://http-live.sr.se/p1-mp3-128')]
-	elif listname == hotoptions.RadioP3:
-		playlist = playqueue = [Song('P3', 'Sveriges Radio', 'http://http-live.sr.se/p3-mp3-128')]
 	else:
 		playlist = playqueue = load_list()
 	playidx = 0
@@ -108,16 +96,17 @@ def play_list(name):
 	else:
 		stop()
 
-def play_search(search):
+def search_music(search):
 	songs = []
 	try:
 		artists = sorted(gs.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
 		if artists:
-			# Get extact match if possible.
+			# Get exact artist match if possible.
 			arts = [a for a in artists if a.name.lower() == search]
 			artists = arts if arts else artists
 			# Add most popular songs, and see which one we're after.
 			arts = []
+			ss = {}
 			for a in artists:
 				score = 0
 				i = 0
@@ -135,13 +124,21 @@ def play_search(search):
 			for s in ss:
 				if s.name not in names:
 					names.add(s.name)
-					songs.append(s)
+					songs += [s.name,artist.name,s.stream.url]
+			songs = songs[:30]
 	except StopIteration:
 		try:
 			# If searching for songs, just pick first hit.
 			songs = [next(gs.search(search, type=Client.SONGS))]
 		except StopIteration:
 			pass
+	return songs
+
+def play_search(search):
+	if 'radio' in listname:
+		songs = sr_radio.search(search)
+	else:
+		songs = search_music(search)
 	queue_songs(songs)
 
 def add_song():
@@ -203,18 +200,16 @@ def load_list():
 	for line in open(listname+'.txt', 'rt'):
 		try:
 			artist,songname,url = [w.strip() for w in line.split(',')]
-			songs += [Song(songname,artist,url)]
+			songs += [ABSong(songname,artist,url)]
 		except:
 			pass
 	return songs
 
 def save_list(songlist):
-	if radio in listname:
-		return
 	f = open(listname+'.txt', 'wt')
 	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.\n')
 	for song in songlist:
-		f.write('%s, %s,\n' % (song.artist, song.name))
+		f.write('%s, %s, %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
 
 def _confixs(s):
 	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
