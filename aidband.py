@@ -57,7 +57,7 @@ def play_idx():
 	global playqueue,playidx
 	if playidx < len(playqueue):
 		song = playqueue[playidx]
-		print(_confixs(song.artist), '-', _confixs(song.name))
+		output(_confixs(song.artist), '-', _confixs(song.name))
 		if song in playlist and 'radio' not in listname:
 			fn = ('cache_%s/' % listname)+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
 			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
@@ -237,6 +237,10 @@ def save_list(songlist):
 	for song in songlist:
 		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
 
+def output(*args):
+	print(' '.join(args))
+	netpeeker.output(' '.join(args))
+
 def _simple_listname():
 	return listname.split('_')[-1]
 
@@ -264,7 +268,7 @@ except:
 stopped = True
 while True:
 	try:
-		print('Enter search term:')
+		output('Enter search term:')
 		cmd = None
 		while not cmd:
 			if stopped:
@@ -286,15 +290,15 @@ while True:
 			fkey_idx = int(fkeys[-1])-1
 			if len(hotoptions.all) > fkey_idx:
 				ln = hotoptions.all[fkey_idx]
-				print(ln)
+				output(ln)
 				play_list(ln)
 		elif cmd == '+':
 			add_song()
-			print('Song added to %s.' % listname)
+			output('Song added to %s.' % listname)
 		elif cmd == '-':
 			drop_song()
 			stopped = False
-			print('Song dropped from %s.' % listname)
+			output('Song dropped from %s.' % listname)
 		elif cmd == '<Up>':
 			prev_song()
 			stopped = False
@@ -303,7 +307,7 @@ while True:
 			stopped = False
 		elif cmd.endswith('\r'):
 			cmd = cmd.rstrip('\r')
-			print(cmd)
+			output(cmd)
 			if ':' not in cmd:
 				play_search(cmd)
 				stopped = False
@@ -311,4 +315,4 @@ while True:
 				execute(cmd)
 	except Exception as e:
 		traceback.print_exc()
-		print(e)
+		output(e)

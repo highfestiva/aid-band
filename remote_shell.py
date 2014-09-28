@@ -12,30 +12,32 @@ try:
 	print("Connecting...")
 	s.connect((host,port))
 	s.settimeout(1)
+	bb = b''
 	while True:
 		try:
-			sys.stdout.write(s.recv(1).decode())
+			bb += s.recv(1)
+			sys.stdout.write(bb.decode())
 			sys.stdout.flush()
+			bb = b''
 		except socket.timeout:
+			pass
+		except UnicodeDecodeError as e:
 			pass
 		while kbhit():
 			ch = getch()
-			print(ord(ch))
 			if ord(ch) == 0:
 				ch = getch()
-				print(ord(ch))
 				if ord(ch) >= 59 and ord(ch) <= 68:
 					ch = ('<F%i>' % (ord(ch)-58)).encode()
 				else:
 					continue
 			elif ord(ch) == 0xE0:
 				ch = getch()
-				print(ord(ch))
 				if   ord(ch) ==  72: ch = '<Up>'.encode()
 				elif ord(ch) ==  80: ch = '<Down>'.encode()
 				elif ord(ch) == 133: ch = '<F11>'.encode()
 				elif ord(ch) == 134: ch = '<F12>'.encode()
-			s.send(ch)
+			s.send(ch.decode('cp850').encode())
 	s.close()
 except socket.error as e:
 	value,message = e.args[:2]

@@ -1,8 +1,8 @@
+from msvcrt import getch
 import re
 import sys
 from time import time
 from threading import Thread
-import tkinter as tk
 
 keys = ''
 hittime = None
@@ -32,30 +32,33 @@ def getstr():
 	keys = ''
 	return ks
 
-def _key(event):
-	global keys,hittime
-	if event.char == '\b':
-		keys = keys[:len(keys)-1] if keys else ''
-	elif event.char:
-		keys += event.char
-	elif '_' not in event.keysym:
-		keys += '<'+event.keysym+'>'
-	hittime = time()
-
-def _die(root):
-	global keys
-	keys = '<quit>'
-	hittime = time()
-	root.quit()
-
 def main():
-	root = tk.Tk()
-	root.geometry('300x200')
-	root.bind('<KeyPress>', _key)
-	root.attributes("-topmost", True)
-	#root.overrideredirect(1)
-	root.protocol("WM_DELETE_WINDOW", lambda: _die(root))
-	root.mainloop()
-	sys.exit(0)
+	global keys
+	while True:
+		ch = getch()
+		if ord(ch) == 0:
+			ch = getch()
+			if ord(ch) >= 59 and ord(ch) <= 68:
+				ch = '<F%i>' % (ord(ch)-58)
+			else:
+				continue
+		elif ord(ch) == 0xE0:
+			ch = getch()
+			if   ord(ch) ==  72: ch = '<Up>'
+			elif ord(ch) ==  80: ch = '<Down>'
+			elif ord(ch) == 133: ch = '<F11>'
+			elif ord(ch) == 134: ch = '<F12>'
+			else: continue
+		elif ord(ch) == 3:
+			keys = '<quit>'
+			hittime = time()
+			sys.exit(0)
+			break
+		ch = ch if type(ch) == str else ch.decode('cp850')
+		if ch == '\b':
+			keys = keys[:len(keys)-1] if keys else ''
+		else:
+			keys += ch
+	hittime = time()
 
 Thread(target=main).start()

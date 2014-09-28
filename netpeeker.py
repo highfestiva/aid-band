@@ -8,6 +8,7 @@ from threading import Thread
 acpt = None
 input = ''
 hittime = None
+clients = []
 
 
 def _timeout(t):
@@ -36,40 +37,65 @@ def getstr():
 
 def handlecmd(client):
 	global input
+	bb = b''
 	try:
 		client.send('\nWelcome to AidBand command interface!\n'.encode())
 		while True:
-			i = client.recv(1).decode()
-			input += i
+			bb += client.recv(1)
+			try:
+				i = bb.decode()
+				bb = b''
+			except:
+				continue
+			if i == '\b':
+				input = input[:len(input)-1] if input else ''
+			else:
+				input += i
 			if '\r' in i: i += '\n'
 			client.send(i.encode())
 	except Exception as e:
 		print(e)
 		print('Connection dropped.')
-		try: client.close()
-		except: pass
+		dropclient(client)
+
+def dropclient(client):
+	global clients
+	try:
+		clients.remote(client)
+		client.close()
+	except:
+		pass
 
 def listen():
+	global clients
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind(('',3303))
 	s.listen(2)
 	while 1:
 		client,address = s.accept()
+		clients += [client]
 		try:
 			client.send('Password: '.encode())
 			pw,i = '',0
 			while '\r' not in pw and len(pw)<50 and i<50:
 				pw += client.recv(1).decode()
 				i += 1
-				print(pw)
 			if pw != '+-*/~\r':
 				print('Bad password %s.' % pw)
-				client.close()
+				dropclient(client)
 				continue
 			Thread(target=handlecmd, args=[client]).start()
 		except Exception as e:
+			dropclient(client)
 			print(e)
-			print('Connection dropped.')
+			print('Connection dropped during password entry.')
+
+
+def output(s):
+	d = (s+'\r\n').encode()
+	for c in clients:
+		try: c.send(d)
+		except: pass
 
 def stop():
 	acpt.stop()
