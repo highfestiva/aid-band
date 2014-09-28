@@ -7,6 +7,7 @@ import difflib
 from grooveshark import Client
 import hotoptions
 import keypeeker
+import netpeeker
 import os.path
 import sr_radio
 import re
@@ -83,7 +84,7 @@ def poll():
 	else:
 		next_song()
 
-def play_list(name):
+def raw_play_list(name):
 	global listname
 	listname = name
 	global playlist,playqueue,playidx
@@ -96,9 +97,15 @@ def play_list(name):
 	playidx = 0
 	if playqueue:
 		play_idx()
-		speech.say(_simple_listname())
 	else:
 		stop()
+	return playqueue
+
+def play_list(name):
+	pq = raw_play_list(name)
+	if pq:
+		speech.say(_simple_listname())
+	else:
 		speech.say('%s playlist is empty, nothing to play.' % _simple_listname())
 
 def search_music(search):
@@ -249,11 +256,12 @@ try:
 	if 'nogs' not in sys.argv:
 		gs = Client()
 		gs.init()
-	play_list(hotoptions.Favorites)
+	raw_play_list(hotoptions.Favorites)
+	stop()
 except:
 	pass
 
-stopped = False
+stopped = True
 while True:
 	try:
 		print('Enter search term:')
@@ -264,9 +272,10 @@ while True:
 			else:
 				time.sleep(0.3)
 				poll()
-			cmd = keypeeker.peekstr()
+			cmd = keypeeker.peekstr() + netpeeker.peekstr()
 		if cmd == '<quit>':
 			stop()
+			netpeeker.stop()
 			sys.exit(0)
 		if cmd == '<F12>':
 			stopped = not stopped
