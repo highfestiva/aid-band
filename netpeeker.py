@@ -35,7 +35,7 @@ def getstr():
 	i,input = input,''
 	return i
 
-def handlecmd(client):
+def handlecmd(client, handle_keys):
 	global input
 	bb = b''
 	try:
@@ -51,6 +51,7 @@ def handlecmd(client):
 				input = input[:len(input)-1] if input else ''
 			else:
 				input += i
+			handle_keys(input)
 			if '\r' in i: i += '\n'
 			client.send(i.encode())
 	except Exception as e:
@@ -66,7 +67,7 @@ def dropclient(client):
 	except:
 		pass
 
-def listen():
+def listen(handle_keys):
 	global clients
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind(('',3303))
@@ -84,7 +85,7 @@ def listen():
 				print('Bad password %s.' % pw)
 				dropclient(client)
 				continue
-			Thread(target=handlecmd, args=[client]).start()
+			Thread(target=handlecmd, args=[client,handle_keys]).start()
 		except Exception as e:
 			dropclient(client)
 			print(e)
@@ -118,5 +119,7 @@ class KillableThread(Thread):
 			sys.exit(0)
 		return self._trace
 
-acpt = KillableThread(target=listen)
-acpt.start()
+def init(handle_keys):
+	global acpt
+	acpt = KillableThread(target=listen, args=[handle_keys])
+	acpt.start()

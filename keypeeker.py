@@ -32,7 +32,7 @@ def getstr():
 	keys = ''
 	return ks
 
-def main():
+def main(handle_keys):
 	global keys
 	while True:
 		ch = getch()
@@ -48,17 +48,20 @@ def main():
 			elif ord(ch) ==  80: ch = '<Down>'
 			elif ord(ch) == 133: ch = '<F11>'
 			elif ord(ch) == 134: ch = '<F12>'
+			elif ord(ch) ==  79: ch = '<End>'
 			else: continue
 		elif ord(ch) == 3:
 			keys = '<quit>'
 			hittime = time()
 			sys.exit(0)
-			break
+			return
 		ch = ch if type(ch) == str else ch.decode('cp850')
 		if ch == '\b':
 			keys = keys[:len(keys)-1] if keys else ''
 		else:
 			keys += ch
+		handle_keys(keys)
 	hittime = time()
 
-Thread(target=main).start()
+def init(handle_keys):
+	Thread(target=main, args=[handle_keys]).start()

@@ -6,6 +6,7 @@ import codecs
 import difflib
 from grooveshark import Client
 import hotoptions
+import interruptor
 import keypeeker
 import netpeeker
 import os.path
@@ -14,6 +15,7 @@ import re
 import speech
 import subprocess
 import sys
+import threading
 import time
 import traceback
 
@@ -238,8 +240,9 @@ def save_list(songlist):
 		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
 
 def output(*args):
-	print(' '.join(args))
-	netpeeker.output(' '.join(args))
+	s = ' '.join([str(a) for a in args])
+	print(s)
+	netpeeker.output(s)
 
 def _simple_listname():
 	return listname.split('_')[-1]
@@ -256,6 +259,10 @@ for ch in hotoptions.all:
 		try: os.mkdir('cache_'+str(ch))
 		except: pass
 
+tid = threading.current_thread().ident
+handle_keys = lambda k: interruptor.handle_keys(tid,k)
+keypeeker.init(handle_keys)
+netpeeker.init(handle_keys)
 try:
 	if 'nogs' not in sys.argv:
 		gs = Client()
@@ -316,3 +323,5 @@ while True:
 	except Exception as e:
 		traceback.print_exc()
 		output(e)
+		keypeeker.peekstr()	# Clear keyboard.
+		netpeeker.peekstr()	# Clear remote keyboard.
