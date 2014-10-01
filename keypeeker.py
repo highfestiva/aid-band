@@ -1,21 +1,17 @@
+from killable import KillableThread
 from msvcrt import getch
 import re
-import sys
-from time import time
-from threading import Thread
+from time import sleep
+from timeout import Timeout
 
+keythread = None
 keys = ''
-hittime = None
-
-def _timeout(t):
-	global hittime
-	if hittime and time()-hittime > t:
-		hittime = time()
-		return True
-	return False
+keytimeout = Timeout()
+keysleep = Timeout()
 
 def peekstr(timeout=10):
-	if _timeout(timeout):
+	if keytimeout.timeout(timeout):
+		keytimeout.reset()
 		global keys
 		keys = ''
 	elif re.match('^[^<>+-]+\r$', keys):
@@ -28,11 +24,11 @@ def peekstr(timeout=10):
 
 def getstr():
 	global keys
-	ks = keys
-	keys = ''
+	ks,keys = keys,''
 	return ks
 
-def main(handle_keys):
+def readkeys(handle_keys):
+	keytimeout.reset()
 	global keys
 	while True:
 		ch = getch()
@@ -52,16 +48,20 @@ def main(handle_keys):
 			else: continue
 		elif ord(ch) == 3:
 			keys = '<quit>'
-			hittime = time()
-			sys.exit(0)
-			return
+			keytimeout.reset()
+			continue
 		ch = ch if type(ch) == str else ch.decode('cp850')
 		if ch == '\b':
 			keys = keys[:len(keys)-1] if keys else ''
 		else:
 			keys += ch
 		handle_keys(keys)
-	hittime = time()
+		keytimeout.reset()
+
+def stop():
+	keythread.stop()
 
 def init(handle_keys):
-	Thread(target=main, args=[handle_keys]).start()
+	global keythread
+	keythread = KillableThread(target=readkeys, args=[handle_keys])
+	keythread.start()

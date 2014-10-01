@@ -5,13 +5,13 @@ import socket
 import sys
 
 
-host = sys.argv[1]
+host = sys.argv[1] if len(sys.argv) >= 2 else 'localhost'
 port = 3303
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
-	print("Connecting...")
 	s.connect((host,port))
 	s.settimeout(1)
+	sendqueue = sys.argv[2:]
 	bb = b''
 	while True:
 		try:
@@ -20,7 +20,11 @@ try:
 			sys.stdout.flush()
 			bb = b''
 		except socket.timeout:
-			pass
+			if sendqueue:
+				d = eval('"'+sendqueue[0]+'"')
+				s.send(d.encode())
+				sendqueue = sendqueue[1:]
+				continue
 		except UnicodeDecodeError as e:
 			pass
 		while kbhit():
@@ -43,4 +47,4 @@ except socket.error as e:
 	value,message = e.args[:2]
 	try: s.close()
 	except: pass
-	print("Could not open socket: " + message)
+	print("Socket closed: " + message)

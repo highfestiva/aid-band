@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import sys
+from threading import Thread
+
+class KillableThread(Thread):
+	def _bootstrap(self):
+		self._killme = False
+		sys.settrace(self._trace)
+		super()._bootstrap()
+	def stop(self):
+		self._killme = True
+	def _trace(self, frame, event, arg):
+		if self._killme:
+			sys.exit(0)
+		return self._trace

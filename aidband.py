@@ -59,9 +59,9 @@ def play_idx():
 	global playqueue,playidx
 	if playidx < len(playqueue):
 		song = playqueue[playidx]
-		output(_confixs(song.artist), '-', _confixs(song.name))
+		output(song.artist, '-', song.name)
 		if song in playlist and 'radio' not in listname:
-			fn = ('cache_%s/' % listname)+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
+			fn = 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
 			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
 		else:
 			fn = None
@@ -209,9 +209,12 @@ def update_url():
 		return False
 
 def execute(cmd):
-	cmd,params = cmd.split(':')
+	cmd,params = [c.strip() for c in cmd.split(':')]
 	if cmd == 'say':
 		speech.say(params)
+	if cmd == 'pwr' and params == 'off':
+		import win32api
+		win32api.ExitWindowsEx(24,0)
 
 def queue_songs(songs):
 	songs = list(songs)
@@ -254,10 +257,8 @@ def _match_ratio(s1,s2):
 	return difflib.SequenceMatcher(None,s1.lower(),s2.lower()).ratio()
 
 
-for ch in hotoptions.all:
-	if 'radio' not in ch:
-		try: os.mkdir('cache_'+str(ch))
-		except: pass
+try: os.mkdir('cache')
+except: pass
 
 tid = threading.current_thread().ident
 handle_keys = lambda k: interruptor.handle_keys(tid,k)
@@ -267,10 +268,13 @@ try:
 	if 'nogs' not in sys.argv:
 		gs = Client()
 		gs.init()
+except Exception as e:
+	print(e)
+try:
 	raw_play_list(hotoptions.Favorites)
 	stop()
-except:
-	pass
+except Exception as e:
+	print(e)
 
 stopped = True
 while True:
@@ -287,10 +291,16 @@ while True:
 		if cmd == '<quit>':
 			stop()
 			netpeeker.stop()
-			sys.exit(0)
+			keypeeker.stop()
+			import win32process
+			win32process.ExitProcess(0)
 		if cmd == '<F12>':
 			stopped = not stopped
-			stop() if stopped else play_idx()
+			if stopped:
+				stop()
+				output('Audio stopped.')
+			else:
+				play_idx()
 			continue
 		fkeys = re.findall(r'<F(\d+)>',cmd)
 		if fkeys:
@@ -299,6 +309,7 @@ while True:
 				ln = hotoptions.all[fkey_idx]
 				output(ln)
 				play_list(ln)
+				stopped = False
 		elif cmd == '+':
 			add_song()
 			output('Song added to %s.' % listname)
@@ -313,7 +324,10 @@ while True:
 			next_song()
 			stopped = False
 		elif cmd.endswith('\r'):
-			cmd = cmd.rstrip('\r')
+			cmd = cmd.strip()
+			if len(cmd) < 3:
+				output('Too short search string "%s".' % cmd)
+				continue
 			output(cmd)
 			if ':' not in cmd:
 				play_search(cmd)
@@ -321,7 +335,10 @@ while True:
 			else:
 				execute(cmd)
 	except Exception as e:
-		traceback.print_exc()
-		output(e)
-		keypeeker.peekstr()	# Clear keyboard.
-		netpeeker.peekstr()	# Clear remote keyboard.
+		try:
+			traceback.print_exc()
+			output(e)
+			keypeeker.getstr()	# Clear keyboard.
+			netpeeker.getstr()	# Clear remote keyboard.
+		except:
+			pass

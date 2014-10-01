@@ -2,6 +2,6 @@
 -SR radio search
 -backspace
 -speech
+-remote commands
 BBC live radio
-remote commands
 com radio
