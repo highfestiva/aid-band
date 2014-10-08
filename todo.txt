@@ -3,5 +3,9 @@
 -backspace
 -speech
 -remote commands
+-RightArrow -> next song, LeftArray -> prev song
+-search within playlist
+-delete from playlist removes cached files
+-shuffle play
 BBC live radio
 com radio

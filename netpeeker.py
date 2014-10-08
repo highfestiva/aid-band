@@ -16,9 +16,9 @@ def peekstr(timeout=10):
 		keytimeout.reset()
 		global input
 		input = ''
-	elif re.match('^[^<>+-]+\r$', input):
+	elif re.match('^[^\t<>+-]+\r$', input):
 		return getstr()
-	elif re.match('^[^<>+-]+$', input):
+	elif re.match('^[^\t<>+-]+$', input):
 		# Not finished typing yet.
 		return ''
 	# Possibly hotkey or such.

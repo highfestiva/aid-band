@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 from killable import KillableThread
 from msvcrt import getch
 import re
@@ -14,9 +17,9 @@ def peekstr(timeout=10):
 		keytimeout.reset()
 		global keys
 		keys = ''
-	elif re.match('^[^<>+-]+\r$', keys):
+	elif re.match('^[^\t<>+-]+\r$', keys):
 		return getstr()
-	elif re.match('^[^<>+-]+$', keys):
+	elif re.match('^[^\t<>+-]+$', keys):
 		# Not finished typing yet.
 		return ''
 	# Possibly hotkey or such.
@@ -40,7 +43,9 @@ def readkeys(handle_keys):
 				continue
 		elif ord(ch) == 0xE0:
 			ch = getch()
-			if   ord(ch) ==  72: ch = '<Up>'
+			if   ord(ch) ==  75: ch = '<Left>'
+			elif ord(ch) ==  77: ch = '<Right>'
+			elif ord(ch) ==  72: ch = '<Up>'
 			elif ord(ch) ==  80: ch = '<Down>'
 			elif ord(ch) == 133: ch = '<F11>'
 			elif ord(ch) == 134: ch = '<F12>'

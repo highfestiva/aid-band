@@ -10,8 +10,9 @@ import interruptor
 import keypeeker
 import netpeeker
 import os.path
-import sr_radio
+import random
 import re
+import sr_radio
 import speech
 import subprocess
 import sys
@@ -25,9 +26,11 @@ start_play_time = time.time()
 cache_write_name = None
 gs = None
 allowcache = False
+useshuffle = True
 listname = None
 playlist = []
 playqueue = []
+shuffleidx = []
 playidx = 0
 
 
@@ -55,13 +58,18 @@ def play_url(url, cachename):
 	proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	start_play_time = time.time()
 
+def remove_from_cache(song):
+	fn = _confixs(_cachename(song))
+	if os.path.exists(fn):
+		os.remove(fn)
+
 def play_idx():
-	global playqueue,playidx
+	global playqueue
 	if playidx < len(playqueue):
-		song = playqueue[playidx]
+		song = playqueue[shuffleidx[playidx]]
 		output(song.artist, '-', song.name)
 		if song in playlist and 'radio' not in listname:
-			fn = 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
+			fn = _cachename(song)
 			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
 		else:
 			fn = None
@@ -86,21 +94,27 @@ def poll():
 	else:
 		next_song()
 
-def raw_play_list(name):
+def raw_play_list(name, doplay=True):
 	global listname
 	listname = name
-	global playlist,playqueue,playidx
+	global playlist,playqueue,playidx,shuffleidx
+	doshuffle = useshuffle
 	if listname == hotoptions.Hit:
 		playqueue = list(gs.popular())
 		listname = hotoptions.Favorites
 		playlist = load_list()
+		doshuffle = False
 	else:
 		playlist = playqueue = load_list()
+	shuffleidx = list(range(len(playqueue)))
+	if doshuffle:
+		random.shuffle(shuffleidx)
 	playidx = 0
-	if playqueue:
-		play_idx()
-	else:
-		stop()
+	if doplay:
+		if playqueue:
+			play_idx()
+		else:
+			stop()
 	return playqueue
 
 def play_list(name):
@@ -109,6 +123,15 @@ def play_list(name):
 		speech.say(_simple_listname())
 	else:
 		speech.say('%s playlist is empty, nothing to play.' % _simple_listname())
+
+def search_queue(search):
+	match = lambda s: max(_match_ratio(s.name,search),_match_ratio(str(s.artist),search))
+	ordered = sorted(playqueue, key=match, reverse=True)
+	if ordered:
+		song = ordered[0]
+		if match(song) > 0.8:
+			return song
+	return None
 
 def search_music(search):
 	songs = []
@@ -152,30 +175,46 @@ def play_search(search):
 	if 'radio' in listname:
 		songs = sr_radio.search(search)
 	else:
+		song = search_queue(search)
+		if song:
+			global playidx
+			idx = playqueue.index(song)
+			playidx = shuffleidx.index(idx)
+			play_idx()
+			return
 		songs = search_music(search)
 	if not songs:
 		speech.say('Nothing found, try again.')
 	queue_songs(songs)
 
 def add_song():
-	global playlist,playqueue,playidx
-	if playqueue[playidx:playidx+1]:
-		song = playqueue[playidx]
-		playlist += [song]
-		save_list(playlist)
-		speech.say('%s added to %s.' % (song.name,_simple_listname()))
+	global playlist,playqueue
+	if shuffleidx[playidx:playidx+1]:
+		song = playqueue[shuffleidx[playidx]]
+		if song not in playlist:
+			playlist += [song]
+			save_list(playlist)
+			speech.say('%s added to %s.' % (song.name,_simple_listname()))
+			return True
+		else:
+			speech.say('%s already in %s.' % (song.name,_simple_listname()))
 	else:
 		speech.say('Play queue is empty, no song to add.')
 
 def drop_song():
-	global playlist,playqueue,playidx
-	if playidx < len(playqueue):
-		song = playqueue[playidx]
-		playqueue = playqueue[:playidx] + playqueue[playidx+1:]
+	global playlist,playqueue,shuffleidx
+	if playidx < len(shuffleidx):
+		pqidx = shuffleidx[playidx]
+		song = playqueue[pqidx]
+		playqueue = playqueue[:pqidx] + playqueue[pqidx+1:]
+		shuffleidx = shuffleidx[:playidx] + shuffleidx[playidx+1:]
+		shuffleidx = [s if s<pqidx else s-1 for s in shuffleidx]	# Reduce all above a certain index.
 		playlist = list(filter(lambda s: s!=song, playlist))
 		play_idx()
 		save_list(playlist)
+		remove_from_cache(song)
 		speech.say('%s dropped from %s.' % (song.name,_simple_listname()))
+		return True
 	else:
 		speech.say('Play queue is empty, no song to remove.')
 
@@ -183,7 +222,6 @@ def prev_song():
 	global playlist,playqueue,playidx
 	playidx -= 1
 	if playidx < 0:
-		playqueue = playlist
 		playidx = len(playqueue)-1 if playqueue else 0
 	play_idx()
 
@@ -191,7 +229,6 @@ def next_song():
 	global playlist,playqueue,playidx
 	playidx += 1
 	if playidx >= len(playqueue):
-		playqueue = playlist
 		playidx = 0
 	play_idx()
 
@@ -199,7 +236,7 @@ def update_url():
 	global playqueue,playidx
 	if playidx >= len(playqueue):
 		return False
-	song = playqueue[playidx]
+	song = playqueue[shuffleidx[playidx]]
 	search = '%s %s' % (song.name,song.artist)
 	try:
 		s = next(gs.search(search, type=Client.SONGS))
@@ -220,8 +257,10 @@ def queue_songs(songs):
 	songs = list(songs)
 	if not songs:
 		return
-	global playqueue,playidx
-	playqueue = playqueue[:playidx+1] + songs + playqueue[playidx+1:]
+	global playqueue,playidx,shuffleidx
+	playqueue += songs
+	newidx = list(range(len(playqueue),len(playqueue)+len(songs)))
+	shuffleidx = shuffleidx[:playidx+1] + newidx + shuffleidx[playidx+1:]
 	next_song()
 
 def load_list():
@@ -250,6 +289,9 @@ def output(*args):
 def _simple_listname():
 	return listname.split('_')[-1]
 
+def _cachename(song):
+	return 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
+
 def _confixs(s):
 	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
 
@@ -270,11 +312,7 @@ try:
 		gs.init()
 except Exception as e:
 	print(e)
-try:
-	raw_play_list(hotoptions.Favorites)
-	stop()
-except Exception as e:
-	print(e)
+raw_play_list(hotoptions.Favorites, doplay=False)
 
 stopped = True
 while True:
@@ -311,18 +349,28 @@ while True:
 				play_list(ln)
 				stopped = False
 		elif cmd == '+':
-			add_song()
-			output('Song added to %s.' % listname)
+			if add_song():
+				output('Song added to %s.' % listname)
 		elif cmd == '-':
-			drop_song()
-			stopped = False
-			output('Song dropped from %s.' % listname)
-		elif cmd == '<Up>':
+			if drop_song():
+				stopped = False
+				output('Song dropped from %s.' % listname)
+		elif cmd == '<Left>':
 			prev_song()
 			stopped = False
-		elif cmd == '<Down>':
+		elif cmd == '<Right>':
 			next_song()
 			stopped = False
+		elif cmd == '\t':
+			useshuffle = not useshuffle
+			if shuffleidx:
+				curidx = shuffleidx[playidx]
+				shuffleidx = list(range(len(playqueue)))
+				if useshuffle:
+					random.shuffle(shuffleidx)
+				playidx = shuffleidx.index(curidx)
+				speech.say('shuffle' if useshuffle else 'playing in order')
+				output('Shuffing active.' if useshuffle else 'Songs playing in list order.')
 		elif cmd.endswith('\r'):
 			cmd = cmd.strip()
 			if len(cmd) < 3:

@@ -37,7 +37,9 @@ try:
 					continue
 			elif ord(ch) == 0xE0:
 				ch = getch()
-				if   ord(ch) ==  72: ch = '<Up>'.encode()
+				if   ord(ch) ==  75: ch = '<Left>'.encode()
+				elif ord(ch) ==  77: ch = '<Right>'.encode()
+				elif ord(ch) ==  72: ch = '<Up>'.encode()
 				elif ord(ch) ==  80: ch = '<Down>'.encode()
 				elif ord(ch) == 133: ch = '<F11>'.encode()
 				elif ord(ch) == 134: ch = '<F12>'.encode()
