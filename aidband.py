@@ -105,10 +105,12 @@ def raw_play_list(name, doplay=True):
 		playlist = load_list()
 		doshuffle = False
 	else:
-		playlist = playqueue = load_list()
+		playlist = load_list()
+		playqueue = playlist[:]
 	shuffleidx = list(range(len(playqueue)))
 	if doshuffle:
 		random.shuffle(shuffleidx)
+	_validate()
 	playidx = 0
 	if doplay:
 		if playqueue:
@@ -161,7 +163,7 @@ def search_music(search):
 			for s in ss:
 				if s.name not in names:
 					names.add(s.name)
-					songs += [s.name,artist.name,s.stream.url]
+					songs.append(s)
 			songs = songs[:30]
 	except StopIteration:
 		try:
@@ -184,6 +186,7 @@ def play_search(search):
 			return
 		songs = search_music(search)
 	if not songs:
+		output("Nothing found that resembles '%s.'" % search)
 		speech.say('Nothing found, try again.')
 	queue_songs(songs)
 
@@ -194,12 +197,19 @@ def add_song():
 		if song not in playlist:
 			playlist += [song]
 			save_list(playlist)
-			speech.say('%s added to %s.' % (song.name,_simple_listname()))
+			s = '%s added to %s.' % (song.name,_simple_listname())
+			speech.say(s)
+			output(s)
 			return True
 		else:
-			speech.say('%s already in %s.' % (song.name,_simple_listname()))
+			s = '%s already in %s.' % (song.name,_simple_listname())
+			speech.say(s)
+			output(s)
 	else:
-		speech.say('Play queue is empty, no song to add.')
+		s = 'Play queue is empty, no song to add.'
+		speech.say(s)
+		output(s)
+	_validate()
 
 def drop_song():
 	global playlist,playqueue,shuffleidx
@@ -217,16 +227,17 @@ def drop_song():
 		return True
 	else:
 		speech.say('Play queue is empty, no song to remove.')
+	_validate()
 
 def prev_song():
-	global playlist,playqueue,playidx
+	global playqueue,playidx
 	playidx -= 1
 	if playidx < 0:
 		playidx = len(playqueue)-1 if playqueue else 0
 	play_idx()
 
 def next_song():
-	global playlist,playqueue,playidx
+	global playqueue,playidx
 	playidx += 1
 	if playidx >= len(playqueue):
 		playidx = 0
@@ -258,9 +269,10 @@ def queue_songs(songs):
 	if not songs:
 		return
 	global playqueue,playidx,shuffleidx
-	playqueue += songs
 	newidx = list(range(len(playqueue),len(playqueue)+len(songs)))
+	playqueue += songs
 	shuffleidx = shuffleidx[:playidx+1] + newidx + shuffleidx[playidx+1:]
+	_validate()
 	next_song()
 
 def load_list():
@@ -283,8 +295,15 @@ def save_list(songlist):
 
 def output(*args):
 	s = ' '.join([str(a) for a in args])
-	print(s)
+	print(s.encode('cp850','ignore').decode('cp850'))
 	netpeeker.output(s)
+
+def _validate():
+	assert len(playqueue) >= len(playlist)
+	assert len(playqueue) == len(shuffleidx)
+	for i in range(len(playqueue)):
+		assert shuffleidx[i] < len(playqueue)
+	assert playidx < len(shuffleidx)
 
 def _simple_listname():
 	return listname.split('_')[-1]
@@ -371,9 +390,10 @@ while True:
 				playidx = shuffleidx.index(curidx)
 				speech.say('shuffle' if useshuffle else 'playing in order')
 				output('Shuffing active.' if useshuffle else 'Songs playing in list order.')
+			_validate()
 		elif cmd.endswith('\r'):
 			cmd = cmd.strip()
-			if len(cmd) < 3:
+			if len(cmd) < 2:
 				output('Too short search string "%s".' % cmd)
 				continue
 			output(cmd)

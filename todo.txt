@@ -7,5 +7,6 @@
 -search within playlist
 -delete from playlist removes cached files
 -shuffle play
+search already present artists, to be able to add more/missing songs
 BBC live radio
 com radio
