@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 class ABSong:
 	def __init__(self, _name,_artist,_url):
 		self.name = _name

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#Uses spotipy to fill the playlists. Enter a bunch of artists in your playlists
+#(no ~'s on those lines), and some songs by each artist will be added.
 
 import codecs
 import difflib
@@ -31,7 +33,7 @@ for f in files:
 	newlines = []
 	for line in lines:
 		line = line.strip()
-		if len(line) >=3 and len(line) < 30 and ',' not in line and '#' not in line and '~' not in line:
+		if len(line) >= 2 and len(line) < 30 and ',' not in line and '#' not in line and '~' not in line:
 			# Probably an artist.
 			tracks = gettracks(line)
 			newlines += tracks if tracks else [line]

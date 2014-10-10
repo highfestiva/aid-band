@@ -1,17 +1,24 @@
 #!/usr/bin/env python
 
+import argparse
 from msvcrt import kbhit,getch
 import socket
 import sys
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-t','--host', dest='host', default='localhost:3303', help="host (and optional port) to connect to, defaults to localhost:3303")
+parser.add_argument('-p','--use-password-file', dest='usepw', default=False, action='store_true', help="use file 'password' (containing password without linefeeds) instead of manual entry")
+parser.add_argument('-c','--command', dest='commands', action='append', default=[], help="pass command(s) to be sent initially")
+options = parser.parse_args()
 
-host = sys.argv[1] if len(sys.argv) >= 2 else 'localhost'
-port = 3303
+host,port = options.host.split(':') if ':' in options.host else (options.host,3303)
+port = int(port)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
 	s.connect((host,port))
 	s.settimeout(1)
-	sendqueue = sys.argv[2:]
+	pw = [open('password').read()+'\\r'] if options.usepw else []
+	sendqueue = pw + options.commands
 	bb = b''
 	while True:
 		try:
@@ -21,7 +28,7 @@ try:
 			bb = b''
 		except socket.timeout:
 			if sendqueue:
-				d = eval('"'+sendqueue[0]+'"')
+				d = eval("'''"+sendqueue[0]+"'''")
 				s.send(d.encode())
 				sendqueue = sendqueue[1:]
 				continue

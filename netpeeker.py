@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 from killable import KillableThread
 import re
 import socket
@@ -75,7 +78,8 @@ def listen(handle_keys):
 			while '\r' not in pw and len(pw)<50 and i<50:
 				pw += client.recv(1).decode()
 				i += 1
-			if pw != '+-*/~\r':
+			wanted_password = open('password').read() + '\r'
+			if pw != wanted_password:
 				print('Bad password entered by client.')
 				dropclient(client)
 				continue

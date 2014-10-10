@@ -1,3 +1,5 @@
+Win32 console muzak player. Requires mplayer.exe installed in your path.
+
 -SR live radio
 -SR radio search
 -backspace

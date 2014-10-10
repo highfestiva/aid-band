@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from absong import ABSong
+import argparse
 import codecs
 import difflib
 from grooveshark import Client
@@ -15,7 +16,6 @@ import re
 import sr_radio
 import speech
 import subprocess
-import sys
 import threading
 import time
 import traceback
@@ -32,6 +32,7 @@ playlist = []
 playqueue = []
 shuffleidx = []
 playidx = 0
+datadir = '.'
 
 
 def stop():
@@ -78,6 +79,9 @@ def play_idx():
 			update_url()
 			url = song.stream.url
 		play_url(url, fn)
+		# Once played the song expires, no use attempting to play that URL again.
+		song = ABSong(song.name,song.artist,None)
+		playqueue[shuffleidx[playidx]] = song
 
 def poll():
 	if not proc or proc.poll() == None:
@@ -122,9 +126,9 @@ def raw_play_list(name, doplay=True):
 def play_list(name):
 	pq = raw_play_list(name)
 	if pq:
-		speech.say(_simple_listname())
+		avoutput(_simple_listname())
 	else:
-		speech.say('%s playlist is empty, nothing to play.' % _simple_listname())
+		avoutput('%s playlist is empty, nothing to play.' % _simple_listname())
 
 def search_queue(search):
 	match = lambda s: max(_match_ratio(s.name,search),_match_ratio(str(s.artist),search))
@@ -186,8 +190,7 @@ def play_search(search):
 			return
 		songs = search_music(search)
 	if not songs:
-		output("Nothing found that resembles '%s.'" % search)
-		speech.say('Nothing found, try again.')
+		avoutput('Nothing found, try again.')
 	queue_songs(songs)
 
 def add_song():
@@ -197,18 +200,12 @@ def add_song():
 		if song not in playlist:
 			playlist += [song]
 			save_list(playlist)
-			s = '%s added to %s.' % (song.name,_simple_listname())
-			speech.say(s)
-			output(s)
+			avoutput('%s added to %s.' % (song.name,_simple_listname()))
 			return True
 		else:
-			s = '%s already in %s.' % (song.name,_simple_listname())
-			speech.say(s)
-			output(s)
+			avoutput('%s already in %s.' % (song.name,_simple_listname()))
 	else:
-		s = 'Play queue is empty, no song to add.'
-		speech.say(s)
-		output(s)
+		avoutput('Play queue is empty, no song to add.')
 	_validate()
 
 def drop_song():
@@ -223,10 +220,10 @@ def drop_song():
 		play_idx()
 		save_list(playlist)
 		remove_from_cache(song)
-		speech.say('%s dropped from %s.' % (song.name,_simple_listname()))
+		avoutput('%s dropped from %s.' % (song.name,_simple_listname()))
 		return True
 	else:
-		speech.say('Play queue is empty, no song to remove.')
+		avoutput('Play queue is empty, no song to remove.')
 	_validate()
 
 def prev_song():
@@ -277,9 +274,10 @@ def queue_songs(songs):
 
 def load_list():
 	songs = []
-	if not os.path.exists(listname+'.txt'):
+	fn = os.path.join(datadir,listname+'.txt')
+	if not os.path.exists(fn):
 		return songs
-	for line in codecs.open(listname+'.txt', 'r', 'utf-8'):
+	for line in codecs.open(fn, 'r', 'utf-8'):
 		try:
 			artist,songname,url = [w.strip() for w in line.split('~')]
 			songs += [ABSong(songname,artist,url)]
@@ -288,7 +286,8 @@ def load_list():
 	return songs
 
 def save_list(songlist):
-	f = codecs.open(listname+'.txt', 'w', 'utf-8')
+	fn = os.path.join(datadir,listname+'.txt')
+	f = codecs.open(fn, 'w', 'utf-8')
 	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.\n')
 	for song in songlist:
 		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
@@ -298,18 +297,23 @@ def output(*args):
 	print(s.encode('cp850','ignore').decode('cp850'))
 	netpeeker.output(s)
 
+def avoutput(*args):
+	s = ' '.join([str(a) for a in args])
+	output(s)
+	speech.say(s)
+
 def _validate():
 	assert len(playqueue) >= len(playlist)
 	assert len(playqueue) == len(shuffleidx)
 	for i in range(len(playqueue)):
 		assert shuffleidx[i] < len(playqueue)
-	assert playidx < len(shuffleidx)
+	assert playidx < len(shuffleidx) or len(shuffleidx) == 0
 
 def _simple_listname():
 	return listname.split('_')[-1]
 
 def _cachename(song):
-	return 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_')
+	return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_'))
 
 def _confixs(s):
 	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
@@ -318,15 +322,24 @@ def _match_ratio(s1,s2):
 	return difflib.SequenceMatcher(None,s1.lower(),s2.lower()).ratio()
 
 
-try: os.mkdir('cache')
+parser = argparse.ArgumentParser()
+parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', help="directory containing playlists and cache (default is '.')")
+parser.add_argument('--without-grooveshark', dest='nogs', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
+options = parser.parse_args()
+
+datadir = options.datadir
+try: os.mkdir(os.path.join(datadir,'cache'))
 except: pass
 
 tid = threading.current_thread().ident
-handle_keys = lambda k: interruptor.handle_keys(tid,k)
+event = threading.Event()
+def handle_keys(k):
+	interruptor.handle_keys(tid,k)
+	event.set()
 keypeeker.init(handle_keys)
 netpeeker.init(handle_keys)
 try:
-	if 'nogs' not in sys.argv:
+	if not options.nogs:
 		gs = Client()
 		gs.init()
 except Exception as e:
@@ -337,12 +350,11 @@ stopped = True
 while True:
 	try:
 		output('Enter search term:')
-		cmd = None
+		cmd = ''
 		while not cmd:
-			if stopped:
-				time.sleep(2)
-			else:
-				time.sleep(0.3)
+			event.wait(2)
+			time.sleep(0.01)	# Hang on a pinch to see if there's more to be had.
+			if not stopped:
 				poll()
 			cmd = keypeeker.peekstr() + netpeeker.peekstr()
 		if cmd == '<quit>':
@@ -364,16 +376,13 @@ while True:
 			fkey_idx = int(fkeys[-1])-1
 			if len(hotoptions.all) > fkey_idx:
 				ln = hotoptions.all[fkey_idx]
-				output(ln)
 				play_list(ln)
 				stopped = False
 		elif cmd == '+':
-			if add_song():
-				output('Song added to %s.' % listname)
+			add_song()
 		elif cmd == '-':
 			if drop_song():
 				stopped = False
-				output('Song dropped from %s.' % listname)
 		elif cmd == '<Left>':
 			prev_song()
 			stopped = False
@@ -388,8 +397,7 @@ while True:
 				if useshuffle:
 					random.shuffle(shuffleidx)
 				playidx = shuffleidx.index(curidx)
-				speech.say('shuffle' if useshuffle else 'playing in order')
-				output('Shuffing active.' if useshuffle else 'Songs playing in list order.')
+				avoutput('Shuffle.' if useshuffle else 'Playing in order.')
 			_validate()
 		elif cmd.endswith('\r'):
 			cmd = cmd.strip()
