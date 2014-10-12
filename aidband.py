@@ -111,11 +111,13 @@ def raw_play_list(name, doplay=True):
 	else:
 		playlist = load_list()
 		playqueue = playlist[:]
+		if 'radio' in listname:
+			doshuffle = False
 	shuffleidx = list(range(len(playqueue)))
 	if doshuffle:
 		random.shuffle(shuffleidx)
-	_validate()
 	playidx = 0
+	_validate()
 	if doplay:
 		if playqueue:
 			play_idx()
@@ -145,14 +147,13 @@ def search_music(search):
 		artists = sorted(gs.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
 		if artists:
 			# Get exact artist match if possible.
-			arts = [a for a in artists if a.name.lower() == search]
+			arts = [a for a in artists if a.name.lower() == search.lower()]
 			artists = arts if arts else artists
 			# Add most popular songs, and see which one we're after.
 			arts = []
 			ss = {}
-			for a in artists:
-				score = 0
-				i = 0
+			for a in artists[:5]:
+				score,i = 0,0
 				for s in a.songs:
 					score += int(s.popularity)
 					i += 1
@@ -160,15 +161,15 @@ def search_music(search):
 						break
 				arts += [(a,score)]
 			artist = sorted(arts, key=lambda l:l[1], reverse=True)[0][0]
-			# If searching for artist, pick all songs, sort by popularity and remove redundant.
+			# If searching for artist, pick a bunch of songs, sort by popularity and remove redundant.
 			ss = sorted(artist.songs, key=lambda s: int(s.popularity), reverse=True)
 			# Uniquify.
 			names = set()
-			for s in ss:
+			for s in ss[:50]:
 				if s.name not in names:
 					names.add(s.name)
 					songs.append(s)
-			songs = songs[:30]
+			songs = songs[:20]
 	except StopIteration:
 		try:
 			# If searching for songs, just pick first hit.
@@ -410,6 +411,13 @@ while True:
 				stopped = False
 			else:
 				execute(cmd)
+	except TypeError as te:
+		for a in te.args:
+			if 'list indices' in a:
+				stop()
+				stopped = True
+				avoutput("You're banned from Groove Shark!")
+				break
 	except Exception as e:
 		try:
 			traceback.print_exc()
