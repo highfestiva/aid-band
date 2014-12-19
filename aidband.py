@@ -31,6 +31,7 @@ listname = None
 playlist = []
 playqueue = []
 shuffleidx = []
+ishits = False
 playidx = 0
 datadir = '.'
 
@@ -101,14 +102,16 @@ def poll():
 def raw_play_list(name, doplay=True):
 	global listname
 	listname = name
-	global playlist,playqueue,playidx,shuffleidx
+	global playlist,playqueue,playidx,shuffleidx,ishits
 	doshuffle = useshuffle
 	if listname == hotoptions.Hit:
+		ishits = True
 		playqueue = list(gs.popular())
 		listname = hotoptions.Favorites
 		playlist = load_list()
 		doshuffle = False
 	else:
+		ishits = False
 		playlist = load_list()
 		playqueue = playlist[:]
 		if 'radio' in listname:
@@ -304,7 +307,8 @@ def avoutput(*args):
 	speech.say(s)
 
 def _validate():
-	assert len(playqueue) >= len(playlist)
+	if not ishits:
+		assert len(playqueue) >= len(playlist)
 	assert len(playqueue) == len(shuffleidx)
 	for i in range(len(playqueue)):
 		assert shuffleidx[i] < len(playqueue)
