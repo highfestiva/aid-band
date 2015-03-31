@@ -348,7 +348,8 @@ try:
 		gs = Client()
 		gs.init()
 except Exception as e:
-	print(e)
+	traceback.print_exc()
+	print('Exception during startup:', e)
 raw_play_list(hotoptions.Favorites, doplay=False)
 
 stopped = True
