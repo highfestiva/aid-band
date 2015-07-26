@@ -2,10 +2,16 @@
 # -*- coding:utf-8 -*-
 
 from killable import KillableThread
-from msvcrt import getch
 import re
 from time import sleep
 from timeout import Timeout
+
+try:
+	from msvcrt import getch
+except:
+	import sys, tty
+	tty.setraw(sys.stdin.fileno())
+	getch = lambda: sys.stdin.read(1)
 
 keythread = None
 keys = ''

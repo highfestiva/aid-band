@@ -7,7 +7,7 @@ import subprocess
 
 class Client:
 	def __init__(self, username, password):
-		self._cmd = ['Consoleify', username, password]
+		self._cmd = ['./Consoleify', username, password]
 		self._proc = None
 		self._reset()
 

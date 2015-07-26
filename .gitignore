@@ -12,5 +12,8 @@ christmas.txt
 password
 sp_credentials
 Consoleify.exe
+Consoleify
 OpenAL.dll
 libspotify.dll
+*.so
+*.so.*

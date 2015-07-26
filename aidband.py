@@ -348,8 +348,12 @@ while True:
 			netpeeker.stop()
 			keypeeker.stop()
 			if muzaks: muzaks.quit()
-			import win32process
-			win32process.ExitProcess(0)
+			try:
+				import win32process
+				win32process.ExitProcess(0)
+			except:
+				import os,signal
+				os.kill(os.getpid(), signal.SIGKILL)
 		if cmd == '<F12>':
 			stopped = not stopped
 			if stopped:
