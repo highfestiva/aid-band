@@ -2,12 +2,9 @@
 # -*- coding:utf-8 -*-
 
 class ABSong:
-	def __init__(self, _name,_artist,_url):
+	def __init__(self, _name,_artist,_uri):
 		self.name = _name
 		self.artist = str(_artist)
-		class ABStream:
-			pass
-		self.stream = ABStream()
-		self.stream.url = _url
+		self.uri = _uri
 	def __eq__(self, other):
 		return self.name == other.name and self.artist == str(other.artist)

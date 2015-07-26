@@ -5,7 +5,7 @@ from absong import ABSong
 import argparse
 import codecs
 import difflib
-from grooveshark import Client
+from spotify import Client
 import hotoptions
 import interruptor
 import keypeeker
@@ -24,7 +24,8 @@ import traceback
 proc = None
 start_play_time = time.time()
 cache_write_name = None
-gs = None
+active_url = ''
+muzaks = None
 allowcache = False
 useshuffle = True
 listname = None
@@ -41,24 +42,31 @@ def stop():
 	if proc:
 		proc.kill()
 		proc.wait()
+		proc = None
 		if cache_write_name:
 			try: os.remove(_confixs(cache_write_name))
 			except: pass
 			cache_write_name = None
+	elif muzaks:
+		muzaks.stop()
 
 def play_url(url, cachename):
 	stop()
-	global proc,start_play_time,cache_write_name
+	global proc,start_play_time,cache_write_name,active_url
 	cache_write_name = None
 	if cachename and url.startswith('http') and allowcache:
 		cmd = ['mplayer.exe', url, '-dumpstream', '-dumpfile', _confixs(cachename)]
 		cache_write_name = cachename
+	elif url.startswith('spotify'):
+		muzaks.playsong(url)
 	elif not url.startswith('http'):
 		cmd = ['mplayer.exe', _confixs(url)]
+		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	else:
 		cmd = ['mplayer.exe', url]
-	proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	start_play_time = time.time()
+	active_url = url
 
 def remove_from_cache(song):
 	fn = _confixs(_cachename(song))
@@ -72,19 +80,24 @@ def play_idx():
 		output(song.artist, '-', song.name)
 		if song in playlist and 'radio' not in listname:
 			fn = _cachename(song)
-			url = fn if os.path.exists(_confixs(fn)) else song.stream.url
+			url = fn if os.path.exists(_confixs(fn)) else song.uri
 		else:
 			fn = None
-			url = song.stream.url
+			url = song.uri
 		if not url:
 			update_url()
-			url = song.stream.url
+			url = song.uri
 		play_url(url, fn)
 		# Once played the song expires, no use attempting to play that URL again.
-		song = ABSong(song.name,song.artist,None)
+		song = ABSong(song.name,song.artist,url)
 		playqueue[shuffleidx[playidx]] = song
 
 def poll():
+	if active_url.startswith('spotify'):
+		if not muzaks.isplaying():
+			next_song()
+		return
+
 	if not proc or proc.poll() == None:
 		return
 	global cache_write_name
@@ -106,7 +119,7 @@ def raw_play_list(name, doplay=True):
 	doshuffle = useshuffle
 	if listname == hotoptions.Hit:
 		ishits = True
-		playqueue = list(gs.popular())
+		playqueue = muzaks.popular()
 		listname = hotoptions.Favorites
 		playlist = load_list()
 		doshuffle = False
@@ -145,41 +158,8 @@ def search_queue(search):
 	return None
 
 def search_music(search):
-	songs = []
-	try:
-		artists = sorted(gs.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
-		if artists:
-			# Get exact artist match if possible.
-			arts = [a for a in artists if a.name.lower() == search.lower()]
-			artists = arts if arts else artists
-			# Add most popular songs, and see which one we're after.
-			arts = []
-			ss = {}
-			for a in artists[:5]:
-				score,i = 0,0
-				for s in a.songs:
-					score += int(s.popularity)
-					i += 1
-					if i >= 10:
-						break
-				arts += [(a,score)]
-			artist = sorted(arts, key=lambda l:l[1], reverse=True)[0][0]
-			# If searching for artist, pick a bunch of songs, sort by popularity and remove redundant.
-			ss = sorted(artist.songs, key=lambda s: int(s.popularity), reverse=True)
-			# Uniquify.
-			names = set()
-			for s in ss[:50]:
-				if s.name not in names:
-					names.add(s.name)
-					songs.append(s)
-			songs = songs[:20]
-	except StopIteration:
-		try:
-			# If searching for songs, just pick first hit.
-			songs = [next(gs.search(search, type=Client.SONGS))]
-		except StopIteration:
-			pass
-	return songs
+	#return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
+	return muzaks.search(search)
 
 def play_search(search):
 	if 'radio' in listname:
@@ -249,12 +229,12 @@ def update_url():
 	if playidx >= len(playqueue):
 		return False
 	song = playqueue[shuffleidx[playidx]]
-	search = '%s %s' % (song.name,song.artist)
-	try:
-		s = next(gs.search(search, type=Client.SONGS))
-		song.stream.url = s.stream.url
-		return True
-	except StopIteration:
+	if not song.uri:
+		search = '%s %s' % (song.name,song.artist)
+		s = muzaks.search(search)
+		if s:
+			song.uri = s[0].uri
+			return True
 		return False
 
 def execute(cmd):
@@ -294,7 +274,7 @@ def save_list(songlist):
 	f = codecs.open(fn, 'w', 'utf-8')
 	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.\n')
 	for song in songlist:
-		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.stream.url if 'radio' in listname else ''))
+		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri if 'radio' in listname else ''))
 
 def output(*args):
 	s = ' '.join([str(a) for a in args])
@@ -329,7 +309,7 @@ def _match_ratio(s1,s2):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', help="directory containing playlists and cache (default is '.')")
-parser.add_argument('--without-grooveshark', dest='nogs', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
+parser.add_argument('--without-spotify', dest='nosp', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
 options = parser.parse_args()
 
 datadir = options.datadir
@@ -344,9 +324,9 @@ def handle_keys(k):
 keypeeker.init(handle_keys)
 netpeeker.init(handle_keys)
 try:
-	if not options.nogs:
-		gs = Client()
-		gs.init()
+	if not options.nosp:
+		username,password = open('sp_credentials','rt').read().split('~~~')
+		muzaks = Client(username,password)
 except Exception as e:
 	traceback.print_exc()
 	print('Exception during startup:', e)
@@ -359,7 +339,7 @@ while True:
 		cmd = ''
 		while not cmd:
 			event.wait(2)
-			time.sleep(0.01)	# Hang on a pinch to see if there's more to be had.
+			time.sleep(0.2)	# Hang on a pinch to see if there's more to be had.
 			if not stopped:
 				poll()
 			cmd = keypeeker.peekstr() + netpeeker.peekstr()
@@ -367,6 +347,7 @@ while True:
 			stop()
 			netpeeker.stop()
 			keypeeker.stop()
+			if muzaks: muzaks.quit()
 			import win32process
 			win32process.ExitProcess(0)
 		if cmd == '<F12>':

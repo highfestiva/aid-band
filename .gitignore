@@ -1,9 +1,16 @@
 __pycache__
 cache/
+dist/
+tmp/
 favorites.txt
 party.txt
 rock.txt
 pop.txt
 classical.txt
 radio_*.txt
+christmas.txt
 password
+sp_credentials
+Consoleify.exe
+OpenAL.dll
+libspotify.dll
