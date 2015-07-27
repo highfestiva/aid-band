@@ -28,35 +28,35 @@ except:
 			ch,emuchars = emuchars[0],emuchars[1:]
 			return ch
 		#ir = sys.stdin.read
-		def ir(n):
-			s = sys.stdin.read(n)
+		def ir():
+			s = sys.stdin.read(1)
 			print(ord(s),end='\r\n',flush=True)
-			return s
-		s = ir(1)
-		if ord(s) == 27:
-			s = ir(1)
-			if ord(s) == 27:
+			return s,ord(s)
+		s,o = ir()
+		if o == 27:
+			s,o = ir()
+			if o == 27:
 				return s
-			if ord(s) == 79:
-				emuchars += chr(ord(ir(1))-21)
+			if o == 79:
+				emuchars += chr(ord(ir())-21)
 				return chr(0)
-			elif ord(s) == 91:
-				s = ir(1)
-				if ord(s) == 65: emuchars += chr(72)
-				if ord(s) == 66: emuchars += chr(80)
-				if ord(s) == 67: emuchars += chr(77)
-				if ord(s) == 68: emuchars += chr(75)
-				if ord(s) == 70: emuchars += chr(79)
-				o = ord(ir(1))*100 + ord(ir(1))
-				ir(1)
+			elif o == 91:
+				s,o = ir()
+				if o == 65: emuchars += chr(72); return chr(0xE0)
+				if o == 66: emuchars += chr(80); return chr(0xE0)
+				if o == 67: emuchars += chr(77); return chr(0xE0)
+				if o == 68: emuchars += chr(75); return chr(0xE0)
+				if o == 70: emuchars += chr(79); return chr(0xE0)
+				o = o*100 + ir()[1]
+				ir()
 				if o == 4953: emuchars += chr(63); return chr(0)
 				if o == 4955: emuchars += chr(64); return chr(0)
 				if o == 4956: emuchars += chr(65); return chr(0)
 				if o == 4957: emuchars += chr(66); return chr(0)
 				if o == 5048: emuchars += chr(67); return chr(0)
 				if o == 5049: emuchars += chr(68); return chr(0)
-				if o == 5050: emuchars += chr(133);
-				if o == 5051: emuchars += chr(134);
+				if o == 5051: emuchars += chr(133);
+				if o == 5052: emuchars += chr(134);
 				return chr(0xE0)
 		print(s, end='', flush=True)
 		return s
