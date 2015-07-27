@@ -1,0 +1,55 @@
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.
+Ludwig van Beethoven ~ Bagatelle in A minor, WoO 59 -"Für Elise" - Live At The Royal Albert Hall/2012 ~ spotify:track:1NpSq9rhyxcDh6dLtOxnNh
+Ludwig van Beethoven ~ The Moonlight Sonet ~ spotify:track:0z46NvGBqk5SmxSNV7UcQt
+Ludwig van Beethoven ~ Piano Sonata No. 14 (Quasi una fantasia) in C-Sharp Minor, Op. 27 No. 2: I. Adagio sostenuto ~ spotify:track:72CnQExnlXk6vB6D0ri0YZ
+Ludwig van Beethoven ~ Bagatelle No. 25 in A Minor, WoO 59, "Für Elise" ~ spotify:track:5ItJk6eoKu73Q6gyRyarvk
+Ludwig van Beethoven ~ Sonata No. 14 in C-Sharp Minor for Piano, Op. 27:2, "Moonlight Sonata": Adagio sostenuto ~ spotify:track:2X7SmzU5DHxvtjd8FzLlbU
+Ludwig van Beethoven ~ Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2, "Moonlight": I. Adagio sostenuto ~ spotify:track:5t0E9V1RiHBflzs71pfGGG
+Ludwig van Beethoven ~ Fuer Elise ~ spotify:track:7cfTba1xLFkHPpVJANHM9I
+Ludwig van Beethoven ~ Piano Sonata No. 8 in C Minor, Op. 13, "Pathetique": II. Adagio cantabile (The Age of Innocence) ~ spotify:track:7m06KAvy8PVgHJya3jqDei
+Ludwig van Beethoven ~ Bagatelle in A minor, WoO 59 -"Für Elise" - Live At The Royal Albert Hall/2012 ~ spotify:track:1NpSq9rhyxcDh6dLtOxnNh
+Ludwig van Beethoven ~ The Moonlight Sonet ~ spotify:track:0z46NvGBqk5SmxSNV7UcQt
+Wolfgang Amadeus Mozart ~ Sonata No. 11 A major, KV 331:Rondo: alla turka ~
+Wolfgang Amadeus Mozart ~ Piano Sonata No. 17 in B-Flat Major, K. 570: I. Allegro ~ spotify:track:6afCLJC9JzVe6D5aicyNCK
+Wolfgang Amadeus Mozart ~ String Quartet No. 15 in D Minor, K. 421 (Haydn Quartet No. 2): I. Allegro ~ spotify:track:2dwa2jBvoydEvCY0LnEs6w
+Wolfgang Amadeus Mozart ~ Mozart: Requiem in D Minor, K. 626: VIII. Lacrimosa ~ spotify:track:1npqP0Epwvvc1jzudkkmVB
+Wolfgang Amadeus Mozart ~ Sonata No. 8 in D major - Rondo allegro ~ spotify:track:1rItr7SF7r1FDKhFRvahV6
+Richard Stoltzman ~ Concerto in B-flat for Bassoon, K.191 (Arranged for Clarinet): Andante ma adagio ~ spotify:track:7A4mkHcr6eZ5qMOWiDXmDe
+Wolfgang Amadeus Mozart ~ Vesperae solennes de confessore, K. 339: V. Laudate Dominum ~ spotify:track:3KA3NVkLDa35XDJzmFrHSs
+Wolfgang Amadeus Mozart ~ Sonata No. 9 in A Minor, K. 310: I. Allegro maestoso ~ spotify:track:37PJ4xHyuxmwEeJuLln9Nq
+Wolfgang Amadeus Mozart ~ Sonata No. 16 in C Major for Piano, K. 545, "Sonata facile": I. Allegro ~ spotify:track:39YQn6BJnOOZPpc6xCfCRN
+Wolfgang Amadeus Mozart ~ Piano Sonata No. 13 in B-Flat Major, K. 333: III. Allegretto grazioso ~ spotify:track:2wLbmJqRyvFcmETMMYRnoh
+Johann Sebastian Bach ~ Toccata, adagio and fugue in C Major, BWV 564: I. Toccata ~ spotify:track:7My8cT39XkYLUE6VWOSHaj
+Johann Sebastian Bach ~ Toccata, Adagio and Fugue in C Major, BWV 564: II. Adagio ~ spotify:track:1CyIUE8jXvxW2ps44SqOjn
+Johann Sebastian Bach ~ Toccata And Fugue In D Minor, BWV 565: Toccata ~ spotify:track:5vMlXTor6DoStxE9e9pXyB
+Johann Sebastian Bach ~ Cantata BWV 29 "Wir danken dir, Gott, wir danken dir: I. Sinfonia ~ spotify:track:0cY97qdIq4uQQIaORgkjnL
+Johann Sebastian Bach ~ Toccata, adagio and fugue in C Major, BWV 564: III. Fugue ~ spotify:track:1hTVAqGWxPGQWJ9Kb0PweW
+Johann Sebastian Bach ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: I. (Allegro) ~ spotify:track:1YB5tMBxhgVfowXEbKXYM5
+Johann Sebastian Bach ~ Concerto No. 1 in F Major, BWV 1046: III. Allegro ~ spotify:track:1GHS7Gz64sLT4mUG8eLohJ
+Johann Sebastian Bach ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: II. Adagio ~ spotify:track:0l9cmIWTkF6W4A9vip5GMo
+Johann Sebastian Bach ~ Concerto No. 1 in F Major, BWV 1046: IV. Menuet - Trio I - Polonaise - Trio II ~ spotify:track:7Lsitp4OIYU2aTof7GuKkO
+Johann Sebastian Bach ~ Brandenburg Concerto No. 2 in F Major, BWV 1047: III. Allegro assai ~ spotify:track:18z5ddRvuTKmgmvsbDKiUu
+Frédéric Chopin ~ Nocturne in E-Flat Major, Op. 9, No.2 ~ spotify:track:24A3HjyT5sGnrejr7yLDod
+Frédéric Chopin ~ Ballade No. 1 in G Minor, Op. 23 ~ spotify:track:3XnR6bll287JuNE1hYVZRG
+Frédéric Chopin ~ Nocturne in C minor, Op. 48, No. 1 ~ spotify:track:0gUk9EVhSc0JnBZTTEZ85h
+Frédéric Chopin ~ 24 Preludes, Op. 28: Prelude No.4 in E Minor ~ spotify:track:0bhMhHUJHJ8YINNo7Vi5mH
+Frédéric Chopin ~ Walzes Op. 64 No 2 in C sharp minor ~ spotify:track:0086KbT2LJdWqaPsqkOKwL
+Frédéric Chopin ~ Concerto No. 1 in E Minor for Piano and Orchestra, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZhMfyFRYTU9lY9suXStqG
+Frédéric Chopin ~ Nocturne No. 1 in F Minor Op.55 ~ spotify:track:50DjrQR7yqoNbNbJ5a5yoK
+Frédéric Chopin ~ Piano Concerto No. 1 in E minor, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZWvS6dZ1WXYekWf8TeG5D
+Frédéric Chopin ~ Nocturne Op 27 No. 2 in D flat Minor - Lento Sostenuto ~ spotify:track:7EaBYGTMdviS1tblkEFK1D
+Frédéric Chopin ~ Nocturne in C minor, Op. 48, No. 1 ~ spotify:track:0gUk9EVhSc0JnBZTTEZ85h
+Carl Orff ~ Carmina Burana: XXV. O Fortuna ~
+Carl Orff ~ O Fortuna from Carmina Burana - Vocal ~ spotify:track:0DHIkKybRhYScZkGQU8XTL
+Carl Orff ~ Carmina Burana: IV. Omnia Sol temperat ~
+Carl Orff ~ Carmina Burana: VI. Tanz ~
+Carl Orff ~ Carmina Burana: XI. Estuans interius ~
+Carl Orff ~ Carmina Burana: XVII. Stetit puella ~
+Carl Orff ~ Carmina Burana: XXI. In trutina ~
+Carl Orff ~ Carmina Burana: XXIII. Dulcissime ~
+Carl Orff ~ Carmina Burana: I. O Fortuna ~
+Carl Orff ~ Carmina Burana: V. Ecce gratum ~
+Ludwig van Beethoven ~ Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2, "Moonlight": I. Adagio sostenuto ~ spotify:track:5t0E9V1RiHBflzs71pfGGG
+The Piano ~ Amazing Short ~
+Mad World ~ Mad World (Feat. Michael Andrews) ~ spotify:track:3JOVTQ5h8HGFnDdp4VT3MP
+Ultima Thule ~ 09 Fädernesland ~ spotify:track:4Pox9WCE41pqcGmsfyuRis

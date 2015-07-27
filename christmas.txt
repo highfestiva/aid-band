@@ -1,16 +1,18 @@
-Playlist for AidBand. Each line contains artist, song name and URI.
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.
 Adolphson & Falk ~ Mer jul ~ spotify:track:6UbwfQeAEzhnolDwXiPowY
 Sean Banan ~ Gott nytt jul ~ spotify:track:4cZK2D6waXuJzFdcaulD5q
 Busungarna ~ Tomten jag vill ha en riktig jul ~ spotify:track:6zp4h4jVjsNlRdhUWtG4l0
 Tommy Körberg ~ O helga natt ~ spotify:track:0XoGiZY2XtBW5qXB3ZzZOX
 Carola ~ God Jul önskar vi er alla ~ spotify:track:3NhbibAeeuBMArKoFYQ2Vd
-Vikingarna med barnkör ~ White Christmas ~Agnetha & Linda ~ Hej mitt vinterland ~ spotify:track:3PzAMnuOjo96i9OK7ONXtM
+Vikingarna med barnkör ~ White Christmas ~
+Agnetha & Linda ~ Hej mitt vinterland ~ spotify:track:3PzAMnuOjo96i9OK7ONXtM
 Coldplay ~ Christmas Lights ~ spotify:track:4fzyvSu73BhGvi96p2zwjL
 Haven Gillespie ~ Santa Claus Is Coming To Town ~ spotify:track:4pQgbL8Obt6l2oSyg1NdLf
 Triad ~ Tänd ett ljus ~ spotify:track:0WeT9UnF79pGH5ohYHsnD9
 Sanna Nielsen ~ Gläns över sjö och strand ~ spotify:track:6TLq2mEUihCC9yc397gCIa
 Sanna Nielsen ~ Låt mig få tända ett ljus (Schlafe Mein Prinzchen) ~ spotify:track:5csnIigVevduzqbjJu4ocr
-Vikingarna med barnkör ~ När juldagsmorgon glimmar ~Jan Malmsjö ~ Ser du stjärnan i det blå ~ spotify:track:7m0IW3ZMCZfpG01Ns2nsKM
+Vikingarna med barnkör ~ När juldagsmorgon glimmar ~
+Jan Malmsjö ~ Ser du stjärnan i det blå ~ spotify:track:7m0IW3ZMCZfpG01Ns2nsKM
 Sanna Nielsen ~ Stilla natt ~ spotify:track:08Xill1HcDO4UmK8u22sCt
 Jenny Öhlund ~ Härlig är jorden ~ spotify:track:1uKVsNu00zJbYwzsykMZSa
 Sonja Aldén ~ Jul, jul strålande jul ~ spotify:track:2YHZEMWrKSNheKZHpVvWZ7
@@ -23,15 +25,18 @@ Amy Deasismont ~ Mössens julafton ~ spotify:track:23nJdN9TpBm5IdBEiACt7d
 Magnus Carlsson ~ White Christmas ~ spotify:track:2eBiUsm6uQg92qZvyoJ0Eu
 Jan Malmsjö ~ Natten tänder ljus på himlen ~ spotify:track:4Y6XeBkwnSWj9YuqYeEZyi
 Kikki Danielsson & Janne Önnerud ~ Nu är det advent ~ spotify:track:2uwqTsfCx7z3ojrYPVz6RP
-Vikingarna med barnkör ~ Nu tändas tusen juleljus ~Sofia Källgren ~ Ave Maria ~ spotify:track:74XEIfbeYFirlEWQox5GpY
+Vikingarna med barnkör ~ Nu tändas tusen juleljus ~
+Sofia Källgren ~ Ave Maria ~ spotify:track:74XEIfbeYFirlEWQox5GpY
 Tommy Körberg Sissel Kyrkjebø ~ Julen är här ~ spotify:track:4cGPWeCfoQTw7i0wqNRcjI
 Jan Johansen ~ Last Christmas ~ spotify:track:4lmKwiD7pcsxtZRWIY8dMT
 Jenny Öhlund ~ Bella Notte ~ spotify:track:0XJxEIC6GDWyZYc6BkSC41
 Sanna Nielsen ~ Låt mig få tända ett ljus (Schlafe Mein Prinzchen) ~ spotify:track:5csnIigVevduzqbjJu4ocr
 Sofia Källgren ~ Sprid ditt ljus ~ spotify:track:2cYLcSvfS2PDLUjoaialds
 Tommy Körberg ~ O helga natt ~ spotify:track:0XoGiZY2XtBW5qXB3ZzZOX
-Vikingarna med barnkör ~ När juldagsmorgon glimmar ~Jan Malmsjö ~ Ser du stjärnan i det blå ~ spotify:track:7m0IW3ZMCZfpG01Ns2nsKM
+Vikingarna med barnkör ~ När juldagsmorgon glimmar ~
+Jan Malmsjö ~ Ser du stjärnan i det blå ~ spotify:track:7m0IW3ZMCZfpG01Ns2nsKM
 Sanna Nielsen ~ Stilla natt ~ spotify:track:08Xill1HcDO4UmK8u22sCt
 Stefan Ljungqvist ~ Tomtefar ska komma till oss ~ spotify:track:2qQFNJOITpV3xevAYfhrLe
 Jenny Öhlund ~ Härlig är jorden ~ spotify:track:1uKVsNu00zJbYwzsykMZSa
 Sonja Aldén ~ Jul, jul strålande jul ~ spotify:track:2YHZEMWrKSNheKZHpVvWZ7
+John Rutter ~ We Wish You A Merry Christmas (arr. J. Rutter) ~ spotify:track:0gO0HC7fxG9Rc7koOUpWjC

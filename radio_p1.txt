@@ -1,0 +1,2 @@
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.
+Sveriges Radio ~ P1 ~ http://http-live.sr.se/p1-mp3-192
