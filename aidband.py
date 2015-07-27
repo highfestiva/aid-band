@@ -36,13 +36,17 @@ shuffleidx = []
 ishits = False
 playidx = 0
 datadir = '.'
+mplayer = 'mplayer.exe' if 'win' in sys.platform.lower() else 'mplayer'
 
 
 def stop():
 	global proc,cache_write_name
 	if proc:
-		proc.kill()
-		proc.wait()
+		try:
+			proc.kill()
+			proc.wait()
+		except:
+			pass
 		proc = None
 		if cache_write_name:
 			try: os.remove(_confixs(cache_write_name))
@@ -56,15 +60,15 @@ def play_url(url, cachename):
 	global proc,start_play_time,cache_write_name,active_url
 	cache_write_name = None
 	if cachename and url.startswith('http') and allowcache:
-		cmd = ['mplayer.exe', url, '-dumpstream', '-dumpfile', _confixs(cachename)]
+		cmd = [mplayer, url, '-dumpstream', '-dumpfile', _confixs(cachename)]
 		cache_write_name = cachename
 	elif url.startswith('spotify'):
 		muzaks.playsong(url)
 	elif not url.startswith('http'):
-		cmd = ['mplayer.exe', _confixs(url)]
+		cmd = [mplayer, _confixs(url)]
 		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	else:
-		cmd = ['mplayer.exe', url]
+		cmd = [mplayer, url]
 		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	start_play_time = time.time()
 	active_url = url
@@ -280,7 +284,7 @@ def save_list(songlist):
 def output(*args):
 	s = ' '.join([str(a) for a in args])
 	if sys.platform == 'linux':
-		print(s)
+		print(s,end='\r\n')
 	else:
 		print(s.encode('cp850','ignore').decode('cp850'))
 	netpeeker.output(s)
@@ -333,7 +337,7 @@ try:
 		muzaks = Client(username,password)
 except Exception as e:
 	traceback.print_exc()
-	print('Exception during startup:', e)
+	print('Exception during startup:', e, end='\r\n')
 raw_play_list(hotoptions.Favorites, doplay=False)
 
 stopped = True

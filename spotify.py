@@ -9,7 +9,10 @@ class Client:
 	def __init__(self, username, password):
 		self._cmd = ['./Consoleify', username, password]
 		self._proc = None
-		self._reset()
+		try:
+			self._reset()
+		except:
+			self.reset()
 
 	def popular(self):
 		s = self._run('toplist')
@@ -63,8 +66,11 @@ class Client:
 	def _reset(self):
 		self._sock = sock.socket()
 		if self._proc:
-			self._proc.kill()
-			self._proc.wait()
+			try:
+				self._proc.kill()
+				self._proc.wait()
+			except:
+				pass
 		self._proc = subprocess.Popen(self._cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		if not self._sock.connect(('localhost',55552)):
 			raise SystemError('Consoleify not responding.')

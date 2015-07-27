@@ -3,8 +3,8 @@
 #would have to be copied manully to that location and started.
 
 ./build.sh
-cp dist/* password sp_credentials //bocken/RnD/AidBandInstall/
+scp -p 2202 dist/* password sp_credentials jonte@ikaruso:~/dev/aidband/install/
 rm -Rf dist/
-./remote_aidband.py -t bocken -p -c '<quit>'
+./remote_aidband.py -t ikaruso -p -c '<quit>'
 sleep 6
-./remote_aidband.py -t bocken -p -c '<F4>'
+./remote_aidband.py -t ikaruso -p -c '<F4>'

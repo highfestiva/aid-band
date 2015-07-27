@@ -18,27 +18,38 @@ oldtcs = None
 try:
 	from msvcrt import getch
 except:
+	getch = None
+if not getch:
 	import sys,tty,termios
-	oldtcs = termios.tcgetattr(sys.stdin)
-	tty.setraw(sys.stdin.fileno())
+	try:
+		oldtcs = termios.tcgetattr(sys.stdin)
+		tty.setraw(sys.stdin.fileno())
+	except:
+		def getch():
+			s = ''
+			while not s:
+				s = sys.stdin.read(1)
+				if not s:
+					sleep(0.1)
+			return s,ord(s)
+if not getch:	
 	emuchars = ''
 	def getch():
 		global emuchars
 		if emuchars:
 			ch,emuchars = emuchars[0],emuchars[1:]
 			return ch
-		#ir = sys.stdin.read
 		def ir():
 			s = sys.stdin.read(1)
-			print(ord(s),end='\r\n',flush=True)
+			#print(s,ord(s),end='\r\n')
 			return s,ord(s)
 		s,o = ir()
 		if o == 27:
 			s,o = ir()
 			if o == 27:
 				return s
-			if o == 79:
-				emuchars += chr(ord(ir())-21)
+			if o == 79:	# xterm F1-F5
+				emuchars += chr(ir()[1]-21)
 				return chr(0)
 			elif o == 91:
 				s,o = ir()
@@ -46,7 +57,11 @@ except:
 				if o == 66: emuchars += chr(80); return chr(0xE0)
 				if o == 67: emuchars += chr(77); return chr(0xE0)
 				if o == 68: emuchars += chr(75); return chr(0xE0)
-				if o == 70: emuchars += chr(79); return chr(0xE0)
+				if o == 70: emuchars += chr(79); return chr(0xE0)	# xterm end
+				if o == 52: emuchars += chr(79); ir(); return chr(0xE0)	# console end
+				if o == 91:	# console F1-F5
+					emuchars += chr(ir()[1]-6)
+					return chr(0)
 				o = o*100 + ir()[1]
 				ir()
 				if o == 4953: emuchars += chr(63); return chr(0)
@@ -124,7 +139,7 @@ def init(handle_keys):
 
 if __name__ == '__main__':
 	def p(x):
-		print(x,[ord(y) for y in x], end='\r\n',flush=True)
+		print('out:', x, [ord(y) for y in x], end='\r\n',flush=True)
 		if '<quit>' in x:
 			stop()
 			import sys
