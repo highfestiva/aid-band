@@ -3,20 +3,63 @@
 
 from killable import KillableThread
 import re
+from select import select
 from time import sleep
 from timeout import Timeout
 
-try:
-	from msvcrt import getch
-except:
-	import sys, tty
-	tty.setraw(sys.stdin.fileno())
-	getch = lambda: sys.stdin.read(1)
 
 keythread = None
 keys = ''
 keytimeout = Timeout()
 keysleep = Timeout()
+oldtcs = None
+
+
+try:
+	from msvcrt import getch
+except:
+	import sys,tty,termios
+	oldtcs = termios.tcgetattr(sys.stdin)
+	tty.setraw(sys.stdin.fileno())
+	emuchars = ''
+	def getch():
+		global emuchars
+		if emuchars:
+			ch,emuchars = emuchars[0],emuchars[1:]
+			return ch
+		#ir = sys.stdin.read
+		def ir(n):
+			s = sys.stdin.read(n)
+			print(ord(s),end='\r\n',flush=True)
+			return s
+		s = ir(1)
+		if ord(s) == 27:
+			s = ir(1)
+			if ord(s) == 27:
+				return s
+			if ord(s) == 79:
+				emuchars += chr(ord(ir(1))-21)
+				return chr(0)
+			elif ord(s) == 91:
+				s = ir(1)
+				if ord(s) == 65: emuchars += chr(72)
+				if ord(s) == 66: emuchars += chr(80)
+				if ord(s) == 67: emuchars += chr(77)
+				if ord(s) == 68: emuchars += chr(75)
+				if ord(s) == 70: emuchars += chr(79)
+				o = ord(ir(1))*100 + ord(ir(1))
+				ir(1)
+				if o == 4953: emuchars += chr(63); return chr(0)
+				if o == 4955: emuchars += chr(64); return chr(0)
+				if o == 4956: emuchars += chr(65); return chr(0)
+				if o == 4957: emuchars += chr(66); return chr(0)
+				if o == 5048: emuchars += chr(67); return chr(0)
+				if o == 5049: emuchars += chr(68); return chr(0)
+				if o == 5050: emuchars += chr(133);
+				if o == 5051: emuchars += chr(134);
+				return chr(0xE0)
+		print(s, end='', flush=True)
+		return s
 
 def peekstr(timeout=10):
 	if keytimeout.timeout(timeout):
@@ -58,9 +101,7 @@ def readkeys(handle_keys):
 			elif ord(ch) ==  79: ch = '<End>'
 			else: continue
 		elif ord(ch) == 3:
-			keys = '<quit>'
-			keytimeout.reset()
-			continue
+			ch,keys = '<quit>',''
 		ch = ch if type(ch) == str else ch.decode('cp850')
 		if ch == '\b':
 			keys = keys[:len(keys)-1] if keys else ''
@@ -70,9 +111,22 @@ def readkeys(handle_keys):
 		keytimeout.reset()
 
 def stop():
-	keythread.stop()
+	if oldtcs:
+		import termios
+		termios.tcsetattr(sys.stdin, termios.TCSADRAIN, oldtcs)
+	try:	keythread.stop()
+	except:	pass
 
 def init(handle_keys):
 	global keythread
 	keythread = KillableThread(target=readkeys, args=[handle_keys])
 	keythread.start()
+
+if __name__ == '__main__':
+	def p(x):
+		print(x,[ord(y) for y in x], end='\r\n',flush=True)
+		if '<quit>' in x:
+			stop()
+			import sys
+			sys.exit(0)
+	readkeys(p)

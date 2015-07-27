@@ -16,6 +16,7 @@ import re
 import sr_radio
 import speech
 import subprocess
+import sys
 import threading
 import time
 import traceback
@@ -278,7 +279,10 @@ def save_list(songlist):
 
 def output(*args):
 	s = ' '.join([str(a) for a in args])
-	print(s.encode('cp850','ignore').decode('cp850'))
+	if sys.platform == 'linux':
+		print(s)
+	else:
+		print(s.encode('cp850','ignore').decode('cp850'))
 	netpeeker.output(s)
 
 def avoutput(*args):
