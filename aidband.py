@@ -55,8 +55,25 @@ def stop():
 	elif muzaks:
 		muzaks.stop()
 
+def spotify_init():
+	global options,muzaks
+	try:
+		if not muzaks and not options.nosp:
+			username,password = open('sp_credentials','rt').read().split('~~~')
+			muzaks = Client(username,password)
+	except Exception as e:
+		traceback.print_exc()
+		print('Exception during spotify login:', e, end='\r\n')
+
+def spotify_exit():
+	global muzaks
+	if muzaks:
+		muzaks.quit()
+	muzaks = None
+
 def play_url(url, cachename):
 	stop()
+	spotify_init()
 	global proc,start_play_time,cache_write_name,active_url
 	cache_write_name = None
 	if cachename and url.startswith('http') and allowcache:
@@ -331,13 +348,7 @@ def handle_keys(k):
 	event.set()
 keypeeker.init(handle_keys)
 netpeeker.init(handle_keys)
-try:
-	if not options.nosp:
-		username,password = open('sp_credentials','rt').read().split('~~~')
-		muzaks = Client(username,password)
-except Exception as e:
-	traceback.print_exc()
-	print('Exception during startup:', e, end='\r\n')
+spotify_init()
 raw_play_list(hotoptions.Favorites, doplay=False)
 
 stopped = True
@@ -366,6 +377,7 @@ while True:
 			stopped = not stopped
 			if stopped:
 				stop()
+				spotify_exit()
 				output('Audio stopped.')
 			else:
 				play_idx()
