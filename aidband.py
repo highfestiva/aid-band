@@ -99,7 +99,6 @@ def play_idx():
 	global playqueue
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
-		output(song.artist, '-', song.name)
 		if song in playlist and 'radio' not in listname:
 			fn = _cachename(song)
 			url = fn if os.path.exists(_confixs(fn)) else song.uri
@@ -109,6 +108,7 @@ def play_idx():
 		if not url:
 			update_url()
 			url = song.uri
+		output(song.artist, '-', song.name, '-', song.uri)
 		play_url(url, fn)
 		# Once played the song expires, no use attempting to play that URL again.
 		song = ABSong(song.name,song.artist,url)
@@ -180,6 +180,7 @@ def search_queue(search):
 	return None
 
 def search_music(search):
+	spotify_init()
 	#return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
 	return muzaks.search(search)
 
@@ -247,15 +248,17 @@ def next_song():
 	play_idx()
 
 def update_url():
-	global playqueue,playidx
+	global playqueue,playidx,playlist
 	if playidx >= len(playqueue):
 		return False
 	song = playqueue[shuffleidx[playidx]]
 	if not song.uri:
+		spotify_init()
 		search = '%s %s' % (song.name,song.artist)
 		s = muzaks.search(search)
 		if s:
 			song.uri = s[0].uri
+			save_list(playlist)
 			return True
 		return False
 
@@ -300,10 +303,13 @@ def save_list(songlist):
 
 def output(*args):
 	s = ' '.join([str(a) for a in args])
-	if sys.platform == 'linux':
-		print(s,end='\r\n')
-	else:
-		print(s.encode('cp850','ignore').decode('cp850'))
+	try:
+		if sys.platform == 'linux':
+			print(s,end='\r\n')
+		else:
+			print(s.encode('cp850','ignore').decode('cp850'))
+	except UnicodeEncodeError:
+		print(s.encode('ascii','ignore').decode('ascii'))
 	netpeeker.output(s)
 
 def avoutput(*args):

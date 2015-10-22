@@ -12,7 +12,7 @@ class Client:
 		try:
 			self._reset()
 		except:
-			self.reset()
+			self.quit()
 
 	def popular(self):
 		s = self._run('toplist')
