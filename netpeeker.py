@@ -9,6 +9,7 @@ from threading import Thread
 
 
 acpt = None
+acpt_sock = None
 input = ''
 clients = []
 keytimeout = Timeout()
@@ -64,8 +65,8 @@ def dropclient(client):
 		pass
 
 def listen(handle_keys):
-	global clients
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	global clients, acpt_sock
+	acpt_sock = s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind(('',3303))
 	s.listen(2)
 	while 1:
@@ -97,9 +98,11 @@ def output(s):
 		except: pass
 
 def stop():
-	acpt.stop()
+	try: acpt_sock.close()
+	except: pass
 	try: [c.close() for c in clients]
 	except: pass
+	acpt.stop()
 	try:
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		s.connect(('localhost',3303))

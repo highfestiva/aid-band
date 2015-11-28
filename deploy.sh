@@ -3,7 +3,9 @@
 #would have to be copied manully to that location and started.
 
 ./build.sh
-scp -p 2202 dist/* password sp_credentials jonte@ikaruso:~/dev/aidband/install/
+sed -i.bak 's/\r//g' dist/*
+rm dist/*.bak
+scp -P 2202 dist/* password sp_credentials dev@ikaruso:/tmp/aidband_install/
 rm -Rf dist/
 ./remote_aidband.py -t ikaruso -p -c '<quit>'
 sleep 6

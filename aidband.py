@@ -297,9 +297,9 @@ def load_list():
 def save_list(songlist):
 	fn = os.path.join(datadir,listname+'.txt')
 	f = codecs.open(fn, 'w', 'utf-8')
-	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.\n')
+	f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.\n')
 	for song in songlist:
-		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri if 'radio' in listname else ''))
+		f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri))
 
 def output(*args):
 	s = ' '.join([str(a) for a in args])
