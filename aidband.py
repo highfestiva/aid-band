@@ -188,13 +188,15 @@ def play_search(search):
 	if 'radio' in listname:
 		songs = sr_radio.search(search)
 	else:
-		song = search_queue(search)
-		if song:
-			global playidx
-			idx = playqueue.index(song)
-			playidx = shuffleidx.index(idx)
-			play_idx()
-			return
+		if search != search.strip('@'):
+			search = search.strip('@')
+			song = search_queue(search)
+			if song:
+				global playidx
+				idx = playqueue.index(song)
+				playidx = shuffleidx.index(idx)
+				play_idx()
+				return
 		songs = search_music(search)
 	if not songs:
 		avoutput('Nothing found, try again.')

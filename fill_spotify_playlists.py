@@ -6,6 +6,7 @@ import codecs
 import difflib
 import glob
 import spotipy
+import sys
 
 sp = spotipy.Spotify()
 
@@ -28,7 +29,8 @@ def gettracks(artist, track):
 			break
 	return ts
 
-files = [f for f in glob.glob('*.txt') if 'todo' not in f]
+globs = glob.glob('*.txt' if not sys.argv[1:] else sys.argv[1])
+files = [f for f in globs if 'todo' not in f]
 for f in files:
 	lines = [l for l in codecs.open(f,'r','utf-8')]
 	newtracks = 0

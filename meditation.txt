@@ -1,0 +1,71 @@
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.
+Kundalini: Yoga, Meditation, Relaxation ~ Yoga Meditation and Relaxation ~ spotify:track:3SrEmZTtPBo5Mzsa7qRsQE
+Meditation for the living ~ Meditation and harmony ~ spotify:track:4yGCHAgL0GoiEwci3SVeuT
+Kundalini: Yoga, Meditation, Relaxation ~ Breathe ~ spotify:track:2DcmhjYX4EPPPNQ8h3nCGS
+Meditation ~ Destiny Meditation ~ spotify:track:613blZhBiOWocWyHih5HCF
+Meditation ~ Waves Meditation ~ spotify:track:5zreNHJLqmrJU69LxWi7mJ
+Meditation ~ Dulled White Noise ~ spotify:track:41exx8oaJcAgS0EWAamIs0
+Meditation ~ Dulled White Noise ~ spotify:track:41exx8oaJcAgS0EWAamIs0
+Meditation ~ Dulled White Noise ~ spotify:track:41exx8oaJcAgS0EWAamIs0
+Asian Zen Meditation ~ Pink-Mauve Split Track ~ spotify:track:4VySiXvlSlNHFGqXPnxjeL
+Asian Zen Meditation ~ Pink-Mauve Split Track ~ spotify:track:4VySiXvlSlNHFGqXPnxjeL
+Lullabies for Deep Meditation ~ Sleep and Dream ~ spotify:track:5yU3skrekM8bcjjs9NIhz7
+Meditation ~ Meditation ~ spotify:track:0hLdtyBcANRcrKzufyyOab
+Meditation ~ Meditation ~ spotify:track:4vowMgIHgSSJPQcaxUpaCf
+Zen ~ Eastern Zen ~ spotify:track:0fSAR3iVkF7qrm8jebzUNH
+Zen ~ Eastern Zen ~ spotify:track:2Uh9hwwzIokPxTs6p9qcfn
+Zen ~ Zen Beach Sounds ~ spotify:track:3ZaJA9vhc0KXu6ddHs01g0
+Zen Music Garden ~ Pink Noise with Slow Swell - Pink Waves ~ spotify:track:5HMmwIti7MYePTP0RuNsGG
+Zen Music Garden ~ Pink Noise with Slow Swell - Pink Waves ~ spotify:track:5HMmwIti7MYePTP0RuNsGG
+Zen Music Garden ~ Pink Noise with Slow Swell - Pink Waves ~ spotify:track:5HMmwIti7MYePTP0RuNsGG
+Zen ~ Zen Surf Beach Sounds ~ spotify:track:01tHPbV7w06kSDYv8upzjw
+Zen ~ Zen Shoreline Beach Sounds ~ spotify:track:1RLdhFKZy4R5qn3O1SC0Ir
+Zen Zellow ~ Sleep Time ~ spotify:track:1KHJl0NuQIQMWmrPdnG6Z9
+Zen Zellow ~ Sleep Sound Pad ~ spotify:track:7GfhO1M9lUYpXEWHiRV6t7
+Zen Zellow ~ Spiritual Balance ~ spotify:track:1WX4bXGNFQi43EMAGOTbgr
+Zen Zellow ~ Destiny Meditation ~ spotify:track:613blZhBiOWocWyHih5HCF
+Reiki ~ Reiki Healing ~ spotify:track:5ZRtslhYEen6qvgJWGgnwq
+Reiki ~ Reiki Healing ~ spotify:track:01tUes8vCKFMPLBGKDUesT
+Reiki ~ Reiki Healing ~ spotify:track:5tqrjFZIckWhEG5R5tFebx
+Reiki ~ Reiki Healing ~ spotify:track:1yv06XNkD1fh3APChb8gwC
+Reiki ~ Reiki Healing ~ spotify:track:155aD6iKuCUEp7lgAxD4Wi
+Reiki ~ Reiki Healing ~ spotify:track:6KM9zxobQC3Spo22GklLcr
+Reiki ~ Reiki Healing ~ spotify:track:6yNsHkIVBJQkPFH2FhnKcQ
+Reiki ~ Reiki Healing ~ spotify:track:0YO9ImpR60fCRwJalbTCRS
+Reiki ~ Ambient Clouds of Light ~ spotify:track:7AhcuMTrgwmRhvSXY8TYYx
+Reiki ~ Reiki for Life ~ spotify:track:1IzkMXkEGkqWi50NF1I606
+Healing ~ Healing Rain - Bryan Kearney Radio Edit ~ spotify:track:75iNukAJ2Yyp7rMKPgXO6n
+Healing ~ Healing Rain - Bryan Kearney Radio Edit ~ spotify:track:0SZz547vy7TdbgFE0kjrz7
+Healing ~ Healing Rain [Mix Cut] - Bryan Kearney Remix ~ spotify:track:0Iu1yn3lsWuPx3MoVH4izW
+Healing ~ Healing Sleep Music ~ spotify:track:2U4Wzp1uATXWIC6wTyJN2l
+Healing ~ Healing Vibes ~ spotify:track:66w4UdA9nkiZKPnwz5Lycs
+Chanting buddhists ~ Request Prayer to the Guru ~ spotify:track:1RhGYNUNgMJxheBCcdp8BD
+Chanting buddhists ~ Crystal Massage of Guyasamaja ~ spotify:track:0zT5ANrt8s1U6r0jC8wHqi
+Chanting buddhists ~ Long Life Prayer for Lama Gangchen Rinpoche ~ spotify:track:3WGk8ucAyMibrU1XSsa5I4
+Chanting buddhists ~ The 8 Auspicious Prayer ~ spotify:track:5R1DxvO6X21u2QVrqJWjiI
+Chanting buddhists ~ The Healing Power of Medicine Buddha ~ spotify:track:1dBiVYPLZP8qvml1x8UPFW
+Chanting buddhists ~ 21 Tara Lullaby - Lounge ~ spotify:track:5nstDTH7qNGP65b4W3nxz5
+Chanting buddhists ~ The Healing Power of Black Manjushri ~ spotify:track:0N54zAvWOWtEnTU60OYcEI
+Chanting buddhists ~ Long Life Prayer for Lama Michel Rinpoche ~ spotify:track:3RnIc1P5D47pT6r3LtPTwJ
+Chanting buddhists ~ 21 Tara Lullaby - Instrumental ~ spotify:track:4rt6k7mJ29f2092E5HRIAz
+Chanting buddhists ~ Lama Tsong Khapa Mantra ~ spotify:track:74wzpi541uDoIv6Sonh3Jv
+chanting buddhist monks ~ Sherab Nyingpo ~ spotify:track:1KpobMfsEHwietwiFdFnFQ
+chanting buddhist monks ~ Tantric Music II ~ spotify:track:5cUX25XkD7g9Mx6qETJY3g
+chanting buddhist monks ~ Dugkar ~ spotify:track:6efoPD1CGleKOhGHrgy2bN
+chanting buddhist monks ~ Tantric Music I ~ spotify:track:68XxBo1MzzsXEWFzQwdc9Y
+chanting buddhist monks ~ Sherab Nyingpo ~ spotify:track:6HuGX8td6n8AXD6C00GlLz
+chanting buddhist monks ~ Tantric Music II ~ spotify:track:4y9mKSTGjRQsYNYxsK98TB
+chanting buddhist monks ~ Dugkar ~ spotify:track:5SQRGNjt4ldkqVft0L0hd0
+chanting buddhist monks ~ Tantric Music I ~ spotify:track:2W96ZyoEhEdepsZG7vZmRd
+chanting buddhist monks ~ Monks Chanting Om (C Natural) ~ spotify:track:6029L2lzR2KlCjYuLvQ1qn
+chanting buddhist monks ~ Large Group of Young Monks Chanting Buddhist Scriptures in a Large Reverberant Room ~ spotify:track:1lc5yL8R1JbwmVR9qFD4EN
+Buddhist Chants and Music ~ Om Mani Padme Hum ~ spotify:track:6jgCd6XevB3gnkJDpWdoUM
+buddhist ~ Buddhist ~ spotify:track:7A3vQB9Qb9W0gSujFkLi65
+buddhist ~ Zen Music for Buddhist Meditation ~ spotify:track:5rShlqgOfyLu2rrMxpL8dc
+buddhist ~ Tibetan Buddhist Meditation Music ~ spotify:track:5oyzHuCriIqu8qh9WMtJY2
+buddhist ~ The Wisdom Mantra - Tibetan Chant plus Urban Groove ~ spotify:track:7sE1RZa8y8xkv01dKPIi28
+buddhist ~ Om Chanting Buddhist Music ~ spotify:track:3kgpNH2ZsvvvR8rN1B8kQ3
+buddhist ~ Buddhist Music for Wellness ~ spotify:track:1xnbFztg57gZvoXZXraLBz
+buddhist ~ Buddhist Melody ~ spotify:track:41Duk0THGmNiw3H3u7E5uz
+buddhist ~ Buddhist Meditation ~ spotify:track:6wL5SGjoGAsADdolI3krTO
+buddhist ~ Female Buddha Taras Mantra - Tibetan Chant plus Urban Groove ~ spotify:track:3SvZOri3IfrcrlOpbqp8zx
