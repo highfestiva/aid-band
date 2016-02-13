@@ -2,7 +2,11 @@
 
 import sock
 import socket
+import spotipy
 import subprocess
+
+
+sp = spotipy.Spotify()
 
 
 class Client:
@@ -19,8 +23,15 @@ class Client:
 		return self._parsesongs(s)
 
 	def search(self, song):
-		s = self._run('search-song %s'%song)
-		return self._parsesongs(s)
+		#s = self._run('search-song %s'%song)
+		#return self._parsesongs(s)
+		found = sp.search(song)
+		tracks = found['tracks']['items']
+		# print()
+		# import pprint
+		# pprint.pprint(tracks)
+		songs = [Song(t['name'], t['popularity'], t['artists'][0]['name'], t['artists'], t['uri']) for t in tracks]
+		return sorted(songs, key=lambda s: s.popularity, reverse=True)
 
 	def playsong(self, uri):
 		s = self._run('play-song %s'%uri)
