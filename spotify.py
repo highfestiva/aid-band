@@ -4,14 +4,16 @@ import sock
 import socket
 import spotipy
 import subprocess
+from sys import platform
 
 
 sp = spotipy.Spotify()
+cmd = 'Consoleify.exe' if platform=='win32' else './Consoleify' 
 
 
 class Client:
 	def __init__(self, username, password):
-		self._cmd = ['./Consoleify', username, password]
+		self._cmd = [cmd, username, password]
 		self._proc = None
 		try:
 			self._reset()

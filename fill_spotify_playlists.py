@@ -19,6 +19,7 @@ def gettracks(artist, track):
 	tracks = hits['tracks']['items']
 	ts = []
 	for t in tracks:
+		print(t['name'].encode())
 		exact_artists = [a for a in t['artists'] if _almost_same(artist, a['name'])]
 		for a in exact_artists:
 			ts += ['%s ~ %s ~ %s' % (t['artists'][0]['name'],t['name'],t['uri'])]
