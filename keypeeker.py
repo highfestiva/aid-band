@@ -31,6 +31,7 @@ if not getch:
 				s = sys.stdin.read(1)
 				if not s:
 					sleep(0.1)
+			print(s, end='', flush=True)
 			return s,ord(s)
 if not getch:	
 	emuchars = ''

@@ -11,11 +11,19 @@ parser.add_argument('-p','--use-password-file', dest='usepw', default=False, act
 parser.add_argument('-c','--command', dest='commands', action='append', default=[], help="pass command(s) to be sent initially")
 options = parser.parse_args()
 
-keypeeker.init()
+iswin = ('win' in sys.platform.lower())
+coding = 'cp850' if iswin else 'utf-8'
 
 host,port = options.host.split(':') if ':' in options.host else (options.host,3303)
 port = int(port)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+def handle_keys(keys):
+	if '<quit>' in keys:
+		s.close()
+		sys.exit(0)
+keypeeker.init(handle_keys)
+
 try:
 	s.connect((host,port))
 	s.settimeout(1)
@@ -25,7 +33,7 @@ try:
 	while True:
 		try:
 			bb += s.recv(1)
-			sys.stdout.write(bb.decode())
+			sys.stdout.write(bb.decode(coding, 'ignore'))
 			sys.stdout.flush()
 			bb = b''
 		except socket.timeout:
@@ -36,9 +44,9 @@ try:
 				continue
 		except UnicodeDecodeError as e:
 			pass
-		s = keypeeker.peekstr(0.1)
-		if s:
-			s.send(s.decode('cp850').encode() if 'win' in sys.platform.lower() else s)
+		ch = keypeeker.peekstr()
+		if ch:
+			s.send(ch.encode(coding, 'ignore'))
 	s.close()
 except socket.error as e:
 	value,message = e.args[:2]

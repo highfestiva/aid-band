@@ -107,6 +107,7 @@ def play_idx():
 	global playqueue
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
+		fn = ''
 		if 'radio' not in listname:
 			fn = _cachename(song)
 		if not song.uri:
@@ -356,11 +357,18 @@ except: pass
 
 tid = threading.current_thread().ident
 event = threading.Event()
+def handle_login():
+	output('Welcome to aid-band cmdline interface!')
+	if stopped:
+		output('No music currently playing.')
+	else:
+		song = playqueue[shuffleidx[playidx]]
+		output('Currently playing "%s" by %s' % (song.name, song.artist))
 def handle_keys(k):
 	interruptor.handle_keys(tid,k)
 	event.set()
 keypeeker.init(handle_keys)
-netpeeker.init(handle_keys)
+netpeeker.init(handle_login, handle_keys)
 spotify_init()
 raw_play_list(hotoptions.Favorites, doplay=False)
 vorbis_encoder.async_maintain_cache_dir('cache')
@@ -442,5 +450,5 @@ while True:
 			output(e)
 			keypeeker.getstr()	# Clear keyboard.
 			netpeeker.getstr()	# Clear remote keyboard.
-		except:
-			pass
+		except Exception as e:
+			print('FATAL ERROR!')
