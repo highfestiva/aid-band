@@ -7,8 +7,9 @@ import subprocess
 from sys import platform
 
 
-sp = spotipy.Spotify()
 cmd = 'Consoleify.exe' if platform=='win32' else './Consoleify' 
+sp = spotipy.Spotify()
+sp.max_get_retries = 1
 
 
 class Client:
@@ -19,6 +20,7 @@ class Client:
 			self._reset()
 		except:
 			self.quit()
+			raise
 
 	def popular(self):
 		s = self._run('toplist')
@@ -28,6 +30,8 @@ class Client:
 		#s = self._run('search-song %s'%song)
 		#return self._parsesongs(s)
 		found = sp.search(song)
+		if not found:
+			return []
 		tracks = found['tracks']['items']
 		# print()
 		# import pprint

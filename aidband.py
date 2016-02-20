@@ -20,6 +20,7 @@ import sys
 import threading
 import time
 import traceback
+import vorbis_encoder
 
 
 proc = None
@@ -27,7 +28,7 @@ start_play_time = time.time()
 cache_write_name = None
 active_url = ''
 muzaks = None
-allowcache = False
+allowcache = True
 useshuffle = True
 listname = None
 playlist = []
@@ -62,8 +63,9 @@ def spotify_init():
 			username,password = open('sp_credentials','rt').read().split('~~~')
 			muzaks = Client(username,password)
 	except Exception as e:
-		traceback.print_exc()
-		print('Exception during spotify login:', e, end='\r\n')
+		print('Exception during spotify login:', e)
+		print('Will play offline only.')
+		options.nosp = True
 
 def spotify_exit():
 	global muzaks
@@ -76,16 +78,15 @@ def play_url(url, cachename):
 	spotify_init()
 	global proc,start_play_time,cache_write_name,active_url
 	cache_write_name = None
-	if cachename and url.startswith('http') and allowcache:
-		cmd = [mplayer, url, '-dumpstream', '-dumpfile', _confixs(cachename)]
-		cache_write_name = cachename
-	elif url.startswith('spotify'):
-		muzaks.playsong(url)
-	elif not url.startswith('http'):
-		cmd = [mplayer, _confixs(url)]
+	if cachename and allowcache and os.path.exists(cachename):
+		cmd = [mplayer, cachename]
 		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		url = cachename
+	elif url.startswith('spotify'):
+		if muzaks:
+			muzaks.playsong(url)
 	else:
-		cmd = [mplayer, url]
+		cmd = [mplayer, _confixs(url)]
 		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	start_play_time = time.time()
 	active_url = url
@@ -99,24 +100,19 @@ def play_idx():
 	global playqueue
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
-		if song in playlist and 'radio' not in listname:
-			fn = _cachename(song)
-			url = fn if os.path.exists(_confixs(fn)) else song.uri
-		else:
-			fn = None
-			url = song.uri
-		if not url:
+		if 'radio' not in listname:
+			fn = _confixs(_cachename(song))
+		if not song.uri:
 			update_url()
-			url = song.uri
-		output(song.artist, '-', song.name, '-', song.uri)
-		play_url(url, fn)
+		output(song.artist, '-', song.name, '-', song.uri, '-', fn)
+		play_url(song.uri, fn)
 		# Once played the song expires, no use attempting to play that URL again.
-		song = ABSong(song.name,song.artist,url)
+		song = ABSong(song.name,song.artist,song.uri)
 		playqueue[shuffleidx[playidx]] = song
 
 def poll():
 	if active_url.startswith('spotify'):
-		if not muzaks.isplaying():
+		if not muzaks or not muzaks.isplaying():
 			next_song()
 		return
 
@@ -171,18 +167,16 @@ def play_list(name):
 		avoutput('%s playlist is empty, nothing to play.' % _simple_listname())
 
 def search_queue(search):
-	match = lambda s: max(_match_ratio(s.name,search),_match_ratio(str(s.artist),search))
-	ordered = sorted(playqueue, key=match, reverse=True)
-	if ordered:
-		song = ordered[0]
-		if match(song) > 0.8:
-			return song
-	return None
+	search = search.lower()
+	match = lambda s: _match_ratio((s.name+' '+s.artist).lower(), search)
+	similar = [song for song in playqueue if match(song) > 0.6]
+	return sorted(similar, key=match, reverse=True)
 
 def search_music(search):
 	spotify_init()
 	#return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
-	return muzaks.search(search)
+	songs = muzaks.search(search) if muzaks else []
+	return songs if songs else search_queue(search)
 
 def play_search(search):
 	if 'radio' in listname:
@@ -190,10 +184,11 @@ def play_search(search):
 	else:
 		if search != search.strip('@'):
 			search = search.strip('@')
-			song = search_queue(search)
-			if song:
+			songs = search_queue(search)
+			# We can't queue these songs, they are already in playqueue.
+			if songs:
 				global playidx
-				idx = playqueue.index(song)
+				idx = playqueue.index(songs[0])
 				playidx = shuffleidx.index(idx)
 				play_idx()
 				return
@@ -257,11 +252,12 @@ def update_url():
 	if not song.uri:
 		spotify_init()
 		search = '%s %s' % (song.name,song.artist)
-		s = muzaks.search(search)
-		if s:
-			song.uri = s[0].uri
-			save_list(playlist)
-			return True
+		if muzaks:
+			s = muzaks.search(search)
+			if s:
+				song.uri = s[0].uri
+				save_list(playlist)
+				return True
 		return False
 
 def execute(cmd):
@@ -331,13 +327,13 @@ def _simple_listname():
 	return listname.split('_')[-1]
 
 def _cachename(song):
-	return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.mpeg').lower().replace(' ','_').replace('/','_').replace('\\','_'))
+	return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.ogg').replace('/','_').replace('\\','_').replace(':','_'))
 
 def _confixs(s):
 	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
 
 def _match_ratio(s1,s2):
-	return difflib.SequenceMatcher(None,s1.lower(),s2.lower()).ratio()
+	return difflib.SequenceMatcher(None,s1,s2).ratio()
 
 
 parser = argparse.ArgumentParser()
@@ -358,6 +354,7 @@ keypeeker.init(handle_keys)
 netpeeker.init(handle_keys)
 spotify_init()
 raw_play_list(hotoptions.Favorites, doplay=False)
+vorbis_encoder.async_maintain_cache_dir('cache')
 
 stopped = True
 while True:
@@ -371,6 +368,7 @@ while True:
 				poll()
 			cmd = keypeeker.peekstr() + netpeeker.peekstr()
 		if cmd == '<quit>':
+			vorbis_encoder.quit()
 			stop()
 			netpeeker.stop()
 			keypeeker.stop()
@@ -429,13 +427,6 @@ while True:
 				stopped = False
 			else:
 				execute(cmd)
-	except TypeError as te:
-		for a in te.args:
-			if 'list indices' in a:
-				stop()
-				stopped = True
-				avoutput("You're banned from Groove Shark!")
-				break
 	except Exception as e:
 		try:
 			traceback.print_exc()
