@@ -1,11 +1,8 @@
 #!/bin/bash
 
-rm -Rf dist/
-mkdir dist
+rm -Rf aidband_install/
+mkdir aidband_install
 #python3 -OO setup.py py2exe
-#cp /c/Program\ Files\ \(x86\)/mplayer/mplayer.exe dist/
-cp aidband.sh *.py dist/
-#mv dist/aidband.exe dist/AidBand.exe
-#cp Consoleify.exe OpenAL.dll libspotify.dll dist/
-echo -n 'ABC' > dist/password
-echo -n 'spotify_username~~~spotify_password' > dist/sp_credentials
+cp aidband.sh *.py aidband_install/
+echo -n 'ABC' > aidband_install/password
+echo -n 'spotify_username~~~spotify_password' > aidband_install/sp_credentials
