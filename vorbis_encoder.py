@@ -25,6 +25,8 @@ def vorbis_encode(fn):
 		print('Vorbis compression installed. Install libav-tools or ffmpeg!')
 		return
 	oggfn = fn.replace('.wav','.ogg')
+	if exists(oggfn):
+		os.remove(oggfn)	# Possibly half-made version.
 	cmd = [ffmpeg, '-i', fn, oggfn]
 	proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	if proc.wait() == 0:
@@ -36,7 +38,7 @@ def vorbis_encode(fn):
 
 def maintain_cache_dir(dirname):
 	try:
-		for w in glob(dirname+'/*.wavy'): # Unfinished business.
+		for w in glob(dirname+'/*.wavy'):	# Unfinished business.
 			os.remove(w)
 	except:
 		pass

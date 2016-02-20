@@ -33,12 +33,12 @@ def getstr():
 	i,input = input,''
 	return i
 
-def handlecmd(client, handle_keys):
+def handlecmd(client, handle_login, handle_keys):
 	global input
 	bb = b''
 	try:
 		print('Remote network shell authenticated and running.')
-		client.send('\nWelcome to AidBand command interface!\n'.encode())
+		handle_login()
 		while True:
 			bb += client.recv(1)
 			try:
@@ -58,20 +58,18 @@ def handlecmd(client, handle_keys):
 
 def dropclient(client):
 	global clients
-	try:
-		clients.remote(client)
-		client.close()
-	except:
-		pass
+	try:	clients.remote(client)
+	except:	pass
+	try:	client.close()
+	except:	pass
 
-def listen(handle_keys):
+def listen(handle_login, handle_keys):
 	global clients, acpt_sock
 	acpt_sock = s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind(('',3303))
 	s.listen(2)
 	while 1:
 		client,address = s.accept()
-		clients += [client]
 		print('New remote network shell connected.')
 		try:
 			client.send('Password: '.encode())
@@ -79,12 +77,14 @@ def listen(handle_keys):
 			while '\r' not in pw and len(pw)<50 and i<50:
 				pw += client.recv(1).decode()
 				i += 1
+			client.send('\n'.encode())
 			wanted_password = open('password').read() + '\r'
 			if pw != wanted_password:
 				print('Bad password entered by client.')
 				dropclient(client)
 				continue
-			Thread(target=handlecmd, args=[client,handle_keys]).start()
+			clients += [client]
+			Thread(target=handlecmd, args=[client,handle_login,handle_keys]).start()
 		except Exception as e:
 			dropclient(client)
 			print(e)
@@ -110,7 +110,7 @@ def stop():
 	except:
 		pass
 
-def init(handle_keys):
+def init(handle_login, handle_keys):
 	global acpt
-	acpt = KillableThread(target=listen, args=[handle_keys])
+	acpt = KillableThread(target=listen, args=[handle_login, handle_keys])
 	acpt.start()
