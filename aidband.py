@@ -5,7 +5,7 @@ from absong import ABSong
 import argparse
 import codecs
 import difflib
-from spotify import Client
+from glob import glob
 import hotoptions
 import interruptor
 import keypeeker
@@ -15,6 +15,7 @@ import random
 import re
 import sr_radio
 import speech
+from spotify import Client
 import subprocess
 import sys
 import threading
@@ -50,7 +51,7 @@ def stop():
 			pass
 		proc = None
 		if cache_write_name:
-			try: os.remove(_confixs(cache_write_name))
+			try: os.remove(cache_write_name)
 			except: pass
 			cache_write_name = None
 	elif muzaks:
@@ -78,21 +79,27 @@ def play_url(url, cachename):
 	spotify_init()
 	global proc,start_play_time,cache_write_name,active_url
 	cache_write_name = None
-	if cachename and allowcache and os.path.exists(cachename):
-		cmd = [mplayer, cachename]
-		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		url = cachename
-	elif url.startswith('spotify'):
-		if muzaks:
-			muzaks.playsong(url)
-	else:
-		cmd = [mplayer, _confixs(url)]
-		proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if cachename and allowcache: 
+		if not os.path.exists(cachename):
+			fns = glob(cachename.replace('-','*-',1))
+			if fns:
+				cachename = fns[0]
+		if os.path.exists(cachename):
+			cmd = [mplayer, cachename]
+			proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+			url = cachename
+	if not proc:
+		if url.startswith('spotify'):
+			if muzaks:
+				muzaks.playsong(url)
+		else:
+			cmd = [mplayer, _confixs(url)]
+			proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	start_play_time = time.time()
 	active_url = url
 
 def remove_from_cache(song):
-	fn = _confixs(_cachename(song))
+	fn = _cachename(song)
 	if os.path.exists(fn):
 		os.remove(fn)
 
@@ -101,10 +108,10 @@ def play_idx():
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
 		if 'radio' not in listname:
-			fn = _confixs(_cachename(song))
+			fn = _cachename(song)
 		if not song.uri:
 			update_url()
-		output(song.artist, '-', song.name, '-', song.uri, '-', fn)
+		output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(fn))
 		play_url(song.uri, fn)
 		# Once played the song expires, no use attempting to play that URL again.
 		song = ABSong(song.name,song.artist,song.uri)
@@ -119,7 +126,7 @@ def poll():
 	if not proc or proc.poll() == None:
 		return
 	global cache_write_name
-	if cache_write_name and os.path.exists(_confixs(cache_write_name)):
+	if cache_write_name and os.path.exists(cache_write_name):
 		cache_write_name = None
 		play_idx()	# Play from cache.
 	elif time.time()-start_play_time < 5.0:	# Stopped after short amount of time? URL probably fucked.
@@ -330,7 +337,9 @@ def _cachename(song):
 	return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.ogg').replace('/','_').replace('\\','_').replace(':','_'))
 
 def _confixs(s):
-	return '_'.join(str(s).encode().decode('ascii', 'ignore').split('?'))
+	if 'win' in sys.platform.lower():
+		return ''.join(str(s).encode().decode('ascii', 'ignore').split('?'))
+	return s
 
 def _match_ratio(s1,s2):
 	return difflib.SequenceMatcher(None,s1,s2).ratio()

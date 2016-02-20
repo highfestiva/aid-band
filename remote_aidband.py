@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import argparse
-from msvcrt import kbhit,getch
+import keypeeker
 import socket
 import sys
 
@@ -10,6 +10,8 @@ parser.add_argument('-t','--host', dest='host', default='localhost:3303', help="
 parser.add_argument('-p','--use-password-file', dest='usepw', default=False, action='store_true', help="use file 'password' (containing password without linefeeds) instead of manual entry")
 parser.add_argument('-c','--command', dest='commands', action='append', default=[], help="pass command(s) to be sent initially")
 options = parser.parse_args()
+
+keypeeker.init()
 
 host,port = options.host.split(':') if ':' in options.host else (options.host,3303)
 port = int(port)
@@ -34,26 +36,14 @@ try:
 				continue
 		except UnicodeDecodeError as e:
 			pass
-		while kbhit():
-			ch = getch()
-			if ord(ch) == 0:
-				ch = getch()
-				if ord(ch) >= 59 and ord(ch) <= 68:
-					ch = ('<F%i>' % (ord(ch)-58)).encode()
-				else:
-					continue
-			elif ord(ch) == 0xE0:
-				ch = getch()
-				if   ord(ch) ==  75: ch = '<Left>'.encode()
-				elif ord(ch) ==  77: ch = '<Right>'.encode()
-				elif ord(ch) ==  72: ch = '<Up>'.encode()
-				elif ord(ch) ==  80: ch = '<Down>'.encode()
-				elif ord(ch) == 133: ch = '<F11>'.encode()
-				elif ord(ch) == 134: ch = '<F12>'.encode()
-			s.send(ch.decode('cp850').encode())
+		s = keypeeker.peekstr(0.1)
+		if s:
+			s.send(s.decode('cp850').encode() if 'win' in sys.platform.lower() else s)
 	s.close()
 except socket.error as e:
 	value,message = e.args[:2]
 	try: s.close()
 	except: pass
 	print("Socket closed: " + message)
+
+keypeeker.stop()

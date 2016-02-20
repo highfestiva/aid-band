@@ -35,17 +35,17 @@ def vorbis_encode(fn):
 		print('Error when converting %s to Vorbis!' % fn)
 
 def maintain_cache_dir(dirname):
+	try:
+		for w in glob(dirname+'/*.wavy'): # Unfinished business.
+			os.remove(w)
+	except:
+		pass
 	while not _quit:
 		try:
 			for w in glob(dirname+'/*.wav'):
 				vorbis_encode(w)
 		except Exception as e:
 			print('Crashed while trying to Vorbis encode:', e)
-		try:
-			for w in glob(dirname+'/*.wavy'): # Unfinished business.
-				os.remove(w)
-		except:
-			pass
 		for _ in range(30):
 			if _quit:
 				break

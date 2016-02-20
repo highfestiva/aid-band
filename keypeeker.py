@@ -122,7 +122,8 @@ def readkeys(handle_keys):
 			keys = keys[:len(keys)-1] if keys else ''
 		else:
 			keys += ch
-		handle_keys(keys)
+		if handle_keys:
+			handle_keys(keys)
 		keytimeout.reset()
 
 def stop():
@@ -132,7 +133,7 @@ def stop():
 	try:	keythread.stop()
 	except:	pass
 
-def init(handle_keys):
+def init(handle_keys=None):
 	global keythread
 	keythread = KillableThread(target=readkeys, args=[handle_keys])
 	keythread.start()
