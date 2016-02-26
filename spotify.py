@@ -5,6 +5,7 @@ import socket
 import spotipy
 import subprocess
 from sys import platform
+import toplist
 
 
 cmd = 'Consoleify.exe' if platform=='win32' else './Consoleify' 
@@ -23,8 +24,10 @@ class Client:
 			raise
 
 	def popular(self):
-		s = self._run('toplist')
-		return self._parsesongs(s)
+		# s = self._run('toplist')
+		# return self._parsesongs(s)
+		tracks = toplist.search()
+		return [Song(t['name'], t['popularity'], t['artists'][0]['name'], t['artists'], t['uri']) for t in tracks]
 
 	def search(self, song):
 		#s = self._run('search-song %s'%song)
