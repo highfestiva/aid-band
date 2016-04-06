@@ -10,22 +10,22 @@ from threading import Thread
 _quit = False
 
 def _find_ffmpeg():
-	files = glob('c:/Program Files*/ffmpeg*/bin/ffmpeg.exe')
+	files = glob('c:/Program Files*/ffmpeg*/bin/ffmpeg.exe') + glob('/usr/bin/avconv') + glob('/usr/bin/ffmpeg')
 	if files:
-		return files[-1]
-	files = glob('/usr/bin/avconv') + glob('/usr/bin/ffmpeg')
-	if files:
-		return files[-1]
-	return None
+		f,oargs = files[-1],[]
+		if 'avconv' in f:
+			oargs += ['-acodec', 'libvorbis']
+		return f,oargs
+	return None,None
 
-ffmpeg = _find_ffmpeg()
+ffmpeg,oargs = _find_ffmpeg()
 
 def vorbis_encode(fn):
 	if not ffmpeg:
 		print('Vorbis compression installed. Install libav-tools or ffmpeg!')
 		return
 	oggfn = fn.replace('.wav','.ogg')
-	cmd = [ffmpeg, '-i', fn, oggfn]
+	cmd = [ffmpeg, '-i', fn] + oargs + [oggfn]
 	proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	if proc.wait() == 0:
 		if exists(oggfn):
