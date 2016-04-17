@@ -47,9 +47,14 @@ def stop():
 		try:
 			proc.kill()
 			proc.wait()
+		except Exception as e:
+			print(e)
+		proc = None
+		try:
+			import os
+			os.system('killall mplayer')
 		except:
 			pass
-		proc = None
 		if cache_write_name:
 			try: os.remove(cache_write_name)
 			except: pass
