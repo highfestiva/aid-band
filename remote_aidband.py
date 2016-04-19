@@ -2,6 +2,7 @@
 
 import argparse
 import keypeeker
+from killable import kill_self
 import socket
 import sys
 
@@ -41,6 +42,8 @@ try:
 				d = eval("'''"+sendqueue[0]+"'''")
 				s.send(d.encode())
 				sendqueue = sendqueue[1:]
+				if not sendqueue and options.commands:
+					break
 				continue
 		except UnicodeDecodeError as e:
 			pass
@@ -55,3 +58,4 @@ except socket.error as e:
 	print("Socket closed: " + message)
 
 keypeeker.stop()
+kill_self()

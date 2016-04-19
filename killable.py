@@ -14,3 +14,11 @@ class KillableThread(Thread):
 		if self._killme:
 			sys.exit(0)
 		return self._trace
+
+def kill_self():
+	try:
+		import win32process
+		win32process.ExitProcess(0)
+	except:
+		import os,signal
+		os.kill(os.getpid(), signal.SIGKILL)

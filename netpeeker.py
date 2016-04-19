@@ -41,27 +41,34 @@ def handlecmd(client, handle_login, handle_keys):
 		handle_login()
 		while True:
 			bb += client.recv(1)
+			if not bb:
+				raise 'Disconnected?'
 			try:
 				i = bb.decode()
 				bb = b''
-			except:
+			except Exception as e:
+				print(e)
 				continue
 			if i == '\b':
-				input = input[:len(input)-1] if input else ''
+				input = input[:-1]
 			else:
 				input += i
 			handle_keys(input)
 			keytimeout.reset()
 	except Exception as e:
-		dropclient(client)
 		print('Remote network shell connection dropped.')
+		dropclient(client)
 
 def dropclient(client):
 	global clients
-	try:	clients.remote(client)
-	except:	pass
-	try:	client.close()
-	except:	pass
+	try:
+		clients.remove(client)
+	except Exception as e:
+		print(e)
+	try:
+		client.close()
+	except Exception as e:
+		print(e)
 
 def listen(handle_login, handle_keys):
 	global clients, acpt_sock
@@ -86,22 +93,25 @@ def listen(handle_login, handle_keys):
 			clients += [client]
 			Thread(target=handlecmd, args=[client,handle_login,handle_keys]).start()
 		except Exception as e:
-			dropclient(client)
 			print(e)
+			dropclient(client)
 			print('Remote network shell dropped during password entry.')
 
 
 def output(s):
 	d = (s+'\r\n').encode()
 	for c in clients:
-		try: c.send(d)
-		except: pass
+		try:
+			c.send(d)
+		except Exception as e:
+			print(e)
 
 def stop():
 	try: acpt_sock.close()
 	except: pass
 	try: [c.close() for c in clients]
 	except: pass
+	clients = []
 	acpt.stop()
 	try:
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
