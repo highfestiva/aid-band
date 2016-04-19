@@ -9,6 +9,7 @@ from glob import glob
 import hotoptions
 import interruptor
 import keypeeker
+from killable import kill_self
 import netpeeker
 import os.path
 import random
@@ -389,18 +390,15 @@ while True:
 			if not stopped:
 				poll()
 			cmd = keypeeker.peekstr() + netpeeker.peekstr()
-		if cmd == '<quit>':
+		if cmd in ('<quit>','<softquit>'):
 			vorbis_encoder.quit()
 			stop()
 			netpeeker.stop()
 			keypeeker.stop()
 			if muzaks: muzaks.quit()
-			try:
-				import win32process
-				win32process.ExitProcess(0)
-			except:
-				import os,signal
-				os.kill(os.getpid(), signal.SIGKILL)
+			if cmd == '<softquit>':
+				break
+			kill_self()
 		if cmd == '<F12>':
 			stopped = not stopped
 			if stopped:
