@@ -39,7 +39,7 @@ shuffleidx = []
 ishits = False
 playidx = 0
 datadir = '.'
-mplayer = 'mplayer.exe' if 'win' in sys.platform.lower() else 'mplayer'
+mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mplayer'
 
 
 def stop():
@@ -90,7 +90,7 @@ def play_url(url, cachename):
 			fns = glob(cachename.replace('-','*-',1))
 			if fns:
 				cachename = fns[0]
-		if os.path.exists(cachename):
+		if mplayer and os.path.exists(cachename):
 			cmd = [mplayer, cachename]
 			proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 			url = cachename
@@ -98,9 +98,11 @@ def play_url(url, cachename):
 		if url.startswith('spotify'):
 			if muzaks:
 				muzaks.playsong(url)
-		else:
+		elif mplayer:
 			cmd = [mplayer, _confixs(url)]
 			proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		else:
+			print('Get me mplayer!')
 	start_play_time = time.time()
 	active_url = url
 
