@@ -1,4 +1,4 @@
-Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL should be left empty if GrooveShark.
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.
 Opiou ~ Fizzle Tickler ~ 
 Opiou ~ Fizzle Tickler ~ 
 Pharrell Williams ~ Happy ~ 
@@ -151,7 +151,7 @@ Slagsmålsklubben ~ Wellington Sears ~
 M.I.A. ~ Paper Planes ~ 
 M.I.A. ~ Mamma Mia ~ 
 M.I.A. ~ Mamma Mia - feat. Prophet of 7Lions ~ 
-M.I.A. ~ Bad Girls ~ 
+M.I.A. ~ Bad Girls ~ spotify:track:6nzXkCBOhb2mxctNihOqbb
 M.I.A. ~ Cara mia ~ 
 M.I.A. ~ Y.A.L.A. ~ 
 M.I.A. ~ Eres Mía ~ 
@@ -175,14 +175,14 @@ Linnea Henriksson ~ Cecilia ~
 Linnea Henriksson ~ Ensamheten ~ 
 Linnea Henriksson ~ Väldigt kär/Obegripligt ensam ~ 
 Linnea Henriksson ~ Jag vet nåt som inte du vet ~ 
-Linnea Henriksson ~ Mitt rum i ditt hjärta ~ 
+Linnea Henriksson ~ Mitt rum i ditt hjärta ~ spotify:track:3EOO2VrhduNw7rqCxIXsA3
 Linnea Henriksson ~ Alice ~ 
 Linnea Henriksson ~ Cecilia (John De Sohn Remix) ~ 
 Everlast ~ What It's Like ~ 
 Everlast ~ White Trash Beautiful ~ 
 Everlast ~ Black Jesus ~ 
 Everlast ~ White Trash Beautiful ~ 
-Everlast ~ I Get By ~ 
+Everlast ~ I Get By ~ spotify:track:6Cvx7B0EOUdWCoGbM0mRQQ
 Everlast ~ Folsom Prison Blues ~ 
 Everlast ~ What It's Like (live acoustic) ~ 
 Everlast ~ Ends ~ 
@@ -294,7 +294,7 @@ Within Temptation ~ Faster ~
 Within Temptation ~ Paradise (What About Us?) [feat. Tarja] - Single Version ~ 
 Within Temptation ~ Angels ~ 
 Within Temptation ~ Paradise (What About Us?) [feat. Tarja] - Single Version ~ 
-Within Temptation ~ All I Need ~ 
+Within Temptation ~ All I Need ~ spotify:track:2FPHOduj8yJPDOadAOqVm5
 Within Temptation ~ Faster - Radio Edit ~ 
 Within Temptation ~ Sinéad ~ 
 Within Temptation ~ In The Middle Of The Night ~ 
@@ -376,7 +376,7 @@ Dead by April ~ Losing You ~
 Dead by April ~ As A Butterfly ~ 
 Dead by April ~ Trapped ~ 
 Dead by April ~ Beautiful Nightmare ~ 
-Dead by April ~ Within My Heart ~ 
+Dead by April ~ Within My Heart ~ spotify:track:0tp8ekiIi5W3g4ROO0ikFU
 Dead by April ~ Angels Of Clarity ~ 
 Eminem ~ The Monster ~ 
 Rihanna ~ Diamonds ~ 
@@ -407,7 +407,7 @@ Eminem ~ Lose Yourself - Soundtrack Version ~
 Eminem ~ Not Afraid ~ 
 Eminem ~ When I'm Gone ~ 
 Eminem ~ Superman ~ 
-Alexandra Stan ~ Mr. Saxobeat - Radio Edit ~ 
+Alexandra Stan ~ Mr. Saxobeat - Radio Edit ~ spotify:track:4zIaXqKCXZs02eB6jEe5Mf
 Alexandra Stan ~ Get Back (Asap) ~ 
 Alexandra Stan ~ Mr. Saxobeat - Radio Edit ~ 
 Alexandra Stan ~ Dance - Radio Edit ~ 
@@ -489,7 +489,7 @@ General Knas ~ En God Vän ~
 General Knas & Kapten Röd ~ Enda Vägen Fram (med Kapten Röd) ~ 
 General Knas ~ Aktivist ~ 
 AKI ~ När solen går ner ~ 
-Kapten Röd ~ Ju Mer Dom Spottar ~ 
+Kapten Röd ~ Ju Mer Dom Spottar ~ spotify:track:6809ESRbIU87qbXCeR80xA
 Kapten Röd ~ Saknade Vänner ~ 
 Kapten Röd ~ Stjärnorna Finns Här ~ 
 Kapten Röd ~ In Kommer Ting ~ 
@@ -511,7 +511,7 @@ Kavinsky ~ Nightcall - Dustin N'Guyen Remix ~
 Kavinsky ~ Roadgame ~ 
 Kavinsky ~ Odd Look ~ 
 Kavinsky ~ ProtoVision ~ 
-Kavinsky ~ Pacific Coast Highway ~ 
+Kavinsky ~ Pacific Coast Highway ~ spotify:track:5GDzL9A3IihC8zm00RlH6Q
 Kavinsky ~ Testarossa Autodrive ~ 
 Kavinsky ~ Wayfarer ~ 
 DJ Khaled ~ All I Do Is Win - Feat. T-Pain, Ludacris, Snoop Dogg & Rick Ross ~ 
@@ -638,7 +638,7 @@ Lars Winnerbäck ~ Kom änglar ~
 Lars Winnerbäck ~ Hugger i sten ~ 
 Lars Winnerbäck ~ Söndermarken ~ 
 Lars Winnerbäck ~ Vi åkte aldrig ut till havet ~ 
-Jessie J ~ Bang Bang ~ 
+Jessie J ~ Bang Bang ~ spotify:track:0puf9yIluy9W0vpMEUoAnN
 Jessie J ~ Who You Are ~ 
 Jessie J ~ Domino ~ 
 Jessie J ~ Price Tag ~ 
@@ -670,7 +670,7 @@ Nine Inch Nails ~ Discipline ~
 Foo Fighers ~ Miracle (Karaoke Version) - Originally Performed By The Foo Fighers ~ 
 Marina and The Diamonds ~ I Am Not A Robot ~ 
 Marina and The Diamonds ~ How To Be A Heartbreaker ~ 
-Marina and The Diamonds ~ Primadonna ~ 
+Marina and The Diamonds ~ Primadonna ~ spotify:track:5tFMuAw6X2R4NLx97g7n9q
 Marina and The Diamonds ~ How To Be A Heartbreaker ~ 
 Marina and The Diamonds ~ Oh No! ~ 
 Marina and The Diamonds ~ Bubblegum Bitch ~ 
@@ -728,7 +728,7 @@ Bloodhound Gang ~ The Ballad Of Chasey Lain ~
 Bloodhound Gang ~ The Bad Touch ~ 
 Bloodhound Gang ~ Along Comes Mary ~ 
 Bloodhound Gang ~ Three Point One Four ~ 
-Bloodhound Gang ~ Mope ~ 
+Bloodhound Gang ~ Mope ~ spotify:track:1M3Q6JBxczHas388EfotPV
 Stefan Sundström ~ Har någon sett Sabina ~ 
 Stefan Sundström ~ Malena ~ 
 Georg Riedel/Stefan Sundström/Lisa Nilsson/Plura Jonsson/Freddie Wadling/Eva Dahlgren/Mauro Scocco/Totta Näslund ~ Alla Ska Sova För Nu Är Det Natt ~ 
@@ -789,7 +789,7 @@ Blind Guardian ~ Nightfall - Live ~
 Blind Guardian ~ Valhalla. - Live ~ 
 Blind Guardian ~ Bright Eyes ~ 
 The Black Eyed Peas ~ Where Is The Love? ~ 
-The Black Eyed Peas ~ I Gotta Feeling ~ 
+The Black Eyed Peas ~ I Gotta Feeling ~ spotify:track:4vp2J1l5RD4gMZwGFLfRAu
 The Black Eyed Peas ~ The Time (Dirty Bit) ~ 
 The Black Eyed Peas ~ Just Can’t Get Enough ~ 
 The Black Eyed Peas ~ Meet Me Halfway ~ 
@@ -928,7 +928,7 @@ Björn Rosenström ~ Muffins ~
 Björn Rosenström ~ Lurad ~ 
 Björn Rosenström ~ Nu Du Kärring ~ 
 Björn Rosenström ~ Gunilla ~ 
-Björn Rosenström ~ Värdelös ~ 
+Björn Rosenström ~ Värdelös ~ spotify:track:2jCFZEMjIGDMy62ceozhwa
 Johnossi ~ Man Must Dance ~ 
 Johnossi ~ What's the Point ~ 
 Johnossi ~ Summerbreeze ~ 
@@ -946,7 +946,7 @@ Nickelback ~ Burn It To The Ground ~
 Nickelback ~ If Today Was Your Last Day ~ 
 Nickelback ~ Lullaby ~ 
 Nickelback ~ Edge Of A Revolution ~ 
-Nickelback ~ Gotta Be Somebody ~ 
+Nickelback ~ Gotta Be Somebody ~ spotify:track:06T10fEzN8ZCcqzQZYA184
 Nickelback ~ Something In Your Mouth ~ 
 Nickelback ~ Rockstar ~ 
 Laleh ~ Tusen bitar ~ 
@@ -974,7 +974,7 @@ Die Antwoord ~ Happy Go Sucky Fucky ~
 Die Antwoord ~ Baby's On Fire ~ 
 Die Antwoord ~ Pitbull Terrier ~ 
 Die Antwoord ~ Fatty Boom Boom ~ 
-Die Antwoord ~ Ugly Boy ~ 
+Die Antwoord ~ Ugly Boy ~ spotify:track:0zSGK8ZpVuo0XdIY21Vyrh
 Die Antwoord ~ Cookie Thumper! ~ 
 Die Antwoord ~ Enter The Ninja ~ 
 Die Antwoord ~ Raging Zef Boner ~ 
@@ -1102,7 +1102,7 @@ Macklemore & Ryan Lewis ~ Wing$ ~
 Macklemore & Ryan Lewis ~ Irish Celebration ~ 
 Macklemore & Ryan Lewis ~ Can't Hold Us - feat. Ray Dalton ~ 
 Macklemore & Ryan Lewis ~ White Walls (feat. ScHoolboy Q & Hollis) ~ 
-Naughty Boy ~ La La La ~ 
+Naughty Boy ~ La La La ~ spotify:track:36pLU2ywVeBKEF0rrKtmCB
 Emeli Sandé ~ Daddy (feat. Naughty Boy) ~ 
 Naughty Boy ~ Home ~ 
 Naughty Boy ~ La La La - Kaos Remix ~ 
@@ -1119,7 +1119,7 @@ Pain ~ Shut Your Mouth ~
 House Of Pain ~ Jump Around ~ 
 T-Pain ~ Up Down (Do This All Day) ~ 
 Flo Rida ~ Low (feat T-Pain) ~ 
-Pain ~ All I Do Is Win - Feat. T-Pain, Ludacris, Snoop Dogg & Rick Ross ~ 
+Pain ~ All I Do Is Win - Feat. T-Pain, Ludacris, Snoop Dogg & Rick Ross ~ spotify:track:0RIHDrcRAXtUlnkvTYPW1a
 Pitbull ~ Hey Baby (Drop It To The Floor) ~ 
 Calvin Harris ~ Blame ~ 
 Calvin Harris ~ Summer ~ 
@@ -1141,7 +1141,7 @@ Taylor Swift ~ Our Song ~
 B.o.B ~ Both Of Us (feat. Taylor Swift) ~ 
 Taylor Swift ~ Red ~ 
 Taylor Swift ~ Safe & Sound - The Hunger Games/Soundtrack Version ~ 
-Rasmus Seebach ~ Natteravn ~ 
+Rasmus Seebach ~ Natteravn ~ spotify:track:0A7DXZpGtZqKsWxahWace2
 Lana Del Rey ~ Summertime Sadness [Lana Del Rey vs. Cedric Gervais] - Cedric Gervais Remix ~ 
 Lana Del Rey ~ Young And Beautiful ~ 
 Lana Del Rey ~ Summertime Sadness [Lana Del Rey vs. Cedric Gervais] - Cedric Gervais Remix ~ 
@@ -1181,7 +1181,7 @@ A$AP Rocky ~ Fashion Killa ~
 Sam Smith ~ I'm Not The Only One ~ 
 A$AP Ferg ~ Shabba ~ 
 Schoolboy Q ~ Hands On the Wheel ~ 
-Petter ~ Håll om mig ~ 
+Petter ~ Håll om mig ~ spotify:track:4J0WQvqCBytACvgKVrq1S3
 Petter ~ Tills döden skiljer oss åt ~ 
 Petter ~ Längesen ~ 
 Petter ~ Fredrik Snortare och Cecilia Synd ~ 
@@ -1385,7 +1385,7 @@ Gyllene Tider ~ Kung av sand ~
 Gyllene Tider ~ (Kom Så Ska Vi) Leva Livet - 2004 Remastered Version ~ 
 The Offspring ~ You're Gonna Go Far, Kid ~ 
 The Offspring ~ The Kids Aren't Alright ~ 
-The Offspring ~ Why Don't You Get a Job? ~ 
+The Offspring ~ Why Don't You Get a Job? ~ spotify:track:5JzF2iymNwCyFz9MTmojd0
 The Offspring ~ Self Esteem ~ 
 The Offspring ~ Pretty Fly (For a White Guy) ~ 
 The Offspring ~ Staring At the Sun ~ 
@@ -1463,7 +1463,7 @@ The Beatles ~ Love Me Do - Original Remastered Version ~
 The Beatles ~ Hey Jude ~ 
 The Beatles ~ Let It Be ~ 
 The Beatles ~ All My Loving ~ 
-The Beatles Connection ~ Blackbird ~ 
+The Beatles Connection ~ Blackbird ~ spotify:track:2C4oyCyHdu1S4q7Gih82vd
 The Beatles ~ Yesterday ~ 
 Alphaville ~ Forever Young ~ 
 Alphaville ~ Big In Japan - Original ~ 
@@ -1519,13 +1519,13 @@ Nirvana ~ Latch - Acoustic ~
 Nirvana ~ Come As You Are ~ 
 Nirvana ~ Lithium ~ 
 Nirvana ~ Heart-Shaped Box ~ 
-Nirvana ~ Rape Me ~ 
+Nirvana ~ Rape Me ~ spotify:track:5Rizj5FLb2AyNKu9esjYY6
 Nirvana ~ Safe With Me ~ 
 Nirvana ~ I've Told You Now - Live At St Pancras Old Church, London / 2013 ~ 
 Nirvana ~ In Bloom - Nevermind Version ~ 
 David Bowie ~ Life On Mars? - 1999 Remastered Version ~ 
 David Bowie ~ Space Oddity - 2009 Remastered Version ~ 
-David Bowie ~ Heroes - 1999 Remastered Version ~ 
+David Bowie ~ Heroes - 1999 Remastered Version ~ spotify:track:5j6ZZwA9BnxZi5Bk0Ng4jB
 David Bowie ~ Moonage Daydream - 2012 Remastered Version ~ 
 David Bowie ~ Let's Dance - 1999 Remastered Version ~ 
 David Bowie ~ Changes - 1999 Remastered Version ~ 
@@ -1603,7 +1603,7 @@ Fatboy Slim ~ Eat Sleep Rave Repeat - Dimitri Vegas & Like Mike vs. Ummet Ozcan 
 Fatboy Slim ~ Eat Sleep Rave Repeat - Calvin Harris Edit ~ 
 Fatboy Slim ~ Samba Do Mundo (Fatboy Slim Presents Gregor Salto) ~ 
 Fatboy Slim ~ Eat Sleep Rave Repeat - Calvin Harris Remix ~ 
-Fatboy Slim ~ Praise You - Radio Edit ~ 
+Fatboy Slim ~ Praise You - Radio Edit ~ spotify:track:62nm5Ay0pIYt8Z54UQrghu
 Rise Against ~ Hero Of War ~ 
 Rise Against ~ Savior ~ 
 Rise Against ~ Satellite ~ 
@@ -1622,7 +1622,7 @@ Beyoncé ~ Halo ~
 Beyoncé ~ Partition ~ 
 Beyoncé ~ Pretty Hurts ~ 
 Beyoncé ~ Run the World (Girls) ~ 
-Beyoncé ~ Single Ladies (Put a Ring on It) ~ 
+Beyoncé ~ Single Ladies (Put a Ring on It) ~ spotify:track:5R9a4t5t5O0IsznsrKPVro
 Beyoncé ~ Love On Top ~ 
 John Mayer ~ Free Fallin' - Live at the Nokia Theatre ~ 
 Donkeyboy ~ Ambitions ~ 
@@ -1659,7 +1659,7 @@ Counting Crows ~ Earthquake Driver ~
 Counting Crows ~ Colorblind ~ 
 Counting Crows ~ Earthquake Driver ~ 
 Counting Crows ~ God Of Ocean Tides ~ 
-Roy Orbison ~ Oh, Pretty Woman ~ 
+Roy Orbison ~ Oh, Pretty Woman ~ spotify:track:52HAHV1j93s5B8GoTNI7DJ
 Roy Orbison ~ Unchained Melody ~ 
 Roy Orbison ~ I Drove All Night ~ 
 3 Doors Down ~ Kryptonite ~ 
@@ -1707,7 +1707,7 @@ Dust Brothers ~ Life Is Sweet ~
 Dust Brothers ~ Chico's Groove ~ 
 Jävlaranamma ~ Pickadulverman ~ 
 Jävlaranamma ~ Upp och hoppa ~ 
-Jävlaranamma ~ Äntligen Måndag ~ 
+Jävlaranamma ~ Äntligen Måndag ~ spotify:track:15urouKhhJWLvDnVZct6wW
 Jävlaranamma ~ Gå förbi ~ 
 Jävlaranamma ~ I Sparrings ungdom ~ 
 Jävlaranamma ~ Dom Är Ledsna ~ 
@@ -1719,7 +1719,7 @@ Cradle Of Filth ~ Nymphetamine Fix ~
 Cradle Of Filth ~ Temptation ~ 
 Cradle Of Filth ~ Hallowed Be Thy Name ~ 
 Cradle Of Filth ~ From the Cradle to Enslave ~ 
-Cradle Of Filth ~ Her Ghost In The Fog ~ 
+Cradle Of Filth ~ Her Ghost In The Fog ~ spotify:track:4INEr5WJcgr9GaQxUDfgRL
 Cradle Of Filth ~ The Death of Love ~ 
 Cradle Of Filth ~ Stay ~ 
 Cradle Of Filth ~ Foetus Of A New Day Kicking ~ 
@@ -1751,7 +1751,7 @@ Big Fish ~ Let's Work Together ~
 Big Fish ~ Man Of The Hour ~ 
 Reel Big Fish ~ Brown Eyed Girl ~ 
 Reel Big Fish ~ Beer ~ 
-Reel Big Fish ~ Beer - Best Of ~ 
+Reel Big Fish ~ Beer - Best Of ~ spotify:track:6olm7fr2ohigkPOQ3jA4dh
 Reel Big Fish ~ Beer ~ 
 Reel Big Fish ~ Everyone Else Is An Asshole ~ 
 Cornelis Vreeswijk ~ Somliga går med trasiga skor ~ 
@@ -1830,7 +1830,7 @@ Live ~ Lightning Crashes ~
 Live ~ The Dolphin's Cry ~ 
 Live ~ Overcome ~ 
 Live ~ I Alone ~ 
-Live ~ Run To The Water ~ 
+Live ~ Run To The Water ~ spotify:track:2wDGXD8v3abIT1uWSlXO2x
 Live ~ Selling The Drama ~ 
 Live ~ All Over You ~ 
 Live ~ The Dam At Otter Creek ~ 
@@ -1915,3 +1915,8 @@ I Love Rock n Roll ~ Love Is Pain ~
 Ska-P ~ Cannabis ~ 
 Sia ~ Elastic Heart ~ 
 Major Lazer ~ Lean On (feat. MØ & DJ Snake) ~ 
+Flo Rida ~ My House ~ spotify:track:6Knv6wdA0luoMUuuoYi2i1
+Peg Parnevik ~ Ain't No Saint ~ spotify:track:2c1EGwagV1sT73NimGsqIh
+Vigiland ~ Pong Dance ~ spotify:track:3AVnIi6HvEiHGlIj4c6ok2
+Sia ~ Cheap Thrills ~ spotify:track:27SdWb2rFzO6GWiYDBTD9j
+Frans ~ If I Were Sorry ~ spotify:track:6oDkCmfVcSd9NXAKk1b4Ll
