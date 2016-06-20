@@ -111,13 +111,15 @@ def remove_from_cache(song):
 	if os.path.exists(fn):
 		os.remove(fn)
 
-def play_idx():
+def do_play_idx():
 	global playqueue
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
 		fn = ''
 		if 'radio' not in listname:
 			fn = _cachename(song)
+			if os.path.exists(fn):
+				return
 		if not song.uri:
 			update_url()
 		output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(fn))
@@ -125,6 +127,18 @@ def play_idx():
 		# Once played the song expires, no use attempting to play that URL again.
 		song = ABSong(song.name,song.artist,song.uri)
 		playqueue[shuffleidx[playidx]] = song
+		return True
+
+def play_idx():
+	global playidx
+	while not do_play_idx():
+		song = playqueue[shuffleidx[playidx]]
+		output('Skipping %s - %s (already cached).' % (song.artist,song.name))
+		playidx += 1
+		if playidx >= len(playqueue):
+			playidx = 0
+		time.sleep(0.5)
+	
 
 def poll():
 	if active_url.startswith('spotify'):

@@ -19,7 +19,7 @@ addit = defaultdict(dict)
 song_file_map = {}
 files = [f.replace('\\','/') for f in glob('cache/*.ogg')]
 for fname in files:
-	at = fname.split('/',1)[1].rsplit('.ogg',1)[0]
+	at = fname.split('/',1)[1].rsplit('.ogg',1)[0].replace('_','/')
 	artist,track = at.split('-',1)
 	if len(artist) <= 2:
 		artist,track = at.rsplit('-',1)
