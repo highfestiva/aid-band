@@ -1,13 +1,8 @@
 #!/bin/bash
-#Example script that deploys to \\Bocken\RnD\AidBand. A first manual instance
-#would have to be copied manully to that location and started.
+# Example script that deploys to dev@ikaruso. A first instance
+# would have to be copied manully to that location and started.
 
-./build.sh
-sed -i.bak 's/\r//g' aidband_install/*
-rm aidband_install/*.bak
-cp password sp_credentials aidband_install/
-scp -P 2202 -r aidband_install dev@ikaruso:/tmp/
-rm -Rf aidband_install/
+scp -P 2202 -r password sp_credentials run.sh *.py dev@ikaruso:/tmp/
 ./remote_aidband.py -t ikaruso -p -c '<quit>'
 sleep 6
 ./remote_aidband.py -t ikaruso -p -c '<F4>'
