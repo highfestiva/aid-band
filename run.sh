@@ -7,6 +7,7 @@ while true; do
 	killall Consoleify 2> /dev/null > /dev/null
 	cp --update -R /tmp/aidband_install/* ./
 	rm -Rf /tmp/aidband_install/*
+	dos2unix *.py *.sh
 	while [ "`ss |grep 3303`" != "" ]; do sleep 1; echo 'w8ing for port to auto-close'; done
 	sleep 10
 	python3 aidband.py
