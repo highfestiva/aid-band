@@ -20,5 +20,11 @@ def kill_self():
 		import win32process
 		win32process.ExitProcess(0)
 	except:
+		pass
+	try:
 		import os,signal
 		os.kill(os.getpid(), signal.SIGKILL)
+	except:
+		pass
+	print('Might have to kill this one with Ctrl+C...')
+	sys.exit(0)
