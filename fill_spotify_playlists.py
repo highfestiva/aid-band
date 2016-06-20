@@ -15,7 +15,11 @@ def _almost_same(s1,s2):
 	return s1 in s2 or difflib.SequenceMatcher(None,s1,s2).ratio() >= 0.8
 
 def gettracks(artist, track):
-	hits = sp.search(' '.join([track,artist]))
+	try:
+		hits = sp.search(' '.join([track,artist]))
+	except Exception as e:
+		print(e)
+		return []
 	tracks = hits['tracks']['items']
 	ts = []
 	for t in tracks:
