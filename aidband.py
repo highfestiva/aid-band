@@ -81,6 +81,7 @@ def spotify_exit():
 	muzaks = None
 
 def play_url(url, cachename):
+	ok = False
 	stop()
 	spotify_init()
 	global proc,start_play_time,cache_write_name,active_url
@@ -94,17 +95,24 @@ def play_url(url, cachename):
 			cmd = [mplayer, cachename]
 			proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 			url = cachename
+			ok = True
 	if not proc:
 		if url.startswith('spotify'):
 			if muzaks:
 				muzaks.playsong(url)
-		elif mplayer:
+				ok = True
+			else:
+				output("Won't play over spotify.")
+		elif mplayer and url:
 			cmd = [mplayer, _confixs(url)]
 			proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		else:
+			ok = True
+		elif url:
 			print('Get me mplayer!')
-	start_play_time = time.time()
-	active_url = url
+	if url:
+		start_play_time = time.time()
+		active_url = url
+	return ok
 
 def remove_from_cache(song):
 	fn = _cachename(song)
@@ -116,29 +124,20 @@ def do_play_idx():
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
 		fn = ''
-		if 'radio' not in listname:
-			fn = _cachename(song)
-			if os.path.exists(fn):
-				return
+		# if 'radio' not in listname:
+			# fn = _cachename(song)
+			# if not os.path.exists(fn):
+				# return
 		if not song.uri:
 			update_url()
 		output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(fn))
-		play_url(song.uri, fn)
-		# Once played the song expires, no use attempting to play that URL again.
-		song = ABSong(song.name,song.artist,song.uri)
-		playqueue[shuffleidx[playidx]] = song
-		return True
+		if play_url(song.uri, fn):
+			song = ABSong(song.name,song.artist,song.uri)
+			playqueue[shuffleidx[playidx]] = song
+			return True
 
 def play_idx():
-	global playidx
-	while not do_play_idx():
-		song = playqueue[shuffleidx[playidx]]
-		output('Skipping %s - %s (already cached).' % (song.artist,song.name))
-		playidx += 1
-		if playidx >= len(playqueue):
-			playidx = 0
-		time.sleep(0.5)
-	
+	return do_play_idx()
 
 def poll():
 	if active_url.startswith('spotify'):

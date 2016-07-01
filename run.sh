@@ -5,6 +5,7 @@ cd ${0%/*}
 while true; do
 	killall mplayer 2> /dev/null > /dev/null
 	killall Consoleify 2> /dev/null > /dev/null
+	mkdir /tmp/aidband_install/ 2> /dev/null
 	cp --update -R /tmp/aidband_install/* ./
 	rm -Rf /tmp/aidband_install/*
 	dos2unix *.py *.sh
