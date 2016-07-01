@@ -124,8 +124,8 @@ def do_play_idx():
 	if playidx < len(playqueue):
 		song = playqueue[shuffleidx[playidx]]
 		fn = ''
-		# if 'radio' not in listname:
-			# fn = _cachename(song)
+		if 'radio' not in listname:
+			fn = _cachename(song)
 			# if not os.path.exists(fn):
 				# return
 		if not song.uri:
