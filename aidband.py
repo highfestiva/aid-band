@@ -199,7 +199,7 @@ def play_list(name):
 
 def search_queue(search):
 	search = search.lower()
-	match = lambda s: _match_ratio((s.name+' '+s.artist).lower(), search)
+	match = lambda s: max([_match_ratio(t.lower(),search) for t in (s.artist,s.name,s.name+' '+s.artist)])
 	similar = [song for song in playqueue if match(song) > 0.6]
 	return sorted(similar, key=match, reverse=True)
 
