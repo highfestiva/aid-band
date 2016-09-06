@@ -8,3 +8,7 @@ class ABSong:
 		self.uri = _uri
 	def __eq__(self, other):
 		return self.name == other.name and self.artist == str(other.artist)
+	def __str__(self):
+		return self.artist + ' ' + self.name
+	def __repr__(self):
+		return self.__str__()

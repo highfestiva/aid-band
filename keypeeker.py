@@ -28,6 +28,7 @@ if not getch:
 		def getch():
 			s = ''
 			while not s:
+				sleep(0.01)
 				s = sys.stdin.read(1)
 				if not s:
 					sleep(0.1)
@@ -99,6 +100,7 @@ def readkeys(handle_keys):
 	keytimeout.reset()
 	global keys
 	while True:
+		sleep(0.01)
 		ch = getch()
 		if ord(ch) == 0:
 			ch = getch()

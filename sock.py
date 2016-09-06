@@ -56,5 +56,6 @@ class socket:
 			except _socket.error:
 				break
 			self.timeout = 0.1
+			sleep(0.001)
 		self.timeout = to
 		return s

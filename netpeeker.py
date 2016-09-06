@@ -4,6 +4,7 @@
 from killable import KillableThread
 import re
 import socket
+from time import sleep
 from timeout import Timeout
 from threading import Thread
 
@@ -40,8 +41,10 @@ def handlecmd(client, handle_login, handle_keys):
 		print('Remote network shell authenticated and running.')
 		handle_login()
 		while True:
+			sleep(0.001)
 			bb += client.recv(1)
 			if not bb:
+				sleep(0.1)
 				raise 'Disconnected?'
 			try:
 				i = bb.decode()
@@ -76,12 +79,14 @@ def listen(handle_login, handle_keys):
 	s.bind(('',3303))
 	s.listen(2)
 	while 1:
+		sleep(0.1)
 		client,address = s.accept()
 		print('New remote network shell connected.')
 		try:
 			client.send('Password: '.encode())
 			pw,i = '',0
 			while '\r' not in pw and len(pw)<50 and i<50:
+				sleep(0.01)
 				pw += client.recv(1).decode()
 				i += 1
 			client.send('\n'.encode())

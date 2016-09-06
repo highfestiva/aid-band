@@ -43,7 +43,7 @@ mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in s
 
 
 def stop():
-	global proc,cache_write_name
+	global proc,cache_write_name,active_url
 	if proc:
 		try:
 			proc.kill()
@@ -52,16 +52,17 @@ def stop():
 			print(e)
 		proc = None
 		try:
-			import os
-			os.system('killall mplayer')
+			subprocess.check_output('killall mplayer'.split(), shell=True, stderr=subprocess.STDOUT)
 		except:
 			pass
 		if cache_write_name:
+			import os
 			try: os.remove(cache_write_name)
 			except: pass
 			cache_write_name = None
 	elif muzaks:
 		muzaks.stop()
+	active_url = ''
 
 def spotify_init():
 	global options,muzaks
@@ -109,9 +110,8 @@ def play_url(url, cachename):
 			ok = True
 		elif url:
 			print('Get me mplayer!')
-	if url:
-		start_play_time = time.time()
-		active_url = url
+	start_play_time = time.time()
+	active_url = url if url else cachename
 	return ok
 
 def remove_from_cache(song):
@@ -145,7 +145,9 @@ def poll():
 			next_song()
 		return
 
-	if not proc or proc.poll() == None:
+	if not proc and not active_url:
+		return
+	if proc and proc.poll() == None:
 		return
 	global cache_write_name
 	if cache_write_name and os.path.exists(cache_write_name):
@@ -397,11 +399,12 @@ vorbis_encoder.async_maintain_cache_dir('cache')
 stopped = True
 while True:
 	try:
+		time.sleep(0.2)	# Let CPU rest in case of infinite loop bug.
 		output('Enter search term:')
 		cmd = ''
 		while not cmd:
 			event.wait(2)
-			time.sleep(0.2)	# Hang on a pinch to see if there's more to be had.
+			time.sleep(0.2)	# Let CPU rest in case of infinite loop bug.
 			if not stopped:
 				poll()
 			cmd = keypeeker.peekstr() + netpeeker.peekstr()
@@ -470,3 +473,4 @@ while True:
 			netpeeker.getstr()	# Clear remote keyboard.
 		except Exception as e:
 			print('FATAL ERROR!')
+		time.sleep(1)
