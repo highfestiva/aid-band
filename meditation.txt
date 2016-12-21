@@ -2,7 +2,6 @@ Playlist for AidBand. Each line contains artist, song name and URL. The first tw
 Kundalini: Yoga, Meditation, Relaxation ~ Yoga Meditation and Relaxation ~ spotify:track:3SrEmZTtPBo5Mzsa7qRsQE
 Meditation for the living ~ Meditation and harmony ~ spotify:track:4yGCHAgL0GoiEwci3SVeuT
 Kundalini: Yoga, Meditation, Relaxation ~ Breathe ~ spotify:track:2DcmhjYX4EPPPNQ8h3nCGS
-Meditation ~ Destiny Meditation ~ spotify:track:613blZhBiOWocWyHih5HCF
 Meditation ~ Waves Meditation ~ spotify:track:5zreNHJLqmrJU69LxWi7mJ
 Meditation ~ Dulled White Noise ~ spotify:track:41exx8oaJcAgS0EWAamIs0
 Meditation ~ Dulled White Noise ~ spotify:track:41exx8oaJcAgS0EWAamIs0
@@ -19,7 +18,6 @@ Zen Music Garden ~ Pink Noise with Slow Swell - Pink Waves ~ spotify:track:5HMmw
 Zen Music Garden ~ Pink Noise with Slow Swell - Pink Waves ~ spotify:track:5HMmwIti7MYePTP0RuNsGG
 Zen Music Garden ~ Pink Noise with Slow Swell - Pink Waves ~ spotify:track:5HMmwIti7MYePTP0RuNsGG
 Zen ~ Zen Surf Beach Sounds ~ spotify:track:01tHPbV7w06kSDYv8upzjw
-Zen ~ Zen Shoreline Beach Sounds ~ spotify:track:1RLdhFKZy4R5qn3O1SC0Ir
 Zen Zellow ~ Sleep Time ~ spotify:track:1KHJl0NuQIQMWmrPdnG6Z9
 Zen Zellow ~ Sleep Sound Pad ~ spotify:track:7GfhO1M9lUYpXEWHiRV6t7
 Zen Zellow ~ Spiritual Balance ~ spotify:track:1WX4bXGNFQi43EMAGOTbgr
@@ -57,15 +55,53 @@ chanting buddhist monks ~ Sherab Nyingpo ~ spotify:track:6HuGX8td6n8AXD6C00GlLz
 chanting buddhist monks ~ Tantric Music II ~ spotify:track:4y9mKSTGjRQsYNYxsK98TB
 chanting buddhist monks ~ Dugkar ~ spotify:track:5SQRGNjt4ldkqVft0L0hd0
 chanting buddhist monks ~ Tantric Music I ~ spotify:track:2W96ZyoEhEdepsZG7vZmRd
-chanting buddhist monks ~ Monks Chanting Om (C Natural) ~ spotify:track:6029L2lzR2KlCjYuLvQ1qn
-chanting buddhist monks ~ Large Group of Young Monks Chanting Buddhist Scriptures in a Large Reverberant Room ~ spotify:track:1lc5yL8R1JbwmVR9qFD4EN
 Buddhist Chants and Music ~ Om Mani Padme Hum ~ spotify:track:6jgCd6XevB3gnkJDpWdoUM
 buddhist ~ Buddhist ~ spotify:track:7A3vQB9Qb9W0gSujFkLi65
-buddhist ~ Zen Music for Buddhist Meditation ~ spotify:track:5rShlqgOfyLu2rrMxpL8dc
 buddhist ~ Tibetan Buddhist Meditation Music ~ spotify:track:5oyzHuCriIqu8qh9WMtJY2
-buddhist ~ The Wisdom Mantra - Tibetan Chant plus Urban Groove ~ spotify:track:7sE1RZa8y8xkv01dKPIi28
-buddhist ~ Om Chanting Buddhist Music ~ spotify:track:3kgpNH2ZsvvvR8rN1B8kQ3
-buddhist ~ Buddhist Music for Wellness ~ spotify:track:1xnbFztg57gZvoXZXraLBz
-buddhist ~ Buddhist Melody ~ spotify:track:41Duk0THGmNiw3H3u7E5uz
 buddhist ~ Buddhist Meditation ~ spotify:track:6wL5SGjoGAsADdolI3krTO
-buddhist ~ Female Buddha Taras Mantra - Tibetan Chant plus Urban Groove ~ spotify:track:3SvZOri3IfrcrlOpbqp8zx
+Zen Music Garden ~ Tibetan Chakra Meditation ~ spotify:track:2lTPby1tReazLGjgih2kam
+Rain Sounds ~ White Noise ~ spotify:track:7dTyZl4cBRKnPBeq1fdrHY
+Mindfulness Meditation Music Spa Maestro ~ Buddhist Zen for Relaxation Meditation ~ spotify:track:4ITdAwX8CFGKp7Dt9sxXx5
+Deep Sleep ~ Delta Waves for Deep Healing Sleep ~ spotify:track:3YMOXCsCYZTSdGMOZz8SzI
+Meredith Monk ~ Walking Song ~
+Kundalini: Yoga, Meditation, Relaxation ~ Breathe ~ spotify:track:2DcmhjYX4EPPPNQ8h3nCGS
+Satori Meditation ~ Zen Music for Buddhist Meditation ~ spotify:track:5rShlqgOfyLu2rrMxpL8dc
+Bridget Kelly+Kendrick Lamar ~ Street Dreamin ~ spotify:track:2AArqeG0gRRiStIXLx5ggC
+Tibetan Buddhist Monks ~ Tantric Music II ~ spotify:track:4su6NfBJ7YCWZEGAADNE6R
+Tibet Academy ~ Om Chanting Buddhist Music ~ spotify:track:3kgpNH2ZsvvvR8rN1B8kQ3
+Sound Ideas ~ Large Group of Young Monks Chanting Buddhist Scriptures in a Large Reverberant Room ~ spotify:track:1lc5yL8R1JbwmVR9qFD4EN
+Tabitha Andersson ~ Waves Meditation ~ spotify:track:4Eb4xmJmYHq0q8h9fxuoep
+Lama Gangchen Rinpoche ~ The Healing Power of Medicine Buddha ~ spotify:track:1XLomyBaww6GEn3KBbfKxT
+Lama Gangchen Rinpoche ~ The Healing Power of Black Manjushri ~ spotify:track:3LqM4HiL3RBvPj07PBeJ2c
+Kendrick Lamar ~ Poetic Justice ~ spotify:track:2P3SLxeQHPqh8qKB6gtJY2
+Meditation+Meditation Spa+Spa+Deep Sleep Meditation+Outside Broadcast Recording ~ Dulled White Noise ~ spotify:track:614zXWwypRtHvaTqWQ9w3s
+Lama Michel Rinpoche ~ Long Life Prayer for Lama Gangchen Rinpoche ~ spotify:track:0iKb9R1jq8expZdAkd5ho7
+Tibetan Buddhist Monks ~ Sherab nyingpo ~ spotify:track:6IJvzKFUCGtab21V3PgzqV
+Tibetan Buddhist Monks ~ Tantric Music I ~ spotify:track:6YWfdEjhzTUAP6pyPLQUCJ
+Yoga Musik Dreamer ~ Buddhist Music for Wellness ~ spotify:track:1xnbFztg57gZvoXZXraLBz
+Lama Michel Rinpoche ~ The 8 Auspicious Prayer ~ spotify:track:6C7A5sTuCIHFYTudtwHCvr
+Lama Michel Rinpoche ~ Long Life Prayer for Lama Michel Rinpoche ~ spotify:track:6GtuTBA21Nt3yx0Jptnoh0
+John Murray ~ Monks Chanting Om (C Natural) ~ spotify:track:6029L2lzR2KlCjYuLvQ1qn
+Lounge relax ~ Relax Your Mind ~ spotify:track:7JOwNmDxZ7AzoARj15EHFN
+Seoul Music Ensemble ~ Buddhist Melody ~ spotify:track:41Duk0THGmNiw3H3u7E5uz
+Lama Surya Das & Steven Halpern ~ Female Buddha Taras Mantra - Tibetan Chant plus Urban Groove ~ spotify:track:3SvZOri3IfrcrlOpbqp8zx
+Lama Gangchen United Peace Voices ~ Crystal Massage of Guyasamaja ~ spotify:track:0NcXpqMuybOU1Kf2G0MSYo
+Lama Surya Das & Steven Halpern ~ The Wisdom Mantra - Tibetan Chant plus Urban Groove ~ spotify:track:7sE1RZa8y8xkv01dKPIi28
+Deep Sleep ~ Deep Sleep ~ spotify:track:6ZRzL1MOtxoTGCCluk6463
+Asian Zen Meditation+Pink Noise+Meditation Awareness ~ Pink-Mauve Split Track ~ spotify:track:7BzwCZNpveSlBivQjpY2mo
+Lama Michel Rinpoche ~ Request Prayer to the Guru ~ spotify:track:0whpxaSPwYssfhwB0sPMQl
+The Lonely Island+Adam Levine+Kendrick Lamar ~ YOLO ~ spotify:track:5KGLJFlE9iAjKubfW07ZZy
+Kundalini: Yoga, Meditation, Relaxation ~ Yoga Meditation and Relaxation ~ spotify:track:3SrEmZTtPBo5Mzsa7qRsQE
+Pema Dechen+United Peace Voices ~ Lama Tsong Khapa Mantra ~ spotify:track:5YI6BwkltDQUFPkGgipskr
+Tibetan Buddhist Monks ~ Dugkar ~ spotify:track:32zNIQgJRuegR9HSYH3GZW
+Meredith Monk ~ Walking Song ~
+Rain Sounds ~ White Noise ~ spotify:track:7dTyZl4cBRKnPBeq1fdrHY
+Lounge relax ~ Relax Your Mind ~ spotify:track:7JOwNmDxZ7AzoARj15EHFN
+Lama Gangchen United Peace Voices ~ Crystal Massage of Guyasamaja ~ spotify:track:0NcXpqMuybOU1Kf2G0MSYo
+Kendrick Lamar ~ Poetic Justice ~ spotify:track:2P3SLxeQHPqh8qKB6gtJY2
+Kundalini: Yoga, Meditation, Relaxation ~ Yoga Meditation and Relaxation ~ spotify:track:3SrEmZTtPBo5Mzsa7qRsQE
+Deep Sleep ~ Delta Waves for Deep Healing Sleep ~ spotify:track:3YMOXCsCYZTSdGMOZz8SzI
+Zen Music Garden ~ Tibetan Chakra Meditation ~ spotify:track:2lTPby1tReazLGjgih2kam
+Kundalini: Yoga, Meditation, Relaxation ~ Breathe ~ spotify:track:2DcmhjYX4EPPPNQ8h3nCGS
+Mindfulness Meditation Music Spa Maestro ~ Mindfulness Meditation ~ spotify:track:2Cd1jXWkkCJtGhir1jxY2T
+Deep Sleep ~ Deep Sleep ~ spotify:track:6ZRzL1MOtxoTGCCluk6463

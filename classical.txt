@@ -5,7 +5,6 @@ Ludwig van Beethoven ~ Piano Sonata No. 14 (Quasi una fantasia) in C-Sharp Minor
 Ludwig van Beethoven ~ Bagatelle No. 25 in A Minor, WoO 59, "Für Elise" ~ spotify:track:5ItJk6eoKu73Q6gyRyarvk
 Ludwig van Beethoven ~ Sonata No. 14 in C-Sharp Minor for Piano, Op. 27:2, "Moonlight Sonata": Adagio sostenuto ~ spotify:track:2X7SmzU5DHxvtjd8FzLlbU
 Ludwig van Beethoven ~ Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2, "Moonlight": I. Adagio sostenuto ~ spotify:track:5t0E9V1RiHBflzs71pfGGG
-Ludwig van Beethoven ~ Fuer Elise ~ spotify:track:7cfTba1xLFkHPpVJANHM9I
 Ludwig van Beethoven ~ Piano Sonata No. 8 in C Minor, Op. 13, "Pathetique": II. Adagio cantabile (The Age of Innocence) ~ spotify:track:7m06KAvy8PVgHJya3jqDei
 Ludwig van Beethoven ~ Bagatelle in A minor, WoO 59 -"Für Elise" - Live At The Royal Albert Hall/2012 ~ spotify:track:1NpSq9rhyxcDh6dLtOxnNh
 Ludwig van Beethoven ~ The Moonlight Sonet ~ spotify:track:0z46NvGBqk5SmxSNV7UcQt
@@ -13,7 +12,6 @@ Wolfgang Amadeus Mozart ~ Sonata No. 11 A major, KV 331:Rondo: alla turka ~
 Wolfgang Amadeus Mozart ~ Piano Sonata No. 17 in B-Flat Major, K. 570: I. Allegro ~ spotify:track:6afCLJC9JzVe6D5aicyNCK
 Wolfgang Amadeus Mozart ~ String Quartet No. 15 in D Minor, K. 421 (Haydn Quartet No. 2): I. Allegro ~ spotify:track:2dwa2jBvoydEvCY0LnEs6w
 Wolfgang Amadeus Mozart ~ Mozart: Requiem in D Minor, K. 626: VIII. Lacrimosa ~ spotify:track:1npqP0Epwvvc1jzudkkmVB
-Wolfgang Amadeus Mozart ~ Sonata No. 8 in D major - Rondo allegro ~ spotify:track:1rItr7SF7r1FDKhFRvahV6
 Richard Stoltzman ~ Concerto in B-flat for Bassoon, K.191 (Arranged for Clarinet): Andante ma adagio ~ spotify:track:7A4mkHcr6eZ5qMOWiDXmDe
 Wolfgang Amadeus Mozart ~ Vesperae solennes de confessore, K. 339: V. Laudate Dominum ~ spotify:track:3KA3NVkLDa35XDJzmFrHSs
 Wolfgang Amadeus Mozart ~ Sonata No. 9 in A Minor, K. 310: I. Allegro maestoso ~ spotify:track:37PJ4xHyuxmwEeJuLln9Nq
@@ -29,18 +27,14 @@ Johann Sebastian Bach ~ Concerto No. 1 in F Major, BWV 1046: III. Allegro ~ spot
 Johann Sebastian Bach ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: II. Adagio ~ spotify:track:0l9cmIWTkF6W4A9vip5GMo
 Johann Sebastian Bach ~ Concerto No. 1 in F Major, BWV 1046: IV. Menuet - Trio I - Polonaise - Trio II ~ spotify:track:7Lsitp4OIYU2aTof7GuKkO
 Johann Sebastian Bach ~ Brandenburg Concerto No. 2 in F Major, BWV 1047: III. Allegro assai ~ spotify:track:18z5ddRvuTKmgmvsbDKiUu
-Frédéric Chopin ~ Nocturne in E-Flat Major, Op. 9, No.2 ~ spotify:track:24A3HjyT5sGnrejr7yLDod
-Frédéric Chopin ~ Ballade No. 1 in G Minor, Op. 23 ~ spotify:track:3XnR6bll287JuNE1hYVZRG
 Frédéric Chopin ~ Nocturne in C minor, Op. 48, No. 1 ~ spotify:track:0gUk9EVhSc0JnBZTTEZ85h
 Frédéric Chopin ~ 24 Preludes, Op. 28: Prelude No.4 in E Minor ~ spotify:track:0bhMhHUJHJ8YINNo7Vi5mH
-Frédéric Chopin ~ Walzes Op. 64 No 2 in C sharp minor ~ spotify:track:0086KbT2LJdWqaPsqkOKwL
 Frédéric Chopin ~ Concerto No. 1 in E Minor for Piano and Orchestra, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZhMfyFRYTU9lY9suXStqG
 Frédéric Chopin ~ Nocturne No. 1 in F Minor Op.55 ~ spotify:track:50DjrQR7yqoNbNbJ5a5yoK
 Frédéric Chopin ~ Piano Concerto No. 1 in E minor, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZWvS6dZ1WXYekWf8TeG5D
 Frédéric Chopin ~ Nocturne Op 27 No. 2 in D flat Minor - Lento Sostenuto ~ spotify:track:7EaBYGTMdviS1tblkEFK1D
 Frédéric Chopin ~ Nocturne in C minor, Op. 48, No. 1 ~ spotify:track:0gUk9EVhSc0JnBZTTEZ85h
 Carl Orff ~ Carmina Burana: XXV. O Fortuna ~
-Carl Orff ~ O Fortuna from Carmina Burana - Vocal ~ spotify:track:0DHIkKybRhYScZkGQU8XTL
 Carl Orff ~ Carmina Burana: IV. Omnia Sol temperat ~
 Carl Orff ~ Carmina Burana: VI. Tanz ~
 Carl Orff ~ Carmina Burana: XI. Estuans interius ~
@@ -51,5 +45,136 @@ Carl Orff ~ Carmina Burana: I. O Fortuna ~
 Carl Orff ~ Carmina Burana: V. Ecce gratum ~
 Ludwig van Beethoven ~ Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2, "Moonlight": I. Adagio sostenuto ~ spotify:track:5t0E9V1RiHBflzs71pfGGG
 The Piano ~ Amazing Short ~
-Mad World ~ Mad World (Feat. Michael Andrews) ~ spotify:track:3JOVTQ5h8HGFnDdp4VT3MP
 Ultima Thule ~ 09 Fädernesland ~ spotify:track:4Pox9WCE41pqcGmsfyuRis
+Frédéric Chopin+Bella Davidovich+Sir Neville Marriner ~ Concerto No. 1 in E Minor for Piano and Orchestra, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZhMfyFRYTU9lY9suXStqG
+Wolfgang Amadeus Mozart+Christoph Eschenbach ~ Sonata No. 16 in C Major for Piano, K. 545, "Sonata facile": I. Allegro ~ spotify:track:39YQn6BJnOOZPpc6xCfCRN
+Johann Sebastian Bach+Freiburger Barockorchester ~ Concerto No. 1 in F Major, BWV 1046: IV. Menuet - Trio I - Polonaise - Trio II ~ spotify:track:7Lsitp4OIYU2aTof7GuKkO
+Ludwig van Beethoven+Jenő Jandó ~ Piano Sonata No. 8 in C Minor, Op. 13, "Pathetique": II. Adagio cantabile (The Age of Innocence) ~ spotify:track:7m06KAvy8PVgHJya3jqDei
+Nikolaus Harnoncourt ~ Mozart: Requiem in D Minor, K. 626: VIII. Lacrimosa ~ spotify:track:1npqP0Epwvvc1jzudkkmVB
+Wolfgang Amadeus Mozart+Yoshiko Okada ~ Piano Sonata No. 13 in B-Flat Major, K. 333: III. Allegretto grazioso ~ spotify:track:2wLbmJqRyvFcmETMMYRnoh
+Frédéric Chopin+Vladimir Feltsman ~ Nocturne in E-Flat Major, Op. 9, No.2 ~ spotify:track:24A3HjyT5sGnrejr7yLDod
+Wolfgang Amadeus Mozart+Musica para Estudiar ~ Sonata No. 8 in D major - Rondo allegro ~ spotify:track:1rItr7SF7r1FDKhFRvahV6
+Ludwig van Beethoven+Martin Jacoby ~ Bagatelle No. 25 in A Minor, WoO 59, "Für Elise" ~ spotify:track:2AR2efIUWwB6hHJBKjmERI
+Frédéric Chopin+Classical Study Music ~ Nocturne Op 27 No. 2 in D flat Minor - Lento Sostenuto ~ spotify:track:5C1BSCr44xrZ94tlGqWUPK
+Wolfgang Amadeus Mozart+Quatuor Ysaÿe ~ String Quartet No. 15 in D Minor, K. 421 (Haydn Quartet No. 2): I. Allegro ~ spotify:track:2dwa2jBvoydEvCY0LnEs6w
+Frédéric Chopin+Bedtime Baby ~ Walzes Op. 64 No 2 in C sharp minor ~ spotify:track:0086KbT2LJdWqaPsqkOKwL
+Johann Sebastian Bach+Karl Richter Chamber Orchestra+Karl Richter ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: I. (Allegro) ~ spotify:track:1YB5tMBxhgVfowXEbKXYM5
+Carl Orff+John Williams ~ O Fortuna from Carmina Burana - Vocal ~ spotify:track:0DHIkKybRhYScZkGQU8XTL
+Ludwig van Beethoven+Valentina Lisitsa ~ Bagatelle in A minor, WoO 59 -Für Elise - Live At The Royal Albert Hall/2012 ~
+Johann Sebastian Bach+Simone Stella ~ Toccata, Adagio and Fugue in C Major, BWV 564: III. Fugue ~ spotify:track:1hTVAqGWxPGQWJ9Kb0PweW
+Frédéric Chopin+Maria Paloma ~ Nocturne No. 1 in F Minor Op.55 ~ spotify:track:04uuUNhvj9jmlavcA9IPTk
+Frédéric Chopin+Janusz Olejniczak ~ Nocturne in C minor, Op. 48, No. 1 ~ spotify:track:3U901vTsG4a3JcLF3aVDQr
+Ludwig van Beethoven+Mélodie Zhao ~ Piano Sonata No. 14 (Quasi una fantasia) in C-Sharp Minor, Op. 27 No. 2: I. Adagio sostenuto ~ spotify:track:72CnQExnlXk6vB6D0ri0YZ
+Johann Sebastian Bach+Freiburger Barockorchester ~ Concerto No. 1 in F Major, BWV 1046: III. Allegro ~ spotify:track:1GHS7Gz64sLT4mUG8eLohJ
+Johann Sebastian Bach+Carlo Curley ~ Toccata, Adagio and Fugue in C Major, BWV 564: II. Adagio ~ spotify:track:57DnAH0MdncG6hU6fxQ0Gx
+Wolfgang Amadeus Mozart+Sara Macliver+Brett Weymark ~ Vesperae solennes de confessore, K. 339: V. Laudate Dominum ~ spotify:track:3KA3NVkLDa35XDJzmFrHSs
+Frédéric Chopin+Murray Perahia ~ 24 Preludes, Op. 28/ Prelude No.4 in E Minor ~
+Johann Sebastian Bach+Michel Piguet+Catherine Mackintosh+Ku Ebbinge+Clare Shanks+Felix Warnock+Christopher Hogwood ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: II. Adagio ~ spotify:track:05LyjKvG1bqG3k6T1ajPTB
+Johann Sebastian Bach+Simon Preston ~ Toccata And Fugue In D Minor, BWV 565: Toccata ~ spotify:track:4HE2Ex0bjbj3YNXmV01OoM
+Ludwig van Beethoven+Claudio Arrau ~ Sonata No. 14 in C-Sharp Minor for Piano, Op. 27:2, "Moonlight": I. Adagio sostenuto ~ spotify:track:59pxNtyQrX4KEnt8pmsaqa
+Johann Sebastian Bach+Bernhard Römer ~ Toccata, adagio and fugue in C Major, BWV 564: I. Toccata ~ spotify:track:7My8cT39XkYLUE6VWOSHaj
+Richard Stoltzman+Wolfgang Amadeus Mozart+Alexander Schneider ~ Concerto in B-flat for Bassoon, K.191 (Arranged for Clarinet): Andante ma adagio ~ spotify:track:7A4mkHcr6eZ5qMOWiDXmDe
+Ludwig van Beethoven+Jenő Jandó ~ Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2, "Moonlight": I. Adagio sostenuto ~ spotify:track:5t0E9V1RiHBflzs71pfGGG
+Ludwig van Beethoven+Classical Study Music ~ Fuer Elise ~ spotify:track:7cfTba1xLFkHPpVJANHM9I
+Ludwig van Beethoven+Study Music Academy ~ The Moonlight Sonet ~ spotify:track:1Kj2I5zq35lmtaw7ZpDe9z
+Wolfgang Amadeus Mozart+Boyan Vodenitcharov ~ Piano Sonata No. 17 in B-Flat Major, K. 570: I. Allegro ~ spotify:track:6afCLJC9JzVe6D5aicyNCK
+Frédéric Chopin+Arthur Rubinstein ~ Ballade No. 1 in G Minor, Op. 23 ~ spotify:track:3XnR6bll287JuNE1hYVZRG
+Johann Sebastian Bach+Dunedin Consort Chorus+John Butt ~ Brandenburg Concerto No. 2 in F Major, BWV 1047: III. Allegro assai ~ spotify:track:18z5ddRvuTKmgmvsbDKiUu
+Wolfgang Amadeus Mozart+Daniel ~ Ben Pienaar-Sonata No. 9 in A Minor, K. 310/ I. Allegro maestoso ~
+Frédéric Chopin+Idil Biret+Slovak State Philharmonic Orchestra, Kosice+Robert Stankovsky ~ Piano Concerto No. 1 in E minor, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZWvS6dZ1WXYekWf8TeG5D
+The Magic Flute ~ Magic Flute - Instrumental Edit ~ spotify:track:1p8VUiNWVqYtV9fz88CTlY
+The Magic Flute ~ Magic Indian Flute ~ spotify:track:0OUaWbAgVNPPVAUyLHhBJo
+The Magic Flute ~ The Magic Flute, K. 620, Act II: Act II: Aria: Der Holle Rache kocht in meinem Herzen (Queen of the Night) ~ spotify:track:38gwrE0xxk2M9fx0mF6nu0
+The Magic Flute ~ The Marriage of Figaro Overture, KV 492 ~ spotify:track:23if4cvw0UI7c8Uc5OOvss
+The Magic Flute ~ The Magic Flute, K. 620: Ouverture ~ spotify:track:6xyv4w3pebde3xLehWais3
+The Magic Flute ~ The Magic Flute, K. 620, Act II: Act II: Pa-Pa-Pa-Pa-Pa-Pa-Papagena! (Papageno, Papagena) ~ spotify:track:3L6v7IFxhgry4gMjNhEpYI
+The Magic Flute ~ So Wonderful (The Magic Flute) ~ spotify:track:1AMCV64X3qj6xNB7KC0rYZ
+The Magic Flute ~ The Magic Flute, K. 620, Act I: Act I: Zu Hilfe! Zu Hilfe! (Tamino, the Three Ladies) ~ spotify:track:37dgiFtHYuwRWuC3N1vv8y
+The Magic Flute ~ The Magic Flute, K. 620, Act I: Act I: Arie: Der Vogelfanger bin ich ja (Papageno) ~ spotify:track:5TujdkThvTsFVXdfAm5rgh
+The Magic Flute ~ Die Zauberflöte (The Magic Flute, K. 620); Aria (No. 14), "Queen of the Night" (Der Hölle Rache Kocht) ~ spotify:track:1aD429sLYbZQcA7qzaiaM9
+The Pearl Fishers ~ The Pearlfishers: Au fond du temple ~ spotify:track:1nlu5qHbAcMN1qMh1xzMBA
+The Pearl Fishers ~ The Pearl Fishers ~ spotify:track:3xY8bjqzO2u5PEnFHTT8Ux
+The Pearl Fishers ~ Les pêcheurs de perles (The Pearl Fishers), Act 1: "Je crois entendre encore" (Romance) ~ spotify:track:0ImEhz5lWHYcx7LdU5z6Nn
+The Pearl Fishers ~ The Pearl Fishers, Act I: "Au fond du temple saint" ~ spotify:track:0UrWa5FpkBOiXWMcX7RyU0
+The Pearl Fishers ~ Act I: Au fond du temple saint ~ spotify:track:54YVTXOyZqsLYtfRpHw9uA
+The Pearl Fishers ~ Bizet: The Pearl Fishers: Au fond du temple saint - Act One ~ spotify:track:7oihvY6oCz0c3U2Fc8UtcM
+The Pearl Fishers ~ Je crois entendre encore (From "The Pearl Fishers") ~ spotify:track:6ABFdM7SSxuKC7hrQRKQWj
+The Pearl Fishers ~ Bizet: The Pearl Fishers: Je crois entendre encore - Act One ~ spotify:track:3tSsTtWPRUvvNn54qLZVE4
+The Pearl Fishers ~ Les Pêcheurs de perles - Opera in three acts (edition based on the original 1863 version; orchestration of restored material by Arthur Hammond) (1990 Digital Remaster), Act I: Au fond du temple saint (Temple Duet) (Nadir, Zurga) ~ spotify:track:76ICqe8dyJWQzDnWxNu9Y7
+The Pearl Fishers ~ Les pêcheurs de perles (The Pearl Fishers), Act 1: "Je crois entendre encore" (Romance) ~ spotify:track:2cmh4U6TkcXerAZNplFlzZ
+Nabucco ~ Nabucco / Act 3: Va, pensiero, sull'ali dorate ~ spotify:track:4UPPQcwiQJpmXYirbgicT9
+Nabucco ~ Nabucco : Overture ~ spotify:track:11V01GqMvxTtVEm65ny1nO
+Nabucco ~ Nabucco : "Va, pensiero, sull'ali dorate" ~ spotify:track:1KAbAYvp25DfVIDLMVTNDC
+Nabucco ~ Verdi: Nabucco, Act 3: "Va, pensiero, sull'ali dorate.." (Chorus) ~ spotify:track:1xZhDC1l6WuIcWNuzqLVsb
+Nabucco ~ Verdi: Nabucco, Act 3: "Va pensiero" (Chorus of the Hebrew Slaves) ~ spotify:track:26tfAzbA8h60Xt0XaH4hVJ
+Nabucco ~ Nabucco ~ spotify:track:5UsGUBboQgEBv05pVgMHb1
+Nabucco ~ Nabucco - Va pensiero ~ spotify:track:7HqrLuHKsRsr7rFcercL05
+Nabucco ~ Nabucco: Overture ~ spotify:track:30u4xjp2Ja2xKWD3MfaF68
+Nabucco ~ Nabucco: Sinfonia ~ spotify:track:2xhBlDiMZiWw4PLAeieXDK
+Nabucco ~ Nabucco, Act III: Va, pensiero, "Chorus of Hebrew Slaves" ~ spotify:track:6UeuTJFhob6Vg3fwZvBSYX
+Lakmé ~ Léo Delibes: Lakmé: I. Flower Duet ~ spotify:track:7e0N8u2VGlhN8Zb9oMrayK
+Lakmé ~ Léo Delibes: Lakmé: II. Bell Song ~ spotify:track:4gUboyKTXaezub4uPu0LgW
+Lakmé ~ Flower duet from Lakme - Remasterisé en 1987 ~ spotify:track:5stPdVFNnyEahYLpWs2akd
+Lakmé ~ The Flower Duet (From "Lakmé") ~ spotify:track:2xORus0TIDTVKatLletu1B
+Lakmé ~ Lakmé / Act 1: "Viens, Mallika, ... Dôme épais" (Flower Duet) ~ spotify:track:4L2D6eUEQOdvAyjc0khFAW
+Lakmé ~ Lakmé : Viens, Mallika, ... Dôme épais (Flower Duet) ~ spotify:track:0kIqfFWqVRVDM4VppOfaZR
+Lakmé ~ Lakmé (Act I): Flower Duet ~ spotify:track:1bd3HTish1c5sK71srccTA
+Lakmé ~ Lakmé / Act 1: Viens, Mallika, ... Dôme épais (Flower Duet) ~ spotify:track:2nI7rOSYklk4SZ3ccPvG2j
+Lakmé ~ Lakmé : "Sous le dôme épais" (Flower Duet) ~ spotify:track:4fqkPUtvywnIq6Ys7fELwU
+Lakmé ~ Lakmé, Act 1: "Sous le dome épais" (Flower Duet) ~ spotify:track:0fowTjWqv4MP5arBkBUT3N
+Madama Butterfly ~ Madama Butterfly (2008 - Remaster), Act II, First Part: Un bel di vedremo ~ spotify:track:2YyiX6MaEXUouzkWk37nGr
+Madama Butterfly ~ Madama Butterfly (1987 - Remaster), Act II: Un bel di vedremo ~ spotify:track:7fmX6tOus0R4rpZLDio6KK
+Madama Butterfly ~ Madame Butterfly, 1. Akt: Vogliatemi bene (Mona Lisa): Madama Butterfly, Act II: Un bel di, vedremo ~ spotify:track:6ATubA0MVPFdbyJ5RQJHs3
+Madama Butterfly ~ Madama Butterfly / Act 2: Con amor muore chi non può serbar vita con onore ~ spotify:track:696lKlTsLBBoGYCi7Pa9xy
+Madama Butterfly ~ Madama Butterfly : Un bel dì vedremo ~ spotify:track:3etVoLM4iu0enJNUYrBsbD
+Madama Butterfly ~ Madama Butterfly : "Coro a bocca chiusa" (Humming Chorus) ~ spotify:track:6O8cd3ru1WqUkHrUHWphaf
+Madama Butterfly ~ Madama Butterfly / Act 2: Coro a bocca chiusa (Humming Chorus) ~ spotify:track:5IqJz4dJudOD0ZJf6HdmOf
+Madama Butterfly ~ Madama Butterfly : "Coro a bocca chiusa" (Humming Chorus) ~ spotify:track:37WUJCcf0TVwE9Qg1LfT0a
+Madama Butterfly ~ Madama Butterfly (1986 - Remaster), Act II: Un bel dì vedremo (Butterfly) ~ spotify:track:5ZwYapRxUlbMuDNeWjwtnN
+Madama Butterfly ~ Madama Butterfly / Act 2: Coro a bocca chiusa (Humming Chorus) ~ spotify:track:524r6ROOuCxC4E1tCmnPTo
+Tristan und Isolde ~ Tristan und Isolde : Prelude ~ spotify:track:0WfO47wTYgWwVK5JVNzg8f
+Tristan und Isolde ~ Tristan und Isolde, Act I: Prelude ~ spotify:track:2rKK9kumTKIhMfZT5r8cVc
+Tristan und Isolde ~ Tristan und Isolde / Act 3: "Mild und leise wie er lächelt" (Isoldes Liebestod) - Live ~ spotify:track:0sJuDys8YxHQ3ltLn4Apo8
+Tristan und Isolde ~ Tristan und Isolde, Act III, Dritte Szene: Mild und leise wie er lächelt (Isolde) ~ spotify:track:3ZzTDUe3NLWYNgfIMsFuzL
+Tristan und Isolde ~ Wagner: Tristan und Isolde: Prelude to Act 1 ~ spotify:track:53x0VIaNqxlKBJ7LyerKGg
+Tristan und Isolde ~ Tannhäuser: Overture ~ spotify:track:5SQMNSf0Po6AMemhp58kmf
+Tristan und Isolde ~ Tristan und Isolde / Act 3: "Mild und leise wie er lächelt" (Isoldes Liebestod) ~ spotify:track:5IlwoNhsF1QC4HoDke1rjO
+Tristan und Isolde ~ Tristan und Isolde - Concert Version: Liebestod ~ spotify:track:38o81L8pnSMIctwvRMQcmi
+Tristan und Isolde ~ Wagner: Tristan und Isolde: Prelude to Act 1 ~ spotify:track:59gpDDaxxRhcpQAgnrHp1U
+Tristan und Isolde ~ Tristan und Isolde, WWV 90, Act I: Act I: Prelude ~ spotify:track:6SgqKaRmoCRCMsAIrtEvqx
+Rigoletto ~ 6 Consolations, S. 172: No. 3 In D Flat Major (Lento, placido) ~ spotify:track:1L4NadMj3Jj7YgGaikyhfr
+Rigoletto ~ Rigoletto / Act 3: "La donna è mobile" ~ spotify:track:2CACso0N7JssbeKSdN4Drl
+Rigoletto ~ The Melody Within ~ spotify:track:4b37qBHC4LG1OSOqtt8GPC
+Rigoletto ~ Rigoletto: La donna è mobile ~ spotify:track:1xZVE6ZxXYQdPbxLltV05t
+Rigoletto ~ The Curse ~ spotify:track:7oSkFQRFS7e7pQw2zFeNvW
+Rigoletto ~ Rigoletto, Atto III, Canzone: "La donna è mobile" ~ spotify:track:0OVK1MteIBXXJARVHFFhXY
+Rigoletto ~ Rigoletto / Act 3: "Bella figlia dell'amore" ~ spotify:track:1HMN7eojriCtjSW1TpAGQT
+Rigoletto ~ Rigoletto / Act 3: Rigoletto: La donna è mobile - Live At Central Park, New York/2011 ~ spotify:track:55ZAkCPkxaMSAFAYueBZZE
+Rigoletto ~ Verdi: Rigoletto, Act 3: "La donna è mobile" (Duke of Mantua) ~ spotify:track:0ayRg4paWdfeTb5yOkaqTT
+Rigoletto ~ Rigoletto / Act 1: "Questa o quella" ~ spotify:track:4bbsvOR3pHLaqpW91BCOQq
+Johann Sebastian Bach+Freiburger Barockorchester ~ Concerto No. 1 in F Major, BWV 1046: IV. Menuet - Trio I - Polonaise - Trio II ~ spotify:track:7Lsitp4OIYU2aTof7GuKkO
+Johann Sebastian Bach+Simon Preston ~ Toccata And Fugue In D Minor, BWV 565: Toccata ~ spotify:track:4HE2Ex0bjbj3YNXmV01OoM
+Johann Sebastian Bach+Carlo Curley ~ Toccata, Adagio and Fugue in C Major, BWV 564: II. Adagio ~ spotify:track:57DnAH0MdncG6hU6fxQ0Gx
+Ludwig van Beethoven+Claudio Arrau ~ Sonata No. 14 in C-Sharp Minor for Piano, Op. 27:2, "Moonlight Sonata": Adagio sostenuto ~ spotify:track:2X7SmzU5DHxvtjd8FzLlbU
+Ludwig van Beethoven+Jenő Jandó ~ Piano Sonata No. 14 in C-Sharp Minor, Op. 27, No. 2, "Moonlight": I. Adagio sostenuto ~ spotify:track:5t0E9V1RiHBflzs71pfGGG
+Wolfgang Amadeus Mozart+Yoshiko Okada ~ Piano Sonata No. 13 in B-Flat Major, K. 333: III. Allegretto grazioso ~ spotify:track:2wLbmJqRyvFcmETMMYRnoh
+Johann Sebastian Bach+Dunedin Consort Chorus+John Butt ~ Brandenburg Concerto No. 2 in F Major, BWV 1047: III. Allegro assai ~ spotify:track:18z5ddRvuTKmgmvsbDKiUu
+Wolfgang Amadeus Mozart+Daniel ~ Ben Pienaar-Sonata No. 9 in A Minor, K. 310/ I. Allegro maestoso ~
+Johann Sebastian Bach+Freiburger Barockorchester ~ Concerto No. 1 in F Major, BWV 1046: III. Allegro ~ spotify:track:1GHS7Gz64sLT4mUG8eLohJ
+Johann Sebastian Bach+Karl Richter Chamber Orchestra+Karl Richter ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: I. (Allegro) ~ spotify:track:1YB5tMBxhgVfowXEbKXYM5
+Nikolaus Harnoncourt ~ Mozart: Requiem in D Minor, K. 626: VIII. Lacrimosa ~ spotify:track:1npqP0Epwvvc1jzudkkmVB
+Wolfgang Amadeus Mozart+Sara Macliver+Brett Weymark ~ Vesperae solennes de confessore, K. 339: V. Laudate Dominum ~ spotify:track:3KA3NVkLDa35XDJzmFrHSs
+Frédéric Chopin+Murray Perahia ~ 24 Preludes, Op. 28/ Prelude No.4 in E Minor ~
+Wolfgang Amadeus Mozart+Boyan Vodenitcharov ~ Piano Sonata No. 17 in B-Flat Major, K. 570: I. Allegro ~ spotify:track:6afCLJC9JzVe6D5aicyNCK
+Frédéric Chopin+Idil Biret+Slovak State Philharmonic Orchestra, Kosice+Robert Stankovsky ~ Piano Concerto No. 1 in E minor, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZWvS6dZ1WXYekWf8TeG5D
+Ludwig van Beethoven+Jenő Jandó ~ Piano Sonata No. 8 in C Minor, Op. 13, "Pathetique": II. Adagio cantabile (The Age of Innocence) ~ spotify:track:7m06KAvy8PVgHJya3jqDei
+Ludwig van Beethoven+Martin Jacoby ~ Bagatelle No. 25 in A Minor, WoO 59, "Für Elise" ~ spotify:track:2AR2efIUWwB6hHJBKjmERI
+Frédéric Chopin+Bella Davidovich+Sir Neville Marriner ~ Concerto No. 1 in E Minor for Piano and Orchestra, Op. 11: II. Romance: Larghetto ~ spotify:track:1ZhMfyFRYTU9lY9suXStqG
+Richard Stoltzman+Wolfgang Amadeus Mozart+Alexander Schneider ~ Concerto in B-flat for Bassoon, K.191 (Arranged for Clarinet): Andante ma adagio ~ spotify:track:7A4mkHcr6eZ5qMOWiDXmDe
+Johann Sebastian Bach+Simone Stella ~ Toccata, Adagio and Fugue in C Major, BWV 564: III. Fugue ~ spotify:track:1hTVAqGWxPGQWJ9Kb0PweW
+Ludwig van Beethoven+Valentina Lisitsa ~ Bagatelle in A minor, WoO 59 -Für Elise - Live At The Royal Albert Hall/2012 ~
+Wolfgang Amadeus Mozart+Christoph Eschenbach ~ Sonata No. 16 in C Major for Piano, K. 545, "Sonata facile": I. Allegro ~ spotify:track:39YQn6BJnOOZPpc6xCfCRN
+Johann Sebastian Bach+Bernhard Römer ~ Toccata, adagio and fugue in C Major, BWV 564: I. Toccata ~ spotify:track:7My8cT39XkYLUE6VWOSHaj
+Johann Sebastian Bach+Michel Piguet+Catherine Mackintosh+Ku Ebbinge+Clare Shanks+Felix Warnock+Christopher Hogwood ~ Brandenburg Concerto No. 1 in F Major, BWV 1046: II. Adagio ~ spotify:track:05LyjKvG1bqG3k6T1ajPTB
+Wolfgang Amadeus Mozart+Quatuor Ysaÿe ~ String Quartet No. 15 in D Minor, K. 421 (Haydn Quartet No. 2): I. Allegro ~ spotify:track:2dwa2jBvoydEvCY0LnEs6w
+Ludwig van Beethoven+Mélodie Zhao ~ Piano Sonata No. 14 (Quasi una fantasia) in C-Sharp Minor, Op. 27 No. 2: I. Adagio sostenuto ~ spotify:track:72CnQExnlXk6vB6D0ri0YZ
