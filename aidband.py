@@ -198,8 +198,7 @@ def play_list(name):
 		avoutput('%s playlist is empty, nothing to play.' % _simple_listname())
 
 def search_queue(search):
-	search = search.lower()
-	match = lambda s: max([_match_ratio(t.lower(),search) for t in (s.artist,s.name,s.name+' '+s.artist)])
+	match = lambda s: max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
 	similar = [song for song in playqueue if match(song) > 0.6]
 	return sorted(similar, key=match, reverse=True)
 
