@@ -12,5 +12,5 @@ while true; do
 	dos2unix *.py *.sh
 	while [ "`ss |grep 3303`" != "" ]; do sleep 1; echo 'w8ing for port to auto-close'; done
 	sleep 10
-	python3 aidband.py
+	python3 aidband.py --without-spotify
 done
