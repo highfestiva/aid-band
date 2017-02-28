@@ -1,0 +1,1 @@
+https://username:password@someproxy.acme.com:8080

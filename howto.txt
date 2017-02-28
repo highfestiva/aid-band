@@ -1,6 +1,0 @@
-1. pip install ws4py.
-2. pip install google.
-3. pip install protobuf.
-4. Install libxml, libxslt and iconv includes+libs+dlls from ftp://ftp.zlatkovic.com/libxml/
-5. Install zlib lib from ftp://ftp.zlatkovic.com/libxml/
-6. pip install lxml

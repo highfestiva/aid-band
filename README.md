@@ -1,3 +1,7 @@
+# Web proxy
+Rename _proxy_settings.txt proxy_settings.txt and fill in your username+password if applicable.
+
+# ToDo
 -SR live radio
 -SR radio search
 -backspace
