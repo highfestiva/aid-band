@@ -20,42 +20,42 @@ port = int(port)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def handle_keys(keys):
-	if '<quit>' in keys:
-		s.close()
-		sys.exit(0)
+    if '<quit>' in keys:
+        s.close()
+        sys.exit(0)
 keypeeker.init(handle_keys)
 
 try:
-	s.connect((host,port))
-	s.settimeout(1)
-	pw = [open('password').read()+'\\r'] if options.usepw else []
-	sendqueue = pw + options.commands
-	bb = b''
-	while True:
-		try:
-			bb += s.recv(1)
-			sys.stdout.write(bb.decode(coding, 'ignore'))
-			sys.stdout.flush()
-			bb = b''
-		except socket.timeout:
-			if sendqueue:
-				d = eval("'''"+sendqueue[0]+"'''")
-				s.send(d.encode())
-				sendqueue = sendqueue[1:]
-				if not sendqueue and options.commands:
-					break
-				continue
-		except UnicodeDecodeError as e:
-			pass
-		ch = keypeeker.peekstr()
-		if ch:
-			s.send(ch.encode(coding, 'ignore'))
-	s.close()
+    s.connect((host,port))
+    s.settimeout(1)
+    pw = [open('password').read()+'\\r'] if options.usepw else []
+    sendqueue = pw + options.commands
+    bb = b''
+    while True:
+        try:
+            bb += s.recv(1)
+            sys.stdout.write(bb.decode(coding, 'ignore'))
+            sys.stdout.flush()
+            bb = b''
+        except socket.timeout:
+            if sendqueue:
+                d = eval("'''"+sendqueue[0]+"'''")
+                s.send(d.encode())
+                sendqueue = sendqueue[1:]
+                if not sendqueue and options.commands:
+                    break
+                continue
+        except UnicodeDecodeError as e:
+            pass
+        ch = keypeeker.peekstr()
+        if ch:
+            s.send(ch.encode(coding, 'ignore'))
+    s.close()
 except socket.error as e:
-	value,message = e.args[:2]
-	try: s.close()
-	except: pass
-	print("Socket closed: " + message)
+    value,message = e.args[:2]
+    try: s.close()
+    except: pass
+    print("Socket closed: " + message)
 
 keypeeker.stop()
 kill_self()

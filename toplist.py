@@ -3,19 +3,19 @@
 from urllib.request import urlopen
 
 def search(country='se', count=50):
-	url = 'http://spotifycharts.com/api/?recurrence=weekly&date=latest&offset=0&limit=%i&type=regional&country=%s' % (count, country)
-	json = urlopen(url).read().decode()
-	py = json.replace('true','True').replace('false','False').replace('null','None')
-	toplist_dict = eval(py)
-	result = []
-	for e in toplist_dict['entries']['items']:
-		track = e['track']
-		result += [{	'name':		track['name'],
-				'popularity':	e['plays'],
-				'artists':	track['artists'],
-				'uri':		'spotify:track:'+track['id'],	}]
-	return result
+    url = 'http://spotifycharts.com/api/?recurrence=weekly&date=latest&offset=0&limit=%i&type=regional&country=%s' % (count, country)
+    json = urlopen(url).read().decode()
+    py = json.replace('true','True').replace('false','False').replace('null','None')
+    toplist_dict = eval(py)
+    result = []
+    for e in toplist_dict['entries']['items']:
+        track = e['track']
+        result += [{    'name':        track['name'],
+                'popularity':    e['plays'],
+                'artists':    track['artists'],
+                'uri':        'spotify:track:'+track['id'],    }]
+    return result
 
 if __name__ == '__main__':
-	for track in search():
-		print(track['name'], 'by', track['artists'][0]['name'])
+    for track in search():
+        print(track['name'], 'by', track['artists'][0]['name'])
