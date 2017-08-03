@@ -16,7 +16,6 @@ import random
 import re
 import sr_radio
 import speech
-from spotify import Client
 import subprocess
 import sys
 import threading
@@ -69,6 +68,7 @@ def spotify_init():
 	try:
 		if not muzaks and not options.nosp:
 			username,password = open('sp_credentials','rt').read().split('~~~')
+			from spotify import Client
 			muzaks = Client(username,password)
 	except Exception as e:
 		print('Exception during spotify login:', e)

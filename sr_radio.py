@@ -8,20 +8,27 @@ import subprocess
 import urllib.parse
 
 
-pages = re.compile(r'(q=http.*?://[a-z\.-_]*?sverigesradio\.se/sida/avsnitt).+?(programid.+?)&')
-pods = re.compile(r'(/topsy/ljudfil/.+?\.mp3)')
+pages = re.compile(r'(q=http.*?://[a-z\.-_]*?sverigesradio\.se/sida/avsnitt).+?programid=(\d+)')
+pods = re.compile(r'(/topsy/ljudfil/.+?[\.-]mp3)')
+moreepisodes = [('http://sverigesradio.se/sida/episode/showmoreepisodelistitems?unitid=%s&page='+str(page)) for page in (0,1,2)]
 
 
 def _google_program(s):
+    print(s)
     param = urllib.parse.urlencode({'q': 'site:sverigesradio.se /sida/avsnitt %s' % s})
     url = 'https://www.google.se/search?%s' % param
-    html = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, stderr=subprocess.DEVNULL).decode()
+    html = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
     try: link = next(pages.finditer(html))
     except: return []
-    link = link.group(1)+'?'+link.group(2)
+    progid = link.group(2)
+    link = link.group(1) + '?programid=%s'
     link = urllib.parse.parse_qs(link)['q'][0].strip()
-    html = subprocess.check_output('curl %s' % link, stderr=subprocess.DEVNULL).decode()
-    return ['http://sverigesradio.se'+pod.group(1) for pod in pods.finditer(html)]
+    urls = []
+    for morepage in [link]+moreepisodes:
+        link = morepage % progid
+        html = subprocess.check_output('curl "%s"' % link, shell=True, stderr=subprocess.DEVNULL).decode()
+        urls += ['http://sverigesradio.se'+pod.group(1) for pod in pods.finditer(html)]
+    return urls
 
 def search(s):
     urls = _google_program(s)
