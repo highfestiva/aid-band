@@ -44,7 +44,9 @@ if not getch:
             ch,emuchars = emuchars[0],emuchars[1:]
             return ch
         def ir():
-            s = sys.stdin.read(1)
+            s = ''
+            while not s:
+                s = sys.stdin.read(1)
             #print(s,ord(s),end='\r\n')
             return s,ord(s)
         s,o = ir()
