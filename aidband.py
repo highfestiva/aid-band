@@ -22,6 +22,7 @@ import threading
 import time
 import traceback
 import vorbis_encoder
+import youtube_radio
 
 
 proc = None
@@ -81,18 +82,18 @@ def spotify_exit():
         muzaks.quit()
     muzaks = None
 
-def play_url(url, cachename):
+def play_url(url, cachewildcard):
     ok = False
     stop()
     spotify_init()
     global proc,start_play_time,cache_write_name,active_url
     cache_write_name = None
-    if cachename and allowcache: 
-        if not os.path.exists(cachename):
-            fns = glob(cachename.replace('-','*-',1))
-            if fns:
-                cachename = fns[0]
-        if mplayer and os.path.exists(cachename):
+    if cachewildcard and allowcache: 
+        fns = glob(cachewildcard)
+        cachename = fns[0] if fns else None
+        if not cachename:
+            cachename = youtube_radio.cache_song(url, cachewildcard)
+        if mplayer and cachename:
             cmd = [mplayer, cachename]
             proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             url = cachename
@@ -111,27 +112,27 @@ def play_url(url, cachename):
         elif url:
             print('Get me mplayer!')
     start_play_time = time.time()
-    active_url = url if url else cachename
+    active_url = url if url else cachewildcard
     return ok
 
 def remove_from_cache(song):
-    fn = _cachename(song)
-    if os.path.exists(fn):
+    wc = _cachewildcard(song)
+    for fn in glob(wc):
         os.remove(fn)
 
 def do_play_idx():
     global playqueue
     if playidx < len(playqueue):
         song = playqueue[shuffleidx[playidx]]
-        fn = ''
+        wildcard = ''
         if 'radio' not in listname:
-            fn = _cachename(song)
-            # if not os.path.exists(fn):
+            wildcard = _cachewildcard(song)
+            # if not os.path.exists(wildcard):
                 # return
         if not song.uri:
             update_url()
-        output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(fn))
-        if play_url(song.uri, fn):
+        output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(wildcard))
+        if play_url(song.uri, wildcard):
             song = ABSong(song.name,song.artist,song.uri)
             playqueue[shuffleidx[playidx]] = song
             return True
@@ -361,8 +362,8 @@ def _validate():
 def _simple_listname():
     return listname.split('_')[-1]
 
-def _cachename(song):
-    return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.ogg').replace('/','_').replace('\\','_').replace(':','_'))
+def _cachewildcard(song):
+    return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.*').replace('/','_').replace('\\','_').replace(':','_'))
 
 def _confixs(s):
     if 'win' in sys.platform.lower():
