@@ -47,6 +47,8 @@ if not getch:
             s = ''
             while not s:
                 s = sys.stdin.read(1)
+                if not s:
+                    sleep(0.1)
             #print(s,ord(s),end='\r\n')
             return s,ord(s)
         s,o = ir()

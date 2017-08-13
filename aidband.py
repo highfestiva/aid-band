@@ -94,7 +94,7 @@ def play_url(url, cachename):
                 cachename = fns[0]
         if mplayer and os.path.exists(cachename):
             cmd = [mplayer, cachename]
-            proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             url = cachename
             ok = True
     if not proc:
@@ -106,7 +106,7 @@ def play_url(url, cachename):
                 output("Won't play over spotify.")
         elif mplayer and url:
             cmd = [mplayer, _confixs(url)]
-            proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             ok = True
         elif url:
             print('Get me mplayer!')
@@ -198,8 +198,13 @@ def play_list(name):
         avoutput('%s playlist is empty, nothing to play.' % _simple_listname())
 
 def search_queue(search):
+    search = search.lower()
+    search_words = search.split()
+    min_match = max(1, len(search_words)//2)
+    similar = [song for song in playqueue if len([1 for lword in search_words if lword in song.searchartist or lword in song.searchname]) >= min_match]
     match = lambda s: max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
-    similar = [song for song in playqueue if match(song) > 0.6]
+    if not similar:
+        similar = [song for song in playqueue if match(song) > 0.6]
     return sorted(similar, key=match, reverse=True)
 
 def search_music(search):

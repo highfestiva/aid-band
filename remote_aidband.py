@@ -34,7 +34,10 @@ try:
     while True:
         try:
             bb += s.recv(1)
-            sys.stdout.write(bb.decode(coding, 'ignore'))
+            try:
+                sys.stdout.write(bb.decode())
+            except:
+                sys.stdout.write(bb.decode(coding, 'ignore'))
             sys.stdout.flush()
             bb = b''
         except socket.timeout:
@@ -49,7 +52,7 @@ try:
             pass
         ch = keypeeker.peekstr()
         if ch:
-            s.send(ch.encode(coding, 'ignore'))
+            s.send(ch.encode())
     s.close()
 except socket.error as e:
     value,message = e.args[:2]
