@@ -60,6 +60,7 @@ def cache_song(url, wildcard):
         return dst_filename
 
 
-songs = search('Kim Cesarion')
-print(songs)
-cache_song(songs[0].uri, './something.*')
+if __name__ == '__main__':
+    songs = search('Kim Cesarion')
+    print(songs)
+    cache_song(songs[0].uri, './something.*')
