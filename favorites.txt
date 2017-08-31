@@ -1,12 +1,13 @@
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.
 16 Horsepower ~ American Wheeze ~ spotify:track:6TdOOA2PBxP8jKO0p9Elc9
-16 Horsepower ~ Black Soul Choir (1996, "Sackcloth'n'Ashes) ~
+16 Horsepower ~ Black Soul Choir (1996, "Sackcloth'n'Ashes) ~ 
 16 Horsepower ~ Black Soul Choir ~ spotify:track:1mZmjuLoslfYSEOXojo8BS
 16 Horsepower ~ Brimstone Rock ~ spotify:track:1nzQhAyJBeWmR75nGcrbKG
 16 Horsepower ~ Haw ~ spotify:track:7My5DIityXisMnm7PRfrTt
-16 Horsepower ~ Hutterite Mile ~
+16 Horsepower ~ Hutterite Mile ~ 
 16 Horsepower ~ I Seen What I Saw ~ spotify:track:4hFUodlSK6gjLoz1US6snk
 16 Horsepower ~ Nobody 'Cept You ~ spotify:track:44GiaUXm72e1n0AZzdUpMZ
-16 Horsepower ~ The Partisan ~
+16 Horsepower ~ The Partisan ~ 
 16 Horsepower ~ Wayfaring Stranger ~ spotify:track:6sqoptJC1QKPjqes9tu0R4
 2Face Idibia ~ Let Somebody Love You ~ spotify:track:1UFlOc7RcdXE2m4x2ukfUZ
 2Face Idibia+Bridget Kelly ~ Let Somebody Love You (feat. Bridget Kelly) ~ spotify:track:6vHvybm4N1VRM5BDVeo5ER
@@ -18,7 +19,7 @@
 3 Doors Down ~ Let Me Be Myself ~ spotify:track:37K07PsEPk3SuYpAvjTbJO
 3 Doors Down ~ When I'm Gone ~ spotify:track:3WbphvawbMZ8FyqDxYGdSQ
 3 Doors Down ~ Your Arms Feel Like home ~ spotify:track:0SanLvXc3eSY7XqfeMlDOS
-4D Winks ~ We're Going to Be Friends ~
+4D Winks ~ We're Going to Be Friends ~ 
 A Perfect Circle ~ 3 Libras ~ spotify:track:5kHkaBN8OEQlmXfQkACxSt
 A Perfect Circle ~ Blue ~ spotify:track:6tgTTBaIf0tO6lvDhoXfMg
 A Perfect Circle ~ Counting Bodies Like Sheep To The Rhythm Of The War Drums ~ spotify:track:3mhhCui69mtJnRhLDoIi2f
@@ -38,16 +39,16 @@ A.T.H.Projekt ~ Thunder - ACDC Remix ~ spotify:track:5GdutiKj8MrhjBpAJNX7EV
 ABBA ~ Dancing Queen ~ spotify:track:4NtUY5IGzHCaqfZemmAu56
 ABBA ~ Mamma Mia ~ spotify:track:22NN4BS1AlqVbyKIWExgON
 ABBA ~ Ring, Ring - Swedish Version ~ spotify:track:6UB7FSQsiHNuygDhYERY4G
-AKI ~ När solen går ner ~
+AKI ~ När solen går ner ~ 
 Ace Hood ~ Top Of The World ~ spotify:track:4CeHfn3tjpxx32IBE6id30
 Adam Sandler ~ Dancin' And Pantsin' ~ spotify:track:4UA1WXu8d4XZk1K94Tshts
 Adele ~ Chasing Pavements (Originally Performed By Adele) [Karaoke Version] ~ spotify:track:5rO7XGsStNSav1bKq6EtHg
 Adele ~ Chasing Pavements ~ spotify:track:59tg0OPhiHlbsVZ9GFqUk5
 Adele ~ Don't You Remember ~ spotify:track:24cKN8P2uGWypxTw5WaNlq
 Adele ~ Hello ~ spotify:track:0ENSn4fwAbCGeFGVUbXEU3
-Adele ~ Hometown Glory (Album) ~
+Adele ~ Hometown Glory (Album) ~ 
 Adele ~ Lovesong ~ spotify:track:2rnvHrNnkWMcAkl4S1WlRg
-Adele ~ Make You Feel My Love (album) ~
+Adele ~ Make You Feel My Love (album) ~ 
 Adele ~ Make You Feel My Love ~ spotify:track:7rPLZ8Krm6CZIbraFUlnWZ
 Adele ~ One And Only ~ spotify:track:4I3KMa9p00MJwWbT0vi5iX
 Adele ~ Rolling in the Deep ~ spotify:track:1CkvWZme3pRgbzaxZnTl5X
@@ -71,7 +72,7 @@ Alanis Morisette ~ Unsent (Full Vocal Version) [In the Style of Alanis Morisette
 Alanis Morisette ~ You Learn (Karaoke Version) - Originally Performed By Alanis Morisette ~ spotify:track:7HEMr68nkpQCQ0bjyqbMUH
 Alanis Morisette ~ You Oughta Know (Full Vocal Version) [In the Style of Alanis Morisette] ~ spotify:track:0gKS0wSFcmyDjYLX21Zw3b
 Alesso+Tove Lo ~ Heroes (we could be) ~ spotify:track:3zU9rdflI65tK4dkkNSp77
-Alexandra Stan ~ 1.000.000 - Rico Bernasconi Remix Edit ~
+Alexandra Stan ~ 1.000.000 - Rico Bernasconi Remix Edit ~ 
 Alexandra Stan ~ Dance (Radio Edit) ~ spotify:track:1h5A6JJJB0W7SX3GO2W7YI
 Alexandra Stan ~ Get Back (Asap) ~ spotify:track:4bcuigNgia6p2EH3KbPWlz
 Alexandra Stan ~ Lollipop (Param pam pam) ~ spotify:track:0xx62yWRlfDBP5QQkRYQmx
@@ -97,7 +98,7 @@ Alice In Videoland ~ Something New ~ spotify:track:5OkgMzJPs54jj1VEyXydhf
 Alice In Videoland ~ Spaceship ~ spotify:track:3RrWyN2a2UNh2Wrfjli7OU
 Alice In Videoland ~ We are Rebels ~ spotify:track:4YiWeOvUOy24wAMl1EUrJX
 Allan Edwall ~ Den lilla bäcken ~ spotify:track:37DNb7NRGkZl02EsALJCWv
-Allan Edwall ~ Du och jag - 1982 Version ~
+Allan Edwall ~ Du och jag - 1982 Version ~ 
 Allan Edwall ~ Familjeporträtt ~ spotify:track:4BBJc3NdIrpGpOZmms6r8R
 Allan Edwall ~ Far ~ spotify:track:5xkURdEICBuwli8TTp1CK9
 Allan Edwall ~ Förhoppning ~ spotify:track:4BiidRDamXTDitiYxKvNW4
@@ -122,12 +123,12 @@ Ane Brun ~ Daring To Love ~ spotify:track:6K58HP1qJwAFQEbMrhqWSk
 Ane Brun ~ Do You Remember ~ spotify:track:07rVYxbwaecOge2rebZi9m
 Ane Brun ~ Du gråter så store tåra - Norwegian Version ~ spotify:track:2hGlIdEaUnpstejT18BFp4
 Ane Brun ~ From Me To You ~ spotify:track:27jecBSosDFnuTM3cbdkDb
-Ane Brun ~ Ge en sol ~
+Ane Brun ~ Ge en sol ~ 
 Ane Brun ~ Halo ~ spotify:track:4JaoU6fL2Ifz2gDyFYtpiP
 Ane Brun ~ True Colors ~ spotify:track:1m0YCWAmlNIdP3lkG289ak
-Anne ~ Lie Rydé-En så'n karl ~
-Anne ~ Lie Rydé-Sån't är livet ~
-Anouk ~ Birds - Eurovision 2013 - The Netherlands ~
+Anne ~ Lie Rydé-En så'n karl ~ 
+Anne ~ Lie Rydé-Sån't är livet ~ 
+Anouk ~ Birds - Eurovision 2013 - The Netherlands ~ 
 Anouk ~ Birds ~ spotify:track:5FYmx75rnDhzgOT513vvDa
 Anouk ~ Everything - Acoustic Version ~ spotify:track:5EX7TM8k3jZGBqogMobrai
 Anouk ~ Losing My Religion - Live At Oosterpoort ~ spotify:track:6L0zkASp1b66hmLiM7hd6J
@@ -139,7 +140,7 @@ Anouk ~ Nobody's Wife ~ spotify:track:1REZWa4xDlZqjmajdhzzNR
 Anouk ~ Places To Go ~ spotify:track:3zGFKLbofY6DhxoBw98VkH
 Anthony B ~ Justice Fight - Remaster ~ spotify:track:6vcAkjqgYS2YpI6VpHluak
 Aperture Science Psychoacoustic Laboratories ~ Cara Mia Addio ~ spotify:track:7EvKZAZ5Jnl8TxSuFrkEEZ
-Arash+Sean Paul ~ She Makes Me Go (Radio) [feat. Sean Paul] ~
+Arash+Sean Paul ~ She Makes Me Go (Radio) [feat. Sean Paul] ~ 
 Arctic Monkeys ~ Arabella ~ spotify:track:2LdG9xtEzCho3jCr58M6cq
 Arctic Monkeys ~ Do I Wanna Know? ~ spotify:track:3jfr0TF6DQcOLat8gGn7E2
 Arctic Monkeys ~ Fluorescent Adolescent ~ spotify:track:7e8utCy2JlSB8dRHKi49xM
@@ -152,7 +153,7 @@ Arctic Monkeys ~ R U Mine? ~ spotify:track:2LlvrdnLa3XbB1b4jYuCnl
 Arctic Monkeys ~ Snap Out Of It ~ spotify:track:30uJNlHIjfDeE4vr8g9fpf
 Arctic Monkeys ~ Why'd You Only Call Me When You're High? ~ spotify:track:2v8X6L6j0kbUPXDZwtXvXU
 Army Of Lovers ~ Crucified ~ spotify:track:6fXzdWgyZhDeLmlzC7Mvco
-Army Of Lovers ~ Give My Life - Radio Edit ~
+Army Of Lovers ~ Give My Life - Radio Edit ~ 
 Ashley Blanchet+Beautiful Ensemble ~ The Locomotion ~ spotify:track:2vCNJEEI948x3XKusOrIbR
 Avicii ~ Addicted To You ~ spotify:track:5GayeBzzXIEl6fY0cP42Z1
 Avicii ~ Dear Boy - Avicii By Avicii ~ spotify:track:3V368AqKw3yoyEBwXWXW8s
@@ -178,7 +179,7 @@ Avril Lavigne ~ Wish You Were Here ~ spotify:track:72po8JKu6e1hLtQ7kGJPg3
 Avril Lavigne+Marilyn Manson ~ Bad Girl ~ spotify:track:0DJLpR7cv97zg4indE9kQT
 B.B. King ~ The Thrill Is Gone ~ spotify:track:6gRGLfswEsfpy1UxHEyP6X
 B.o.B ~ Both Of Us (feat. Taylor Swift) ~ spotify:track:3r9bgSJlJz2zlevcBRYXko
-BWO ~ Sixteen Tons Of Hardware - Radio Edit ~
+BWO ~ Sixteen Tons Of Hardware - Radio Edit ~ 
 Baauer ~ Dum Dum ~ spotify:track:6mOex0b8muOcZDTBAwKBXn
 Baauer ~ Harlem Shake ~ spotify:track:01XFgRZfZI7oBagNf1Loml
 Baauer ~ You & Me - Baauer Remix ~ spotify:track:6xpjDIL734Jzr5ub8aos8s
@@ -236,14 +237,14 @@ Björn Rosenström ~ Raggarrock, Pojkarna Som Busar ~ spotify:track:587jp7jaczAz
 Björn Rosenström ~ Ragnar ~ spotify:track:2rlHeuE6ez1hSNNsFta5Gy
 Björn Rosenström ~ Värdelös ~ spotify:track:2jCFZEMjIGDMy62ceozhwa
 Black Sabbath ~ Paranoid ~ spotify:track:1Y373MqadDRtclJNdnUXVc
-Blind Guardian ~ Bright Eyes ~
-Blind Guardian ~ Imaginations From The Other Side. - Live ~
-Blind Guardian ~ Lord Of The Rings. ~
-Blind Guardian ~ Nightfall - Live ~
+Blind Guardian ~ Bright Eyes ~ 
+Blind Guardian ~ Imaginations From The Other Side. - Live ~ 
+Blind Guardian ~ Lord Of The Rings. ~ 
+Blind Guardian ~ Nightfall - Live ~ 
 Blind Guardian ~ Sacred Worlds ~ spotify:track:2vhCCKCp5v8zWHaK4KbqYd
-Blind Guardian ~ The Bard's Song - In The Forest - Live ~
+Blind Guardian ~ The Bard's Song - In The Forest - Live ~ 
 Blind Guardian ~ Twilight of the Gods ~ spotify:track:6yO0U0Ibny1f8P3zEbyYJi
-Blind Guardian ~ Valhalla. - Live ~
+Blind Guardian ~ Valhalla. - Live ~ 
 Bloodhound Gang ~ Along Comes Mary ~ spotify:track:2B9CHpmOUrqmpyZWnNoVcK
 Bloodhound Gang ~ Fire Water Burn ~ spotify:track:7FkyQsWH9mmxoYLCNj4f8y
 Bloodhound Gang ~ Foxtrot Uniform Charlie Kilo ~ spotify:track:5sWusCvXSGXkFtocDDncmc
@@ -263,14 +264,14 @@ Blur ~ Song 2 - 2012 Remastered Version ~ spotify:track:1FTSo4v6BOZH9QxKc3MbVM
 Blur ~ Tender ~ spotify:track:42cxPm9jgbaxIVN77XA1m6
 Blur ~ The Universal ~ spotify:track:0qmCWYu7hOvriyuqXfPw7I
 Bo Kaspers Orkester ~ Dansa på min grav ~ spotify:track:0bQ8ROJ7MDnhBvcSwphE4w
-Bo Kaspers Orkester ~ Ett tag till ~
+Bo Kaspers Orkester ~ Ett tag till ~ 
 Bo Kaspers Orkester ~ Festen ~ spotify:track:6MYT4ZKAJHtNzAjXZFgvU7
 Bo Kaspers Orkester ~ I samma bil ~ spotify:track:4pWq7GndIl8NXzd9owY4bE
-Bo Kaspers Orkester ~ Jag tycker inte om dej ~
+Bo Kaspers Orkester ~ Jag tycker inte om dej ~ 
 Bo Kaspers Orkester ~ Jag är vacker ikväll ~ spotify:track:1BaD8sr0BehjLd7QkrDlLi
-Bo Kaspers Orkester ~ Mr John Carlos ~
-Bo Kaspers Orkester ~ Sjungande sig till sömns ~
-Bo Kaspers Orkester ~ Vi kommer aldrig att dö - 2009 Version ~
+Bo Kaspers Orkester ~ Mr John Carlos ~ 
+Bo Kaspers Orkester ~ Sjungande sig till sömns ~ 
+Bo Kaspers Orkester ~ Vi kommer aldrig att dö - 2009 Version ~ 
 Bo Kaspers Orkester ~ Världens ände ~ spotify:track:73g3fp76pqLcV5koV3Ek7i
 Bob Dylan ~ Blowin' In the Wind ~ spotify:track:18GiV1BaXzPVYpp9rmOg0E
 Bob Dylan ~ Don't Think Twice, It's All Right ~ spotify:track:2WOjLF83vqjit2Zh4B69V3
@@ -289,7 +290,7 @@ Bob Dylan ~ The Times They Are A-Changin' ~ spotify:track:52vA3CYKZqZVdQnzRrdZt6
 Bob Dylan+Johnny Cash ~ Girl from the North Country ~ spotify:track:4ijw7fy7LDYMZDqt6SGWIB
 Bobbysocks ~ La det swinge ~ spotify:track:0LmEzNrxk0lecRm8X58jiC
 Bon Jovi ~ Livin' On A Prayer ~ spotify:track:0J6mQxEZnlRt9ymzFntA6z
-Brainpool ~ Bandstarter ~
+Brainpool ~ Bandstarter ~ 
 Bridget Kelly ~ Coca1n3 Heartbreak ~ spotify:track:2898Mmg1R1YjVnj3nCiBb3
 Bridget Kelly ~ Friends ~ spotify:track:435Iu4phNbAnPNX3zLFz1O
 Bridget Kelly ~ Goosebumps ~ spotify:track:3CdCsFRJZOoVzBZIul0ztT
@@ -327,7 +328,7 @@ Calle Kristiansson ~ Jimi Henrix ~ spotify:track:2IToj96VWdLvZcjWyic8qM
 Calvin Harris ~ Drinking From the Bottle ~ spotify:track:1oHxIPqJyvAYHy0PVrDU98
 Calvin Harris ~ Feel So Close - Radio Edit ~ spotify:track:1gihuPhrLraKYrJMAEONyc
 Calvin Harris ~ I Need Your Love ~ spotify:track:05SBRd4fXgn8FX7bf8BCAE
-Calvin Harris ~ Spectrum (Say My Name) - Calvin Harris Remix Radio Edit ~
+Calvin Harris ~ Spectrum (Say My Name) - Calvin Harris Remix Radio Edit ~ 
 Calvin Harris ~ Summer ~ spotify:track:6YUTL4dYpB9xZO5qExPf05
 Calvin Harris ~ Sweet Nothing ~ spotify:track:24LS4lQShWyixJ0ZrJXfJ5
 Calvin Harris+Alesso+Hurts ~ Under Control ~ spotify:track:4J7CKHCF3mdL4diUsmW8lq
@@ -382,19 +383,19 @@ Coldplay+Rihanna ~ Princess of China - Acoustic ~ spotify:track:2tKqZsc0epdLrsNU
 Cornelis Vreeswijk ~ Balladen Om Fredrik Åkare (Vart Är Du På Väg ) ~ spotify:track:6LNQARba6ZcyvJWIWOMx6Z
 Cornelis Vreeswijk ~ Balladen Om Fredrik Åkare Och Den Söta Froken Cecilia Lind ~ spotify:track:0IOwglicEYV4ClynmdnkjE
 Cornelis Vreeswijk ~ Blues For Almqvist ~ spotify:track:5TnqVLF2Z82T9fXTXYAyAU
-Cornelis Vreeswijk ~ Brev från kolonien ~
+Cornelis Vreeswijk ~ Brev från kolonien ~ 
 Cornelis Vreeswijk ~ Epistel Nr 43: Till Ulla Winblad, Skriven Vid Ett Ömt Tillfälle ~ spotify:track:2WlKuVJ0xoWLB3kRXkyqtb
 Cornelis Vreeswijk ~ Incestvisa ~ spotify:track:1ssBpRN1yRRWFediCffw7d
 Cornelis Vreeswijk ~ Jag Och Bosse Liden ~ spotify:track:5pLC8cs42xCr8QqUwHbTei
-Cornelis Vreeswijk ~ Jag hade en gång en båt ~
+Cornelis Vreeswijk ~ Jag hade en gång en båt ~ 
 Cornelis Vreeswijk ~ Joroupo A La Mundebo (Hönan Agda) ~ spotify:track:20IhopVSSYfZBZNtk6YnmC
 Cornelis Vreeswijk ~ Mor Har Köpt En Massageapparat ~ spotify:track:0NUxuHA1szyRKRV10J7qhg
 Cornelis Vreeswijk ~ Mördar-anders ~ spotify:track:3YUfPdFZtM8mrCxVnusj36
 Cornelis Vreeswijk ~ Personliga Person ~ spotify:track:3S5viiJ0JAgqt6iK75ZxyD
 Cornelis Vreeswijk ~ Polaren Per På Socialen ~ spotify:track:2Vu7SJ6PbTcB6gZKCi66Xr
-Cornelis Vreeswijk ~ Polaren Per är kärlekskrank ~
+Cornelis Vreeswijk ~ Polaren Per är kärlekskrank ~ 
 Cornelis Vreeswijk ~ Somliga Går Med Trasiga Skor ~ spotify:track:4KhaEGmco4sb2CAWnsK04O
-Cornelis Vreeswijk ~ Sommarkort ~
+Cornelis Vreeswijk ~ Sommarkort ~ 
 Cornelis Vreeswijk ~ Till Julia ~ spotify:track:4H93SYA7JtQ6w9ug4BRTwz
 Cornelis Vreeswijk ~ Turistens Klagan ~ spotify:track:14f5MXRiQKE95D0cyswWTW
 Corona ~ The Rhythm of the Night ~ spotify:track:0ofMkI3jzmGCElAOgOLeo3
@@ -443,7 +444,7 @@ Daft Punk ~ One More Time ~ spotify:track:0DiWol3AO6WpXZgp0goxAV
 Daft Punk+Julian Casablancas ~ Instant Crush ~ spotify:track:2cGxRwrMyEAp8dEbuZaVv6
 Daft Punk+Pharrell Williams ~ Lose Yourself to Dance ~ spotify:track:5CMjjywI0eZMixPeqNd75R
 Daft Punk+Pharrell Williams+Nile Rodgers ~ Get Lucky - Radio Edit ~ spotify:track:2Foc5Q5nqNiosCNqttzHof
-Daniel Adams-Ray ~ Där regnbågen tar slut - BABA Remix ~
+Daniel Adams-Ray ~ Där regnbågen tar slut - BABA Remix ~ 
 Dave Brubeck Trio ~ Heart And Soul ~ spotify:track:2P1QzYsYzbPCg9K2LfsCpl
 Dave Brubeck ~ Besame Mucho ~ spotify:track:1GZD0TZJHmdQaZsucHBmWT
 Dave Brubeck ~ Blue Rondo à la Turk ~ spotify:track:3cYHFvUYDVY9loQQ0LalJc
@@ -465,7 +466,7 @@ David Guetta - Usher ~ Without You (feat. Usher) [Radio Edit] ~ spotify:track:0V
 David Guetta ~ Bad (feat. Vassy) - Radio Edit ~ spotify:track:6PtXobrqImYfnpIxNsJApa
 David Guetta ~ Gettin' Over You (feat. Fergie & LMFAO) ~ spotify:track:7bPu0pkptMwRHIR0VtrCSf
 David Guetta ~ Lovers on the Sun (feat. Sam Martin) ~ spotify:track:2i2zYdN4KCkTCDscdMYr87
-David Guetta ~ Play Hard (feat. Ne-Yo & Akon) [New Edit] ~
+David Guetta ~ Play Hard (feat. Ne-Yo & Akon) [New Edit] ~ 
 David Guetta ~ Repeat (feat. Jessie J) ~ spotify:track:3foOp6lYC046Xq2dJVvwa8
 David Guetta ~ She Wolf (Falling to Pieces) [feat. Sia] ~ spotify:track:1HfPcQ3c2HyGeID3u1lmCa
 David Guetta ~ Ten Feet Tall - David Guetta Remix ~ spotify:track:7ePpy73TCKzEqKerrjTS1s
@@ -499,10 +500,10 @@ Den svenska björnstammen ~ Som vanligt (Instrumental) ~ spotify:track:3icZgU2GI
 Den svenska björnstammen ~ Svalkar vinden ~ spotify:track:5hRH9hB920H3OlpfC7fBbU
 Den svenska björnstammen ~ Trumma trumma ~ spotify:track:6eLtkHgSGglHhqWaBEj3Z5
 Den svenska björnstammen ~ Vart jag mig i världen vänder ~ spotify:track:68sFVD0NzRLOo7IX4RF9B3
-Di Leva ~ Everyone Is Jesus ~
-Di Leva ~ Vi har bara varandra ~
-Di Leva+Thomas Di Leva ~ Vem ska jag tro på ~
-Dick Dale and his Del ~ Tones-Misirlou - From Pulp Fiction ~
+Di Leva ~ Everyone Is Jesus ~ 
+Di Leva ~ Vi har bara varandra ~ 
+Di Leva+Thomas Di Leva ~ Vem ska jag tro på ~ 
+Dick Dale and his Del ~ Tones-Misirlou - From Pulp Fiction ~ 
 Die Antwoord ~ Baby's on Fire ~ spotify:track:4NYk8R213DesTy4ZNgdH19
 Die Antwoord ~ Cookie Thumper! ~ spotify:track:7pX7v3nQCz2bzPI02cbLmB
 Die Antwoord ~ Enter The Ninja ~ spotify:track:7vLHDdIIO862CZeRSx62mp
@@ -513,23 +514,23 @@ Die Antwoord ~ I Fink U Freeky ~ spotify:track:6yDu6UVWQ820sn3nkh1sag
 Die Antwoord ~ Pitbull Terrier ~ spotify:track:7wxqtAEYlz4gwVowjgOTrC
 Die Antwoord ~ Raging Zef Boner ~ spotify:track:2z3bxv6KtND0SPwngyhZeJ
 Die Antwoord ~ Ugly Boy ~ spotify:track:0zSGK8ZpVuo0XdIY21Vyrh
-Die Atzen Frauenarzt & Manny Marc ~ Disco Pogo - Atzen Musik Mix ~
-Dimitri Vegas & Like Mike ~ Tremor - Radio Edit ~
+Die Atzen Frauenarzt & Manny Marc ~ Disco Pogo - Atzen Musik Mix ~ 
+Dimitri Vegas & Like Mike ~ Tremor - Radio Edit ~ 
 Dimitri Vegas & Like Mike+Diplo+Fatboy Slim+Bonde Do Role+Pin ~ Eparrei ~ spotify:track:4BKEpntnKg6KXLarhjYkrk
 Dj Momma+Hachin ~ Hej Hej Monika ~ spotify:track:3Zx11ihxLyMHnXStQzsP3i
-Docent Död ~ Solglasögon ~
-Doktor Kosmos ~ Blåvita flingor ~
-Doktor Kosmos ~ Borgarsvin ~
-Doktor Kosmos ~ Doktor Knark Is Back In The Town ~
+Docent Död ~ Solglasögon ~ 
+Doktor Kosmos ~ Blåvita flingor ~ 
+Doktor Kosmos ~ Borgarsvin ~ 
+Doktor Kosmos ~ Doktor Knark Is Back In The Town ~ 
 Doktor Kosmos ~ Doktor Kosmos gör en låt ~ spotify:track:4wxmCw7kxzTMerjVFgInDn
-Doktor Kosmos ~ Doktor Vänster ~
-Doktor Kosmos ~ Högstadiepersonerna ~
-Doktor Kosmos ~ Jag låg med henne i Tjeckoslovakien ~
-Doktor Kosmos ~ Le Punkrocker ~
+Doktor Kosmos ~ Doktor Vänster ~ 
+Doktor Kosmos ~ Högstadiepersonerna ~ 
+Doktor Kosmos ~ Jag låg med henne i Tjeckoslovakien ~ 
+Doktor Kosmos ~ Le Punkrocker ~ 
 Doktor Kosmos ~ Lesbian wannabe ~ spotify:track:7FRpAE4nOyC9SAciaIM6mp
 Doktor Kosmos ~ När min pojke går på stan ~ spotify:track:60m9A1T8A2u1iMkKkpGahI
-Doktor Kosmos ~ Push-Up ~
-Doktor Kosmos ~ På låtsas och på riktigt ~
+Doktor Kosmos ~ Push-Up ~ 
+Doktor Kosmos ~ På låtsas och på riktigt ~ 
 Dolly Parton ~ 9 to 5 ~ spotify:track:4w3tQBXhn5345eUXDGBWZG
 Done Again ~ Coming Undone (In the Style of Korn) [Performance Track with Demonstration Vocals] ~ spotify:track:5XfbXTQJF5HjX1gRexk9Xm
 Done Again ~ Spaceman (In the Style of "Babylon Zoo") [Performance Track with Demonstration Vocals] ~ spotify:track:1M6b2gVOjaKnoIqqyC0Jlr
@@ -544,9 +545,9 @@ Dubba Jonny ~ Home - Original Mix ~ spotify:track:17HJdRFrXAgBylOXpKSv2G
 Dubba Jonny ~ No Stopping - Original Mix ~ spotify:track:3oHbPRNWFO6pJhQpDPgLS7
 Dubba Jonny ~ Not Another UKF Dubstep Tutorial ~ spotify:track:0icbiVjEsvv9VpVI1o83s7
 Dubba Jonny ~ Space Blasters - Original ~ spotify:track:1r5D9flMN91JOOWf8oPaXq
-Duck Sauce ~ Barbra Streisand - Radio Edit ~
-Dundertåget ~ Delad vårdnad (ska du ha spö) ~
-Dundertåget ~ Ifrån mej själv ~
+Duck Sauce ~ Barbra Streisand - Radio Edit ~ 
+Dundertåget ~ Delad vårdnad (ska du ha spö) ~ 
+Dundertåget ~ Ifrån mej själv ~ 
 Dune ~ Alive ~ spotify:track:5WBnKCEsPwsvWHUZmLjS3s
 Dune ~ Can‘t Stop Raving (Video Mix) ~ spotify:track:4Q7fEjeCZgU8oxjbLWrm7L
 Dune ~ Concert Pitch ~ spotify:track:01MhW3mxsCg2Jrz6HNOZUA
@@ -560,30 +561,30 @@ Dust Brothers ~ In Dust We Trust ~ spotify:track:0iYXzgykHUjgMAzcjJq5i7
 Dust Brothers ~ Leave Home ~ spotify:track:4mFDB35IaTzrzqMn4spMqo
 Dust Brothers ~ One Too Many Mornings ~ spotify:track:0lOzGDHcPlUB1ZvXMWQ0Oh
 Dust Brothers ~ Song To The Siren - Live ~ spotify:track:5pedBzuqzuqb8NPXqXFm1T
-Dusty Springfield ~ Son Of A Preacher Man - Mono Version ~
+Dusty Springfield ~ Son Of A Preacher Man - Mono Version ~ 
 Dusty Springfield ~ Son Of A Preacher Man ~ spotify:track:7odHgoLFi3GQ90E9PeraI3
-Dvbbs ~ Tsunami - Radio Edit ~
+Dvbbs ~ Tsunami - Radio Edit ~ 
 Dúné+Alesso ~ Heiress Of Valentina - Jean Elan Remix ~ spotify:track:3KZuIleh0O6oIQYGj2e7JV
-E-Type-This Is The Way  ~  2015 Adam Rickfors Version ~
-E-Type-This Is The Way ~ 2015 Adam Rickfors Version ~
+E-Type-This Is The Way ~ 2015 Adam Rickfors Version ~ 
+E-Type-This Is The Way ~ 2015 Adam Rickfors Version ~ 
 EMC ~ Winds Of Change ~ spotify:track:1ZakKrElcn3PVOYOKlNz4z
 Eagle ~ Save Tonight (In the Style of Eagle Eye Cherry) [Karaoke Version] ~ spotify:track:55xHU3HDeXhANG1yyvniFT
 Eagle-Eye Cherry ~ Save Tonight ~ spotify:track:1t2Hq2WIBcZINOEnK6mdJG
 Eagles ~ Hotel California ~ spotify:track:40riOy7x9W7GXjyGp4pjAv
-Ebba Grön ~ 800° ~
-Ebba Grön ~ Beväpna er ~
-Ebba Grön ~ Die Mauer ~
-Ebba Grön ~ Flyktsoda ~
-Ebba Grön ~ Mamma pappa barn ~
-Ebba Grön ~ Staten & kapitalet ~
-Ebba Grön ~ Ung & kåt ~
-Ebba Grön ~ We´re Only In It For The Drugs No.1 ~
+Ebba Grön ~ 800° ~ 
+Ebba Grön ~ Beväpna er ~ 
+Ebba Grön ~ Die Mauer ~ 
+Ebba Grön ~ Flyktsoda ~ 
+Ebba Grön ~ Mamma pappa barn ~ 
+Ebba Grön ~ Staten & kapitalet ~ 
+Ebba Grön ~ Ung & kåt ~ 
+Ebba Grön ~ We´re Only In It For The Drugs No.1 ~ 
 Edward Sharpe & The Magnetic Zeros ~ Home ~ spotify:track:6ZapsNk1ZpaebNXAIohP9R
 Eklipse ~ Cloudbusting - Kate Bush ~ spotify:track:6LFcix6MoAnj8xdcWIybfp
 El Chombo ~ Chacarron - Radio Edit ~ spotify:track:1HnQcY4VmcysHIOY8zR5wF
 Electric Six ~ Gay Bar ~ spotify:track:6s9iK4Hf5nLhdDMCnkDV3T
 Ellie Golding ~ Guns & Horses [Originally Performed By Ellie Golding] - Full Vocal Version ~ spotify:track:5kkfv5akwTukpW2TrWebKD
-Ellie Golding ~ High for This (feat. Sorta Eazy) ~
+Ellie Golding ~ High for This (feat. Sorta Eazy) ~ 
 Ellie Golding ~ Your Song (Originally Performed By Ellie Golding) [Full Vocal Version] ~ spotify:track:2eKvz61aBUXQjyEANVgpA8
 Elton John ~ Can You Feel The Love Tonight ~ spotify:track:5NjEHwWc2vb3fJAxM9lnEO
 Elton John ~ Candle In The Wind ~ spotify:track:1ZvS1DmW1cF0oknYGCVNK7
@@ -592,8 +593,8 @@ Elton John ~ Rocket Man (I Think It's Going To Be A Long Long Time) ~ spotify:tr
 Elton John ~ Tiny Dancer ~ spotify:track:2TVxnKdb3tqe1nhQWwwZCO
 Elton John ~ Your Song ~ spotify:track:38zsOOcu31XbbYj9BIPUF1
 Elton John+Kiki Dee ~ Don't Go Breaking My Heart ~ spotify:track:5pKJtX4wBeby9qIfFhyOJj
-Elvis Costello ~ My Mood Swings - From The Big Lebowski Soundtrack ~
-Elvis Costello ~ My Mood Swings ~
+Elvis Costello ~ My Mood Swings - From The Big Lebowski Soundtrack ~ 
+Elvis Costello ~ My Mood Swings ~ 
 Elvis Presley ~ Can't Help Falling in Love ~ spotify:track:44AyOl4qVkzS48vBsbNXaC
 Elvis Presley ~ In the Ghetto ~ spotify:track:7BmYyi2KC4AeDI6dB8mGlW
 Elvis Presley ~ Jailhouse Rock ~ spotify:track:4gphxUgq0JSFv2BCLhNDiE
@@ -648,7 +649,7 @@ Faithless ~ Insomnia 2.0 - Avicii Remix [Radio Edit] ~ spotify:track:3NaVPL3TSSs
 Familygrind ~ America, Fuck Yeah! (Skit 10) ~ spotify:track:5ctZ1vssMehwy0U2hhraUn
 Fatboy Slim ~ Eat Sleep Rave Repeat (feat. Beardyman) - Calvin Harris Radio Edit ~ spotify:track:6gF4YXwuu1N0lJDOuMLgbU
 Fatboy Slim ~ Eat Sleep Rave Repeat (feat. Beardyman) - Calvin Harris Remix ~ spotify:track:5dBXXkHfhpoq23sogsE4KC
-Fatboy Slim ~ Eat Sleep Rave Repeat - Dimitri Vegas & Like Mike vs. Ummet Ozcan Tomorrowland Radio Edit ~
+Fatboy Slim ~ Eat Sleep Rave Repeat - Dimitri Vegas & Like Mike vs. Ummet Ozcan Tomorrowland Radio Edit ~ 
 Fatboy Slim ~ Praise You - Radio Edit ~ spotify:track:62nm5Ay0pIYt8Z54UQrghu
 Fatboy Slim ~ Praise You ~ spotify:track:21RDsw7wzUJNl2FbWTgEfJ
 Fatboy Slim ~ Right Here, Right Now ~ spotify:track:3Pb9QabepyR9e9D8NqorPH
@@ -678,8 +679,8 @@ Flo Rida ~ Wild Ones (feat. Sia) ~ spotify:track:1NpW5kyvO4XrNJ3rnfcNy3
 Flo Rida+Pitbull ~ Can't Believe It (feat. Pitbull) ~ spotify:track:1kxyZ2SpflM1ogD0B5hgfX
 Flo Rida+Redfoo ~ Run - feat. RedFoo of LMFAO [Bonus Track] ~ spotify:track:5LqHJL3NDuGzyq6mMYD4Eq
 Flosstradamus ~ Rollup - Baauer Remix ~ spotify:track:4NZg8df9BxJ6spPDnr6Z9T
-Flux Pavillion ~ Cracks (Flux Pavillion Remix) ~
-Flux Pavillion ~ Without You - Doctor P & Flux Pavillion Remix ~
+Flux Pavillion ~ Cracks (Flux Pavillion Remix) ~ 
+Flux Pavillion ~ Without You - Doctor P & Flux Pavillion Remix ~ 
 Frank Sinatra+The Ken Lane Singers ~ Jingle Bells ~ spotify:track:5CMVGP24paZIukljDj0iWc
 Frans ~ If I Were Sorry ~ spotify:track:6oDkCmfVcSd9NXAKk1b4Ll
 Förstörda För Livet ~ En Alternativ Demokrati ~ spotify:track:2KIc7NH38TXdmUocDC6U5H
@@ -693,7 +694,7 @@ Förstörda För Livet ~ Pang Pang ~ spotify:track:5iQMVkE4KwiVAV5AXRjJTr
 Förstörda För Livet ~ Spegelfobi ~ spotify:track:2oj2rm4W1jmHNwoTcPaa8W
 Förstörda För Livet ~ Tro Pelle Det ~ spotify:track:6bPApPU1rd4nBIWueSR2EL
 G-Eazy+Bebe Rexha ~ Me, Myself & I ~ spotify:track:0KMYgSe9JWHloFeEVBU6qq
-Galavant ~ Tonight - Radio Edit ~
+Galavant ~ Tonight - Radio Edit ~ 
 Galavant+Mary Jane Smith ~ World of Dreams - Radio Edit ~ spotify:track:4eO9fpVqqswS43IVM8PYbb
 Gary Jules ~ Barstool ~ spotify:track:4UVyroBUoa6zqKYiT5zpGs
 Gary Jules ~ Broke Window ~ spotify:track:0q6nRzY4uFEudb8072a3CQ
@@ -704,13 +705,13 @@ Gary Jules ~ Something Else ~ spotify:track:6Iyf6uViaMb8QE5nO7IOrd
 Gary Jules ~ The Devil Keeps Grinning ~ spotify:track:25507Sqn1NiGJz5pnwfdSc
 Gary Jules+Michael Andrews ~ Mad World (Feat. Michael Andrews) ~ spotify:track:3JOVTQ5h8HGFnDdp4VT3MP
 Gavin Mikhail ~ Some Die Young ~ spotify:track:4mBh4tcnLYBR4WQG6SdG6q
-General Knas & Kapten Röd ~ Enda Vägen Fram (med Kapten Röd) ~
+General Knas & Kapten Röd ~ Enda Vägen Fram (med Kapten Röd) ~ 
 General Knas ~ Aktivist ~ spotify:track:4Uuv4LSEZxYPVArjlopjFs
 General Knas ~ En God Vän ~ spotify:track:5jxoUDrxDW6rywmtvu3lBO
 General Knas ~ Hetare Än Lava (med Syster Sol) ~ spotify:track:2CAcMHYILhxMCYia4U9aSb
 General Knas ~ Mäktiga Lejon ~ spotify:track:5SRYjt785NGUcn8V1g6BQ6
 General Knas+Kapten Röd ~ Delelelelelelelikat (med Kapten Röd) ~ spotify:track:3ZQmQfeyoKnkqcjmKo2M06
-Georg Riedel/Stefan Sundström/Lisa Nilsson/Plura Jonsson/Freddie Wadling/Eva Dahlgren/Mauro Scocco/Totta Näslund ~ Alla Ska Sova För Nu Är Det Natt ~
+Georg Riedel/Stefan Sundström/Lisa Nilsson/Plura Jonsson/Freddie Wadling/Eva Dahlgren/Mauro Scocco/Totta Näslund ~ Alla Ska Sova För Nu Är Det Natt ~ 
 Gipsy Kings ~ Hotel California (Spanish Mix) ~ spotify:track:4Rvhe8O90hFIExTJkdrRPM
 Golden Bear Karaoke ~ Miracle (Karaoke Version) - Originally Performed By The Foo Fighers ~ spotify:track:37cX1S1gPNLBCBv1u2ZVmi
 Green Day ~ 21 Guns ~ spotify:track:64yrDBpcdwEdNY9loyEGbX
@@ -719,7 +720,7 @@ Green Day ~ Basket Case ~ spotify:track:6L89mwZXSOwYl76YXfX13s
 Green Day ~ Boulevard Of Broken Dreams - feat. John Gallagher Jr., Rebecca Naomi Jones, Stark Sands, Company [Album Version] ~ spotify:track:41pFyxOpS119Pb8JEzhx0w
 Green Day ~ Brain Stew ~ spotify:track:1nLnpLXvl68RZCSjfkyiaa
 Green Day ~ Good Riddance (Time Of Your Life) ~ spotify:track:6ORqU0bHbVCRjXm9AjyHyZ
-Green Day ~ Holiday - Faded Ending ~
+Green Day ~ Holiday - Faded Ending ~ 
 Green Day ~ Holiday/Boulevard Of Broken Dreams ~ spotify:track:0MsrWnxQZxPAcov7c74sSo
 Green Day ~ Jesus Of Suburbia ~ spotify:track:58KPPL1AdLHMvR2O2PZejr
 Green Day ~ Wake Me Up When September Ends ~ spotify:track:3ZffCQKLFLUvYM59XKLbVm
@@ -735,7 +736,7 @@ Gyllene Tider ~ Gå & fiska! ~ spotify:track:1s05SZVy1mOsbMuCIqKpHM
 Gyllene Tider ~ Kung av sand ~ spotify:track:7C9SQqsckFfCu0lwcjoxNU
 Gyllene Tider ~ Ljudet av ett annat hjärta ~ spotify:track:609nGhhEsoyx8FGphSzQxH
 Gyllene Tider ~ När vi två blir en ~ spotify:track:2EKzS2s2VKnbQ7jxyk2WHi
-Gyllene Tider ~ Sommartider - 2004 Digital Remaster ~
+Gyllene Tider ~ Sommartider - 2004 Digital Remaster ~ 
 Gyllene Tider+Michael Ilbert ~ Ska vi älska, så ska vi älska till Buddy Holly ~ spotify:track:2z5DiVx4fzXVHvxTuuQNKl
 Halfway House ~ The Hammer ~ spotify:track:0HSVcU9aGDHVh0m8DHLEO0
 Hardwell ~ Hardwell On Air - Best Of September 2014 [Mix Cut] - Intro ~ spotify:track:34ufOTULOFdwAU5k5AaDKx
@@ -761,12 +762,12 @@ Håkan Hellström ~ Tro och tvivel (Live) ~ spotify:track:0IQBwszytBLb7GsRm0GwKz
 Håkan Hellström ~ Valborg (Live) ~ spotify:track:6UUvEYYyVOu2jlkXpPVBc7
 Håkan Hellström+Veronica Maggio ~ Hela huset (Live) ~ spotify:track:74s8tx6zJ8Cv7wwmbdHpzs
 Håkan Hellström+Veronica Maggio ~ Kärlek är ett brev skickat tusen gånger (Live) ~ spotify:track:3MStizApJ9pUnercbKup5E
-I Love Rock n Roll ~ Love Is Pain ~
+I Love Rock n Roll ~ Love Is Pain ~ 
 Icona Pop ~ All Night ~ spotify:track:15iosIuxC3C53BgsM5Uggs
 Icona Pop ~ Get Lost ~ spotify:track:2ie4YdZgMJVEaz4irkf5yw
 Icona Pop ~ Girlfriend ~ spotify:track:6JqRzMVuX8sO5huQpG1vbi
 Icona Pop ~ Mind Your Manners - feat. Icona Pop ~ spotify:track:1hPajXXDa8dfTFABNZe2Ri
-Icona Pop ~ We Got The World - Radio Edit ~
+Icona Pop ~ We Got The World - Radio Edit ~ 
 Icona Pop ~ We Got The World ~ spotify:track:0BJPGg90E6p2Ve0D8EcZGF
 Icona Pop+Charli XCX ~ I Love It (feat. Charli XCX) - Original Version ~ spotify:track:3VZQshi4COChhXaz7cLP02
 In Flames ~ Dead Eyes ~ spotify:track:6Myck4PMxX2JU0ZyvgV06N
@@ -778,32 +779,32 @@ In Flames ~ In Plain View ~ spotify:track:6Jjwks2VgLrv5FkWmYOGsy
 In Flames ~ Monsters in the Ballroom ~ spotify:track:1mnmbWvenOOr0WaNaWKEHZ
 In Flames ~ Paralyzed ~ spotify:track:0qjwAUX2OQQaRvxrrRYJvh
 In Flames ~ Rusted Nail ~ spotify:track:5A5zlq9BNCtRP58wNHLNHh
-In Flames ~ The Jester´s Dance ~
+In Flames ~ The Jester´s Dance ~ 
 In Flames ~ Through Oblivion ~ spotify:track:7maIZJnwsPBUWT9yJYyPoe
 In Flames ~ When the World Explodes ~ spotify:track:1z0EBl0anAPunlcNTdsVp9
 In Flames ~ Where The Dead Ships Dwell ~ spotify:track:3cDqayp0cCIO76NJuzAHWU
 In Flames ~ With Eyes Wide Open ~ spotify:track:6IdJ8rralYq3DommruSdu8
-Iron Maiden ~ Fear Of The Dark - 1998 Remastered Version ~
-Iron Maiden ~ Hallowed Be Thy Name - 1998 Remastered Version ~
-Iron Maiden ~ Phantom Of The Opera - 1998 Remastered Version ~
-Iron Maiden ~ Run to the Hills - 1998 Remastered Version ~
-Iron Maiden ~ Running Free - 1998 Remastered Version ~
-Iron Maiden ~ The Number Of The Beast - 1998 Remastered Version ~
-Iron Maiden ~ The Trooper - 1998 Remastered Version ~
+Iron Maiden ~ Fear Of The Dark - 1998 Remastered Version ~ 
+Iron Maiden ~ Hallowed Be Thy Name - 1998 Remastered Version ~ 
+Iron Maiden ~ Phantom Of The Opera - 1998 Remastered Version ~ 
+Iron Maiden ~ Run to the Hills - 1998 Remastered Version ~ 
+Iron Maiden ~ Running Free - 1998 Remastered Version ~ 
+Iron Maiden ~ The Number Of The Beast - 1998 Remastered Version ~ 
+Iron Maiden ~ The Trooper - 1998 Remastered Version ~ 
 Iron Maiden ~ The Wicker Man ~ spotify:track:2rKSOsF3t1Gt79h4wDanfK
 JAY Z ~ 99 Problems ~ spotify:track:7sLpSWxQazJzDVG6YGzlVs
 JAY Z ~ Empire State Of Mind ~ spotify:track:3xkxcbnc7G3XYuZt6eUnI5
 JAY Z ~ Holy Grail ~ spotify:track:37jTPJgwCCmIGMPB45jrPV
 JAY Z ~ No Church In The Wild ~ spotify:track:0aFObVR01JzPbBMjze4xPV
 JAY Z ~ Young Forever ~ spotify:track:6s6bdIzswzuJPr9syfjJAB
-JAY Z+Kanye West+Frank Ocean+The ~ Dream-No Church In The Wild ~
+JAY Z+Kanye West+Frank Ocean+The ~ Dream-No Church In The Wild ~ 
 JAY Z+Linkin Park ~ Numb/Encore ~ spotify:track:7dyluIqv7QYVTXXZiMWPHW
 JAY Z+Rihanna+Kanye West ~ Run This Town ~ spotify:track:2a8CtZyPdd8w2csZh7oxpc
 Jack Carroll ~ On the Road I ~ spotify:track:1bgce362zcYC31s3f2gRy7
 Jack Carroll ~ On the Road II ~ spotify:track:6ZW96jLHNZXBxjNJumvbQ4
-Jack Kerouac ~ Jack Kerouac Reads On The Road ~
-Jakob Hellman ~ Hon Har Ett Sätt - 1998 Digital Remaster ~
-Jakob Hellman ~ Vara Vänner - 1998 Digital Remaster ~
+Jack Kerouac ~ Jack Kerouac Reads On The Road ~ 
+Jakob Hellman ~ Hon Har Ett Sätt - 1998 Digital Remaster ~ 
+Jakob Hellman ~ Vara Vänner - 1998 Digital Remaster ~ 
 James Blake ~ A Case Of You ~ spotify:track:6tNrUI6H15kqWBff0HcEZr
 James Blake ~ Fall Creek Boys Choir ~ spotify:track:39JWDRbZm56bZPxky7f91d
 James Blake ~ I Never Learnt To Share ~ spotify:track:2mKgAOAUL9uTOFGPxb4a6O
@@ -850,10 +851,10 @@ Jessie J+Big Sean+Dizzee Rascal ~ Wild - UK Version ~ spotify:track:4YCCwOhHTQcr
 Jewel ~ Foolish Games ~ spotify:track:6Ee5Y6kCdlZfoFhyR8xPVt
 Jewel ~ You Were Meant For Me ~ spotify:track:6kBU9uWqar0Fw2Ws0he11A
 Jimi Hendrix ~ All Along the Watchtower ~ spotify:track:2aoo2jlRnM3A0NyLQqMN2f
-Jimi Henrix ~ Purple Haze In the Style of Jimi Henrix ~
+Jimi Henrix ~ Purple Haze In the Style of Jimi Henrix ~ 
 Johann Sebastian Bach+Nikolaus Harnoncourt ~ Cantata BWV 29 "Wir danken dir, Gott, wir danken dir: I. Sinfonia ~ spotify:track:0cY97qdIq4uQQIaORgkjnL
 John Coltrane ~ Locomotion - 2003 - Remaster ~ spotify:track:43qTHtzIXt8ehFgcncwglq
-John De Sohn+Kristin Amparo ~ Dance Our Tears Away - Radio Edit ~
+John De Sohn+Kristin Amparo ~ Dance Our Tears Away - Radio Edit ~ 
 John Lennon ~ Imagine - 2010 - Remaster ~ spotify:track:7pKfPomDEeI4TPT6EOYjn9
 John Mayer ~ Free Fallin' - Live at the Nokia Theatre ~ spotify:track:4LloVtxNZpeh7q7xdi1DQc
 Johnossi ~ 18 Karat Gold ~ spotify:track:0MhLTe7fbGPnFvP5PBM6ov
@@ -899,7 +900,7 @@ Kapten Röd ~ Ju Mer Dom Spottar ~ spotify:track:6809ESRbIU87qbXCeR80xA
 Kapten Röd ~ Saknade Vänner ~ spotify:track:598BgYwZQN0sFb6m5slUDq
 Kapten Röd ~ Stjärnorna Finns Här ~ spotify:track:6CNyUhyC2ptjX6sGtvAoFS
 Kapten Röd ~ Trasig ~ spotify:track:3UqiCXXdBnOUdTPApzYW3k
-Karlsson & Winnberg ~ Hearts Beating Weak ~
+Karlsson & Winnberg ~ Hearts Beating Weak ~ 
 Kartellen ~ Svarta duvor & vissna liljor ~ spotify:track:7EbbpPz5TuG9eVZDDbKs1e
 Kate Bush ~ Army Dreamers ~ spotify:track:6OmdWLjlx4BIDGEO8BZlqH
 Kate Bush ~ Babooshka ~ spotify:track:53Mz9H5UvWMQUXHZnaZYKQ
@@ -907,7 +908,7 @@ Kate Bush ~ Running Up That Hill (A Deal With God) [Tribute to Kate Bush] ~ spot
 Kate Bush ~ Snowflake ~ spotify:track:4kBGp54LVQFBbsvOJ41eHd
 Kate Bush ~ The Man With The Child In His Eyes ~ spotify:track:4xjVfArXNQRxAvsUpjmfMt
 Kate Bush ~ This Woman's Work ~ spotify:track:4F6ihtOUcj1uLWdSkc1RzG
-Kate Bush ~ Wuthering Heights - New Vocal ~
+Kate Bush ~ Wuthering Heights - New Vocal ~ 
 Kate Bush ~ Wuthering Heights ~ spotify:track:5YSI1311X8t31PBjkBG4CZ
 Katy Perry ~ Birthday ~ spotify:track:2xLOMHjkOK8nzxJ4r6yOKR
 Katy Perry ~ California Gurls - feat. Snoop Dogg ~ spotify:track:6tS3XVuOyu10897O3ae7bi
@@ -950,14 +951,14 @@ Kent ~ Utan dina andetag ~ spotify:track:1Yc4z9MWH2gtGzLY2RjGqW
 Kent ~ Var är vi nu? ~ spotify:track:7qfnGMiBSbTbrABfqJ2AXV
 Kic ~ Californ-I-A ~ spotify:track:2GPSeLkvMBH0WT8GUyfXib
 Kic ~ Stop Sign ~ spotify:track:0J5dpc2euwfnesRVe1bWqi
-Kim Cesarion ~ Brains Out ~
-Kim Cesarion ~ Can't Love Nobody ~
-Kim Cesarion ~ Girls ~
-Kim Cesarion ~ I Love This Life ~
-Kim Cesarion ~ One True Lover ~
-Kim Cesarion ~ Trade Ya ~
-Kim Cesarion ~ Undressed - Live ~
-Kim Cesarion ~ Undressed - Oliver Nelson Remix ~
+Kim Cesarion ~ Brains Out ~ 
+Kim Cesarion ~ Can't Love Nobody ~ 
+Kim Cesarion ~ Girls ~ 
+Kim Cesarion ~ I Love This Life ~ 
+Kim Cesarion ~ One True Lover ~ 
+Kim Cesarion ~ Trade Ya ~ 
+Kim Cesarion ~ Undressed - Live ~ 
+Kim Cesarion ~ Undressed - Oliver Nelson Remix ~ 
 Kim Cesarion ~ Undressed ~ spotify:track:0ERBV06FfrPFGFVlvfjDuR
 Kings of Leon ~ Closer ~ spotify:track:1O8d2pWtBclzuY3FctBPVa
 Kings of Leon ~ Don't Matter ~ spotify:track:48Jhybk2ZpPrnFb3oXdh6Z
@@ -998,7 +999,7 @@ LMFAO ~ I'm In Miami Bitch ~ spotify:track:1vaUxfrERQIQfJ1wBTmeRE
 LMFAO ~ Sexy And I Know It ~ spotify:track:0obBFrPYkSoBJbvHfUIhkv
 LMFAO ~ Yes ~ spotify:track:0Rdfu7NQubmGmYz90usRCU
 LMFAO+Lauren Bennett+GoonRock ~ Party Rock Anthem ~ spotify:track:0IkKz2J93C94Ei4BvDop7P
-Labyrint ~ Broder del. 2 ~
+Labyrint ~ Broder del. 2 ~ 
 Lack Of Afro+Jack Tyson ~ On the Road (feat. Jack Tyson-Charles) ~ spotify:track:4o2VPvOQF2ShXTFdVGqYXx
 Lady Gaga ~ Alejandro ~ spotify:track:15pu8u4n3q4BKl4tF20c5v
 Lady Gaga ~ Applause ~ spotify:track:2Zj4FUsMtu9PMuJsHbGbdv
@@ -1026,16 +1027,16 @@ Laleh ~ Boom ~ spotify:track:2jqaxOtKdhAda0Ow6qYPiz
 Laleh ~ Chiquitita ~ spotify:track:55fWq35wFJWkLXgcfJpPIn
 Laleh ~ Colors ~ spotify:track:3MR0UR0ACR5dmhRVMiEuMF
 Laleh ~ Elephant ~ spotify:track:61Eqjsoha2PKu1Z4EMR0PK
-Laleh ~ En stund på jorden ~
-Laleh ~ Goliat ~
-Laleh ~ Live Tomorrow ~
+Laleh ~ En stund på jorden ~ 
+Laleh ~ Goliat ~ 
+Laleh ~ Live Tomorrow ~ 
 Laleh ~ Some Die Young ~ spotify:track:65Ve3XLglW5xSYVFnnm5mI
 Laleh ~ Speaking Of Truth - Orchestrated ~ spotify:track:1hpjW2TTR6uyEU9thrk6KW
-Laleh ~ Stars Align - Radio Edit ~
+Laleh ~ Stars Align - Radio Edit ~ 
 Laleh ~ Stars Align ~ spotify:track:41E9rkIWTue7yjoA8NbReF
-Laleh ~ Tusen bitar ~
-Laleh ~ Vårens första dag ~
-Laleh ~ Ängeln i rummet ~
+Laleh ~ Tusen bitar ~ 
+Laleh ~ Vårens första dag ~ 
+Laleh ~ Ängeln i rummet ~ 
 Lana Del Rey ~ Blue Jeans ~ spotify:track:2lFTzUnuGaWlWHJQokjRyb
 Lana Del Rey ~ Born To Die - Woodkid & The Shoes Remix ~ spotify:track:3lWdN5LJV67EwGuzJeNHsj
 Lana Del Rey ~ Born To Die ~ spotify:track:487OPlneJNni3NWC8SYqhW
@@ -1050,14 +1051,14 @@ Lars Winnerbäck ~ Dom tomma stegen ~ spotify:track:5mih6gShTFOHya3fFHMPZR
 Lars Winnerbäck ~ Elegi ~ spotify:track:0uTdDtNBxwma3QMvZShBWm
 Lars Winnerbäck ~ Hjärter Dams sista sång ~ spotify:track:0sEwPYPHDD4G3AWxUC8ZYq
 Lars Winnerbäck ~ Hosianna ~ spotify:track:0oXvFa9QBrM9SaHIRkuKlW
-Lars Winnerbäck ~ Hugger i sten ~
-Lars Winnerbäck ~ Jag får liksom ingen ordning ~
+Lars Winnerbäck ~ Hugger i sten ~ 
+Lars Winnerbäck ~ Jag får liksom ingen ordning ~ 
 Lars Winnerbäck ~ Jag är hos dig igen ~ spotify:track:2m0hasRoPdaQdB6w1Cb00P
-Lars Winnerbäck ~ Kom änglar ~
-Lars Winnerbäck ~ Om du lämnade mig nu ~
+Lars Winnerbäck ~ Kom änglar ~ 
+Lars Winnerbäck ~ Om du lämnade mig nu ~ 
 Lars Winnerbäck ~ Som jag hade dig förut - med Lars Winnerbäck ~ spotify:track:7INhO4ADgVyGVr3ivV4I1D
 Lars Winnerbäck ~ Stackars ~ spotify:track:7qbtulLYpwZPXqdgnsCSdb
-Lars Winnerbäck ~ Söndermarken ~
+Lars Winnerbäck ~ Söndermarken ~ 
 Lars Winnerbäck ~ Utkast till ett brev ~ spotify:track:3tXgGYRE0spiBVxaa9Xr79
 Lars Winnerbäck ~ Vi åkte aldrig ut till havet ~ spotify:track:0j007vqXkNH1xWUFNaUy6L
 Led Zeppelin ~ Stairway To Heaven ~ spotify:track:51pQ7vY7WXzxskwloaeqyj
@@ -1077,8 +1078,8 @@ Liam Lynch ~ Rock And Roll Whore ~ spotify:track:6Ko6kq854g4u6MQn0ZNDJq
 Liam Lynch ~ SOS ~ spotify:track:2xk4wlB6orxXE1KF0NwTWY
 Liam Lynch ~ Still Wasted From The Party Last Night ~ spotify:track:0IEInuSJNidChMXDbCZ6Uj
 Liam Lynch ~ United States of Whatever ~ spotify:track:6Jub05dvpbF4Im83NqMCUg
-Lill Lindfors ~ En sån karl ~
-Lillasyster ~ Vad skulle mamma säga ~
+Lill Lindfors ~ En sån karl ~ 
+Lillasyster ~ Vad skulle mamma säga ~ 
 Lily Allen ~ Fuck You ~ spotify:track:1GCbc1vpkZA2zhjsSFhmHT
 Limp Bizkit ~ Behind Blue Eyes ~ spotify:track:2F8mhprAH20PKf32agtk1d
 Limp Bizkit ~ Break Stuff ~ spotify:track:2YC6ET3q1F29B0V7UcPV70
@@ -1101,7 +1102,7 @@ Linkin Park ~ Numb ~ spotify:track:2nLtzopw4rPReszdYBJU6h
 Linkin Park ~ One Step Closer ~ spotify:track:3K4HG9evC7dg3N0R9cYqk4
 Linkin Park ~ Papercut ~ spotify:track:1Vej0qeQ3ioKwpI6FUbRv1
 Linnea Henriksson ~ Alice ~ spotify:track:3YTMxW2wXLSHLSKCiv5hX8
-Linnea Henriksson ~ Cecilia (John De Sohn Remix) ~
+Linnea Henriksson ~ Cecilia (John De Sohn Remix) ~ 
 Linnea Henriksson ~ Cecilia ~ spotify:track:7JZwhkSeU628zhN8MPxiOj
 Linnea Henriksson ~ Ensamheten ~ spotify:track:4UmX5cdEd5Xa3e8v299akk
 Linnea Henriksson ~ Halmstad ~ spotify:track:1UmPfQAPqLnjSuRtcLJeoF
@@ -1117,22 +1118,22 @@ Liquido ~ Narcotic - Radio Edit ~ spotify:track:1H5VQuShs4qfwBXyHF0PeH
 Liquido ~ Ordinary life ~ spotify:track:4fG8mAbKblEv8DU8UDDNIQ
 Liquido ~ Play Some Rock ~ spotify:track:4OY3aVDM4DMy6jX9S8ba1W
 Liquido ~ Swing It ~ spotify:track:2i7tDbpwjEfjmoOt3URQGK
-Lisa Ekdahl ~ Benen I Kors ~
+Lisa Ekdahl ~ Benen I Kors ~ 
 Lisa Ekdahl ~ Cry Me a River ~ spotify:track:7I5Pm4IKv0MXDOTQeYP0Vd
-Lisa Ekdahl ~ Det Är En Nåd ~
-Lisa Ekdahl ~ Du Sålde Våra Hjärtan ~
+Lisa Ekdahl ~ Det Är En Nåd ~ 
+Lisa Ekdahl ~ Du Sålde Våra Hjärtan ~ 
 Lisa Ekdahl ~ Everything ~ spotify:track:19BbCfDHQp45AmuZJFxDyh
-Lisa Ekdahl ~ Flyg Vilda Fågel ~
+Lisa Ekdahl ~ Flyg Vilda Fågel ~ 
 Lisa Ekdahl ~ Främmande Fågel ~ spotify:track:0xvJNgNJ75kbM6z20Sg4Db
 Lisa Ekdahl ~ Happiness Is Brief ~ spotify:track:5cVgPByTJpNlYaMSK3Ovtn
 Lisa Ekdahl ~ Heavenly Shower ~ spotify:track:2GAVI4dLjAapIyJekbZb2L
-Lisa Ekdahl ~ I Tveksamhetens Tid ~
+Lisa Ekdahl ~ I Tveksamhetens Tid ~ 
 Lisa Ekdahl ~ Now or Never ~ spotify:track:2tg3evhwOBw0WNY4HZ7Eei
-Lisa Ekdahl ~ Sanningen I Vitögat ~
+Lisa Ekdahl ~ Sanningen I Vitögat ~ 
 Lisa Ekdahl ~ Sing & Dance ~ spotify:track:3Fhib8QqOobYi0r3wVbgoS
 Lisa Ekdahl ~ Vem vet? ~ spotify:track:23yY19f6tziXAX9d86ztCA
 Lisa Ekdahl ~ When Did You Leave Heaven ~ spotify:track:3dK6wiOjaEQdBwCW3p7Ckq
-Lisa Ekdahl ~ Öppna upp ditt fönster ~
+Lisa Ekdahl ~ Öppna upp ditt fönster ~ 
 Lisa Ekdahl+Lars Winnerbäck ~ Dom Band Som Binder Mig ~ spotify:track:44Mq01PnV6qFCzX6UI0KgY
 Little Eva ~ The Locomotion ~ spotify:track:53UXqZaarqFPAFEy7dT1m1
 Little Majorette ~ Bite the Bullet ~ spotify:track:1X9cfJuHgz1byvVhSytDXe
@@ -1190,7 +1191,7 @@ Lukas Graham ~ Mama Said ~ spotify:track:5ArQzSBevAdXTxRY6Ulhbq
 M.I.A. ~ Bad Girls ~ spotify:track:6nzXkCBOhb2mxctNihOqbb
 M.I.A. ~ Double Bubble Trouble ~ spotify:track:7xi6IzpwkgtpenLzl5LMLc
 M.I.A. ~ Mamma Mia - From "Mamma Mia!" Soundtrack ~ spotify:track:4nI8e3fy1hHvhCvJURv5JI
-M.I.A. ~ Mamma Mia - feat. Prophet of 7Lions ~
+M.I.A. ~ Mamma Mia - feat. Prophet of 7Lions ~ 
 M.I.A. ~ Our Last Summer - From "Mamma Mia!" Soundtrack ~ spotify:track:7bFmXanwZQm6BMV9Nka6Hk
 M.I.A. ~ Paper Planes ~ spotify:track:1kusepF3AacIEtUTYrw4GV
 M.I.A. ~ Y.A.L.A. ~ spotify:track:12tA6w3I4PLAHunawPPfTW
@@ -1205,7 +1206,7 @@ Macklemore & Ryan Lewis ~ White Walls - feat. ScHoolboy Q, Hollis ~ spotify:trac
 Macklemore & Ryan Lewis ~ Wing$ ~ spotify:track:5n5uyFpfopa4mNdSN0gTaH
 Macklemore & Ryan Lewis+Mary Lambert+Ryan Lewis+Macklemore ~ Same Love - feat. Mary Lambert ~ spotify:track:01uqI4H13Gsd8Lyl1EYd8H
 Madness ~ Our House ~ spotify:track:0vWCLHyiA1G3eqBPnY1WFW
-Madness ~ Tonight Again ~
+Madness ~ Tonight Again ~ 
 Madonna ~ Hung Up ~ spotify:track:70VjMtwhm3Q2HBQeJnPfmh
 Madonna ~ Like A Prayer ~ spotify:track:1z3ugFmUKoCzGsI6jdY4Ci
 Madrugada ~ Lift Me (Duet with Ane Brun) ~ spotify:track:59Y1ueMzPRTSnYjSwA5H3y
@@ -1250,11 +1251,11 @@ Marina and the Diamonds ~ Power & Control ~ spotify:track:5IixEDnbG6pZOy38vkkuvr
 Marina and the Diamonds ~ Teen Idle ~ spotify:track:7HSZigV3SjVlKrCfz2iR28
 Maroon 5 ~ Moves Like Jagger - Studio Recording From The Voice Performance ~ spotify:track:7LcfRTgAVTs5pQGEQgUEzN
 Martin Garrix ~ Animals - Original Mix ~ spotify:track:5AGTIWWLasdnpe5yvriQNA
-Martin Garrix ~ Animals - Radio Edit ~
+Martin Garrix ~ Animals - Radio Edit ~ 
 Martin Garrix ~ Backlash - Martin Garrix Radio Edit ~ spotify:track:125GzlPqu6eQRr1yQSqhGo
 Martin Garrix ~ Crackin - Martin Garrix Edit ~ spotify:track:03fAVei89vxfO70FuLMrfc
-Martin Garrix ~ Helicopter - Original Edit ~
-Martin Garrix ~ Project T - Martin Garrix Edit ~
+Martin Garrix ~ Helicopter - Original Edit ~ 
+Martin Garrix ~ Project T - Martin Garrix Edit ~ 
 Martin Garrix ~ Proxy - Original Mix ~ spotify:track:0HSHOXIDMwhFbXHnaxpvxE
 Martin Garrix ~ Wizard - Radio Edit ~ spotify:track:6UVnjHQGV3LySBsvYp1MBb
 Matte Caliste ~ Arbetarklass (feat. Sebbe Staxx, Promoe & Robert Athill) ~ spotify:track:1BdvWHUZvh6siSmm69Wneu
@@ -1275,8 +1276,8 @@ Metallica ~ Sad But True ~ spotify:track:5pQYjzkALsgYOcFTC8DMmU
 Metallica ~ The Unforgiven ~ spotify:track:5SnOyuBtyzufoXBAKOdcxD
 Metallica ~ Wherever I May Roam ~ spotify:track:4zJLpLsfY52ih6y8u4mhKH
 Metallica ~ Whiskey In The Jar ~ spotify:track:77gY3WsOnEsq9JOWgBmdLj
-Michael Bolton ~ Fields Of Gold - featuring Eva Cassidy ~
-Michael Bolton+Eva Cassidy ~ Fields Of Gold - featuring Eva Cassidy ~
+Michael Bolton ~ Fields Of Gold - featuring Eva Cassidy ~ 
+Michael Bolton+Eva Cassidy ~ Fields Of Gold - featuring Eva Cassidy ~ 
 Michael Jackson ~ ABC ~ spotify:track:0oubcb5bvMbIotoXub5Ye0
 Michael Jackson ~ Beat It - Single Version ~ spotify:track:1OOtq8tRnDM8kG2gqUPjAj
 Michael Jackson ~ Billie Jean - Single Version ~ spotify:track:5ChkMS8OtdzJeqyybCc9R5
@@ -1287,16 +1288,16 @@ Michael Jackson ~ Man in the Mirror - Remastered Version ~ spotify:track:1nl09Aj
 Michael Jackson ~ Smooth Criminal - Remastered Radio Edit ~ spotify:track:2O3FCy9JdGflUnZ8LLrd4u
 Michelle Williams ~ Say Yes (ft. Beyoncé & Kelly Rowland) ~ spotify:track:0Dl1YXkGH0ZYmQGnc8v46z
 Midnight Oil ~ Beds Are Burning - Remastered ~ spotify:track:6Nabz5Gsy80XL0MJoOmgF8
-Mikael Rickfors ~ Vingar ~
+Mikael Rickfors ~ Vingar ~ 
 Mike Patton ~ 29-The Snow Angel ~ spotify:track:2iYoacr76KtnkG1oP3T1bF
 Mike Patton ~ Deep Down ~ spotify:track:3vqQrFM2ntOEqtP3Q3DkyB
 Mike Patton ~ Il Cielo In Una Stanza ~ spotify:track:2V5cxuQK2Uil81hSifzG0X
 Mike Patton ~ Ore D'Amore ~ spotify:track:2Ib82MPeh9P71iS8u5af2H
 Mike Posner ~ I Took A Pill In Ibiza - Seeb Remix ~ spotify:track:1MtUq6Wp1eQ8PC6BbPCj8P
 Mimikry ~ Balladen Om Herr Fredrik Åkare Och Den Sota Froken Cecilia Lind ~ spotify:track:26djLpRVeX1mOoArqz5ihD
-Miriam Bryant ~ Allt jag behöver ~
-Miriam Bryant ~ Push Play - Filip Jenven & Mike Perry Remix - Radio Edit ~
-Miriam Bryant ~ Stationen ~
+Miriam Bryant ~ Allt jag behöver ~ 
+Miriam Bryant ~ Push Play - Filip Jenven & Mike Perry Remix - Radio Edit ~ 
+Miriam Bryant ~ Stationen ~ 
 Moby ~ Extreme Ways ~ spotify:track:1RoV2hHbjzFbo9uKe2cvGs
 Moby ~ Flower ~ spotify:track:60rIdEPDrzyLiLC0icp3xz
 Moby ~ Honey ~ spotify:track:52tILLw5fRKqPbe5ps1QLL
@@ -1309,21 +1310,21 @@ Moby ~ The Last Day - feat. Skylar Grey ~ spotify:track:74uy3oSbV9VyplakF6ppOE
 Moby ~ Why Does My Heart Feel So Bad? ~ spotify:track:3MZQF2Qv9ehvgT3Uxm61jo
 Molotov ~ Da Da Da (DADADA) ~ spotify:track:1SUeecktKzDv706GbnKjhS
 Monster High ~ We Are Monster High ~ spotify:track:0S9oB3FMSFnP4FC8OW6Q3K
-Monster Magnet ~ Monolithic ~
+Monster Magnet ~ Monolithic ~ 
 Monster Magnet ~ Negasonic Teenage Warhead ~ spotify:track:1VekjKr0JXvbebbvpLxfEr
-Monster Magnet ~ Radiation Day ~
-Monster Magnet ~ Slut Machine ~
+Monster Magnet ~ Radiation Day ~ 
+Monster Magnet ~ Slut Machine ~ 
 Monster Magnet ~ Space Lord ~ spotify:track:3CQT1WcWe86brcWVMhgEYa
 Monster Magnet ~ Tractor ~ spotify:track:4m044gXV9wDPHASyQcDKvo
-Monster Magnet ~ Unbroken (Hotel Baby) ~
-Moondog ~ Stamping Ground ~
+Monster Magnet ~ Unbroken (Hotel Baby) ~ 
+Moondog ~ Stamping Ground ~ 
 Moonspell ~ Alma Mater ~ spotify:track:0z05WGKhrg8nWH0KFrWfXk
 Moonspell ~ At Tragic Heights ~ spotify:track:3RHVvrCXVCnlBMo4TgU1xC
 Moonspell ~ Axis Mundi ~ spotify:track:4DAF3PxDLhH4bfEsGmKwgk
 Moonspell ~ Breathe (Until We Are No More) ~ spotify:track:04MciDTehPKN5pbar6vnwh
 Moonspell ~ Domina ~ spotify:track:0XTu2tHj4Z866Tg2miPUf3
 Moonspell ~ Extinct ~ spotify:track:3QgWF0JQVjguvZspCAykMb
-Moonspell ~ Finisterra ~
+Moonspell ~ Finisterra ~ 
 Moonspell ~ Lickanthrope ~ spotify:track:3mQzW15R3Sv6XBIJs0BtmS
 Moonspell ~ Medusalem ~ spotify:track:1LLv2e4KSlhU2t057F1EvZ
 Moonspell ~ Moonspell - Original Mix ~ spotify:track:0XyslgtaTpMdMHfcM9nW2c
@@ -1334,16 +1335,16 @@ Moonspell ~ Scorpion Flower ~ spotify:track:53Pr3tabWa36Ywsqo3IQt6
 Moonspell ~ The Last Of Us ~ spotify:track:1cwWs5jFs1PBuUPSZ7fL2j
 Moonspell ~ Vampiria ~ spotify:track:1TtvuL2vxl9gKyHoMlxXU5
 Moulin Rouge ~ Come What May - Original Film Version ~ spotify:track:492lNF2DgQtod42Sl9JbrP
-Movitz! ~ Ack,för en usel koja! ~
-Movitz! ~ Drick ur ditt glas ~
-Movitz! ~ Epistel 2 "Nå, skruva fiolen" ~
+Movitz! ~ Ack,för en usel koja! ~ 
+Movitz! ~ Drick ur ditt glas ~ 
+Movitz! ~ Epistel 2 "Nå, skruva fiolen" ~ 
 Movitz! ~ Fredmans Epistel N:o 81 - Märk hur' vår skugga, märk Movitz Mon Frere! ~ spotify:track:2TpykuOni5aPTlpJyIoVhe
-Movitz! ~ Liksom en herdinna ~
+Movitz! ~ Liksom en herdinna ~ 
 Movitz! ~ Movitz Helt Allena ~ spotify:track:77M4ObQVLH9bB8yW9rQ7T5
-Movitz! ~ Movitz med flor om armen... ~
-Movitz! ~ Movitz, mitt hjärta blöder! ~
-Movitz! ~ Nota bene ~
-Movitz! ~ Tre remmare ~
+Movitz! ~ Movitz med flor om armen... ~ 
+Movitz! ~ Movitz, mitt hjärta blöder! ~ 
+Movitz! ~ Nota bene ~ 
+Movitz! ~ Tre remmare ~ 
 Muse ~ Dead Inside ~ spotify:track:2daZovie6pc2ZK7StayD1K
 Muse ~ Hysteria ~ spotify:track:7xyYsOvq5Ec3P4fr6mM9fD
 Muse ~ Knights Of Cydonia ~ spotify:track:7ouMYWpwJ422jRcDASZB7P
@@ -1366,14 +1367,14 @@ Mustasch ~ I'm Frustrated ~ spotify:track:4tPHPTf3X2s5EIV59WILck
 Mustasch ~ Mine ~ spotify:track:4gm22pHp2OWD9ZvGutMsTY
 Mustasch ~ Speed Metal ~ spotify:track:6Ao15Gn6lCejlvhxASCgCQ
 Mustasch ~ Thank You for the Demon ~ spotify:track:3pK6IqDO4RMb0KEN8W2HNW
-Mylène Farmer ~ Mad World - Live / Lyon / 2013 ~
+Mylène Farmer ~ Mad World - Live / Lyon / 2013 ~ 
 Naomi & Her Handsome Devils ~ Goody Goody ~ spotify:track:6ruP5hqQD9dYEvLivkTzND
 Nationalorkestern ~ Bängen trålar ~ spotify:track:1ejKxG7YbJqSTmW0fEMvrG
 Nationalorkestern ~ Hanna från Arlöv ~ spotify:track:0oAT2kjoL4xOemkRAFOR7D
 Nationalorkestern ~ Livet är en fest ~ spotify:track:1GPDWtNTfViJAO9NjIrD3H
 Nationalteatern ~ Bängen trålar (Inspelad för SR Tonkraft 1975) ~ spotify:track:3yLkAM7xeZuXFYL3w0vuEg
-Nationalteatern ~ Vi fortsätter spela rock´n roll men vi håller på att dö ~
-Naughty Boy ~ Get Lucky - Bonus Track ~
+Nationalteatern ~ Vi fortsätter spela rock´n roll men vi håller på att dö ~ 
+Naughty Boy ~ Get Lucky - Bonus Track ~ 
 Naughty Boy ~ Think About It ~ spotify:track:440UT6QhBxjOjrZPlXugoX
 Naughty Boy+Bastille ~ No One’s Here To Sleep ~ spotify:track:2oyiRrtSRCSdSSLWPS3E8j
 Naughty Boy+Emeli Sandé ~ Lifted ~ spotify:track:5OFnCw227Q1wr8cEEftzv8
@@ -1383,15 +1384,15 @@ Nause ~ Another You - Radio Edit ~ spotify:track:5eStYwqzPHZdfwedVJasoV
 Nause ~ Bullets - Nause & Adrian Lux Remix Radio ~ spotify:track:2T7VjDtoFLiFeBwknZjZ1Z
 Nause ~ Head Over Heels - Radio Edit ~ spotify:track:7yTagOsQZZ1wvZ2YIDHFa1
 Nause ~ Head Over Heels - Tim Mason Remix - Radio Edit ~ spotify:track:6wNtYSPhdp47gKvnsaMJdy
-Nause ~ Hungry Hearts - Radio Edit ~
-Nause ~ Made Of - Radio Edit ~
-Nause ~ Mellow - Radio Edit ~
-Nause ~ Move - Radio Edit ~
-Nause ~ This Is The Song - Radio Edit ~
-Nause ~ Tomorrow's Just Begun - Radio Edit ~
+Nause ~ Hungry Hearts - Radio Edit ~ 
+Nause ~ Made Of - Radio Edit ~ 
+Nause ~ Mellow - Radio Edit ~ 
+Nause ~ Move - Radio Edit ~ 
+Nause ~ This Is The Song - Radio Edit ~ 
+Nause ~ Tomorrow's Just Begun - Radio Edit ~ 
 New Tribute Kings ~ With Every Heartbeat Originally Performed By Robyn Feat. Kleerup - Tribute Version ~ spotify:track:6WdQ5SoKdXCJRbCKiRWPcq
 New Vaudeville Band ~ Winchester Cathedral ~ spotify:track:0En1z8CJgm4msQsRa73Q3i
-Nic & The Family ~ Hej Monica ~
+Nic & The Family ~ Hej Monica ~ 
 Nickelback ~ Burn It To The Ground ~ spotify:track:1jq28NGw6wdtFKx8MBPy6C
 Nickelback ~ Edge Of A Revolution ~ spotify:track:5JjHr4GeuAERaa1qgsbv6A
 Nickelback ~ Gotta Be Somebody ~ spotify:track:06T10fEzN8ZCcqzQZYA184
@@ -1407,7 +1408,7 @@ Nicki Minaj ~ Pills N Potions ~ spotify:track:2bkyTJ4bAnc8a5ly3dg9DX
 Nicki Minaj ~ Starships ~ spotify:track:59RSrxkSKSixEWBAIvE5Wa
 Nicki Minaj ~ Super Bass ~ spotify:track:7gKIt3rDGIMJDFVSPBnGmj
 Nico & Vinz ~ Am I Wrong ~ spotify:track:2wqaekenSQZm7hxQOYt8oE
-Nicole Kidman+Ewan McGregor ~ Come What May - From Moulin Rouge Soundtrack ~
+Nicole Kidman+Ewan McGregor ~ Come What May - From Moulin Rouge Soundtrack ~ 
 Niggas In Paris Instrumental ~ Niggas In Paris (Remade Instrumental Originally Recorded By Jay-Z & Kanye West) ~ spotify:track:1kfGkqNAGpiPGfst4Ln7m6
 Nina Simone ~ Feeling Good ~ spotify:track:1VKsbTJ78G5bnfyoPz46LA
 Nina Simone ~ I Got It Bad (And That Ain't Good) ~ spotify:track:18xTRkGg43KB4Fn26yOzrh
@@ -1462,7 +1463,7 @@ Nirvana Nevermind ~ Something In The Way ~ spotify:track:1nFtiJxYdhtFfFtfXBv06s
 Nirvana Nevermind ~ Territorial Pissings ~ spotify:track:2jmVGWe4MYY1zAAzpFHHcC
 Nirvana ~ Come As You Are ~ spotify:track:4P5KoWXOxwuobLmHXLMobV
 Nirvana ~ Heart-Shaped Box ~ spotify:track:11LmqTE2naFULdEP94AUBa
-Nirvana ~ I've Told You Now - Live At St Pancras Old Church, London / 2013 ~
+Nirvana ~ I've Told You Now - Live At St Pancras Old Church, London / 2013 ~ 
 Nirvana ~ In Bloom - Nevermind Version ~ spotify:track:30HCB1FoE77IfGRyNv4eFq
 Nirvana ~ Latch - Acoustic ~ spotify:track:3XyU03WycJQ02kExHb9dqW
 Nirvana ~ Lithium ~ spotify:track:2YodwKJnbPyNKe8XXSE9V7
@@ -1482,23 +1483,23 @@ Opeth ~ River ~ spotify:track:4ieeKcwdw9yYzLV8AhHHh0
 Opeth ~ Voice Of Treason ~ spotify:track:6kPTQHX4X4jd8qY0QJ200Z
 Opeth ~ Windowpane - Remixed ~ spotify:track:5jkQuAI61Ud3y2z9Y5ylz8
 Opeth ~ Windowpane ~ spotify:track:4uJSCrI7r0usNJ3aaHAuC6
-Opiou ~ Fizzle Tickler ~
+Opiou ~ Fizzle Tickler ~ 
 Opus ~ Live Is Life (digitally remastered) - Single Version ~ spotify:track:5luOvrlnzfvJQdQjrScVj4
 Orchestral Manoeuvres In The Dark ~ Locomotion ~ spotify:track:5Fcnb3VuV7QeuALMowpFoG
 Oskar Linnros ~ 25 ~ spotify:track:2I2FmTU2bArpAI8QGThvkA
 Oskar Linnros ~ Annie Hall ~ spotify:track:3CzGiSHUpWd2yCh8rA0aLv
-Oskar Linnros ~ Det är inte synd om dig ~
-Oskar Linnros ~ Från balkongen ~
+Oskar Linnros ~ Det är inte synd om dig ~ 
+Oskar Linnros ~ Från balkongen ~ 
 Oskar Linnros ~ Från och med Du ~ spotify:track:6sjGsKuInpaK3uoaWGe22W
 Oskar Linnros ~ Genom eld ~ spotify:track:6Re80TWVf2qIT6xk0LVcch
-Oskar Linnros ~ Gå hem ~
-Oskar Linnros ~ Hur Dom Än ~
-Oskar Linnros ~ Kan jag få ett vittne? ~
-Oskar Linnros ~ Plåster ~
+Oskar Linnros ~ Gå hem ~ 
+Oskar Linnros ~ Hur Dom Än ~ 
+Oskar Linnros ~ Kan jag få ett vittne? ~ 
+Oskar Linnros ~ Plåster ~ 
 Otis Redding ~ (Sittin' On) The Dock Of The Bay ~ spotify:track:4Y4Gd3ty8uut6Qw43c7yJc
 Otto Knows+Lindsey Stirling+Alex Aris ~ Dying for You (feat. Alex Aris) ~ spotify:track:59A6lBd9QmcD8rQTZPj1xD
 P!nk ~ Blow Me (One Last Kiss) ~ spotify:track:6LS6pltO7YBgjwNVhxMwtp
-P!nk ~ F**kin' Perfect ~
+P!nk ~ F**kin' Perfect ~ 
 P!nk ~ Get The Party Started ~ spotify:track:4bk78jvK8Fe9YHqruOJW0v
 P!nk ~ I Don't Believe You ~ spotify:track:1uQ3wKvdmFjBMMABNW3cf7
 P!nk ~ Just Give Me a Reason ~ spotify:track:4VC5nFbYO4avKksJ9jN4pY
@@ -1513,7 +1514,7 @@ P!nk ~ Who Knew ~ spotify:track:7FpoD2ZlcBSj05rEHSZoiB
 PSY ~ Gangnam Style (강남스타일) ~ spotify:track:03UrZgTINDqvnUMbbIMhql
 Pain ~ Beautiful Pain ~ spotify:track:7hiBhOh4s8G0xmGYBAjyuw
 Pain ~ Shut Your Mouth (Live In Paris, March 2009) ~ spotify:track:2nAd9EA1sLhGwBhFPqD8qC
-Panetoz ~ Dansa Pausa ~
+Panetoz ~ Dansa Pausa ~ 
 Panetoz ~ Håll om mig hårt ~ spotify:track:0gZGgHr4QcMa5tpA9qxUqV
 Panteros666+Woodkid ~ Clear (feat. Woodkid) ~ spotify:track:2Mp3wFKCHY5b7KTTVZMbtS
 Panteros666+Woodkid+Chambray ~ Clear (Chambray Remix) [feat. Woodkid] ~ spotify:track:5dB25g9LHHWdwrm3eGFD8R
@@ -1541,41 +1542,40 @@ Pema Dechen ~ 21 Tara Lullaby - Instrumental ~ spotify:track:4ymcezpky8D10kGFxFM
 Pema Dechen ~ 21 Tara Lullaby - Lounge ~ spotify:track:3QiVJaiRGOSH62HSlz3Mi7
 Pernilla Wahlgren ~ Picadilly Circus - 2006 Remastered Version ~ spotify:track:5IdaNGlyp4KKQHlKQcARl8
 Pet Shop Boys ~ West End Girls - 2001 Remastered Version ~ spotify:track:7FlwylpJSe3ea6m1IrkizS
-Petter ~ Baksmälla ~
+Petter ~ Baksmälla ~ 
 Petter ~ Fredrik Snortare och Cecilia Synd ~ spotify:track:0I7B4cDM2Rqh6uxn00BU7m
 Petter ~ Håll om mig ~ spotify:track:4J0WQvqCBytACvgKVrq1S3
-Petter ~ Logiskt ~
+Petter ~ Logiskt ~ 
 Petter ~ Längesen ~ spotify:track:4GAQsZ49FjnU3YaUnbY0QR
-Petter ~ Stockholm i mitt hjärta ~
+Petter ~ Stockholm i mitt hjärta ~ 
 Petter ~ Tills döden skiljer oss åt ~ spotify:track:33gz72fMQYsCcuuZpqLQLY
 Petter+Chords ~ Natt & dag ~ spotify:track:75MY7L4J5TjaTgXMNZLJT7
 Petter+Eye N'I ~ Så klart! ~ spotify:track:59GzLHQ8PJcGuOCAIpSVbT
 Pharrell Williams ~ Happy ~ spotify:track:6NPVjNh8Jhru9xOmyQigds
-Pink Floyd ~ Another Brick In The Wall - 2001 Remastered Version ~
-Pink Floyd ~ Another Brick In The Wall, Pt. 2 - 2011 Remastered Version ~
-Pink Floyd ~ Breathe (In The Air) [2011 - Remaster] ~
-Pink Floyd ~ Comfortably Numb - 2011 Remastered Version ~
-Pink Floyd ~ Hey You - 2011 Remastered Version ~
-Pink Floyd ~ Money - 2011 Remastered Version ~
-Pink Floyd ~ Shine On You Crazy Diamond (Parts 1 - 5) [Edit] (2011 - Remaster) ~
-Pink Floyd ~ Time - 2011 Remastered Version ~
-Pink Floyd ~ Wish You Were Here - 2011 Remastered Version ~
+Pink Floyd ~ Another Brick In The Wall - 2001 Remastered Version ~ 
+Pink Floyd ~ Another Brick In The Wall, Pt. 2 - 2011 Remastered Version ~ 
+Pink Floyd ~ Breathe (In The Air) [2011 - Remaster] ~ 
+Pink Floyd ~ Comfortably Numb - 2011 Remastered Version ~ 
+Pink Floyd ~ Hey You - 2011 Remastered Version ~ 
+Pink Floyd ~ Money - 2011 Remastered Version ~ 
+Pink Floyd ~ Shine On You Crazy Diamond (Parts 1 - 5) [Edit] (2011 - Remaster) ~ 
+Pink Floyd ~ Time - 2011 Remastered Version ~ 
+Pink Floyd ~ Wish You Were Here - 2011 Remastered Version ~ 
 Pitbull ~ Hey Baby (Drop It To the Floor) ~ spotify:track:3rfhI32Il2hVRKDkuGeeen
 Pitbull ~ Timber ~ spotify:track:3cHyrEgdyYRjgJKSOiOtcS
 Pitbull+Ke$ha ~ Timber (Originally by Pitbull & Ke$ha) - Karaoke Version ~ spotify:track:2ppkGiVQYy8iieeZvL1PZS
 Pixies ~ Where Is My Mind? ~ spotify:track:5BP0oaQ1VhuaznT77CBXQp
 Placebo ~ Running Up That Hill ~ spotify:track:6RHHbAbyIcPpvS1dP3KUGq
-Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.
-Promoe ~ Dekadansen ~
-Promoe ~ Ge oss Sverige tillbaka ~
-Promoe ~ Mammas gata ~
-Promoe ~ Svennebanan ~
-Promoe ~ These Walls Don't Lie ~
+Promoe ~ Dekadansen ~ 
+Promoe ~ Ge oss Sverige tillbaka ~ 
+Promoe ~ Mammas gata ~ 
+Promoe ~ Svennebanan ~ 
+Promoe ~ These Walls Don't Lie ~ 
 Promoe+Partiet ~ Supervalåret (med Promoe) ~ spotify:track:10BxqlKJ7L7PCaVYgsQM8A
 Pugh Rogefeldt ~ Visan Om Bo (feat. Stefan Sundström) ~ spotify:track:4idkhw1F8Sr2KVjskvp8Pe
 Pulp No Pulp ~ C'est la vie (You Never Can Tell) [From "Pulp Fiction"] ~ spotify:track:5SSmYuGf5aNbaMoreSKLY1
-Pulp ~ Common People - Full Length Version; Album Version ~
-Queen ~ Another One Bites The Dust - Remastered 2011 ~
+Pulp ~ Common People - Full Length Version; Album Version ~ 
+Queen ~ Another One Bites The Dust - Remastered 2011 ~ 
 Queen ~ Bohemian Rhapsody - Remastered 2011 ~ spotify:track:2GAIycsMaDVtMtdvxzR2xI
 Queen ~ Don't Stop Me Now - Remastered 2011 ~ spotify:track:7hQJA50XrCWABAu5v6QZ4i
 Queen ~ I Want To Break Free - Remastered 2011 ~ spotify:track:33BzkvP6Vr2igVsRJXNTz6
@@ -1620,7 +1620,7 @@ Rammstein ~ Du Riechst So Gut ~ spotify:track:73se54LukI1xEPE8XKsrWf
 Rammstein ~ Du hast ~ spotify:track:1dS1SUD3vr0McKwez9MqAY
 Rammstein ~ I Am Rammstein (Live Version) ~ spotify:track:3tfF98X8wmsBwoVdZ34Dj8
 Rammstein ~ Rammstein ruht ~ spotify:track:4tL8hNK2EbOInd987Zp1rs
-Rammstein ~ STIMMEN AUS DEM KISSEN - VARIATIONEN ÜBER RAMMSTEIN ~
+Rammstein ~ STIMMEN AUS DEM KISSEN - VARIATIONEN ÜBER RAMMSTEIN ~ 
 Rammstein ~ Sonne ~ spotify:track:4w3R0GZ2rScJMKlgPJzHRq
 Rammstein ~ What The Hell - Back To Rammstein RMX ~ spotify:track:2x3OJuNSKN1fHjKCHn6DwL
 Rancid ~ Fall Back Down ~ spotify:track:3pdHJCTk85ls2SGGXIJ7XH
@@ -1660,12 +1660,12 @@ Reel Big Fish ~ She Has A Girlfriend Now ~ spotify:track:6cG3kY60HMcFqiZN8frkXF
 Reel Big Fish ~ Take On Me - Best Of ~ spotify:track:7IfckgnBsIdP4XE4tfWEDN
 Rhymes & Riddim ~ Andra Sidan ~ spotify:track:4mgjdD83RABXAM64vB3AQu
 Rhymes & Riddim ~ Enkel Matematik ~ spotify:track:2Okk6GJbZluiY5tZUq9R19
-Rhymes & Riddim ~ Fri (feat. Robert Athill) ~
-Rhymes & Riddim ~ Galen värld ~
+Rhymes & Riddim ~ Fri (feat. Robert Athill) ~ 
+Rhymes & Riddim ~ Galen värld ~ 
 Rhymes & Riddim ~ Likadant ~ spotify:track:7ghbl9klH7MAjvofXyuGkb
-Rhymes & Riddim ~ Spelar ingen roll ~
-Rhymes & Riddim ~ Spola tillbaks (feat. Shivano) ~
-Rhymes & Riddim ~ Titta på mig nu ~
+Rhymes & Riddim ~ Spelar ingen roll ~ 
+Rhymes & Riddim ~ Spola tillbaks (feat. Shivano) ~ 
+Rhymes & Riddim ~ Titta på mig nu ~ 
 Rihanna ~ Bitch Better Have My Money ~ spotify:track:0NTMtAO2BV4tnGvw9EgBVq
 Rihanna ~ Diamonds ~ spotify:track:7Kt59L2ZZGtOnIhvMwzG6f
 Rihanna ~ Man Down ~ spotify:track:454h9zAIuTe1eJyw9iTnj4
@@ -1688,9 +1688,9 @@ Rise Against ~ Tragedy + Time ~ spotify:track:39yvhCgBmNrLf0m9lan0Ge
 Robbie Williams ~ Let Me Entertain You ~ spotify:track:0SLtqCrXBRrnkxSOMA3X4W
 Robyn ~ Call Your Girlfriend ~ spotify:track:2sCoROOlNQyFpRQEe6A5lv
 Robyn ~ Dancing On My Own ~ spotify:track:3Rc2ajBMInxeNGVkMPC92Y
-Robyn ~ Hang With Me - Acoustic Version ~
-Robyn ~ Hang With Me - Edit ~
-Robyn ~ Indestructible - Radio Edit ~
+Robyn ~ Hang With Me - Acoustic Version ~ 
+Robyn ~ Hang With Me - Edit ~ 
+Robyn ~ Indestructible - Radio Edit ~ 
 Robyn ~ Indestructible ~ spotify:track:4CZ8nFoCsNNXuaX0qBm8LX
 Rockabye Baby! ~ We Are Never Ever Getting Back Together ~ spotify:track:57MBAMog95bS4z4hvo3ZL9
 Romeo Santos ~ Eres Mía ~ spotify:track:6I86RF3odBlcuZA9Vfjzeq
@@ -1749,10 +1749,10 @@ Sam Smith ~ I'm Not The Only One ~ spotify:track:0fioLzGM8ngbD1w6fMmm45
 Sam Smith ~ Latch - Acoustic ~ spotify:track:5vUNRJsvEOUsz4sbKkJpFr
 Samantha Fox ~ Touch Me (I Want Your Body) ~ spotify:track:5AE6Ms50U9Hh3TtANtAnut
 Samir & Viktor ~ Bada nakna ~ spotify:track:68jkh9nqSjpmRtkkA9f0ld
-Sanna Nielsen ~ Empty Room ~
+Sanna Nielsen ~ Empty Room ~ 
 Sanna Nielsen ~ Rainbow ~ spotify:track:30Mkr0pLt3WJzLB7gIRLpC
 Sanna Nielsen ~ Undo ~ spotify:track:3XhlY1x0LcIyHpZJB1g6WS
-Sanna Nielsen ~ Utan dina andetag ~
+Sanna Nielsen ~ Utan dina andetag ~ 
 Schoolboy Q+A$AP Rocky ~ Hands On The Wheel ~ spotify:track:2kfpH2OAAdpk5J3JaraAIh
 Scorpions ~ Always Somewhere ~ spotify:track:6Ok4D4w117mSi9OP8tmrpg
 Scorpions ~ No One Like You - 2011 Version ~ spotify:track:5hVepr5CHiTGtJY5bP4i5n
@@ -1779,11 +1779,11 @@ Sean Banan ~ Skaka Rumpa ~ spotify:track:2q5WLigZE4cxOnNO7Le0So
 Sean Kingston+Nicki Minaj ~ Letting Go (Dutty Love) featuring Nicki Minaj ~ spotify:track:0wDbYIl4fN2mccHczCJqEf
 Sean Paul ~ Other Side Of Love ~ spotify:track:4RdUpI3iTwqzCQe9ttKB5Q
 Sean Paul ~ She Doesn't Mind ~ spotify:track:1zZIGnXIcDKU8QIUkR20nK
-Sean Paul ~ She Makes Me Go - Radio feat. Sean Paul ~
+Sean Paul ~ She Makes Me Go - Radio feat. Sean Paul ~ 
 Sean Paul ~ Temperature ~ spotify:track:0k2GOhqsrxDTAbFFSdNJjT
 Sean Paul+Alexis Jordan ~ Got 2 Luv U (feat. Alexis Jordan) ~ spotify:track:7ha7zYOryB0rpnMTa4S75U
-September ~ Cry for You - UK Radio Edit ~
-September ~ Kärlekens tunga ~
+September ~ Cry for You - UK Radio Edit ~ 
+September ~ Kärlekens tunga ~ 
 September ~ Mikrofonkåt ~ spotify:track:6iZVv78KUv8sKv92JvoiqB
 September ~ Party In My Head ~ spotify:track:0Hu9X7ipOV8sdHj7YzOppM
 September ~ Satellites - US Mix ~ spotify:track:7iZuR1XsziH1CN5xYp4H18
@@ -1815,8 +1815,8 @@ Skrillex ~ Recess ~ spotify:track:1RJZLVGpBG9nNZiHRQSWTp
 Skrillex ~ Scary Monsters And Nice Sprites ~ spotify:track:4rwpZEcnalkuhPyGkEdhu0
 Skrillex+Sirah ~ Kyoto (feat. Sirah) ~ spotify:track:3FUZpoj9VV0sgc8RqbS3xQ
 Slagsmålsklubben ~ Hit Me Hard ~ spotify:track:4QQK41jsFhvMTJezQL6xCc
-Slagsmålsklubben ~ Hänt ~
-Slagsmålsklubben ~ Malmö Beach Night Party ~
+Slagsmålsklubben ~ Hänt ~ 
+Slagsmålsklubben ~ Malmö Beach Night Party ~ 
 Slagsmålsklubben ~ Ovningskora ~ spotify:track:5vn6pVxzLeWJweGa9zqxGD
 Slagsmålsklubben ~ Smart Drag Mr. Christer ~ spotify:track:3uCjRHuZo6790JwGcbXP3P
 Slagsmålsklubben ~ Smk Hittar Munspelet ~ spotify:track:5IYVxul8ZJA0jGhmvlUQbU
@@ -1830,19 +1830,19 @@ Snoop Dogg+Wiz Khalifa+Bruno Mars ~ Young, Wild & Free (feat. Bruno Mars) ~ spot
 Snowstorm ~ Sommarnatt (Snowstorm cover) ~ spotify:track:2hjiZeBembOY4GoIKy6BS8
 Soul Asylum ~ Runaway Train ~ spotify:track:3Ib3SJV8ZXuLvDiDb2w1As
 Soulja King ~ Girls Love Beyonce & Drake ~ spotify:track:03HtB11NXcnNVtRgxA3Ao1
-Soulsavers feat. Mark Lanegan and Mike Patton ~ Unbalanced Pieces ~
+Soulsavers feat. Mark Lanegan and Mike Patton ~ Unbalanced Pieces ~ 
 Sparks ~ At Home At Work At Play ~ spotify:track:0WtuSuOI7b3sOJTkvECga9
 Sparks ~ This Town Ain't Big Enough For Both Of Us ~ spotify:track:2rgHxOarlO4W35mg0IZ5u8
 Stammreim ~ Du hast - Instrumental Mix ~ spotify:track:4C2aXul4JQ89pPJhXfPjIb
-Stefan Sundström ~ Den svenska gästarbeterskans sång ~
+Stefan Sundström ~ Den svenska gästarbeterskans sång ~ 
 Stefan Sundström ~ Fredrik Nu är det Dags att Gå ~ spotify:track:3gbn0UFXnAYjWIDDPeYd9L
-Stefan Sundström ~ Grön grön grön ~
-Stefan Sundström ~ Har någon sett Sabina ~
-Stefan Sundström ~ Malena ~
-Stefan Sundström ~ Nog ~
-Stefan Sundström ~ Resa med lätt bagage ~
+Stefan Sundström ~ Grön grön grön ~ 
+Stefan Sundström ~ Har någon sett Sabina ~ 
+Stefan Sundström ~ Malena ~ 
+Stefan Sundström ~ Nog ~ 
+Stefan Sundström ~ Resa med lätt bagage ~ 
 Stefan Sundström ~ Söder ska resa sej (igen) ~ spotify:track:2unLJnct8rOBEq2dsaX7nE
-Stefan Sundström ~ Tiden blev kort ~
+Stefan Sundström ~ Tiden blev kort ~ 
 Stefans Matlåtar ~ Kompisar ~ spotify:track:37ty6hzqMYNss2UaXBxikl
 Stefans Matlåtar ~ Macka ~ spotify:track:7btNnUin1K1pI34JPPwHJh
 Stefans Matlåtar ~ Matlåten ~ spotify:track:30EGB8KI2Y9ntufhDpwLx2
@@ -1850,7 +1850,7 @@ Stefans Matlåtar ~ Matlåten ~ spotify:track:6T0bKHuZVKcbnF4OckavC3
 Stefans Matlåtar ~ Restaurang Vals ~ spotify:track:2emMiFerbidRDrDpgueFsy
 Stevie Wonder ~ Superstition - Single Version ~ spotify:track:5BxUIRd7eVYJ5YColCSdpB
 Strafe Run ~ Ode to Rammstein ~ spotify:track:0UwYWTcMxcPOkf3aMRobmA
-Stress ~ Tystas ner - RMH Remix ~
+Stress ~ Tystas ner - RMH Remix ~ 
 Style of Eye ~ Here With Me ~ spotify:track:3S2grpa5xhEVGDw4S9ZGAn
 Sublime ~ Badfish ~ spotify:track:4KnpSJBbcpJBAjEaaJBcL8
 Sublime ~ Caress Me Down ~ spotify:track:0wWjWihr46S1gOB6KC2he3
@@ -1881,8 +1881,8 @@ System of a Down ~ Radio/Video ~ spotify:track:41pOIT2t1rvr2Trg1HQChZ
 System of a Down ~ Sugar ~ spotify:track:31RTFPrB7wmYBhlkM2ILXG
 System of a Down ~ Toxicity ~ spotify:track:0snQkGI5qnAmohLE7jTsTn
 System of a Down ~ Violent Pornography ~ spotify:track:249Z7XT6mf8B2zuI0RaeS0
-Syster Sol ~ Kärleksrevolt! ~
-Syster Sol+AKI+Dani M+General Knas ~ Kärleksrevolt! ~
+Syster Sol ~ Kärleksrevolt! ~ 
+Syster Sol+AKI+Dani M+General Knas ~ Kärleksrevolt! ~ 
 T-Pain+B.o.B ~ Up Down (Do This All Day) ~ spotify:track:1uH1Nd8vet2uoZSDFSDwbh
 Taco ~ Puttin' On The Ritz (Re-Recorded / Remastered) ~ spotify:track:5tdTQGPEaPH2B4TRpxLypg
 Taio Cruz ~ Dynamite ~ spotify:track:1DqdF42leyFIzqNDv9CjId
@@ -1904,7 +1904,7 @@ Teddybears ~ Cobrastyle ~ spotify:track:45sdD9GjryujVOcRJ4YQRQ
 Teddybears ~ Get Mama A House - feat. B.o.B ~ spotify:track:0vb5XuWzpyzuW3Tw8wLVRW
 Teddybears ~ Hey Boy ~ spotify:track:191WWeKEl9FKuTaSdJOqco
 Teddybears ~ Little Stereo ~ spotify:track:3iPPpKw775rCOiFd2aMT8F
-Teddybears ~ No More Michael Jackson ~
+Teddybears ~ No More Michael Jackson ~ 
 Teddybears ~ Sunshine ~ spotify:track:0OXvO7h8MkGueA4ad1LvKm
 Teddybears ~ Yours To Keep - feat. Neneh Cherry ~ spotify:track:46QtaRwLuWe5vRrNBm5iby
 Tegan And Sara ~ Everything Is AWESOME!!! - Originally Performed By Tegan and Sara feat. The Lonely Island ~ spotify:track:5xpZ30HA9w2dQHKugWk0so
@@ -1923,13 +1923,13 @@ The Archies ~ Sugar, Sugar ~ spotify:track:3iSws76HjaU7k49EqJVTfF
 The Beach Boys ~ Good Vibrations - 2001 - Remaster ~ spotify:track:2oF7FZHIJbzjeEXZ3D0Ku4
 The Beach Boys ~ Surfin' U.S.A. ~ spotify:track:0wz1LjDb9ZNEYwOmDJ3Q4b
 The Beatles Connection ~ Blackbird ~ spotify:track:2C4oyCyHdu1S4q7Gih82vd
-The Beatles ~ A Day In The Life - Remastered 2009 ~
+The Beatles ~ A Day In The Life - Remastered 2009 ~ 
 The Beatles ~ All My Loving - Remastered ~ spotify:track:4joiWvli4qJVEW6qZV2i2J
 The Beatles ~ Hey Jude - Remastered 2015 ~ spotify:track:0aym2LBJBk9DAYuHHutrIl
 The Beatles ~ Let It Be - Remastered ~ spotify:track:7iN1s7xHE4ifF5povM6A48
-The Beatles ~ Love Me Do - Original Remastered Version ~
-The Beatles ~ Twist And Shout - Remastered 2009 ~
-The Beatles ~ Yesterday - Remastered 2009 ~
+The Beatles ~ Love Me Do - Original Remastered Version ~ 
+The Beatles ~ Twist And Shout - Remastered 2009 ~ 
+The Beatles ~ Yesterday - Remastered 2009 ~ 
 The Beatles ~ Yesterday - Remastered ~ spotify:track:3BQHpFgAp4l80e1XslIjNI
 The Black Eyed Peas ~ Boom Boom Pow ~ spotify:track:5MeZ3VxmtSv1O8PcekvLTn
 The Black Eyed Peas ~ I Gotta Feeling ~ spotify:track:4vp2J1l5RD4gMZwGFLfRAu
@@ -1983,9 +1983,9 @@ The Film Score Dance Band ~ You Never Can Tell (Pulp Fiction) ~ spotify:track:5a
 The Film Score Orchestra ~ You Never Can Tell (Pulp Fiction) ~ spotify:track:394ozwq5Rd454wj29ay5KH
 The Housemartins ~ Caravan of Love (Karaoke Version) [In the Style of Housemartins] ~ spotify:track:6zibN4gY2v2pyiOgIWJpnu
 The Jackson 5 ~ I Want You Back - Kenny Hayes Sunshine Funk Remix ~ spotify:track:3YvMNitBSsDN2L7kVzLNNa
-The Kinks ~ You Really Got Me (Remastered) ~
+The Kinks ~ You Really Got Me (Remastered) ~ 
 The Lambrettas ~ Locomotion ~ spotify:track:1TkAIr8e7PZqAmjDgCKxtt
-The Lively Ones ~ Surf Rider! - Original Soundtrack Theme from Pulp Fiction ~
+The Lively Ones ~ Surf Rider! - Original Soundtrack Theme from Pulp Fiction ~ 
 The Lonely Island ~ Go Kindergarten ~ spotify:track:4gExQEdVh6uroHw2siEmi9
 The Lonely Island ~ I Just Had Sex ~ spotify:track:6eG57n71RMwtmtmeJxinSQ
 The Lonely Island ~ I'm On A Boat ~ spotify:track:3IQSYqnKsCTMLWn2xE3HFT
@@ -2034,17 +2034,17 @@ The Sounds ~ Living in America ~ spotify:track:4lXFRXIbhmiCBlkugTm7Po
 The Sounds ~ No One Sleeps When I’m Awake ~ spotify:track:3WKuvzrcU1eMt0cxHV9OZ5
 The Sounds ~ Painted By Numbers ~ spotify:track:1jnggDvEm0OUskPxHmIUml
 The Sounds ~ Rock 'N' Roll Pest Control ~ spotify:track:3NwKW5qUxLBOx8UXZSJDnu
-The Sounds ~ Seven Days A Week ~
+The Sounds ~ Seven Days A Week ~ 
 The Sounds ~ Tony The Beat ~ spotify:track:6NxenAS6XMgEmE84gjwLZg
 The Supremes ~ Baby Love - Juke Box Single Version ~ spotify:track:2F3Yu4N3RBvBET9qaE1quT
-The Supremes ~ Stop! In The Name Of Love - Stereo Version ~
+The Supremes ~ Stop! In The Name Of Love - Stereo Version ~ 
 The Supremes ~ You Can't Hurry Love ~ spotify:track:69Qa7czzqraPWZgxpQN405
 The Verve ~ Bitter Sweet Symphony - 2004 Digital Remaster ~ spotify:track:1WYEDcS7WGjv0rG7rmMX3o
 The White Stripes ~ Blue Orchid ~ spotify:track:1JJJQYklfk5ayxyYQgD5FO
 The White Stripes ~ Fell In Love With A Girl ~ spotify:track:33ytgjBqchYHhhRfKWMCvH
 The White Stripes ~ Hotel Yorba ~ spotify:track:6J2rMdXyBOi9Pp3NWaMZFk
 The White Stripes ~ Icky Thump ~ spotify:track:09QZAEmdbq28OaNyqTOEvY
-The White Stripes ~ Jolene (Live Under Blackpool Lights) ~
+The White Stripes ~ Jolene (Live Under Blackpool Lights) ~ 
 The White Stripes ~ Seven Nation Army ~ spotify:track:3ctoHckjyd13eBi2IDw2Ip
 The White Stripes ~ The Hardest Button To Button ~ spotify:track:1DH4YwHHGBkWO8dX3JISjl
 The White Stripes ~ We're Going To Be Friends ~ spotify:track:6u13tCUeMafkT0KFsmvodB
@@ -2058,7 +2058,7 @@ Thermostatic ~ Private Machine ~ spotify:track:4Ps0reYaMsSRXdOki6zt4X
 Thermostatic ~ Reasons ~ spotify:track:2GXHxR1UZcxpGKY7BBM6Cs
 Thermostatic ~ So Close So Near ~ spotify:track:0q3mmXXuQolCJsjAffeKvL
 Thermostatic ~ The box ~ spotify:track:5h5dl7izPzUII09dM4U853
-Thomas Rusiak ~ Hiphopper (feat Teddybears STHLM) ~
+Thomas Rusiak ~ Hiphopper (feat Teddybears STHLM) ~ 
 Timbuktu ~ Alla vill till himmelen men ingen vill dö ~ spotify:track:5tAyPMQFAR2u1BbEytn0eH
 Timbuktu ~ Annie Leibovitz ~ spotify:track:06EJImF4rr9ATsmgSViddP
 Timbuktu ~ Den Svenska Skammen ~ spotify:track:5rFPZM81qjTomttbvGenqL
@@ -2076,7 +2076,7 @@ Tom Jones ~ It's Not Unusual - 2nd Studio Version ~ spotify:track:0gE3ctfU9bxgxe
 Tom Jones ~ She's A Lady ~ spotify:track:3MkhfGI1air9O4XJ5FWrlo
 Tom Jones+Mousse T. ~ Sex Bomb ~ spotify:track:47TOpx16LwqnL9ff2uWTef
 Tom Jones+The Cardigans ~ Burning Down The House ~ spotify:track:3v3EGRQ6bywgEaeBRYhpcN
-Townes Van Zandt ~ Dead Flowers ~
+Townes Van Zandt ~ Dead Flowers ~ 
 Tracy Chapman ~ Across The Lines ~ spotify:track:3XkXJNMHJB0UiKiVz83yD7
 Tracy Chapman ~ Ain't No Sunshine featuring Tracy Chapman ~ spotify:track:1amH1FjaNDAaZVpHWzcztW
 Tracy Chapman ~ Baby Can I Hold You ~ spotify:track:2DjWsDGgL1xNbhnr7f6t5F
@@ -2091,7 +2091,7 @@ Tracy Chapman ~ Talkin' Bout A Revolution ~ spotify:track:0YMFcrMtBowDdD5bPz0cgy
 Tracy Chapman ~ The Promise ~ spotify:track:2HO2bnoMrpnZUbUqiilLHi
 Travie McCoy+Bruno Mars ~ Billionaire (feat. Bruno Mars) ~ spotify:track:2M9ULmQwTaTGmAdXaXpfz5
 Trey Songz ~ Touchin, Lovin (feat. Nicki Minaj) ~ spotify:track:4bkhs6spQvVnVJAlXuKR6a
-Trio ~ Da Da Da ich lieb dich nicht du liebst mich nicht Aha Aha Aha ~
+Trio ~ Da Da Da ich lieb dich nicht du liebst mich nicht Aha Aha Aha ~ 
 Trolle og Tormod ~ ABC - feat. General Knas ~ spotify:track:08x7d5lSieD1eIPtQwYmIk
 Tuklan ~ Ebony Eyes - DJs From Mars Remix Edit ~ spotify:track:2C3wFGXjyTpfepEAFMs8V2
 Twenty One Pilots ~ Stressed Out ~ spotify:track:3CRDbSIZ4r5MsZ0YwxuEkn
@@ -2104,12 +2104,12 @@ U2 ~ Pride (In The Name Of Love) - Remastered ~ spotify:track:3dh2LlmeMqKJbzn2WU
 U2 ~ Where The Streets Have No Name - New Edit U218 ~ spotify:track:6m7gIWLPer8eUVUCqs3mWg
 U2 ~ Who's Gonna Ride Your Wild Horses ~ spotify:track:4SzIZFruLhiAzhuMtAhIRt
 U2 ~ With Or Without You - Remastered ~ spotify:track:5JGEAz15LkPoOtFHttDtVs
-U2-I Still Haven't Found What I'm Looking For  ~  Remastered ~
-U2-I Still Haven't Found What I'm Looking For ~ Remastered ~
-U2-Pride (In The Name Of Love)  ~  Remastered ~
-U2-Pride (In The Name Of Love) ~ Remastered ~
-U2-Where The Streets Have No Name  ~  New Edit U218 ~
-U2-Where The Streets Have No Name ~ New Edit U218 ~
+U2-I Still Haven't Found What I'm Looking For ~ Remastered ~ 
+U2-I Still Haven't Found What I'm Looking For ~ Remastered ~ 
+U2-Pride (In The Name Of Love) ~ Remastered ~ 
+U2-Pride (In The Name Of Love) ~ Remastered ~ 
+U2-Where The Streets Have No Name ~ New Edit U218 ~ 
+U2-Where The Streets Have No Name ~ New Edit U218 ~ 
 UB40 ~ Red Red Wine - Edit ~ spotify:track:4uOKFydzAejjSFqYbv1XPt
 Ulf Lundell ~ (Oh la la) Jag vill ha dej ~ spotify:track:3jgyp48pP9uzOhfVPfJdaR
 Ulf Lundell ~ Kär och galen ~ spotify:track:7dBAtPY1EzaSTtbOiy4QS4
@@ -2124,16 +2124,16 @@ Ulf Lundell ~ Öppna landskap ~ spotify:track:2tFKOR3lkEmILgxUc2yhuU
 Uno Svenningsson ~ Under ytan ~ spotify:track:7E9rcVjE66zO7p4IwyhjBC
 Vance Joy ~ Winds Of Change ~ spotify:track:7JXxssBpAnroZOMR4vpOuc
 Veronica Maggio ~ Jag kommer ~ spotify:track:2QyTvPHRT9P6ZZSOAzG7eG
-Veronica Maggio ~ Jag lovar ~
-Veronica Maggio ~ Låtsas som det regnar - Jarly Remix ~
-Veronica Maggio ~ Låtsas som det regnar ~
+Veronica Maggio ~ Jag lovar ~ 
+Veronica Maggio ~ Låtsas som det regnar - Jarly Remix ~ 
+Veronica Maggio ~ Låtsas som det regnar ~ 
 Veronica Maggio ~ Mitt hjärta blöder ~ spotify:track:7cgo7045JzywlitlUuG6SM
-Veronica Maggio ~ Sergels torg ~
+Veronica Maggio ~ Sergels torg ~ 
 Veronica Maggio ~ Snälla bli min ~ spotify:track:35yrPjlYNotXUXAV0tjIM8
-Veronica Maggio ~ Trädgården en fredag ~
+Veronica Maggio ~ Trädgården en fredag ~ 
 Veronica Maggio ~ Välkommen in ~ spotify:track:3O56xDyPRTBeiqaijnUA1b
 Vigiland ~ Pong Dance ~ spotify:track:3AVnIi6HvEiHGlIj4c6ok2
-Village People ~ YMCA - Original Version 1978 ~
+Village People ~ YMCA - Original Version 1978 ~ 
 Vitamin String Quartet ~ When We Were Young - String Quartet Rendition of Adele ~ spotify:track:3GdKj4OMg88FR1vQeGnQ5e
 Weezer ~ Back To The Shack ~ spotify:track:42YgaJLCehufTbH2orwBHM
 Weezer ~ Buddy Holly ~ spotify:track:7GptbanebPZYkLPvjNfd6m
@@ -2147,10 +2147,10 @@ Wheatus ~ Teenage Dirtbag ~ spotify:track:3LI4MmibTkXH5cGpCGZgyw
 William B. Williams ~ Introduction of Dave Brubeck Quartet ~ spotify:track:3OunJZpDKmWjuGuimtDQus
 Within Temptation ~ All I Need ~ spotify:track:2FPHOduj8yJPDOadAOqVm5
 Within Temptation ~ Angels ~ spotify:track:50A75OZiqGkRdF904sRQXg
-Within Temptation ~ Faster - Radio Edit ~
+Within Temptation ~ Faster - Radio Edit ~ 
 Within Temptation ~ Faster ~ spotify:track:09whmgWfGHPys6k3M9Athv
 Within Temptation ~ In The Middle Of The Night ~ spotify:track:2mxZKXsHBWqm5Oz8DSE1ic
-Within Temptation ~ Paradise (What About Us?) [feat. Tarja] - Single Version ~
+Within Temptation ~ Paradise (What About Us?) [feat. Tarja] - Single Version ~ 
 Within Temptation ~ Shot In The Dark ~ spotify:track:1Pw3TwAjDb1oS0F9x4dGdQ
 Within Temptation ~ Sinéad ~ spotify:track:6agaR8uXdeycsvlxtZvKMW
 Within Temptation ~ What Have You Done (feat. Keith Caputo) ~ spotify:track:48cflKh8744H5azTEGO6zV
@@ -2170,7 +2170,7 @@ Yolanda Be Cool ~ We No Speak Americano - Radio Edit ~ spotify:track:6Ljak2OKTpS
 ZAYN ~ PILLOWTALK ~ spotify:track:0IKK48xF4eEdfofyaeKWWO
 Zeds Dead feat. Memorecks ~ Collapse (feat. Memorecks) ~ spotify:track:4fb0iBhHbQeiJHOfLr6R75
 Zeds Dead feat. Sean Price ~ Dead Price (feat. Sean Price) ~ spotify:track:4cNdza3CVVfo5mBlDpQRtV
-Zeds Dead ~ Eyes on Fire - Zeds Dead RMX ~
+Zeds Dead ~ Eyes on Fire - Zeds Dead RMX ~ 
 Zeds Dead ~ Holding on for Life - Zeds Dead Remix ~ spotify:track:7gd9BBTPlJyMRpHPfkPneX
 Zeds Dead ~ Rude Boy ~ spotify:track:2nz6tKHsV0GJhwaXIOvYz5
 Zeds Dead ~ Smack My Bitch Up (Noisia Remix) ~ spotify:track:4ndYuCdyCueaYWbROBusyU

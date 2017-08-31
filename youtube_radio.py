@@ -54,7 +54,7 @@ def cache_song(url, wildcard):
         video = pafy.new(url)
         audiostream = max(video.audiostreams, key=lambda audio: abs(audio.rawbitrate-131072))
         src_filename = audiostream.download()
-        base,ext = os.path.splitext(filename)
+        base,ext = os.path.splitext(src_filename)
         dst_filename = wildcard.replace('.*', ext)
         os.rename(src_filename, dst_filename)
         return dst_filename

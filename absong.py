@@ -5,7 +5,10 @@ class ABSong:
     def __init__(self, _name,_artist,_uri):
         self.name = _name
         self.artist = str(_artist)
-        self.searchname   = self.name.lower().split('(')[0].strip()
+        self.searchname   = self.name.lower()
+        if self.searchname[0] != '(':
+            self.searchname = self.searchname.partition('(')[0]
+        self.searchname   = self.searchname.strip()
         self.searchartist = self.artist.lower().split('+')[0].strip()
         self.uri = _uri
     def __eq__(self, other):

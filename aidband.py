@@ -5,6 +5,7 @@ from absong import ABSong
 import argparse
 import codecs
 import difflib
+from functools import partial
 from glob import glob
 import hotoptions
 import interruptor
@@ -198,20 +199,45 @@ def play_list(name):
     else:
         avoutput('%s playlist is empty, nothing to play.' % _simple_listname())
 
-def search_queue(search):
+
+def match(search, song):
+	s = song
+	return max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
+
+def search_precise(search):
     search = search.lower()
     search_words = search.split()
-    min_match = max(1, len(search_words)//2)
-    similar = [song for song in playqueue if len([1 for lword in search_words if lword in song.searchartist or lword in song.searchname]) >= min_match]
-    match = lambda s: max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
+    similar = []
+    for song in playqueue:
+        awords = song.searchartist.split()
+        artist_perc = sum(1 for sword in search_words if sword in awords) / len(search_words)
+        nwords = song.searchname.split()
+        name_perc = sum(1 for sword in search_words if sword in nwords) / len(search_words)
+        if artist_perc+name_perc >= 0.5:
+            print('precise match for:', str(song).encode(), artist_perc, name_perc)
+            similar.append(song)
+    score = 0
+    if similar:
+        similar = sorted(similar, key=partial(match, search), reverse=True)
+        score = match(search, similar[0])
+    print('precise:', score, str(similar).encode())
+    return score,similar
+
+def search_queue(search):
+    search = search.lower()
+    score,similar = search_precise(search)
     if not similar:
-        similar = [song for song in playqueue if match(song) > 0.6]
-    return sorted(similar, key=match, reverse=True)
+        similar = [song for song in playqueue if match(search, song) > 0.6]
+    return sorted(similar, key=partial(match, search), reverse=True)
 
 def search_music(search):
     spotify_init()
     #return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
     songs = muzaks.search(search) if muzaks else []
+    if not songs:
+        score,songs = search_precise(search)
+        if score < 0.6:
+            songs = youtube_radio.search(search)
     return songs if songs else search_queue(search)
 
 def play_search(search):
@@ -351,6 +377,12 @@ def avoutput(*args):
     output(s)
     speech.say(s)
 
+def run_ext_cmd(cmd):
+    try:
+        exec(open('ext/'+cmd.strip()).read())
+    except Exception as e:
+        output('ext_cmd "%s" crash: %s' % (cmd, str(e)))
+
 def _validate():
     if not ishits:
         assert len(playqueue) >= len(playlist)
@@ -459,6 +491,8 @@ while True:
                 playidx = shuffleidx.index(curidx)
                 avoutput('Shuffle.' if useshuffle else 'Playing in order.')
             _validate()
+        elif cmd.startswith('!'):
+            run_ext_cmd(cmd.lstrip('!'))
         elif cmd.endswith('\r'):
             cmd = cmd.strip()
             if len(cmd) < 2:
