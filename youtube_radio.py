@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from absong import ABSong
+import html
 import os
 import pafy
 import re
@@ -18,16 +19,18 @@ def search(s):
     print(s)
     param = urllib.parse.urlencode({'q': 'site:youtube.com %s' % s})
     url = 'https://www.google.se/search?%s' % param
-    html = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
+    body = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
     artist = ''
     songs = []
     urls = set()
     names = set()
-    for pagelink in pages.finditer(html):
+    for pagelink in pages.finditer(body):
         url = pagelink.group(1).replace('%3F','?').replace('%3D', '=')
-        name = parenths.sub('', tags.sub('', pagelink.group(2)))
-        name = parenths.sub('', name)
-        name = ' '.join(name.split()).strip()
+        name = html.unescape(pagelink.group(2))
+        name = tags.sub(' ', name)
+        name = parenths.sub(' ', name)
+        name = name.replace('"', ' ').strip()
+        name = ' '.join(name.split())
         exists = (url in urls or name in names)
         urls.add(url)
         names.add(name)
@@ -61,6 +64,6 @@ def cache_song(url, wildcard):
 
 
 if __name__ == '__main__':
-    songs = search('Kim Cesarion')
+    songs = search('milencolin')
     print(songs)
     cache_song(songs[0].uri, './something.*')

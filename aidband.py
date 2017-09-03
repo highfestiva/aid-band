@@ -212,6 +212,7 @@ def search_precise(search):
     search = search.lower()
     search_words = search.split()
     similar = []
+    artist_similar = []
     for song in playqueue:
         awords = song.searchartist.split()
         artist_perc = sum(1 for sword in search_words if sword in awords) / len(search_words)
@@ -220,16 +221,18 @@ def search_precise(search):
         if artist_perc+name_perc >= 0.5:
             print('precise match for:', str(song).encode(), artist_perc, name_perc)
             similar.append(song)
+        if artist_perc >= 0.5:
+            artist_similar.append(song)
     score = 0
     if similar:
         similar = sorted(similar, key=partial(match, search), reverse=True)
         score = match(search, similar[0])
     print('precise:', score, str(similar).encode())
-    return score,similar
+    return score,similar,artist_similar
 
 def search_queue(search):
     search = search.lower()
-    score,similar = search_precise(search)
+    score,similar,artist_similar = search_precise(search)
     if not similar:
         similar = [song for song in playqueue if match(search, song) > 0.6]
     return sorted(similar, key=partial(match, search), reverse=True)
@@ -239,8 +242,8 @@ def search_music(search):
     #return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
     songs = muzaks.search(search) if muzaks else []
     if not songs:
-        score,songs = search_precise(search)
-        if score < 0.6:
+        score,songs,artist_songs = search_precise(search)
+        if score < 0.6 or 1 <= len(artist_songs) <= 10:
             songs = youtube_radio.search(search)
     return songs if songs else search_queue(search)
 
