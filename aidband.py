@@ -92,13 +92,17 @@ def play_url(url, cachewildcard):
     if cachewildcard and allowcache: 
         fns = glob(cachewildcard)
         cachename = fns[0] if fns else None
+        did_download = False
         if not cachename:
             cachename = youtube_radio.cache_song(url, cachewildcard)
+            did_download = True
         if mplayer and cachename:
             cmd = [mplayer, cachename]
             proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             url = cachename
             ok = True
+            if did_download:
+                add_song(verbose=False)
     if not proc:
         if url.startswith('spotify'):
             if muzaks:
@@ -259,19 +263,22 @@ def play_search(search):
         avoutput('Nothing found, try again.')
     queue_songs(songs)
 
-def add_song():
+def add_song(verbose=True):
     global playlist,playqueue
     if shuffleidx[playidx:playidx+1]:
         song = playqueue[shuffleidx[playidx]]
         if song not in playlist:
             playlist += [song]
             save_list(playlist)
-            avoutput('%s added to %s.' % (song.name,_simple_listname()))
+            if verbose:
+                avoutput('%s added to %s.' % (song.name,_simple_listname()))
             return True
         else:
-            avoutput('%s already in %s.' % (song.name,_simple_listname()))
+            if verbose:
+                avoutput('%s already in %s.' % (song.name,_simple_listname()))
     else:
-        avoutput('Play queue is empty, no song to add.')
+        if verbose:
+            avoutput('Play queue is empty, no song to add.')
     _validate()
 
 def drop_song():
