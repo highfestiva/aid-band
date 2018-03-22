@@ -254,12 +254,8 @@ def play_search(search):
         if search != search.strip('@'):
             search = search.strip('@')
             songs = search_queue(search)
-            # We can't queue these songs, they are already in playqueue.
             if songs:
-                global playidx
-                idx = playqueue.index(songs[0])
-                playidx = shuffleidx.index(idx)
-                play_idx()
+                requeue_songs(songs)
                 return
         songs = search_music(search)
     if not songs:
@@ -348,6 +344,26 @@ def queue_songs(songs):
     newidx = list(range(len(playqueue),len(playqueue)+len(songs)))
     playqueue += songs
     shuffleidx = shuffleidx[:playidx+1] + newidx + shuffleidx[playidx+1:]
+    _validate()
+    next_song()
+
+def requeue_songs(songs):
+    '''Repositions songs to end up next in the play queue'''
+    songs = list(songs)
+    if not songs:
+        return
+    global playidx, playqueue, shuffleidx
+    in_idx = playidx + 1
+    for song in songs:
+        pq_idx = playqueue.index(song)
+        sh_idx = shuffleidx.index(pq_idx)
+        shuffleidx = shuffleidx[:sh_idx] + shuffleidx[sh_idx+1:] # drop from current pos
+        if sh_idx < in_idx:
+            in_idx -= 1
+        if sh_idx <= playidx: # back up current playing index, as we've effectivly dropped one song earlier in the list
+            playidx -= 1
+        shuffleidx = shuffleidx[:in_idx] + [pq_idx] + shuffleidx[in_idx:] # insert in next slot
+        in_idx += 1 # insert next song beyond
     _validate()
     next_song()
 
