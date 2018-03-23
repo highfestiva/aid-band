@@ -87,7 +87,7 @@ def play_url(url, cachewildcard):
     ok = False
     stop()
     spotify_init()
-    global proc,start_play_time,cache_write_name,active_url
+    global proc,start_play_time,cache_write_name,active_url,options
     cache_write_name = None
     if cachewildcard and allowcache: 
         fns = glob(cachewildcard)
@@ -97,7 +97,7 @@ def play_url(url, cachewildcard):
             cachename = youtube_radio.cache_song(url, cachewildcard)
             did_download = True
         if mplayer and cachename:
-            cmd = [mplayer, cachename]
+            cmd = [mplayer, '-volume', options.volume, cachename]
             proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             url = cachename
             ok = True
@@ -111,7 +111,7 @@ def play_url(url, cachewildcard):
             else:
                 output("Won't play over spotify.")
         elif mplayer and url:
-            cmd = [mplayer, _confixs(url)]
+            cmd = [mplayer, '-volume', options.volume, _confixs(url)]
             proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             ok = True
         elif url:
@@ -299,18 +299,24 @@ def drop_song():
     _validate()
 
 def prev_song():
-    global playqueue,playidx
-    playidx -= 1
-    if playidx < 0:
-        playidx = len(playqueue)-1 if playqueue else 0
-    play_idx()
+    step_song(-1)
 
 def next_song():
+    step_song(+1)
+
+def step_song(step):
     global playqueue,playidx
-    playidx += 1
-    if playidx >= len(playqueue):
-        playidx = 0
-    play_idx()
+    for _ in range(3): # make up to three attempts
+        playidx += 1
+        if playidx < 0:
+            playidx = len(playqueue)-1
+        if playidx >= len(playqueue):
+            playidx = 0
+        try:
+            play_idx()
+            break
+        except Exception as e:
+            output('step_song "%s" crash: %s' % (cmd, str(e)))
 
 def update_url():
     global playqueue,playidx,playlist
@@ -435,6 +441,7 @@ def _match_ratio(s1,s2):
 parser = argparse.ArgumentParser()
 parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', help="directory containing playlists and cache (default is '.')")
 parser.add_argument('--without-spotify', dest='nosp', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
+parser.add_argument('--volume', default='100', help='pass volume to mplayer')
 options = parser.parse_args()
 
 datadir = options.datadir
@@ -518,7 +525,12 @@ while True:
                 avoutput('Shuffle.' if useshuffle else 'Playing in order.')
             _validate()
         elif cmd.startswith('!'):
-            run_ext_cmd(cmd.lstrip('!'))
+            cmd = cmd.strip()
+            if cmd.startswith('!volume'):
+                options.volume = cmd.partition(' ')[2]
+                avoutput('Volume set to %s.' % options.volume)
+            else:
+                run_ext_cmd(cmd.lstrip('!'))
         elif cmd.endswith('\r'):
             cmd = cmd.strip()
             if len(cmd) < 2:
