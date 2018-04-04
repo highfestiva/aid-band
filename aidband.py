@@ -440,9 +440,10 @@ def _match_ratio(s1,s2):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', help="directory containing playlists and cache (default is '.')")
-parser.add_argument('--without-spotify', dest='nosp', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
+parser.add_argument('--with-spotify', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
 parser.add_argument('--volume', default='100', help='pass volume to mplayer')
 options = parser.parse_args()
+options.nosp = not options.with_spotify
 
 datadir = options.datadir
 try: os.mkdir(os.path.join(datadir,'cache'))
