@@ -15,12 +15,24 @@ keytimeout = Timeout()
 keysleep = Timeout()
 oldtcs = None
 iswin = 'win' in platform
+last_key = None
 
 
 try:
-    from msvcrt import getch
+    from msvcrt import getch as ms_getch
+    def getch():
+        global last_key
+        if last_key is not None:
+            key,last_key = last_key,None
+            return key
+        key = ms_getch()
+        last_key = ms_getch() # clear horrid follow-up zero
+        if last_key == b'\x00':
+            last_key = None
+        return key
 except:
     getch = None
+
 if not getch:
     import sys,tty,termios
     try:
@@ -36,7 +48,8 @@ if not getch:
                     sleep(0.1)
             print(s, end='', flush=True)
             return s,ord(s)
-if not getch:    
+
+if not getch:
     emuchars = ''
     def getch():
         global emuchars
