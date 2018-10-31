@@ -26,7 +26,10 @@ try:
             key,last_key = last_key,None
             return key
         key = ms_getch()
-        last_key = ms_getch() # clear horrid follow-up zero
+        if key == b'\xe0':
+            last_key = ms_getch() # clear horrid follow-up zero
+        else:
+            last_key = b'\x00'
         if last_key == b'\x00':
             last_key = None
         return key
@@ -98,13 +101,13 @@ if not getch:
         return s
 
 def peekstr(timeout=10):
+    global keys
     if keytimeout.timeout(timeout):
         keytimeout.reset()
-        global keys
         keys = ''
-    elif re.match('^[^\t<>+-]+\r$', keys):
+    elif keys.endswith('\r'):
         return getstr()
-    elif re.match('^[^\t<>+-]+$', keys):
+    elif not re.match(r'^(\+|-|<[A-Za-z0-9]+>)$', keys):
         # Not finished typing yet.
         return ''
     # Possibly hotkey or such.
