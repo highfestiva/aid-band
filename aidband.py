@@ -126,7 +126,7 @@ def remove_from_cache(song):
         os.remove(fn)
 
 def do_play_idx():
-    global playqueue
+    global playqueue,options
     if playidx < len(playqueue):
         song = playqueue[shuffleidx[playidx]]
         wildcard = ''
@@ -134,7 +134,7 @@ def do_play_idx():
             wildcard = _cachewildcard(song)
             # if not os.path.exists(wildcard):
                 # return
-        if not song.uri:
+        if not glob(wildcard):
             update_url()
         output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(wildcard))
         if play_url(song.uri, wildcard):
@@ -319,11 +319,18 @@ def step_song(step):
             output('step_song "%s" crash: %s' % (cmd, str(e)))
 
 def update_url():
-    global playqueue,playidx,playlist
+    global playqueue,playidx,playlist,options
     if playidx >= len(playqueue):
         return False
     song = playqueue[shuffleidx[playidx]]
-    if not song.uri:
+    if not song.uri or ('spotify:' in song.uri and not options.dont_replace_spotify):
+        search = song.artist + ' - ' + song.name
+        songs = youtube_radio.search(search)
+        if songs:
+            song.uri = songs[0].uri
+            save_list(playlist)
+            return True
+    elif not song.uri:
         spotify_init()
         search = '%s %s' % (song.name,song.artist)
         if muzaks:
@@ -332,7 +339,7 @@ def update_url():
                 song.uri = s[0].uri
                 save_list(playlist)
                 return True
-        return False
+    return False
 
 def execute(cmd):
     cmd,params = [c.strip() for c in cmd.split(':')]
@@ -441,6 +448,7 @@ def _match_ratio(s1,s2):
 parser = argparse.ArgumentParser()
 parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', help="directory containing playlists and cache (default is '.')")
 parser.add_argument('--with-spotify', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
+parser.add_argument('--dont-replace-spotify', action='store_true', default=False, help="don't replace spotify URI's with youtube ones")
 parser.add_argument('--volume', default='100', help='pass volume to mplayer')
 options = parser.parse_args()
 options.nosp = not options.with_spotify
