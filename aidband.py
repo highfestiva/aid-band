@@ -208,16 +208,21 @@ def match(search, song):
 	s = song
 	return max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
 
+
+def rawstr(s):
+    return ''.join(filter(str.isalpha, s))
+
+
 def search_precise(search):
     search = search.lower()
-    search_words = search.split()
+    search_words = [rawstr(s) for s in search.split()]
     similar = []
     artist_similar = []
     for song in playqueue:
         awords = song.searchartist.split()
-        artist_perc = sum(1 for sword in search_words if sword in awords) / len(search_words)
+        artist_perc = sum(min(1.5,len(sword)/4) for sword in search_words if sword in awords) / len(search_words)
         nwords = song.searchname.split()
-        name_perc = sum(1 for sword in search_words if sword in nwords) / len(search_words)
+        name_perc = sum(min(1.5,len(sword)/4) for sword in search_words if sword in nwords) / len(search_words)
         if artist_perc+name_perc >= 0.5:
             print('precise match for:', str(song).encode(), artist_perc, name_perc)
             similar.append(song)
@@ -256,8 +261,8 @@ def play_search(search):
             songs = search_queue(search)
             if songs:
                 requeue_songs(songs)
-                return
-        songs = search_music(search)
+        else:
+            songs = search_music(search)
     if not songs:
         avoutput('Nothing found, try again.')
     queue_songs(songs)
@@ -307,7 +312,7 @@ def next_song():
 def step_song(step):
     global playqueue,playidx
     for _ in range(3): # make up to three attempts
-        playidx += 1
+        playidx += step
         if playidx < 0:
             playidx = len(playqueue)-1
         if playidx >= len(playqueue):
