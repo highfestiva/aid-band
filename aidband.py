@@ -239,6 +239,22 @@ def search_queue(search):
         similar = [song for song in playqueue if match(search, song) > 0.6]
     return sorted(similar, key=partial(match, search), reverse=True)
 
+def songs_eq(s1, s2):
+    m = match(s1.searchartist + ' ' + s1.searchname, s2)
+    # print('"%s" "%s" == "%s" "%s" -> %f' % (s1.searchname, s1.searchartist, s2.searchname, s2.searchartist, m))
+    return m > 0.7
+
+def drop_existing(found_songs, songs):
+    new_songs = []
+    for fs in found_songs:
+        for s in songs:
+            if songs_eq(s, fs):
+                break
+        else:
+            new_songs += [fs]
+    print('new songs found:', new_songs)
+    return new_songs
+
 def search_music(search):
     spotify_init()
     #return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
@@ -246,8 +262,10 @@ def search_music(search):
     if not songs:
         score,songs,artist_songs = search_precise(search)
         if score < 0.51 or 1 <= len(artist_songs) <= 10:
-            output('Searching Youtube...')
-            songs = youtube_radio.search(search)
+            output('Searching Youtube for %s...' % search)
+            found_songs = youtube_radio.search(search)
+            new_songs = drop_existing(found_songs, songs)
+            songs = new_songs + songs
     return songs
 
 def play_search(search):

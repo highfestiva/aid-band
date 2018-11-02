@@ -13,10 +13,10 @@ import urllib.parse
 pages = re.compile(r'q=(http.*?://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?)</a>')
 tags = re.compile(r'<.*?>')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
+bad_words = 'album official video'.split()
 
 
 def search(s):
-    print(s)
     param = urllib.parse.urlencode({'q': 'site:youtube.com %s' % s})
     url = 'https://www.google.se/search?%s' % param
     body = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
@@ -27,23 +27,18 @@ def search(s):
     for pagelink in pages.finditer(body):
         url = pagelink.group(1).replace('%3F','?').replace('%3D', '=')
         name = html.unescape(pagelink.group(2))
-        while True:
-            try:
-                i = name.lower().index('youtube')
-                name = name[:i] + ' ' + name[i+7:]
-            except:
-                break
         name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
         r = parenths.match(name)
         if r:
-            name,inparenths = r[1],r[2].strip()
-            name += r[3]
+            name = r.group(1) + ' ' + r.group(3)
+            inparenths = r.group(2).strip()
             if inparenths.lower() in s.lower():
                 name += ' ' + inparenths
         name = name.partition('(')[0]
         name = name.replace('"', ' ').replace('`', "'").strip(' \t-+"\'=!.')
-        name = ' '.join(name.split())
+        words = [w for w in name.split() if not [b for b in bad_words if b in w.lower()]]
+        name = ' '.join(words).strip()
         if not name:
             continue
         exists = (url in urls or name in names)
@@ -71,7 +66,11 @@ def cache_song(url, wildcard):
     if 'youtube.com' in url:
         video = pafy.new(url)
         audiostream = max(video.audiostreams, key=lambda audio: abs(audio.rawbitrate-131072))
+        if audiostream.get_filesize() > 8e6:
+            print('File too big, refusing to download!')
+            return ''
         src_filename = audiostream.download()
+        print()
         base,ext = os.path.splitext(src_filename)
         dst_filename = wildcard.replace('.*', ext)
         os.rename(src_filename, dst_filename)

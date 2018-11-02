@@ -8,4 +8,5 @@ def rawstr(s):
     return ''.join([ch for ch in s if ch in alnum_letters])
 
 def rawphrase(s):
-    return ''.join([ch for ch in s if ch in phrase_letters])
+    s = ''.join([ch for ch in s if ch in phrase_letters])
+    return ' '.join(s.split())
