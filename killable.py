@@ -4,6 +4,9 @@ import sys
 from threading import Thread
 
 class KillableThread(Thread):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.daemon = True
     def _bootstrap(self):
         self._killme = False
         sys.settrace(self._trace)

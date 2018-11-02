@@ -29,7 +29,6 @@ import youtube_radio
 
 proc = None
 start_play_time = time.time()
-cache_write_name = None
 active_url = ''
 muzaks = None
 allowcache = True
@@ -45,7 +44,7 @@ mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in s
 
 
 def stop():
-    global proc,cache_write_name,active_url
+    global proc,active_url
     if proc:
         try:
             proc.kill()
@@ -57,11 +56,6 @@ def stop():
             subprocess.check_output('killall mplayer'.split(), shell=True, stderr=subprocess.STDOUT)
         except:
             pass
-        if cache_write_name:
-            import os
-            try: os.remove(cache_write_name)
-            except: pass
-            cache_write_name = None
     elif muzaks:
         muzaks.stop()
     active_url = ''
@@ -88,8 +82,7 @@ def play_url(url, cachewildcard):
     ok = False
     stop()
     spotify_init()
-    global proc,start_play_time,cache_write_name,active_url,options
-    cache_write_name = None
+    global proc,start_play_time,active_url,options
     if cachewildcard and allowcache: 
         fns = glob(cachewildcard)
         cachename = fns[0] if fns else None
@@ -98,22 +91,24 @@ def play_url(url, cachewildcard):
             cachename = youtube_radio.cache_song(url, cachewildcard)
             did_download = True
         if mplayer and cachename:
-            cmd = [mplayer, '-volume', options.volume, cachename]
-            proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if not options.only_cache:
+                cmd = [mplayer, '-volume', options.volume, cachename]
+                proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             url = cachename
             ok = True
             if did_download:
                 add_song(verbose=False)
     if not proc:
-        if url.startswith('spotify'):
+        if url.startswith('spotify') and not options.only_cache:
             if muzaks:
                 muzaks.playsong(url)
                 ok = True
             else:
                 output("Won't play over spotify.")
         elif mplayer and url:
-            cmd = [mplayer, '-volume', options.volume, _confixs(url)]
-            proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if not options.only_cache:
+                cmd = [mplayer, '-volume', options.volume, _confixs(url)]
+                proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             ok = True
         elif url:
             print('Get me mplayer!')
@@ -156,17 +151,7 @@ def poll():
         return
     if proc and proc.poll() == None:
         return
-    global cache_write_name
-    if cache_write_name and os.path.exists(cache_write_name):
-        cache_write_name = None
-        play_idx()    # Play from cache.
-    elif time.time()-start_play_time < 5.0:    # Stopped after short amount of time? URL probably fucked.
-        if update_url():
-            play_idx()
-        else:
-            next_song()
-    else:
-        next_song()
+    next_song()
 
 def raw_play_list(name, doplay=True):
     global listname
@@ -340,7 +325,7 @@ def step_song(step):
             output('step_song "%s" crash: %s' % (cmd, str(e)))
 
 def update_url():
-    global playqueue,playidx,playlist,options
+    global playqueue,playidx,playlist,options,stopped
     if playidx >= len(playqueue):
         return False
     song = playqueue[shuffleidx[playidx]]
@@ -351,6 +336,11 @@ def update_url():
             song.uri = songs[0].uri
             save_list(playlist)
             return True
+        else:
+            avoutput('No results on Youtube; are we blocked by Google?')
+            stopped = True
+            stop()
+            assert False
     elif not song.uri:
         spotify_init()
         search = '%s %s' % (song.name,song.artist)
@@ -455,7 +445,12 @@ def _simple_listname():
     return listname.split('_')[-1]
 
 def _cachewildcard(song):
-    return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.*').replace('/','_').replace('\\','_').replace(':','_').replace('?',''))
+    s = str(song.artist) + '-' + song.name
+    replacements = {'/':'_', '\\':'_', ':':'_', '?':'', '(':'', ')':'', '[':'', ']':''}
+    for a,b in replacements.items():
+        s = s.replace(a,b)
+    s = os.path.join(datadir, 'cache/'+s+'.*')
+    return s
 
 def _confixs(s):
     if 'win' in sys.platform.lower():
@@ -470,6 +465,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', help="directory containing playlists and cache (default is '.')")
 parser.add_argument('--with-spotify', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
 parser.add_argument('--dont-replace-spotify', action='store_true', default=False, help="don't replace spotify URI's with youtube ones")
+parser.add_argument('--only-cache', action='store_true', default=False, help="don't play any music, just download the files")
 parser.add_argument('--volume', default='100', help='pass volume to mplayer')
 options = parser.parse_args()
 options.nosp = not options.with_spotify
@@ -490,8 +486,8 @@ def handle_login():
 def handle_keys(k):
     interruptor.handle_keys(tid,k)
     event.set()
-keypeeker.init(handle_keys)
 netpeeker.init(handle_login, handle_keys)
+keypeeker.init(handle_keys)
 spotify_init()
 raw_play_list(hotoptions.Favorites, doplay=False)
 vorbis_encoder.async_maintain_cache_dir('cache')

@@ -76,6 +76,7 @@ def dropclient(client):
 def listen(handle_login, handle_keys):
     global clients, acpt_sock
     acpt_sock = s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind(('',3303))
     s.listen(2)
     while 1:
@@ -129,3 +130,7 @@ def init(handle_login, handle_keys):
     global acpt
     acpt = KillableThread(target=listen, args=[handle_login, handle_keys])
     acpt.start()
+    sleep(1)
+    if not acpt.is_alive():
+        acpt.join()
+    assert acpt.is_alive()
