@@ -12,7 +12,7 @@ import urllib.parse
 
 pages = re.compile(r'q=(http.*?://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?)</a>')
 tags = re.compile(r'<.*?>')
-parenths = re.compile(r'\(.*?\)')
+parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 
 
 def search(s):
@@ -27,10 +27,25 @@ def search(s):
     for pagelink in pages.finditer(body):
         url = pagelink.group(1).replace('%3F','?').replace('%3D', '=')
         name = html.unescape(pagelink.group(2))
+        while True:
+            try:
+                i = name.lower().index('youtube')
+                name = name[:i] + ' ' + name[i+7:]
+            except:
+                break
+        name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
-        name = parenths.sub(' ', name)
-        name = name.replace('"', ' ').strip()
+        r = parenths.match(name)
+        if r:
+            name,inparenths = r[1],r[2].strip()
+            name += r[3]
+            if inparenths.lower() in s.lower():
+                name += ' ' + inparenths
+        name = name.partition('(')[0]
+        name = name.replace('"', ' ').replace('`', "'").strip(' \t-+"\'=!.')
         name = ' '.join(name.split())
+        if not name:
+            continue
         exists = (url in urls or name in names)
         urls.add(url)
         names.add(name)

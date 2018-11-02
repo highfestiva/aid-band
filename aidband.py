@@ -22,6 +22,7 @@ import sys
 import threading
 import time
 import traceback
+import util
 import vorbis_encoder
 import youtube_radio
 
@@ -203,19 +204,13 @@ def play_list(name):
     else:
         avoutput('%s playlist is empty, nothing to play.' % _simple_listname())
 
-
 def match(search, song):
 	s = song
 	return max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
 
-
-def rawstr(s):
-    return ''.join(filter(str.isalpha, s))
-
-
 def search_precise(search):
     search = search.lower()
-    search_words = [rawstr(s) for s in search.split()]
+    search_words = [util.rawstr(s) for s in search.split()]
     similar = []
     artist_similar = []
     for song in playqueue:
@@ -224,15 +219,17 @@ def search_precise(search):
         nwords = song.searchname.split()
         name_perc = sum(min(1.5,len(sword)/4) for sword in search_words if sword in nwords) / len(search_words)
         if artist_perc+name_perc >= 0.5:
-            print('precise match for:', str(song).encode(), artist_perc, name_perc)
+            # print('precise match for:', str(song).encode(), artist_perc, name_perc)
             similar.append(song)
         if artist_perc >= 0.5:
             artist_similar.append(song)
     score = 0
     if similar:
-        similar = sorted(similar, key=partial(match, search), reverse=True)
-        score = match(search, similar[0])
-    print('precise:', score, str(similar).encode())
+        score_songs = sorted(((match(search, s),s) for s in similar), key=lambda e:e[0], reverse=True)
+        score = score_songs[0][0]
+        score_songs = [(m,s) for m,s in score_songs if m > score*0.8]
+        similar = [s for m,s in score_songs]
+    print('precise:', score, str(str(similar).encode())[2:-1])
     return score,similar,artist_similar
 
 def search_queue(search):
@@ -248,9 +245,10 @@ def search_music(search):
     songs = muzaks.search(search) if muzaks else []
     if not songs:
         score,songs,artist_songs = search_precise(search)
-        if score < 0.6 or 1 <= len(artist_songs) <= 10:
+        if score < 0.51 or 1 <= len(artist_songs) <= 10:
+            output('Searching Youtube...')
             songs = youtube_radio.search(search)
-    return songs if songs else search_queue(search)
+    return songs
 
 def play_search(search):
     if 'radio' in listname:
@@ -439,7 +437,7 @@ def _simple_listname():
     return listname.split('_')[-1]
 
 def _cachewildcard(song):
-    return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.*').replace('/','_').replace('\\','_').replace(':','_'))
+    return os.path.join(datadir, 'cache/'+(str(song.artist)+'-'+song.name+'.*').replace('/','_').replace('\\','_').replace(':','_').replace('?',''))
 
 def _confixs(s):
     if 'win' in sys.platform.lower():
