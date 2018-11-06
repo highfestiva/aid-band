@@ -194,9 +194,32 @@ def match(search, song):
     return max([_match_ratio(t,search) for t in (s.searchartist, s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
 
 def match_song(search, song):
-    '''Exclude *exclusively* artist'''
-    s = song
-    return max([_match_ratio(t,search) for t in (s.searchname, s.searchname+' '+s.searchartist, s.searchartist+' '+s.searchname)])
+    return _match_ratio(song.searchname, search)
+
+def match_artist(search, song):
+    return _match_ratio(song.searchartist, search)
+
+def split_artist_song(search, artist):
+    wss = search.split()
+    songwords = []
+    artistwords = []
+    for ws in wss:
+        for wa in artist.split():
+            if _match_ratio(ws, wa) >= 0.75:
+                artistwords.append(ws)
+                break
+        else:
+            songwords.append(ws)
+    return ' '.join(artistwords), ' '.join(songwords)
+
+def drop_song(search, artist):
+    wss = search.split()
+    for wa in artist.split():
+        for i,ws in enumerate(wss):
+            if _match_ratio(ws, wa) < 0.75:
+                del wss[i]
+                break
+    return ' '.join(wss)
 
 def search_precise(search):
     search = search.lower()
@@ -209,25 +232,32 @@ def search_precise(search):
         nwords = song.searchname.split()
         name_perc = sum(min(1.5,len(sword)/4) for sword in search_words if sword in nwords) / len(search_words)
         if artist_perc+name_perc >= 0.5:
-            # print('precise match for:', str(song).encode(), artist_perc, name_perc)
             similar.append(song)
         if artist_perc >= 0.5:
             artist_similar.append(song)
     score = 0
     song_score = 0
     if similar:
-        o_similar = similar
         score_songs = sorted(((match(search, s),s) for s in similar), key=lambda e:e[0], reverse=True)
         score = score_songs[0][0]
         score_songs = [(m,s) for m,s in score_songs if m > score*0.8]
         similar = [s for m,s in score_songs]
-        song_score = max([match_song(search, s) for s in o_similar])
-    print('precise:', score, str(str(similar).encode())[2:-1])
-    return score,song_score,similar,artist_similar
+        song_scores = []
+        artist_scores = []
+        for search_artist in set(s.searchartist for s in similar):
+            artistsearch,songsearch = split_artist_song(search, search_artist)
+            if songsearch:
+                song_scores.extend([match_song(songsearch, s) for s in similar])
+            if artistsearch:
+                artist_scores.extend([match_artist(artistsearch, s) for s in similar])
+        song_score = max(song_scores) if song_scores else 0
+        artist_score = max(artist_scores) if artist_scores else 0
+    print('precise:', score, song_score, artist_score, str(str(similar).encode())[2:-1])
+    return score,song_score,artist_score,similar,artist_similar
 
 def search_queue(search):
     search = search.lower()
-    score,song_score,similar,artist_similar = search_precise(search)
+    _,_,_,similar,artist_similar = search_precise(search)
     if not similar:
         similar = [song for song in playqueue if match(search, song) > 0.6]
     return sorted(similar, key=partial(match, search), reverse=True)
@@ -237,10 +267,10 @@ def songs_eq(s1, s2):
     # print('"%s" "%s" == "%s" "%s" -> %f' % (s1.searchname, s1.searchartist, s2.searchname, s2.searchartist, m))
     return m > 0.7
 
-def drop_existing(found_songs, songs):
+def unique_songs(found_songs, songs):
     new_songs = []
     for fs in found_songs:
-        for s in songs:
+        for s in songs+new_songs:
             if songs_eq(s, fs):
                 break
         else:
@@ -253,13 +283,20 @@ def search_music(search):
     #return sorted(muzaks.search(search, type=Client.ARTISTS), key=lambda a: _match_ratio(a.name, search), reverse=True)
     songs = muzaks.search(search) if muzaks else []
     if not songs:
-        score,song_score,songs,artist_songs = search_precise(search)
-        if song_score > 0.8:
-            pass # YOU PLAY NOW!
-        elif score < 0.51 or 1 <= len(artist_songs) <= 10:
+        inet_search = False
+        score,song_score,artist_score,songs,artist_songs = search_precise(search)
+        if song_score > 0.8: # "exact" match of a song
+            pass
+        elif 0 < song_score < 0.6 and artist_score > 0.8: # we don't have this particular song
+            inet_search = True
+        elif score < 0.51: # we don't have this song/artist/combo
+            inet_search = True
+        elif 1 <= len(artist_songs) <= 10:
+            inet_search = True # we want more songs from this artist
+        if inet_search:
             output('Searching Youtube for %s...' % search)
             found_songs = youtube_radio.search(search)
-            new_songs = drop_existing(found_songs, songs)
+            new_songs = unique_songs(found_songs, songs)
             songs = new_songs + songs
     return songs
 
