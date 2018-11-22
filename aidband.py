@@ -495,8 +495,10 @@ def avoutput(*args):
     speech.say(s)
 
 def run_ext_cmd(cmd):
+    cmd = cmd.split()
+    cmd,args = cmd[0],cmd[1:]
     try:
-        exec(open('ext/'+cmd.strip()).read())
+        exec(open('ext/'+cmd.strip()).read(), {'args':args})
     except Exception as e:
         output('ext_cmd "%s" crash: %s' % (cmd, str(e)))
 
