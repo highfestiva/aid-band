@@ -89,6 +89,8 @@ def play_url(url, cachewildcard):
         cachename = fns[0] if fns else None
         did_download = False
         if not cachename:
+            if options.offline:
+                return False
             if options.background_download:
                 background_thread = threading.Thread(target=partial(youtube_radio.cache_song, url, cachewildcard))
                 background_thread.start()
@@ -267,7 +269,7 @@ def search_precise(search):
                 artist_scores.extend([match_artist(artistsearch, s) for s in similar])
         song_score = max(song_scores) if song_scores else 0
         artist_score = max(artist_scores) if artist_scores else 0
-    print('precise:', score, song_score, artist_score, str(str(similar).encode())[2:-1])
+    print('precise:', score, song_score, artist_score, util.str2prt(str(similar)))
     return score,song_score,artist_score,similar,artist_similar
 
 def search_queue(search):
@@ -393,7 +395,7 @@ def step_song(step):
 
 def update_url():
     global playqueue,playidx,playlist,options,stopped
-    if playidx >= len(playqueue):
+    if playidx >= len(playqueue) or options.offline:
         return False
     song = playqueue[shuffleidx[playidx]]
     if not song.uri or ('spotify:' in song.uri and not options.dont_replace_spotify):
@@ -483,14 +485,8 @@ def save_list(songlist):
         f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri))
 
 def output(*args):
-    s = ' '.join([str(a) for a in args])
-    try:
-        if sys.platform == 'linux':
-            print(s,end='\r\n')
-        else:
-            print(s.encode('cp850','ignore').decode('cp850'))
-    except UnicodeEncodeError:
-        print(s.encode('ascii','ignore').decode('ascii'))
+    s = util.str2prt(*args)
+    print(s)
     netpeeker.output(s)
 
 def avoutput(*args):
@@ -524,9 +520,7 @@ def _cachewildcard(song):
     return s
 
 def _confixs(s):
-    if 'win' in sys.platform.lower():
-        return ''.join(str(s).encode().decode('ascii', 'ignore').split('?'))
-    return s
+    return util.str2prt(s)
 
 def _match_ratio(s1,s2):
     return difflib.SequenceMatcher(None,s1,s2).ratio()
@@ -538,6 +532,7 @@ parser.add_argument('--with-spotify', action='store_true', default=False, help="
 parser.add_argument('--dont-replace-spotify', action='store_true', default=False, help="don't replace spotify URI's with youtube ones")
 parser.add_argument('--only-cache', action='store_true', default=False, help="don't play any music, just download the files")
 parser.add_argument('--background-download', action='store_true', default=False, help="don't wait for file to download, skip to next song instead")
+parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
 parser.add_argument('--volume', default='100', help='pass volume to mplayer')
 options = parser.parse_args()
 options.nosp = not options.with_spotify

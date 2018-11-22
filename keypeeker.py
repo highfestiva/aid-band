@@ -142,7 +142,7 @@ def readkeys(handle_keys):
             else: continue
         elif ord(ch) == 3:
             ch,keys = '<quit>',''
-        ch = ch if type(ch) == str else ch.decode('cp1252' if iswin else 'utf-8')
+        ch = ch if type(ch) == str else ch.decode('cp850' if iswin else 'utf-8')
         if ch == '\b':
             keys = keys[:len(keys)-1] if keys else ''
         else:
