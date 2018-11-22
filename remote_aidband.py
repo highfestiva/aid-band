@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 
 import argparse
 import keypeeker
@@ -11,9 +12,6 @@ parser.add_argument('-t','--host', dest='host', default='localhost:3303', help="
 parser.add_argument('-p','--use-password-file', dest='usepw', default=False, action='store_true', help="use file 'password' (containing password without linefeeds) instead of manual entry")
 parser.add_argument('-c','--command', dest='commands', action='append', default=[], help="pass command(s) to be sent initially")
 options = parser.parse_args()
-
-iswin = ('win' in sys.platform.lower())
-coding = 'cp850' if iswin else 'utf-8'
 
 host,port = options.host.split(':') if ':' in options.host else (options.host,3303)
 port = int(port)
@@ -34,11 +32,8 @@ try:
     while True:
         try:
             bb += s.recv(1)
-            try:
-                sys.stdout.write(bb.decode())
-            except:
-                sys.stdout.write(bb.decode(coding, 'ignore'))
-            sys.stdout.flush()
+            sys.stdout.write(bb.decode())
+            #sys.stdout.flush()
             bb = b''
         except socket.timeout:
             if sendqueue:
