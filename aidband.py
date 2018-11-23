@@ -91,8 +91,9 @@ def play_url(url, cachewildcard):
         if not cachename:
             if options.offline:
                 return False
-            if options.background_download:
-                background_thread = threading.Thread(target=partial(youtube_radio.cache_song, url, cachewildcard))
+            if not options.foreground_download:
+                song = playqueue[shuffleidx[playidx]]
+                background_thread = threading.Thread(target=partial(bkg_save_song, song, cachewildcard))
                 background_thread.start()
                 return False
             cachename = youtube_radio.cache_song(url, cachewildcard)
@@ -280,9 +281,9 @@ def search_queue(search):
     return sorted(similar, key=partial(match, search), reverse=True)
 
 def songs_eq(s1, s2):
-    m = match(s1.searchartist + ' ' + s1.searchname, s2)
-    # print('"%s" "%s" == "%s" "%s" -> %f' % (s1.searchname, s1.searchartist, s2.searchname, s2.searchartist, m))
-    return m > 0.7
+    ma = _match_ratio(s1.searchartist, s2.searchartist)
+    ms = _match_ratio(s1.searchname, s2.searchname)
+    return ma > 0.85 and ms > 0.75
 
 def unique_songs(found_songs, songs):
     new_songs = []
@@ -314,7 +315,7 @@ def search_music(search):
             output('Searching Youtube for %s...' % search)
             found_songs = threshold_search(search)
             new_songs = unique_songs(found_songs, songs)
-            songs = new_songs + songs
+            songs += new_songs
     return songs
 
 def play_search(search):
@@ -345,6 +346,13 @@ def threshold_search(search):
     global last_yt_search
     last_yt_search = time.time()
     return youtube_radio.search(search)
+
+def bkg_save_song(song, cachewildcard):
+    global playlist
+    youtube_radio.cache_song(song.uri, cachewildcard)
+    if song not in playlist:
+        playlist += [song]
+        save_list(playlist)
 
 def add_song(verbose=True):
     global playlist,playqueue
@@ -399,7 +407,7 @@ def update_url():
         return False
     song = playqueue[shuffleidx[playidx]]
     if not song.uri or ('spotify:' in song.uri and not options.dont_replace_spotify):
-        if threshold_search_secs_left()>0 and options.background_download:
+        if threshold_search_secs_left()>0 and not options.foreground_download:
             # can't search right away, so instead skip ahead to a playable song
             time.sleep(0.1) # don't burn all cpu for nothin'
             return False
@@ -533,7 +541,7 @@ parser.add_argument('--data-dir', dest='datadir', metavar='DIR', default='.', he
 parser.add_argument('--with-spotify', action='store_true', default=False, help="don't login to music service, meaning only radio can be played")
 parser.add_argument('--dont-replace-spotify', action='store_true', default=False, help="don't replace spotify URI's with youtube ones")
 parser.add_argument('--only-cache', action='store_true', default=False, help="don't play any music, just download the files")
-parser.add_argument('--background-download', action='store_true', default=False, help="don't wait for file to download, skip to next song instead")
+parser.add_argument('--foreground-download', action='store_true', default=False, help="wait for file to finish downloading instead of skipping ahead")
 parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
 parser.add_argument('--volume', default='100', help='pass volume to mplayer')
 options = parser.parse_args()

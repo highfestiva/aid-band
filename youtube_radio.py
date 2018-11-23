@@ -13,7 +13,9 @@ import urllib.parse
 pages = re.compile(r'q=(http.*?://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?)</a>')
 tags = re.compile(r'<.*?>')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
-bad_words = 'album official video music youtube'.split()
+bad_urls = 'list= /channel/'.split()
+bad_names = 'review'.split()
+drop_words = 'album official video music youtube'.split()
 clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 
 
@@ -28,13 +30,14 @@ def search(s):
     hits = []
     for pagelink in pages.finditer(body):
         url = pagelink.group(1).replace('%3F','?').replace('%3D', '=')
-        if 'list=' in url or '/channel/' in url:
-            continue
         name = html.unescape(pagelink.group(2))
         name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
         name = name.replace('~', ' - ').replace(':', ' - ').replace('"', ' ').replace('`', "'")
-        words = [w for w in name.split() if not [b for b in bad_words if b in w.lower()]]
+        # print(name, url)
+        if _match_words(url, bad_urls) or _match_words(name, bad_names):
+            continue
+        words = [w for w in name.split() if not [b for b in drop_words if b in w.lower()]]
         name = ' '.join(words).strip()
         name = clean_ends(name)
         if not name:
@@ -116,6 +119,10 @@ def cache_song(url, wildcard):
         dst_filename = wildcard.replace('.*', ext)
         os.rename(src_filename, dst_filename)
         return dst_filename
+
+
+def _match_words(s, words):
+    return any((word in s.lower()) for word in words)
 
 
 if __name__ == '__main__':
