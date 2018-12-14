@@ -107,7 +107,7 @@ def peekstr(timeout=10):
         keys = ''
     elif keys.endswith('\r'):
         return getstr()
-    elif not re.match(r'^(\+|-|<[A-Za-z0-9]+>)$', keys):
+    elif not re.match(r'^(\t|\+|-|<[A-Za-z0-9]+>)$', keys):
         # Not finished typing yet.
         return ''
     # Possibly hotkey or such.

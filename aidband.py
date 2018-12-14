@@ -33,6 +33,7 @@ active_url = ''
 muzaks = None
 allowcache = True
 useshuffle = True
+onrepeat = False
 listname = None
 playlist = []
 playqueue = []
@@ -398,7 +399,8 @@ def next_song():
 
 def step_song(step):
     global playidx
-    playidx += step
+    if not onrepeat:
+        playidx += step
     play_idx(error_step=step)
 
 def update_url():
@@ -577,6 +579,7 @@ while True:
         cmd = ''
         while not cmd:
             event.wait(2)
+            event.clear()
             time.sleep(0.2)    # Let CPU rest in case of infinite loop bug.
             if not stopped:
                 poll()
@@ -609,23 +612,29 @@ while True:
         elif cmd == '+':
             add_song()
         elif cmd == '-':
+            onrepeat = False
             if drop_song():
                 stopped = False
         elif cmd == '<Left>':
+            onrepeat = False
             prev_song()
             stopped = False
         elif cmd == '<Right>':
+            onrepeat = False
             next_song()
             stopped = False
-        elif cmd == '\t':
+        elif cmd == '<Up>': # toggle repeat
+            onrepeat = not onrepeat
+            avoutput('Repeat.' if onrepeat else 'Playing in sequence.')
+        elif cmd == '\t': # toggle shuffle
+            onrepeat = False
             useshuffle = not useshuffle
-            if shuffleidx:
-                curidx = shuffleidx[playidx]
-                shuffleidx = list(range(len(playqueue)))
-                if useshuffle:
-                    random.shuffle(shuffleidx)
-                playidx = shuffleidx.index(curidx)
-                avoutput('Shuffle.' if useshuffle else 'Playing in order.')
+            curidx = shuffleidx[playidx]
+            shuffleidx = list(range(len(playqueue)))
+            if useshuffle:
+                random.shuffle(shuffleidx)
+            playidx = shuffleidx.index(curidx)
+            avoutput('Shuffle.' if useshuffle else 'Playing in order.')
             _validate()
         elif cmd.startswith('!'):
             cmd = cmd.strip()
@@ -635,6 +644,7 @@ while True:
             else:
                 run_ext_cmd(cmd.lstrip('!'))
         elif cmd.endswith('\r'):
+            onrepeat = False
             cmd = cmd.strip()
             if len(cmd) < 2:
                 output('Too short search string "%s".' % cmd)
