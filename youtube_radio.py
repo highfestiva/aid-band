@@ -16,10 +16,11 @@ parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
 bad_names = 'review'.split()
 drop_words = 'album official video music youtube'.split()
+dislike_words = 'cover'.split()
 clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 
 
-def search(s):
+def search(s, verbose=False):
     param = urllib.parse.urlencode({'q': 'site:youtube.com %s' % s})
     url = 'https://www.google.se/search?%s' % param
     body = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
@@ -34,7 +35,8 @@ def search(s):
         name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
         name = name.replace('~', ' - ').replace(':', ' - ').replace('"', ' ').replace('`', "'")
-        # print(name, url)
+        if verbose:
+            print(name, url)
         if _match_words(url, bad_urls) or _match_words(name, bad_names):
             continue
         words = [w for w in name.split() if not [b for b in drop_words if b in w.lower()]]
@@ -57,13 +59,20 @@ def search(s):
     search_phrases = [p.strip() for p in sl.split('-')]
     def matchlen_pos(s1, s2, i1):
         i2 = s2.find(s1)
+        score = 100
         if i2 >= 0:
-            return abs(i1-i2)
-        return -100
-    score_phrase = lambda nu: -sum([matchlen_pos(p, nu[0].lower(), sl.index(p)) for p in search_phrases])
+            score = abs(i1-i2)
+            if verbose:
+                print(s1, s2, score)
+        for w in dislike_words:
+            if w in s2:
+                score += 30
+        return score
+    score_phrase = lambda nu: sum([matchlen_pos(p, nu[0].lower(), sl.index(p)) for p in search_phrases])
     hits = sorted(hits, key=score_phrase)
-    # print('\n'.join(str(h) for h in hits))
-    # print()
+    if verbose:
+        print('\n'.join(str(h) for h in hits))
+        print()
     # cleanup names
     for i,(name,url) in enumerate(hits):
         r = parenths.match(name)
@@ -74,7 +83,8 @@ def search(s):
                 words += [inparenths]
             name = clean_ends(' '.join(w.strip() for w in words))
             hits[i][0] = name
-    # print('\n'.join(str(h) for h in hits))
+    if verbose:
+        print('\n'.join(str(h) for h in hits))
     # 1st pick artist if present in any hit
     artists = [] # ordered; don't use set()
     for name,url in hits:
@@ -106,7 +116,8 @@ def search(s):
                     break
             else:
                 songs += [ABSong(song, s, url)]
-    # print(songs)
+    if verbose:
+        print(songs)
     # os._exit(1)
     return songs
 
@@ -131,6 +142,6 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('Liquido - Swing It')
-    print(songs)
-    cache_song(songs[0].uri, './something.*')
+    songs = search('Oskar Linnros - Plåster', verbose=True)
+    # songs = search('Liquido - Swing It', verbose=True)
+    #cache_song(songs[0].uri, './something.*')
