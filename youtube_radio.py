@@ -53,9 +53,14 @@ def search(s):
     # place those with dashes (-) first, assumed to be better named
     hits = sorted(hits, key=lambda nu: nu[0].index('-') if '-' in nu[0] else +100)
     # sort by exact match, phrase by phrase + additional points for the correct order
-    search_phrases = [p.strip() for p in s.lower().split('-')]
-    matchlen_pos = lambda s1,s2,p1,p2: len(os.path.commonprefix([s1,s2])) * (2 if p1==p2 else 1)
-    score_phrase = lambda nu: -sum(max([matchlen_pos(pn.strip(), pp, i, j) for j,pp in enumerate(search_phrases)]) for i,pn in enumerate(nu[0].lower().split('-')))
+    sl = s.lower()
+    search_phrases = [p.strip() for p in sl.split('-')]
+    def matchlen_pos(s1, s2, i1):
+        i2 = s2.find(s1)
+        if i2 >= 0:
+            return abs(i1-i2)
+        return -100
+    score_phrase = lambda nu: -sum([matchlen_pos(p, nu[0].lower(), sl.index(p)) for p in search_phrases])
     hits = sorted(hits, key=score_phrase)
     # print('\n'.join(str(h) for h in hits))
     # print()
@@ -65,7 +70,7 @@ def search(s):
         if r:
             words = [r.group(1), r.group(3)]
             inparenths = r.group(2).strip()
-            if inparenths.lower() in s.lower():
+            if inparenths.lower() in sl:
                 words += [inparenths]
             name = clean_ends(' '.join(w.strip() for w in words))
             hits[i][0] = name
@@ -126,6 +131,6 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('milencolin')
+    songs = search('Liquido - Swing It')
     print(songs)
     cache_song(songs[0].uri, './something.*')
