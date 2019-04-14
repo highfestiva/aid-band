@@ -12,7 +12,7 @@ import interruptor
 import keypeeker
 from killable import kill_self
 import netpeeker
-import os.path
+import os
 import random
 import re
 import sr_radio
@@ -41,7 +41,8 @@ shuffleidx = []
 ishits = False
 playidx = 0
 datadir = '.'
-mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mplayer'
+mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mpv'
+mplayer_volume = '-volume' if 'win' in sys.platform.lower() else '--volume'
 last_yt_search = 0
 
 
@@ -90,7 +91,8 @@ def play_url(url, cachewildcard):
         cachename = fns[0] if fns else None
         did_download = False
         if not cachename:
-            if options.offline:
+            if options.offline > 0:
+                options.offline -= 1
                 return False
             if not options.foreground_download:
                 song = playqueue[shuffleidx[playidx]]
@@ -101,7 +103,7 @@ def play_url(url, cachewildcard):
             did_download = True
         if mplayer and cachename:
             if not options.only_cache:
-                cmd = [mplayer, '-volume', options.volume, cachename]
+                cmd = [mplayer, mplayer_volume, options.volume, cachename]
                 proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             url = cachename
             ok = True
@@ -405,7 +407,7 @@ def step_song(step):
 
 def update_url():
     global playqueue,playidx,playlist,options,stopped
-    if playidx >= len(playqueue) or options.offline:
+    if playidx >= len(playqueue) or options.offline > 0:
         return False
     song = playqueue[shuffleidx[playidx]]
     if not song.uri or ('spotify:' in song.uri and not options.dont_replace_spotify):
@@ -421,9 +423,7 @@ def update_url():
             return True
         else:
             avoutput('No results on Youtube; are we blocked by Google?')
-            stopped = True
-            stop()
-            assert False
+            options.offline = 3
     elif not song.uri:
         spotify_init()
         search = '%s %s' % (song.name,song.artist)
@@ -545,9 +545,15 @@ parser.add_argument('--dont-replace-spotify', action='store_true', default=False
 parser.add_argument('--only-cache', action='store_true', default=False, help="don't play any music, just download the files")
 parser.add_argument('--foreground-download', action='store_true', default=False, help="wait for file to finish downloading instead of skipping ahead")
 parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
-parser.add_argument('--volume', default='100', help='pass volume to mplayer')
+parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
 options = parser.parse_args()
 options.nosp = not options.with_spotify
+options.offline = 1e8 if options.offline else 0
+if not options.volume:
+    if 'CON_VOLUME' in os.environ:
+        options.volume = os.environ['CON_VOLUME']
+    else:
+        options.volume = '100'
 
 datadir = options.datadir
 try: os.mkdir(os.path.join(datadir,'cache'))

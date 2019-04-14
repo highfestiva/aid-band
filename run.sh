@@ -10,7 +10,7 @@ while true; do
 	cp --update -R /tmp/aidband_install/* ./
 	rm -Rf /tmp/aidband_install/*
 	dos2unix *.py *.sh
-	python3 aidband.py
+	python3 aidband.py > log.txt
 	while [ "`ss |grep 3303`" != "" ]; do sleep 1; echo 'w8ing for port to auto-close'; done
 	sleep 10
 done
