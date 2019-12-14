@@ -233,15 +233,6 @@ def split_artist_song(search, artist):
             songwords.append(ws)
     return ' '.join(artistwords), ' '.join(songwords)
 
-def drop_song(search, artist):
-    wss = search.split()
-    for wa in artist.split():
-        for i,ws in enumerate(wss):
-            if _match_ratio(ws, wa) < 0.75:
-                del wss[i]
-                break
-    return ' '.join(wss)
-
 def search_precise(search):
     search = search.lower()
     search_words = [util.rawstr(s) for s in search.split()]
@@ -326,7 +317,7 @@ def play_search(search):
     if 'radio' in listname:
         songs = sr_radio.search(search)
     else:
-        if search != search.strip('@'):
+        if search != search.strip('@') or on_yplaylist():
             search = search.strip('@')
             songs = search_queue(search)
             if songs:
@@ -378,7 +369,7 @@ def add_song(verbose=True):
 
 def drop_song():
     global playlist,playqueue,shuffleidx
-    if playidx < len(shuffleidx):
+    if playidx < len(shuffleidx) and not on_yplaylist():
         pqidx = shuffleidx[playidx]
         song = playqueue[pqidx]
         playqueue = playqueue[:pqidx] + playqueue[pqidx+1:]
@@ -475,27 +466,33 @@ def requeue_songs(songs):
     _validate()
     next_song()
 
+def on_yplaylist():
+    return listname.startswith('pl_')
+
 def load_list():
     songs = []
     fn = os.path.join(datadir,listname+'.txt')
     if not os.path.exists(fn):
         return songs
-    if listname.startswith('pl_'):
+    if on_yplaylist():
         try:
             pl_url = open(fn).read().strip()
             for artist,songname,url in youtube_playlist.playlist(pl_url):
                 songs += [ABSong(songname,artist,url)]
         except:
             pass
-    for line in codecs.open(fn, 'r', 'utf-8'):
-        try:
-            artist,songname,url = [w.strip() for w in line.split('~')]
-            songs += [ABSong(songname,artist,url)]
-        except:
-            pass
+    else:
+        for line in codecs.open(fn, 'r', 'utf-8'):
+            try:
+                artist,songname,url = [w.strip() for w in line.split('~')]
+                songs += [ABSong(songname,artist,url)]
+            except:
+                pass
     return songs
 
 def save_list(songlist):
+    if songlist.startswith('pl_'):
+        return
     fn = os.path.join(datadir,listname+'.txt')
     f = codecs.open(fn, 'w', 'utf-8')
     f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.\n')
