@@ -24,6 +24,7 @@ import time
 import traceback
 import util
 import vorbis_encoder
+import youtube_playlist
 import youtube_radio
 
 
@@ -479,6 +480,13 @@ def load_list():
     fn = os.path.join(datadir,listname+'.txt')
     if not os.path.exists(fn):
         return songs
+    if listname.startswith('pl_'):
+        try:
+            pl_url = open(fn).read().strip()
+            for artist,songname,url in youtube_playlist.playlist(pl_url):
+                songs += [ABSong(songname,artist,url)]
+        except:
+            pass
     for line in codecs.open(fn, 'r', 'utf-8'):
         try:
             artist,songname,url = [w.strip() for w in line.split('~')]
