@@ -57,7 +57,7 @@ def stop():
             print(e)
         proc = None
         try:
-            subprocess.check_output('killall mplayer'.split(), shell=True, stderr=subprocess.STDOUT)
+            subprocess.check_output(['killall', mplayer], shell=True, stderr=subprocess.STDOUT)
         except:
             pass
     elif muzaks:
@@ -119,11 +119,11 @@ def play_url(url, cachewildcard):
                 output("Won't play over spotify.")
         elif mplayer and url:
             if not options.only_cache:
-                cmd = [mplayer, '-volume', options.volume, _confixs(url)]
+                cmd = [mplayer, mplayer_volume, options.volume, _confixs(url)]
                 proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             ok = True
         elif url:
-            print('Get me mplayer!')
+            print('Get me %s!' % mplayer)
     start_play_time = time.time()
     active_url = url if url else cachewildcard
     return ok
