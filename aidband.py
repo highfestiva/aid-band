@@ -10,7 +10,7 @@ from glob import glob
 import hotoptions
 import interruptor
 import keypeeker
-from killable import kill_self
+from killable import kill_self, single_threaded
 import netpeeker
 import os
 import random
@@ -51,6 +51,7 @@ last_yt_search = 0
 popen_kwargs = {}
 
 
+@single_threaded
 def stop():
     global proc,active_url,stopped
     if proc:
@@ -87,11 +88,12 @@ def spotify_exit():
         muzaks.quit()
     muzaks = None
 
+@single_threaded
 def play_url(url, cachewildcard):
     ok = False
     stop()
     spotify_init()
-    global proc,start_play_time,active_url,options
+    global proc,start_play_time,active_url,options,stopped
     if cachewildcard and allowcache: 
         fns = glob(cachewildcard)
         cachename = fns[0] if fns else None
@@ -131,6 +133,7 @@ def play_url(url, cachewildcard):
             print('Get me %s!' % mplayer)
     start_play_time = time.time()
     active_url = url if url else cachewildcard
+    stopped = not ok
     return ok
 
 def remove_from_cache(song):
@@ -160,7 +163,6 @@ def play_idx(error_step=+1):
     for _ in range(20):
         try:
             if do_play_idx():
-                stopped = False
                 return True
         except Exception as e:
             output('play_idx "%s" crash: %s [stopped playback]' % (cmd, str(e)))

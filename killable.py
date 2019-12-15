@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import sys
-from threading import Thread
+from threading import Thread, Lock
+
 
 class KillableThread(Thread):
     def __init__(self, **kwargs):
@@ -18,6 +19,7 @@ class KillableThread(Thread):
             sys.exit(0)
         return self._trace
 
+
 def kill_self():
     try:
         import win32process
@@ -31,3 +33,13 @@ def kill_self():
         pass
     print('Might have to kill this one with Ctrl+C...')
     sys.exit(0)
+
+
+class single_threaded:
+    def __init__(self, f):
+        self.lock = Lock()
+        self.f = f
+    def __call__(self, *args, **kwargs):
+        with self.lock:
+            return self.f(*args,**kwargs)
+        return func
