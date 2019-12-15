@@ -1,6 +1,7 @@
 #!/usr/bin/env pythonw
 
 import aidband
+from functools import partial
 import killable
 import tkinter as tk
 from time import sleep
@@ -8,6 +9,11 @@ from time import sleep
 
 aidband.raw_play_list(aidband.hotoptions.Favorites, doplay=False)
 aidband.popen_kwargs = dict(creationflags=aidband.subprocess.CREATE_NO_WINDOW)
+
+
+@killable.single_threaded
+def update_song_title(root, song):
+    root.title(song.artist + ' - ' + song.name)
 
 
 class App(tk.Frame):
@@ -22,7 +28,7 @@ class App(tk.Frame):
         self.master.protocol('WM_DELETE_WINDOW', self.closing)
         self.create_widgets()
         self.pack(fill=tk.X)
-        aidband.playing_callbacks += [self.playing_song]
+        aidband.playing_callbacks += [partial(update_song_title, self.master)]
         t = killable.KillableThread(target=self.poll)
         t.start()
         aidband.play_idx()
@@ -36,9 +42,6 @@ class App(tk.Frame):
         for i in range(1, 12+1):
             self.inp.bind('<F%i>'%i, self.key)
         self.inp.pack(fill=tk.X)
-
-    def playing_song(self, song):
-        self.master.title(song.artist + ' - ' + song.name)
 
     def key(self, event):
         print(event)

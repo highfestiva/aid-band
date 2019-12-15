@@ -541,9 +541,10 @@ def _simple_listname():
 
 def _cachewildcard(song):
     s = str(song.artist) + '-' + song.name
-    replacements = {'/':'_', '\\':'_', ':':'_', '?':'', '(':'', ')':'', '[':'', ']':'', '"':'', '*':'_'}
+    replacements = {'/':'_', '\\':'_', ':':'_', '?':'', '(':'', ')':'', '[':'', ']':'', '"':'', '*':'_', '\t':' ', '  ':' '}
     for a,b in replacements.items():
         s = s.replace(a,b)
+    s = s.partition('...')[0].strip()
     s = os.path.join(datadir, 'cache/'+s+'.*')
     return s
 
