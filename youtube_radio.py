@@ -129,8 +129,8 @@ def cache_song(url, wildcard):
         if audiostream.get_filesize() > 8e6:
             print('File too big, refusing to download!')
             return ''
-        src_filename = audiostream.download()
-        print()
+        audiostream.download()
+        src_filename = audiostream.filename
         base,ext = os.path.splitext(src_filename)
         dst_filename = wildcard.replace('.*', ext)
         os.rename(src_filename, dst_filename)

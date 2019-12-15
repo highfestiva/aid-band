@@ -594,7 +594,6 @@ if __name__ == '__main__':
     if options.bg_convert_wav:
         vorbis_encoder.async_maintain_cache_dir('cache')
 
-    stopped = True
     while True:
         try:
             time.sleep(0.2)    # Let CPU rest in case of infinite loop bug.
@@ -630,21 +629,17 @@ if __name__ == '__main__':
                 if len(hotoptions.all) > fkey_idx:
                     ln = hotoptions.all[fkey_idx]
                     play_list(ln)
-                    stopped = False
             elif cmd == '+':
                 add_song()
             elif cmd == '-':
                 onrepeat = False
-                if drop_song():
-                    stopped = False
+                drop_song()
             elif cmd == '<Left>':
                 onrepeat = False
                 prev_song()
-                stopped = False
             elif cmd == '<Right>':
                 onrepeat = False
                 next_song()
-                stopped = False
             elif cmd == '<Up>': # toggle repeat
                 onrepeat = not onrepeat
                 avoutput('Repeat.' if onrepeat else 'Playing in sequence.')
@@ -674,7 +669,6 @@ if __name__ == '__main__':
                 output(cmd)
                 if ':' not in cmd:
                     play_search(cmd)
-                    stopped = False
                 else:
                     execute(cmd)
         except Exception as e:
