@@ -25,6 +25,7 @@ class App(tk.Frame):
         aidband.playing_callbacks += [self.playing_song]
         t = killable.KillableThread(target=self.poll)
         t.start()
+        aidband.play_idx()
 
     def create_widgets(self):
         self.cmd = tk.StringVar() 
