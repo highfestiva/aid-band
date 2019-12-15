@@ -28,6 +28,8 @@ import youtube_playlist
 import youtube_radio
 
 
+cmd = ''
+stopped = True
 proc = None
 start_play_time = time.time()
 active_url = ''
@@ -38,6 +40,7 @@ onrepeat = False
 listname = None
 playlist = []
 playqueue = []
+playing_callbacks = []
 shuffleidx = []
 ishits = False
 playidx = 0
@@ -45,10 +48,11 @@ datadir = '.'
 mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mpv'
 mplayer_volume = '-volume' if 'win' in sys.platform.lower() else '--volume'
 last_yt_search = 0
+popen_kwargs = {}
 
 
 def stop():
-    global proc,active_url
+    global proc,active_url,stopped
     if proc:
         try:
             proc.kill()
@@ -63,6 +67,7 @@ def stop():
     elif muzaks:
         muzaks.stop()
     active_url = ''
+    stopped = True
 
 def spotify_init():
     global options,muzaks
@@ -105,7 +110,7 @@ def play_url(url, cachewildcard):
         if mplayer and cachename:
             if not options.only_cache:
                 cmd = [mplayer, mplayer_volume, options.volume, cachename]
-                proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **popen_kwargs)
             url = cachename
             ok = True
             if did_download:
@@ -120,7 +125,7 @@ def play_url(url, cachewildcard):
         elif mplayer and url:
             if not options.only_cache:
                 cmd = [mplayer, mplayer_volume, options.volume, _confixs(url)]
-                proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **popen_kwargs)
             ok = True
         elif url:
             print('Get me %s!' % mplayer)
@@ -145,13 +150,17 @@ def do_play_idx():
         if not glob(wildcard):
             update_url()
         output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(wildcard))
-        return play_url(song.uri, wildcard)
+        if play_url(song.uri, wildcard):
+            for pc in playing_callbacks:
+                pc(song)
+            return True
 
 def play_idx(error_step=+1):
-    global playqueue,playidx
+    global playqueue,playidx,stopped
     for _ in range(20):
         try:
             if do_play_idx():
+                stopped = False
                 return True
         except Exception as e:
             output('play_idx "%s" crash: %s [stopped playback]' % (cmd, str(e)))
@@ -491,7 +500,7 @@ def load_list():
     return songs
 
 def save_list(songlist):
-    if songlist.startswith('pl_'):
+    if on_yplaylist():
         return
     fn = os.path.join(datadir,listname+'.txt')
     f = codecs.open(fn, 'w', 'utf-8')
@@ -551,6 +560,7 @@ parser.add_argument('--only-cache', action='store_true', default=False, help="do
 parser.add_argument('--foreground-download', action='store_true', default=False, help="wait for file to finish downloading instead of skipping ahead")
 parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
 parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
+parser.add_argument('--bg-convert-wav', action='store_true', help='convert .wav to .ogg in the background')
 options = parser.parse_args()
 options.nosp = not options.with_spotify
 options.offline = 1e8 if options.offline else 0
@@ -564,114 +574,115 @@ datadir = options.datadir
 try: os.mkdir(os.path.join(datadir,'cache'))
 except: pass
 
-tid = threading.current_thread().ident
-event = threading.Event()
-def handle_login():
-    output('Welcome to aid-band cmdline interface!')
-    if stopped:
-        output('No music currently playing.')
-    else:
-        song = playqueue[shuffleidx[playidx]]
-        output('Currently playing "%s" by %s' % (song.name, song.artist))
-def handle_keys(k):
-    interruptor.handle_keys(tid,k)
-    event.set()
-netpeeker.init(handle_login, handle_keys)
-keypeeker.init(handle_keys)
-spotify_init()
-raw_play_list(hotoptions.Favorites, doplay=False)
-vorbis_encoder.async_maintain_cache_dir('cache')
+if __name__ == '__main__':
+    tid = threading.current_thread().ident
+    event = threading.Event()
+    def handle_login():
+        output('Welcome to aid-band cmdline interface!')
+        if stopped:
+            output('No music currently playing.')
+        else:
+            song = playqueue[shuffleidx[playidx]]
+            output('Currently playing "%s" by %s' % (song.name, song.artist))
+    def handle_keys(k):
+        interruptor.handle_keys(tid,k)
+        event.set()
+    netpeeker.init(handle_login, handle_keys)
+    keypeeker.init(handle_keys)
+    spotify_init()
+    raw_play_list(hotoptions.Favorites, doplay=False)
+    if options.bg_convert_wav:
+        vorbis_encoder.async_maintain_cache_dir('cache')
 
-stopped = True
-while True:
-    try:
-        time.sleep(0.2)    # Let CPU rest in case of infinite loop bug.
-        output('Enter search term:')
-        cmd = ''
-        while not cmd:
-            event.wait(2)
-            event.clear()
-            time.sleep(0.2)    # Let CPU rest in case of infinite loop bug.
-            if not stopped:
-                poll()
-            cmd = keypeeker.peekstr() + netpeeker.peekstr()
-        if cmd in ('<quit>','<softquit>'):
-            vorbis_encoder.quit()
-            stop()
-            netpeeker.stop()
-            keypeeker.stop()
-            if muzaks: muzaks.quit()
-            if cmd == '<softquit>':
-                break
-            kill_self()
-        if cmd == '<F12>':
-            stopped = not stopped
-            if stopped:
-                stop()
-                spotify_exit()
-                output('Audio stopped.')
-            else:
-                play_idx()
-            continue
-        fkeys = re.findall(r'<F(\d+)>',cmd)
-        if fkeys:
-            fkey_idx = int(fkeys[-1])-1
-            if len(hotoptions.all) > fkey_idx:
-                ln = hotoptions.all[fkey_idx]
-                play_list(ln)
-                stopped = False
-        elif cmd == '+':
-            add_song()
-        elif cmd == '-':
-            onrepeat = False
-            if drop_song():
-                stopped = False
-        elif cmd == '<Left>':
-            onrepeat = False
-            prev_song()
-            stopped = False
-        elif cmd == '<Right>':
-            onrepeat = False
-            next_song()
-            stopped = False
-        elif cmd == '<Up>': # toggle repeat
-            onrepeat = not onrepeat
-            avoutput('Repeat.' if onrepeat else 'Playing in sequence.')
-        elif cmd == '\t': # toggle shuffle
-            onrepeat = False
-            useshuffle = not useshuffle
-            curidx = shuffleidx[playidx]
-            shuffleidx = list(range(len(playqueue)))
-            if useshuffle:
-                random.shuffle(shuffleidx)
-            playidx = shuffleidx.index(curidx)
-            avoutput('Shuffle.' if useshuffle else 'Playing in order.')
-            _validate()
-        elif cmd.startswith('!'):
-            cmd = cmd.strip()
-            if cmd.startswith('!volume'):
-                options.volume = cmd.partition(' ')[2]
-                avoutput('Volume set to %s.' % options.volume)
-            else:
-                run_ext_cmd(cmd.lstrip('!'))
-        elif cmd.endswith('\r'):
-            onrepeat = False
-            cmd = cmd.strip()
-            if len(cmd) < 2:
-                output('Too short search string "%s".' % cmd)
-                continue
-            output(cmd)
-            if ':' not in cmd:
-                play_search(cmd)
-                stopped = False
-            else:
-                execute(cmd)
-    except Exception as e:
+    stopped = True
+    while True:
         try:
-            traceback.print_exc()
-            output(e)
-            keypeeker.getstr()    # Clear keyboard.
-            netpeeker.getstr()    # Clear remote keyboard.
+            time.sleep(0.2)    # Let CPU rest in case of infinite loop bug.
+            output('Enter search term:')
+            cmd = ''
+            while not cmd:
+                event.wait(2)
+                event.clear()
+                time.sleep(0.2)    # Let CPU rest in case of infinite loop bug.
+                if not stopped:
+                    poll()
+                cmd = keypeeker.peekstr() + netpeeker.peekstr()
+            if cmd in ('<quit>','<softquit>'):
+                vorbis_encoder.quit()
+                stop()
+                netpeeker.stop()
+                keypeeker.stop()
+                if muzaks: muzaks.quit()
+                if cmd == '<softquit>':
+                    break
+                kill_self()
+            if cmd == '<F12>':
+                if not stopped:
+                    stop()
+                    spotify_exit()
+                    output('Audio stopped.')
+                else:
+                    play_idx()
+                continue
+            fkeys = re.findall(r'<F(\d+)>',cmd)
+            if fkeys:
+                fkey_idx = int(fkeys[-1])-1
+                if len(hotoptions.all) > fkey_idx:
+                    ln = hotoptions.all[fkey_idx]
+                    play_list(ln)
+                    stopped = False
+            elif cmd == '+':
+                add_song()
+            elif cmd == '-':
+                onrepeat = False
+                if drop_song():
+                    stopped = False
+            elif cmd == '<Left>':
+                onrepeat = False
+                prev_song()
+                stopped = False
+            elif cmd == '<Right>':
+                onrepeat = False
+                next_song()
+                stopped = False
+            elif cmd == '<Up>': # toggle repeat
+                onrepeat = not onrepeat
+                avoutput('Repeat.' if onrepeat else 'Playing in sequence.')
+            elif cmd == '\t': # toggle shuffle
+                onrepeat = False
+                useshuffle = not useshuffle
+                curidx = shuffleidx[playidx]
+                shuffleidx = list(range(len(playqueue)))
+                if useshuffle:
+                    random.shuffle(shuffleidx)
+                playidx = shuffleidx.index(curidx)
+                avoutput('Shuffle.' if useshuffle else 'Playing in order.')
+                _validate()
+            elif cmd.startswith('!'):
+                cmd = cmd.strip()
+                if cmd.startswith('!volume'):
+                    options.volume = cmd.partition(' ')[2]
+                    avoutput('Volume set to %s.' % options.volume)
+                else:
+                    run_ext_cmd(cmd.lstrip('!'))
+            elif cmd.endswith('\r'):
+                onrepeat = False
+                cmd = cmd.strip()
+                if len(cmd) < 2:
+                    output('Too short search string "%s".' % cmd)
+                    continue
+                output(cmd)
+                if ':' not in cmd:
+                    play_search(cmd)
+                    stopped = False
+                else:
+                    execute(cmd)
         except Exception as e:
-            print('FATAL ERROR!')
-        time.sleep(1)
+            try:
+                traceback.print_exc()
+                output(e)
+                keypeeker.getstr()    # Clear keyboard.
+                netpeeker.getstr()    # Clear remote keyboard.
+            except Exception as e:
+                print('FATAL ERROR!')
+            time.sleep(1)

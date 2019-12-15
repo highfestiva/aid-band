@@ -54,7 +54,9 @@ def maintain_cache_dir(dirname):
             sleep(1)
 
 def async_maintain_cache_dir(dirname):
-    Thread(target=maintain_cache_dir, args=(dirname,)).start()
+    t = Thread(target=maintain_cache_dir, args=(dirname,))
+    t.daemon = True
+    t.start()
 
 def quit():
     global _quit
