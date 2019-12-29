@@ -1,3 +1,4 @@
+Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.
 AC/DC ~ Thunderstruck ~ spotify:track:52UWtKlYjZO3dHoRlWuz9S
 AC/DC ~ Back in Black ~ spotify:track:08mG3Y1vljYA6bvDt4Wqkj
 AC/DC ~ Highway to Hell ~ spotify:track:2zYzyRzz6pRmhPzyfMEC8s
@@ -11,3 +12,6 @@ Blind Guardian ~ A Voice In The Dark ~ spotify:track:3Lvqo90120UeNXVnYUAGc8
 Blind Guardian ~ Skalds and Shadows ~ spotify:track:4GH6PfxGQoe6y8GaUOrl9h
 Blind Guardian ~ Otherland ~ spotify:track:78mlJfa5dfbKOmVFCtCJhb
 Blind Guardian ~ Lord Of The Rings. ~ spotify:track:5NDGt2224PKAS6ax9CdE07
+In Flames ~ The End ~ https://www.youtube.com/watch?v=yafxUluB6DA
+IN FLAMES ~ Take This Life ~ https://www.youtube.com/watch?v=O1FkbvGl-IU
+IN FLAMES ~ Save me ~ https://www.youtube.com/watch?v=gHFjQznssoY

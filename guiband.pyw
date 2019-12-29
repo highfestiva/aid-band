@@ -45,10 +45,10 @@ class App(tk.Frame):
 
     def key(self, event):
         print(event)
+        cmd = self.cmd.get()
         if event.keysym == 'Return':
-            search = self.cmd.get()
             self.cmd.set('')
-            aidband.play_search(search)
+            aidband.play_search(cmd)
         elif event.keysym == 'F12':
             if aidband.stopped:
                 aidband.play_idx()
@@ -62,9 +62,9 @@ class App(tk.Frame):
             if len(aidband.hotoptions.all) > fkey_idx:
                 ln = aidband.hotoptions.all[fkey_idx]
                 aidband.play_list(ln)
-        elif event.keysym == 'Left':
+        elif event.keysym == 'Left' and not cmd:
             aidband.prev_song()
-        elif event.keysym == 'Right':
+        elif event.keysym == 'Right' and not cmd:
             aidband.next_song()
 
     def poll(self):
