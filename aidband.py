@@ -90,10 +90,11 @@ def spotify_exit():
 
 @single_threaded
 def play_url(url, cachewildcard):
+    global proc,start_play_time,active_url,options,stopped
+    start_play_time = time.time()+2 # cut some slack
     ok = False
     stop()
     spotify_init()
-    global proc,start_play_time,active_url,options,stopped
     if cachewildcard and allowcache: 
         fns = glob(cachewildcard)
         cachename = fns[0] if fns else None
@@ -131,7 +132,7 @@ def play_url(url, cachewildcard):
             ok = True
         elif url:
             print('Get me %s!' % mplayer)
-    start_play_time = time.time()
+    start_play_time = time.time() # set again if process start took some time
     active_url = url if url else cachewildcard
     stopped = not ok
     return ok
@@ -145,6 +146,8 @@ def do_play_idx():
     global playqueue,options
     if playidx < len(playqueue):
         song = playqueue[shuffleidx[playidx]]
+        for pc in playing_callbacks:
+            pc(song)
         wildcard = ''
         if 'radio' not in listname:
             wildcard = _cachewildcard(song)
@@ -154,8 +157,6 @@ def do_play_idx():
             update_url()
         output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(wildcard))
         if play_url(song.uri, wildcard):
-            for pc in playing_callbacks:
-                pc(song)
             return True
 
 def play_idx(error_step=+1):
@@ -183,6 +184,8 @@ def poll():
         return
     if proc and proc.poll() == None:
         return
+    if time.time()-start_play_time < 0.5: # gotta cut it some slack
+        return
     next_song()
 
 def raw_play_list(name, doplay=True):
@@ -195,7 +198,6 @@ def raw_play_list(name, doplay=True):
         playqueue = muzaks.popular()
         listname = hotoptions.Favorites
         playlist = load_list()
-        doshuffle = False
     else:
         ishits = False
         playlist = load_list()
@@ -408,6 +410,18 @@ def step_song(step):
         playidx += step
     play_idx(error_step=step)
 
+def toggle_shuffle():
+    global useshuffle,playidx,shuffleidx
+    useshuffle = not useshuffle
+    curidx = shuffleidx[playidx]
+    shuffleidx = list(range(len(playqueue)))
+    if useshuffle:
+        random.shuffle(shuffleidx)
+    playidx = shuffleidx.index(curidx)
+    avoutput('Shuffle.' if useshuffle else 'Playing in order.')
+    _validate()
+    return useshuffle
+
 def update_url():
     global playqueue,playidx,playlist,options,stopped
     if playidx >= len(playqueue) or options.offline > 0:
@@ -451,6 +465,8 @@ def queue_songs(songs):
     if not songs:
         return
     global playqueue,playidx,shuffleidx
+    if len(songs) == 1 and not useshuffle and songs[0] in playqueue:
+        return requeue_songs(songs)
     newidx = list(range(len(playqueue),len(playqueue)+len(songs)))
     playqueue += songs
     shuffleidx = shuffleidx[:playidx+1] + newidx + shuffleidx[playidx+1:]
@@ -459,21 +475,26 @@ def queue_songs(songs):
 
 def requeue_songs(songs):
     '''Repositions songs to end up next in the play queue'''
+    global playidx, playqueue, shuffleidx
     songs = list(songs)
     if not songs:
         return
-    global playidx, playqueue, shuffleidx
-    in_idx = playidx + 1
-    for song in songs:
-        pq_idx = playqueue.index(song)
-        sh_idx = shuffleidx.index(pq_idx)
-        shuffleidx = shuffleidx[:sh_idx] + shuffleidx[sh_idx+1:] # drop from current pos
-        if sh_idx < in_idx:
-            in_idx -= 1
-        if sh_idx <= playidx: # back up current playing index, as we've effectivly dropped one song earlier in the list
-            playidx -= 1
-        shuffleidx = shuffleidx[:in_idx] + [pq_idx] + shuffleidx[in_idx:] # insert in next slot
-        in_idx += 1 # insert next song beyond
+    if len(songs) == 1 and not useshuffle:
+        # move "song pointer" to that position
+        pq_idx = playqueue.index(songs[0])
+        playidx = pq_idx-1 if pq_idx > 0 else len(playqueue)-1
+    else:
+        in_idx = playidx + 1
+        for song in songs:
+            pq_idx = playqueue.index(song)
+            sh_idx = shuffleidx.index(pq_idx)
+            shuffleidx = shuffleidx[:sh_idx] + shuffleidx[sh_idx+1:] # drop from current pos
+            if sh_idx < in_idx:
+                in_idx -= 1
+            if sh_idx <= playidx: # back up current playing index, as we've effectivly dropped one song earlier in the list
+                playidx -= 1
+            shuffleidx = shuffleidx[:in_idx] + [pq_idx] + shuffleidx[in_idx:] # insert in next slot
+            in_idx += 1 # insert next song beyond
     _validate()
     next_song()
 
@@ -648,14 +669,7 @@ if __name__ == '__main__':
                 avoutput('Repeat.' if onrepeat else 'Playing in sequence.')
             elif cmd == '\t': # toggle shuffle
                 onrepeat = False
-                useshuffle = not useshuffle
-                curidx = shuffleidx[playidx]
-                shuffleidx = list(range(len(playqueue)))
-                if useshuffle:
-                    random.shuffle(shuffleidx)
-                playidx = shuffleidx.index(curidx)
-                avoutput('Shuffle.' if useshuffle else 'Playing in order.')
-                _validate()
+                toggle_shuffle()
             elif cmd.startswith('!'):
                 cmd = cmd.strip()
                 if cmd.startswith('!volume'):

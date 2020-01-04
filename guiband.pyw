@@ -9,16 +9,21 @@ from time import sleep
 
 aidband.raw_play_list(aidband.hotoptions.Favorites, doplay=False)
 aidband.popen_kwargs = dict(creationflags=aidband.subprocess.CREATE_NO_WINDOW)
+current_title = ''
 
 
 @killable.single_threaded
 def update_song_title(root, song):
-    root.title(song.artist + ' - ' + song.name)
+    global current_title
+    current_title = song.artist + ' - ' + song.name
+    root.title(current_title)
 
 
 class App(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
+        self.master.bind("<Button-1>", self.next_song)
+        self.master.bind("<Button-3>", self.prev_song)
         self.quit = False
         self.master = master
         self.master.iconbitmap('pixeldoctrine.ico')
@@ -37,7 +42,7 @@ class App(tk.Frame):
         self.cmd = tk.StringVar() 
         self.inp = tk.Entry(self, textvariable=self.cmd)
         self.inp.focus()
-        for key in 'Return Left Right'.split():
+        for key in 'Return Left Right Tab'.split():
             self.inp.bind('<'+key+'>', self.key)
         for i in range(1, 12+1):
             self.inp.bind('<F%i>'%i, self.key)
@@ -66,11 +71,24 @@ class App(tk.Frame):
             aidband.prev_song()
         elif event.keysym == 'Right' and not cmd:
             aidband.next_song()
+        elif event.keysym == 'Tab':
+            shuffle = aidband.toggle_shuffle()
+            root.title(current_title + (' [shuffled]' if shuffle else ' [playing in order]'))
+
+    def next_song(self, *args, **kwargs):
+        self.cmd.set('')
+        aidband.next_song()
+
+    def prev_song(self, *args, **kwargs):
+        self.cmd.set('')
+        aidband.prev_song()
 
     def poll(self):
         while not self.quit:
             sleep(0.5)
             aidband.poll()
+            if self.cmd.get().startswith(' '):
+                self.next_song()
 
     def closing(self):
         print('terminating window')
