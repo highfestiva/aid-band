@@ -48,6 +48,7 @@ datadir = '.'
 mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mpv'
 mplayer_volume = '-volume' if 'win' in sys.platform.lower() else '--volume'
 last_yt_search = 0
+timer_stop_t = None
 popen_kwargs = {}
 
 
@@ -177,7 +178,7 @@ def play_idx(error_step=+1):
 def poll():
     if active_url.startswith('spotify'):
         if not muzaks or not muzaks.isplaying():
-            next_song()
+            try_next_song()
         return
 
     if not proc and not active_url:
@@ -186,7 +187,7 @@ def poll():
         return
     if time.time()-start_play_time < 0.5: # gotta cut it some slack
         return
-    next_song()
+    try_next_song()
 
 def raw_play_list(name, doplay=True):
     global listname
@@ -327,6 +328,8 @@ def search_music(search):
     return songs
 
 def play_search(search):
+    global timer_stop_t
+    timer_stop_t = None
     if 'radio' in listname:
         songs = sr_radio.search(search)
     else:
@@ -404,6 +407,17 @@ def prev_song():
 def next_song():
     step_song(+1)
 
+def try_next_song():
+    global timer_stop_t
+    if timer_stop_t and timer_stop_t < time.time():
+        stop()
+        timer_stop_t = None
+        avoutput('Goodnight!')
+        for pc in playing_callbacks:
+            pc(None)
+    else:
+        next_song();
+
 def step_song(step):
     global playidx
     if not onrepeat:
@@ -421,6 +435,21 @@ def toggle_shuffle():
     avoutput('Shuffle.' if useshuffle else 'Playing in order.')
     _validate()
     return useshuffle
+
+def run_command(cmd):
+    global options
+    if cmd.startswith('!'):
+        cmd = cmd[1:].strip()
+    if cmd.startswith('volume'):
+        options.volume = cmd.partition(' ')[2]
+        avoutput('Volume set to %s.' % options.volume)
+    elif cmd.startswith('timer'):
+        global timer_stop_t
+        minutes = float(cmd.partition(' ')[2])
+        timer_stop_t = minutes * 60 + time.time()
+        avoutput('Timer set to %s minutes.' % minutes)
+    else:
+        run_ext_cmd(cmd.lstrip('!'))
 
 def update_url():
     global playqueue,playidx,playlist,options,stopped
@@ -671,12 +700,7 @@ if __name__ == '__main__':
                 onrepeat = False
                 toggle_shuffle()
             elif cmd.startswith('!'):
-                cmd = cmd.strip()
-                if cmd.startswith('!volume'):
-                    options.volume = cmd.partition(' ')[2]
-                    avoutput('Volume set to %s.' % options.volume)
-                else:
-                    run_ext_cmd(cmd.lstrip('!'))
+                run_command(cmd, options)
             elif cmd.endswith('\r'):
                 onrepeat = False
                 cmd = cmd.strip()

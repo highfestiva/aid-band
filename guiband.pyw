@@ -15,7 +15,10 @@ current_title = ''
 @killable.single_threaded
 def update_song_title(root, song):
     global current_title
-    current_title = song.artist + ' - ' + song.name
+    if not song:
+        current_title = '[Stopped]'
+    else:
+        current_title = song.artist + ' - ' + song.name
     root.title(current_title)
 
 
@@ -53,7 +56,10 @@ class App(tk.Frame):
         cmd = self.cmd.get()
         if event.keysym == 'Return':
             self.cmd.set('')
-            aidband.play_search(cmd)
+            if cmd.startswith('!'):
+                aidband.run_command(cmd)
+            else:
+                aidband.play_search(cmd)
         elif event.keysym == 'F12':
             if aidband.stopped:
                 aidband.play_idx()
@@ -85,7 +91,7 @@ class App(tk.Frame):
 
     def poll(self):
         while not self.quit:
-            sleep(0.5)
+            sleep(1)
             aidband.poll()
             if self.cmd.get().startswith(' '):
                 self.next_song()
