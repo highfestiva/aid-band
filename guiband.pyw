@@ -89,12 +89,19 @@ class App(tk.Frame):
         self.cmd.set('')
         aidband.prev_song()
 
+    def drop_song(self, *args, **kwargs):
+        self.cmd.set('')
+        aidband.drop_song()
+
     def poll(self):
         while not self.quit:
             sleep(1)
             aidband.poll()
-            if self.cmd.get().startswith(' '):
+            cmd = self.cmd.get()
+            if cmd == ' ':
                 self.next_song()
+            elif cmd == '-':
+                self.drop_song()
 
     def closing(self):
         print('terminating window')
