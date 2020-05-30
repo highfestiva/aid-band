@@ -294,7 +294,7 @@ def songs_eq(s1, s2):
     ms = _match_ratio(s1.searchname, s2.searchname)
     return ma > 0.85 and ms > 0.75
 
-def unique_songs(found_songs, songs):
+def unique_songs(search, found_songs, songs):
     new_songs = []
     for fs in found_songs:
         for s in songs+new_songs:
@@ -302,6 +302,8 @@ def unique_songs(found_songs, songs):
                 break
         else:
             new_songs += [fs]
+    if ' - ' in search:
+        new_songs = new_songs[:1]
     print('new songs found:', new_songs)
     return new_songs
 
@@ -323,7 +325,7 @@ def search_music(search):
         if inet_search:
             output('Searching Youtube for %s...' % search)
             found_songs = threshold_search(search)
-            new_songs = unique_songs(found_songs, songs)
+            new_songs = unique_songs(search, found_songs, songs)
             songs += new_songs
     return songs
 
