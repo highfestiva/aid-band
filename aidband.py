@@ -21,6 +21,7 @@ import subprocess
 import sys
 import threading
 import time
+from toplist import ilikeradio as load_pop_songs
 import traceback
 import util
 import vorbis_encoder
@@ -190,15 +191,15 @@ def poll():
     try_next_song()
 
 def raw_play_list(name, doplay=True):
-    global listname
+    global listname,playlist,playqueue,playidx,shuffleidx,ishits,options
     listname = name
-    global playlist,playqueue,playidx,shuffleidx,ishits
     doshuffle = useshuffle
     if listname == hotoptions.Hit:
         ishits = True
-        playqueue = muzaks.popular()
-        listname = hotoptions.Favorites
-        playlist = load_list()
+        playlist = [ABSong(s['name'], s['artists'][0]['name'], s['uri']) for s in  load_pop_songs()]
+        playqueue = playlist[:]
+        doshuffle = False
+        options.foreground_download = True
     else:
         ishits = False
         playlist = load_list()
@@ -335,7 +336,7 @@ def play_search(search):
     if 'radio' in listname:
         songs = sr_radio.search(search)
     else:
-        if search != search.strip('@') or on_yplaylist():
+        if search != search.strip('@') or on_realtime_playlist():
             search = search.strip('@')
             songs = search_queue(search)
             if songs:
@@ -387,7 +388,7 @@ def add_song(verbose=True):
 
 def drop_song():
     global playlist,playqueue,shuffleidx
-    if playidx < len(shuffleidx) and not on_yplaylist():
+    if playidx < len(shuffleidx) and not on_realtime_playlist():
         pqidx = shuffleidx[playidx]
         song = playqueue[pqidx]
         playqueue = playqueue[:pqidx] + playqueue[pqidx+1:]
@@ -529,15 +530,15 @@ def requeue_songs(songs):
     _validate()
     next_song()
 
-def on_yplaylist():
-    return listname.startswith('pl_')
+def on_realtime_playlist():
+    return ishits or listname.startswith('pl_')
 
 def load_list():
     songs = []
     fn = os.path.join(datadir,listname+'.txt')
     if not os.path.exists(fn):
         return songs
-    if on_yplaylist():
+    if on_realtime_playlist():
         try:
             pl_url = open(fn).read().strip()
             for artist,songname,url in youtube_playlist.playlist(pl_url):
@@ -554,7 +555,7 @@ def load_list():
     return songs
 
 def save_list(songlist):
-    if on_yplaylist():
+    if on_realtime_playlist():
         return
     fn = os.path.join(datadir,listname+'.txt')
     f = codecs.open(fn, 'w', 'utf-8')
