@@ -105,7 +105,8 @@ def play_url(url, cachewildcard):
             if options.offline > 0:
                 options.offline -= 1
                 return False
-            if not options.foreground_download:
+            foreground = ishits or options.foreground_download
+            if not foreground:
                 song = playqueue[shuffleidx[playidx]]
                 background_thread = threading.Thread(target=partial(bkg_save_song, song, cachewildcard))
                 background_thread.start()
@@ -199,7 +200,6 @@ def raw_play_list(name, doplay=True):
         playlist = [ABSong(s['name'], s['artists'][0]['name'], s['uri']) for s in  load_pop_songs()]
         playqueue = playlist[:]
         doshuffle = False
-        options.foreground_download = True
     else:
         ishits = False
         playlist = load_list()
@@ -460,7 +460,8 @@ def update_url():
         return False
     song = playqueue[shuffleidx[playidx]]
     if not song.uri or ('spotify:' in song.uri and not options.dont_replace_spotify):
-        if threshold_search_secs_left()>0 and not options.foreground_download:
+        foreground = ishits or options.foreground_download
+        if threshold_search_secs_left()>0 and not foreground:
             # can't search right away, so instead skip ahead to a playable song
             time.sleep(0.1) # don't burn all cpu for nothin'
             return False

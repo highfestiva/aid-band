@@ -10,12 +10,13 @@ import subprocess
 import urllib.parse
 
 
-pages = re.compile(r'q=(http.*?://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?)</a>')
+pages = re.compile(r'q=(http.*?://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?</a>.*?)</div>')
 tags = re.compile(r'<.*?>')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
 bad_names = 'review'.split()
-drop_words = 'album official video music youtube'.split()
+drop_words = 'album official video music youtube https'.split()
+like_words = 'lyrics'.split()
 dislike_words = 'cover'.split()
 clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 
@@ -35,6 +36,7 @@ def search(s, verbose=False):
         name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
         name = name.replace('~', ' - ').replace(':', ' - ').replace('"', ' ').replace('`', "'")
+        name = ''.join((ch if ord(ch)<10000 else ' ') for ch in name)
         if verbose:
             print(name, url)
         if _match_words(url, bad_urls) or _match_words(name, bad_names):
@@ -51,9 +53,25 @@ def search(s, verbose=False):
             continue
         hits.append([name,url])
     # sort by length
-    hits = sorted(hits, key=lambda nu: len(nu[0]))
+    score = {h:len(h)*2 for h,u in hits}
+    if verbose:
+        print(score)
+    # sort by no paranthesis
+    score = {h:score[h]+h.find('(')+h.find('[') for h,u in hits}
+    if verbose:
+        print(score)
     # place those with dashes (-) first, assumed to be better named
-    hits = sorted(hits, key=lambda nu: nu[0].index('-') if '-' in nu[0] else +100)
+    score = {h:score[h]+(h.index('-') if '-' in h else +50) for h,u in hits}
+    if verbose:
+        print(score)
+    # place those with spaced dashes ( - ) first, assumed to be better named
+    score = {h:score[h]+(h.index(' - ') if ' - ' in h else +50) for h,u in hits}
+    if verbose:
+        print(score)
+    # sort by liked words
+    score = {h:score[h]-75*len([1 for w in like_words if w in h.lower()]) for h,u in hits}
+    if verbose:
+        print(score)
     # sort by exact match, phrase by phrase + additional points for the correct order
     sl = s.lower()
     search_phrases = [p.strip() for p in sl.split('-')]
@@ -62,15 +80,19 @@ def search(s, verbose=False):
         score = 100
         if i2 >= 0:
             score = abs(i1-i2)
-            if verbose:
-                print(s1, s2, score)
+            # if verbose:
+                # print(s1, s2, score)
         for w in dislike_words:
             if w in s2:
-                score += 30
+                score += 50
         return score
-    score_phrase = lambda nu: sum([matchlen_pos(p, nu[0].lower(), sl.index(p)) for p in search_phrases])
-    hits = sorted(hits, key=score_phrase)
+    score_phrase = lambda h: sum([matchlen_pos(p, h.lower(), sl.index(p)) for p in search_phrases])
+    score = {h:score[h]+score_phrase(h) for h,u in hits}
     if verbose:
+        print(score)
+    hits = sorted(hits, key=lambda nu: score[nu[0]])
+    if verbose:
+        print('post score sort')
         print('\n'.join(str(h) for h in hits))
         print()
     # cleanup names
@@ -84,6 +106,7 @@ def search(s, verbose=False):
             name = clean_ends(' '.join(w.strip() for w in words))
             hits[i][0] = name
     if verbose:
+        print('post cleanup')
         print('\n'.join(str(h) for h in hits))
     # 1st pick artist if present in any hit
     artists = [] # ordered; don't use set()
@@ -117,6 +140,7 @@ def search(s, verbose=False):
             else:
                 songs += [ABSong(song, s, url)]
     if verbose:
+        print('done')
         print(songs)
     # os._exit(1)
     return songs
@@ -126,8 +150,10 @@ def cache_song(url, wildcard):
     if 'youtube.com' in url:
         video = pafy.new(url)
         audiostream = max(video.audiostreams, key=lambda audio: abs(audio.rawbitrate-131072))
-        if audiostream.get_filesize() > 8e6:
-            print('File too big, refusing to download!')
+        fsize = audiostream.get_filesize()
+        if fsize < 1e5 or fsize > 8e6:
+            reason = 'small' if fsize < 1e6 else 'big'
+            print('File too %s (%s B), refusing to download!' % (reason, fsize))
             return ''
         audiostream.download()
         src_filename = audiostream.filename
@@ -142,6 +168,8 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('Oskar Linnros - Plåster', verbose=True)
+    songs = search('Miss Li - Komplicerad', verbose=True)
+    # songs = search('Gym Class Heroes - Stereo Hearts', verbose=True)
+    # songs = search('Oskar Linnros - Plåster', verbose=True)
     # songs = search('Liquido - Swing It', verbose=True)
     #cache_song(songs[0].uri, './something.*')
