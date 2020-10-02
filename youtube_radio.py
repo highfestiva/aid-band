@@ -10,7 +10,7 @@ import subprocess
 import urllib.parse
 
 
-pages = re.compile(r'q=(http.*?://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?</a>.*?)</div>')
+pages = re.compile(r'q=(https://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?</a>.*?)</div>')
 tags = re.compile(r'<.*?>')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
@@ -41,6 +41,7 @@ def search(s, verbose=False):
             print(name, url)
         if _match_words(url, bad_urls) or _match_words(name, bad_names):
             continue
+        assert len(url) <= 60, 'url too long: '+url
         words = [w for w in name.split() if not [b for b in drop_words if b in w.lower()]]
         name = ' '.join(words).strip()
         name = clean_ends(name)
@@ -168,7 +169,8 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('Miss Li - Komplicerad', verbose=True)
+    songs = search('Victor Crone - Yes, I Will Wait', verbose=True)
+    # songs = search('Miss Li - Komplicerad', verbose=True)
     # songs = search('Gym Class Heroes - Stereo Hearts', verbose=True)
     # songs = search('Oskar Linnros - Plåster', verbose=True)
     # songs = search('Liquido - Swing It', verbose=True)
