@@ -6,6 +6,7 @@ from glob import glob
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os.path
 import random
+import ssl
 import urllib.parse
 import util
 
@@ -45,8 +46,9 @@ class AidbandServer(BaseHTTPRequestHandler):
 
 
 def run():
-	httpd = HTTPServer(('0.0.0.0', 8800), AidbandServer)
-	httpd.serve_forever()
+    httpd = HTTPServer(('0.0.0.0', 8800), AidbandServer)
+    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='server.pem', server_side=True)
+    httpd.serve_forever()
 
 
 def run_threaded():

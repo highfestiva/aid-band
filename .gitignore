@@ -21,3 +21,4 @@ libspotify.lib
 libspotify.dll
 *.so
 *.so.*
+*.pem

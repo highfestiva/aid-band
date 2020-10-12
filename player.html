@@ -1,23 +1,33 @@
 <html>
 <head>
-<title>Aidband Player</title>
+  <title>Aidband Player</title>
+  <meta name="viewport" content="initial-scale=1.0">
 </head>
-<body>
+
+<body style="display:flex;justify-content:center;align-items:center;zoom:150%;">
 <div>
-<input id="inp"></input>
-<button id="btn">Play!</button>
+  <input id="inp" placeholder="random"></input>
+  <button id="btn" type="button">&gt;</button>
 </div>
 </body>
+
 <script>
-function playRandom() {
+function keyPress(ev) {
+  if (ev.keyCode == 13) {
+    playSong();
+  }
+}
+function playSong() {
   if (window.song) {
     window.song.pause();
   }
   var title = document.getElementById("inp").value;
   window.song = new Audio(title.length<3? "random" : "song/"+title);
   window.song.play();
-  window.song.onended = playRandom;
+  window.song.onended = playSong;
 }
-document.getElementById("btn").addEventListener("click", playRandom);
+document.getElementById("inp").addEventListener("keypress", keyPress);
+document.getElementById("btn").addEventListener("click", playSong);
 </script>
+
 </html>
