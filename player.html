@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Aidband Player</title>
+</head>
+<body>
+<div>
+<input id="inp"></input>
+<button id="btn">Play!</button>
+</div>
+</body>
+<script>
+function playRandom() {
+  if (window.song) {
+    window.song.pause();
+  }
+  var title = document.getElementById("inp").value;
+  window.song = new Audio(title.length<3? "random" : "/song/"+title);
+  window.song.play();
+  window.song.onended = playRandom;
+}
+document.getElementById("btn").addEventListener("click", playRandom);
+</script>
+</html>

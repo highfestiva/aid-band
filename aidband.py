@@ -8,6 +8,7 @@ import difflib
 from functools import partial
 from glob import glob
 import hotoptions
+import htmlserver
 import interruptor
 import keypeeker
 from killable import kill_self, single_threaded
@@ -141,7 +142,7 @@ def play_url(url, cachewildcard):
     return ok
 
 def remove_from_cache(song):
-    wc = _cachewildcard(song)
+    wc = util._cachewildcard(song)
     for fn in glob(wc):
         os.remove(fn)
 
@@ -153,7 +154,7 @@ def do_play_idx():
             pc(song)
         wildcard = ''
         if 'radio' not in listname:
-            wildcard = _cachewildcard(song)
+            wildcard = util._cachewildcard(song)
             # if not os.path.exists(wildcard):
                 # return
         if not glob(wildcard):
@@ -169,13 +170,14 @@ def play_idx(error_step=+1):
             if do_play_idx():
                 return True
         except Exception as e:
-            output('play_idx "%s" crash: %s [stopped playback]' % (cmd, str(e)))
-            return
+            output('play_idx "%s" crash: %s' % (cmd, str(e)))
+            time.sleep(10)
         playidx += error_step
         if playidx < 0:
             playidx = len(playqueue)-1
         if playidx >= len(playqueue):
             playidx = 0
+    output('Unable to play anything, stopping playback')
 
 def poll():
     if active_url.startswith('spotify'):
@@ -549,8 +551,7 @@ def load_list():
     else:
         for line in codecs.open(fn, 'r', 'utf-8'):
             try:
-                artist,songname,url = [w.strip() for w in line.split('~')]
-                songs += [ABSong(songname,artist,url)]
+                songs += [ABSong(line)]
             except:
                 pass
     return songs
@@ -593,15 +594,6 @@ def _validate():
 def _simple_listname():
     return listname.split('_')[-1]
 
-def _cachewildcard(song):
-    s = str(song.artist) + '-' + song.name
-    replacements = {'/':'_', '\\':'_', ':':'_', '?':'', '(':'', ')':'', '[':'', ']':'', '"':'', '*':'_', '\t':' ', '  ':' '}
-    for a,b in replacements.items():
-        s = s.replace(a,b)
-    s = s.partition('...')[0].strip()
-    s = os.path.join(datadir, 'cache/'+s+'.*')
-    return s
-
 def _confixs(s):
     return util.str2prt(s)
 
@@ -616,6 +608,7 @@ parser.add_argument('--dont-replace-spotify', action='store_true', default=False
 parser.add_argument('--only-cache', action='store_true', default=False, help="don't play any music, just download the files")
 parser.add_argument('--foreground-download', action='store_true', default=False, help="wait for file to finish downloading instead of skipping ahead")
 parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
+parser.add_argument('--dont-webserve', action='store_true', default=False, help="don't serve html playing")
 parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
 parser.add_argument('--bg-convert-wav', action='store_true', help='convert .wav to .ogg in the background')
 options = parser.parse_args()
@@ -647,6 +640,8 @@ if __name__ == '__main__':
     netpeeker.init(handle_login, handle_keys)
     keypeeker.init(handle_keys)
     spotify_init()
+    if not options.dont_webserve:
+        htmlserver.run_threaded()
     raw_play_list(hotoptions.Favorites, doplay=False)
     if options.bg_convert_wav:
         vorbis_encoder.async_maintain_cache_dir('cache')

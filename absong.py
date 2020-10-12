@@ -5,7 +5,9 @@ from util import rawphrase
 
 
 class ABSong:
-    def __init__(self, _name,_artist,_uri):
+    def __init__(self, _name, _artist=None, _uri=None):
+        if _artist is None:
+            _artist,_name,_uri = [w.strip() for w in _name.split('~')]
         self.name = _name
         self.artist = str(_artist)
         self.searchname   = self.name.lower().replace('(', ' ').replace(')', ' ')

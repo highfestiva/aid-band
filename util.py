@@ -1,7 +1,9 @@
+import os.path
 import string
 import sys
 
 alnum_letters = string.ascii_letters + string.digits + ' '
+datadir = '.'
 phrase_letters = alnum_letters + ' '
 
 
@@ -23,3 +25,13 @@ def str2prt(*args):
             return s.encode('cp850','ignore').decode('cp850')
     except UnicodeEncodeError:
         return s.encode('ascii','ignore').decode('ascii')
+
+
+def _cachewildcard(song):
+    s = str(song.artist) + '-' + song.name
+    replacements = {'/':'_', '\\':'_', ':':'_', '?':'', '(':'', ')':'', '[':'', ']':'', '"':'', '*':'_', '\t':' ', '  ':' '}
+    for a,b in replacements.items():
+        s = s.replace(a,b)
+    s = s.partition('...')[0].strip()
+    s = os.path.join(datadir, 'cache/'+s+'.*')
+    return s

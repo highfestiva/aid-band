@@ -31,7 +31,7 @@ def search(s, verbose=False):
     names = set()
     hits = []
     for pagelink in pages.finditer(body):
-        url = pagelink.group(1).replace('%3F','?').replace('%3D', '=')
+        url = pagelink.group(1).replace('%3F','?').replace('%3D', '=').partition('%26')[0]
         name = html.unescape(pagelink.group(2))
         name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
@@ -169,7 +169,8 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('Victor Crone - Yes, I Will Wait', verbose=True)
+    songs = search('Darin - Tvillingen', verbose=True)
+    # songs = search('Victor Crone - Yes, I Will Wait', verbose=True)
     # songs = search('Miss Li - Komplicerad', verbose=True)
     # songs = search('Gym Class Heroes - Stereo Hearts', verbose=True)
     # songs = search('Oskar Linnros - Plåster', verbose=True)
