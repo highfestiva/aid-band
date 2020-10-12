@@ -14,7 +14,7 @@ function playRandom() {
     window.song.pause();
   }
   var title = document.getElementById("inp").value;
-  window.song = new Audio(title.length<3? "random" : "/song/"+title);
+  window.song = new Audio(title.length<3? "random" : "song/"+title);
   window.song.play();
   window.song.onended = playRandom;
 }
