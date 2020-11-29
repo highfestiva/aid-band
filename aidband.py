@@ -8,7 +8,6 @@ import difflib
 from functools import partial
 from glob import glob
 import hotoptions
-import htmlserver
 import interruptor
 import keypeeker
 from killable import kill_self, single_threaded
@@ -170,8 +169,8 @@ def play_idx(error_step=+1):
             if do_play_idx():
                 return True
         except Exception as e:
-            output('play_idx "%s" crash: %s' % (cmd, str(e)))
-            time.sleep(10)
+            output('play_idx cmd "%s" crash: %s' % (cmd, str(e)))
+            time.sleep(1)
         playidx += error_step
         if playidx < 0:
             playidx = len(playqueue)-1
@@ -608,7 +607,7 @@ parser.add_argument('--dont-replace-spotify', action='store_true', default=False
 parser.add_argument('--only-cache', action='store_true', default=False, help="don't play any music, just download the files")
 parser.add_argument('--foreground-download', action='store_true', default=False, help="wait for file to finish downloading instead of skipping ahead")
 parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
-parser.add_argument('--dont-webserve', action='store_true', default=False, help="don't serve html playing")
+parser.add_argument('--webserve', action='store_true', default=False, help='serve html playing')
 parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
 parser.add_argument('--bg-convert-wav', action='store_true', help='convert .wav to .ogg in the background')
 options = parser.parse_args()
@@ -640,7 +639,8 @@ if __name__ == '__main__':
     netpeeker.init(handle_login, handle_keys)
     keypeeker.init(handle_keys)
     spotify_init()
-    if not options.dont_webserve:
+    if not options.webserve:
+        import htmlserver
         htmlserver.run_threaded()
     raw_play_list(hotoptions.Favorites, doplay=False)
     if options.bg_convert_wav:

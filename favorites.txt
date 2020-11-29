@@ -4,13 +4,12 @@ Playlist for AidBand. Each line contains artist, song name and URL. The first tw
 16 Horsepower ~ Black Soul Choir ~ spotify:track:1mZmjuLoslfYSEOXojo8BS
 16 Horsepower ~ Brimstone Rock ~ https://www.youtube.com/watch?v=6-J9DQNHEvs
 16 Horsepower ~ Haw ~ spotify:track:7My5DIityXisMnm7PRfrTt
-16 Horsepower ~ Hutterite Mile ~ 
+16 Horsepower ~ Hutterite Mile ~ https://www.youtube.com/watch?v=6O2teGtdEP8
 16 Horsepower ~ I Seen What I Saw ~ https://www.youtube.com/watch?v=SJlA5tiqJG4
-16 Horsepower ~ Nobody 'Cept You ~ https://www.youtube.com/watch?v=xk6TiKmIA-s
 16 Horsepower ~ The Partisan ~ https://www.youtube.com/watch?v=snKli2IzFJM
 16 Horsepower ~ Wayfaring Stranger ~ spotify:track:6sqoptJC1QKPjqes9tu0R4
 2Face Idibia ~ Let Somebody Love You ~ https://www.youtube.com/watch?v=wmFm0LcsCfQ
-2Face Idibia+Bridget Kelly ~ Let Somebody Love You (feat. Bridget Kelly) ~ spotify:track:6vHvybm4N1VRM5BDVeo5ER
+2Face Idibia+Bridget Kelly ~ Let Somebody Love You (feat. Bridget Kelly) ~ https://www.youtube.com/watch?v=tKUsCRhR-d8
 3 Doors Down ~ Believer ~ spotify:track:4amkRdPOtztjXoWI7s9mDS
 3 Doors Down ~ Here Without You ~ spotify:track:3NLrRZoMF0Lx6zTlYqeIo4
 3 Doors Down ~ It's The Only One You've Got - Acoustic ~ spotify:track:5oel38N4QKN8um0fT99Uzn
@@ -18,7 +17,7 @@ Playlist for AidBand. Each line contains artist, song name and URL. The first tw
 3 Doors Down ~ Let Me Be Myself ~ spotify:track:37K07PsEPk3SuYpAvjTbJO
 3 Doors Down ~ When I'm Gone ~ spotify:track:3WbphvawbMZ8FyqDxYGdSQ
 3 Doors Down ~ Your Arms Feel Like home ~ https://www.youtube.com/watch?v=jejFJ4FvDwE
-4D Winks ~ We're Going to Be Friends ~ 
+4D Winks ~ We're Going to Be Friends ~ https://www.youtube.com/watch?v=HXX62gWDgMs
 A Perfect Circle ~ 3 Libras ~ https://www.youtube.com/watch?v=u9MAg9E5K3w
 A Perfect Circle ~ Blue ~ spotify:track:6tgTTBaIf0tO6lvDhoXfMg
 A Perfect Circle ~ Counting Bodies Like Sheep To The Rhythm Of The War Drums ~ https://www.youtube.com/watch?v=93ByMEx50Zc
@@ -62,10 +61,9 @@ Alan Walker ~ Faded ~ spotify:track:1brwdYwjltrJo7WHpIvbYt
 Alanis Morisette ~ Everything ~ https://www.youtube.com/watch?v=C6kLbDHu0yc
 Alanis Morisette ~ Hands Clean ~ https://www.youtube.com/watch?v=2dH289KxkGw
 Alanis Morisette ~ Ironic ~ https://www.youtube.com/watch?v=Jne9t8sHpUc
-Alanis Morisette ~ Thank U ~ https://www.youtube.com/watch?v=xt4mkBRuGkA
 Alanis Morisette ~ Unsent ~ https://www.youtube.com/watch?v=yYhhZQx0Xhg
 Alanis Morisette ~ You Learn ~ https://www.youtube.com/watch?v=GFW-WfuX2Dk
-Alanis Morisette ~ You Oughta Know ~ 
+Alanis Morisette ~ You Oughta Know ~ https://www.youtube.com/watch?v=8TnhqlvO2qw
 Alesso+Tove Lo ~ Heroes (we could be) ~ https://www.youtube.com/watch?v=epl0wG9vjv4
 Alexandra Stan ~ 1.000.000 - Rico Bernasconi Remix Edit ~ https://www.youtube.com/watch?v=RdyIy7F_wIQ
 Alexandra Stan ~ Dance (Radio Edit) ~ https://www.youtube.com/watch?v=o5Jdq7gep20
@@ -86,7 +84,7 @@ Alice In Chains ~ Would? ~ https://www.youtube.com/watch?v=Nco_kh8xJDs
 Alice In Videoland ~ Cut The Crap ~ spotify:track:2cvs8M29ETBfLj0xHjPEEC
 Alice In Videoland ~ Going Down ~ spotify:track:4pm4bypxHCRiXOoZ2ztkVL
 Alice In Videoland ~ Got To Go ~ spotify:track:0Lja6wSYZdi7TTJjQhnddG
-Alice In Videoland ~ Ladykiller ~ spotify:track:6TcRyD39AxTaOyuGpfBdsw
+Alice In Videoland ~ Ladykiller ~ https://www.youtube.com/watch?v=BxG-oaeyowo
 Alice In Videoland ~ Lay Me Down ~ https://www.youtube.com/watch?v=YKSnpQJJjlo
 Alice In Videoland ~ Radio Song ~ spotify:track:679CaIOCfhALgzV7cS6lzm
 Alice In Videoland ~ Something New ~ https://www.youtube.com/watch?v=jvbGNBSLXC8
@@ -180,7 +178,6 @@ Cradle Of Filth ~ The Death of Love ~ https://www.youtube.com/watch?v=uEkPi0xx4j
 Crash Test Dummies ~ Afternoons & Coffeespoons ~ https://www.youtube.com/watch?v=W0YeGv5xHUU
 Crash Test Dummies ~ Mmm Mmm Mmm Mmm ~ spotify:track:76nvqWPFucUra1xCkN1tnD
 Crash Test Dummies ~ Superman's Song ~ spotify:track:3lcP1anKWxdp6IRNF9vGhu
-Crash Test Dummies ~ The Ballad Of Peter Pumpkinhead ~ https://www.youtube.com/watch?v=etbALdQ2AAk
 Crash Test Dummies+Ellen Reid ~ The Ballad Of Peter Pumpkinhead ~ spotify:track:1NM2ME1gnJpVJjd09XSSrh
 Cyndi Lauper ~ Girls Just Want to Have Fun ~ spotify:track:2zjt2hHBbiv5SuxYg8Z7eP
 DJ Fresh ~ Louder - Doctor P & Flux Pavillion Remix ~ https://www.youtube.com/watch?v=7cxgao2rYZw
@@ -229,7 +226,7 @@ David Guetta ~ Lovers on the Sun (feat. Sam Martin) ~ https://www.youtube.com/wa
 David Guetta ~ Play Hard (feat. Ne-Yo & Akon) [New Edit] ~ 
 David Guetta ~ Repeat (feat. Jessie J) ~ spotify:track:3foOp6lYC046Xq2dJVvwa8
 David Guetta ~ She Wolf (Falling to Pieces) [feat. Sia] ~ https://www.youtube.com/watch?v=PVzljDmoPVs
-David Guetta ~ Ten Feet Tall - David Guetta Remix ~ spotify:track:7ePpy73TCKzEqKerrjTS1s
+David Guetta ~ Ten Feet Tall - David Guetta Remix ~ https://www.youtube.com/watch?v=BjE4fK4QiI0
 David Guetta ~ Titanium (feat. Sia) ~ https://www.youtube.com/watch?v=JRfuAukYTKg
 David Guetta ~ Turn Me On (feat. Nicki Minaj) ~ https://www.youtube.com/watch?v=YVw7eJ0vGfM
 David Guetta ~ Where Them Girls At - feat. Nicki Minaj & Flo Rida ~ https://www.youtube.com/watch?v=p4kVWCSzfK4
@@ -253,7 +250,7 @@ Deep Sleep ~ Sleeping on the Beach (Gentle Waves on the Beach) ~ https://www.you
 Deep Sleep ~ Zen Shoreline Beach Sounds ~ spotify:track:1RLdhFKZy4R5qn3O1SC0Ir
 Den svenska björnstammen ~ Evig lycka (feat The Very Best) [Instrumental] ~ https://www.youtube.com/watch?v=OM6_gBi4iJY
 Den svenska björnstammen ~ Hatar allt ~ spotify:track:4hAF1weCCXAdsJyoPkhevZ
-Den svenska björnstammen ~ Klagan (Instrumental) ~ spotify:track:3bvdoUxJntMMBreDqR7Gxm
+Den svenska björnstammen ~ Klagan (Instrumental) ~ https://www.youtube.com/watch?v=54UW-yJRmmc
 Den svenska björnstammen ~ Mörkt kallt ljus ~ https://www.youtube.com/watch?v=Y32hUOf-iNQ
 Den svenska björnstammen ~ Snorvalp (Instrumental) ~ https://www.youtube.com/watch?v=lkcr6zmszp8
 Den svenska björnstammen ~ Som vanligt (Instrumental) ~ https://www.youtube.com/watch?v=VFGcguwyk5Q
@@ -311,8 +308,8 @@ Dune ~ Can‘t Stop Raving (Video Mix) ~ https://www.youtube.com/watch?v=5KJ__06
 Dune ~ Concert Pitch ~ https://www.youtube.com/watch?v=rg9nUrXm5Cg
 Dune ~ DNA ~ https://www.youtube.com/watch?v=Irxi9cQ-b90?rel=0
 Dune ~ Hardcore Vibes - The Viper Edit ~ https://www.youtube.com/watch?v=yTpCtYbdVjg
-Dune ~ Million Miles From Home (Video Mix) ~ spotify:track:73kkxsNIUnaG6esuI64JAG
-Dust Brothers ~ Alive Alone ~ spotify:track:6dgFhHtleZmYABhqiX8MKV
+Dune ~ Million Miles From Home (Video Mix) ~ https://www.youtube.com/watch?v=qholYrAf4GU
+Dust Brothers ~ Alive Alone ~ https://www.youtube.com/watch?v=VRCTyD3SzVA
 Dust Brothers ~ Chemical Beats ~ https://www.youtube.com/watch?v=vhpQxoyhssg
 Dust Brothers ~ Fuck Up Beats ~ spotify:track:2VY20LS1h4g7NcX5s8wq0Z
 Dust Brothers ~ In Dust We Trust ~ https://www.youtube.com/watch?v=C-_9V29E9Uo
@@ -324,7 +321,7 @@ Dusty Springfield ~ Son Of A Preacher Man ~ spotify:track:7odHgoLFi3GQ90E9PeraI3
 Dvbbs ~ Tsunami - Radio Edit ~ https://www.youtube.com/watch?v=PiY_93NKUtw
 Dúné+Alesso ~ Heiress Of Valentina - Jean Elan Remix ~ spotify:track:3KZuIleh0O6oIQYGj2e7JV
 E-Type-This Is The Way ~ 2015 Adam Rickfors Version ~ 
-E-Type-This Is The Way ~ 2015 Adam Rickfors Version ~ 
+E-Type-This Is The Way ~ 2015 Adam Rickfors Version ~ https://www.youtube.com/watch?v=oofsjL-qo1Q
 EMC ~ Winds Of Change ~ spotify:track:1ZakKrElcn3PVOYOKlNz4z
 Eagle Eye Cherry ~ Save Tonight ~ https://www.youtube.com/watch?v=TnEdUVBjZfo
 Eagle-Eye Cherry ~ Save Tonight ~ spotify:track:1t2Hq2WIBcZINOEnK6mdJG
@@ -343,7 +340,7 @@ El Chombo ~ Chacarron - Radio Edit ~ spotify:track:1HnQcY4VmcysHIOY8zR5wF
 Electric Six ~ Gay Bar ~ https://www.youtube.com/watch?v=-XNFokmDKrE
 Ellie Golding ~ Guns & Horses ~ https://www.youtube.com/watch?v=IDwbHeR0UYc
 Ellie Golding ~ High for This (feat. Sorta Eazy) ~ https://www.youtube.com/watch?v=EJgfmO23fUI
-Ellie Golding ~ Your Song ~ 
+Ellie Golding ~ Your Song ~ https://www.youtube.com/watch?v=xscixyIP6Ho
 Elton John ~ Can You Feel The Love Tonight ~ https://www.youtube.com/watch?v=KjgWWjkNbhU
 Elton John ~ Candle In The Wind ~ https://www.youtube.com/watch?v=DH8yRSDkx5M
 Elton John ~ I'm Still Standing ~ https://www.youtube.com/watch?v=ZHwVBirqD2s
@@ -360,7 +357,6 @@ Elvis Presley ~ Suspicious Minds ~ spotify:track:1OtWwtGFPXVhdAVKZHwrNF
 Emeli Sandé+Naughty Boy ~ Daddy (feat. Naughty Boy) ~ http://www.youtube.com/watch?v=ZJvu9ueE4Tw
 Eminem ~ 'Till I Collapse ~ https://www.youtube.com/watch?v=ytQ5CYE1VZw
 Eminem ~ Lose Yourself - Soundtrack Version ~ spotify:track:5Z01UMMf7V1o0MzF86s6WJ
-Eminem ~ Love The Way You Lie ~ https://www.youtube.com/watch?v=7tnfDJDSGd0
 Eminem ~ Mockingbird ~ spotify:track:561jH07mF1jHuk7KlaeF0s
 Eminem ~ Not Afraid ~ spotify:track:7Ie9W94M7OjPoZVV216Xus
 Eminem ~ Rap God ~ https://www.youtube.com/watch?v=XbGs_qK2PQA
@@ -432,8 +428,8 @@ Flo Rida ~ I Cry ~ spotify:track:4bZd0nRuX8HyjeXAUBczvm
 Flo Rida ~ Low (feat T-Pain) ~ https://www.youtube.com/watch?v=qoSgMHvUB6Y
 Flo Rida ~ My House ~ spotify:track:6Knv6wdA0luoMUuuoYi2i1
 Flo Rida ~ Whistle ~ spotify:track:0ltBH1JNzSvQJPjJpvTu9B
-Flo Rida ~ Wild Ones (feat. Sia) ~ spotify:track:1NpW5kyvO4XrNJ3rnfcNy3
-Flo Rida+Pitbull ~ Can't Believe It (feat. Pitbull) ~ https://www.youtube.com/watch?v=-WDcpwZqYlU
+Flo Rida ~ Wild Ones (feat. Sia) ~ https://www.youtube.com/watch?v=mjcvxLSZD-Q
+Flo Rida+Pitbull ~ Can't Believe It (feat. Pitbull) ~ https://www.youtube.com/watch?v=gtqYBEEV1gQ
 Flo Rida+Redfoo ~ Run - feat. RedFoo of LMFAO [Bonus Track] ~ https://www.youtube.com/watch?v=6KOrO698S_E
 Flosstradamus ~ Rollup - Baauer Remix ~ spotify:track:4NZg8df9BxJ6spPDnr6Z9T
 Flux Pavillion ~ Cracks (Flux Pavillion Remix) ~ https://www.youtube.com/watch?v=K1VLaXoRRdk
@@ -441,7 +437,7 @@ Flux Pavillion ~ Without You - Doctor P & Flux Pavillion Remix ~ https://www.you
 Frans ~ If I Were Sorry ~ spotify:track:6oDkCmfVcSd9NXAKk1b4Ll
 Förstörda För Livet ~ En Alternativ Demokrati ~ spotify:track:2KIc7NH38TXdmUocDC6U5H
 Förstörda För Livet ~ En Genväg Till Framgång (Pappa Betalar) ~ https://www.youtube.com/watch?v=WGWlo2qVF7g
-Förstörda För Livet ~ En Utopi Av Dyscleksi ~ spotify:track:2nYm9bkM664CJukbA2tMLr
+Förstörda För Livet ~ En Utopi Av Dyscleksi ~ https://www.youtube.com/watch?v=tIRDZHKbTzE
 Förstörda För Livet ~ Ett Spel För Galleriet ~ https://www.youtube.com/watch?v=FgTWHBlU0sA
 Förstörda För Livet ~ Imorgon När Kriget Kom ~ https://www.youtube.com/watch?v=l3p7O8r7qKs
 Förstörda För Livet ~ Kom Igen! ~ spotify:track:5kd0yCNyDzxVOQEfoozFOR
@@ -464,7 +460,7 @@ Gavin Mikhail ~ Some Die Young ~ spotify:track:4mBh4tcnLYBR4WQG6SdG6q
 General Knas & Kapten Röd ~ Enda Vägen Fram (med Kapten Röd) ~ https://www.youtube.com/watch?v=rPR936Z3hdk
 General Knas ~ Aktivist ~ spotify:track:4Uuv4LSEZxYPVArjlopjFs
 General Knas ~ En God Vän ~ spotify:track:5jxoUDrxDW6rywmtvu3lBO
-General Knas ~ Hetare Än Lava (med Syster Sol) ~ spotify:track:2CAcMHYILhxMCYia4U9aSb
+General Knas ~ Hetare Än Lava (med Syster Sol) ~ https://www.youtube.com/watch?v=_bs9woh2OCw
 General Knas ~ Mäktiga Lejon ~ https://www.youtube.com/watch?v=io-SFF78aMo
 General Knas+Kapten Röd ~ Delelelelelelelikat (med Kapten Röd) ~ spotify:track:3ZQmQfeyoKnkqcjmKo2M06
 Georg Riedel/Stefan Sundström/Lisa Nilsson/Plura Jonsson/Freddie Wadling/Eva Dahlgren/Mauro Scocco/Totta Näslund ~ Alla Ska Sova För Nu Är Det Natt ~ 
@@ -475,7 +471,7 @@ Green Day ~ American Idiot ~ https://www.youtube.com/watch?v=Ee_uujKuJMI
 Green Day ~ Basket Case ~ spotify:track:6L89mwZXSOwYl76YXfX13s
 Green Day ~ Boulevard Of Broken Dreams - feat. John Gallagher Jr., Rebecca Naomi Jones, Stark Sands, Company ~ https://www.youtube.com/watch?v=JKURH45IZ_M
 Green Day ~ Brain Stew ~ https://www.youtube.com/watch?v=UNq9gmY_Oz4
-Green Day ~ Good Riddance (Time Of Your Life) ~ spotify:track:6ORqU0bHbVCRjXm9AjyHyZ
+Green Day ~ Good Riddance (Time Of Your Life) ~ https://www.youtube.com/watch?v=stmwNQuUOgk
 Green Day ~ Holiday - Faded Ending ~ https://www.youtube.com/watch?v=aeN1ExDSuec
 Green Day ~ Holiday/Boulevard Of Broken Dreams ~ https://www.youtube.com/watch?v=J0xe5DcnYSA
 Green Day ~ Jesus Of Suburbia ~ https://www.youtube.com/watch?v=JMcNzjzw63I
@@ -524,7 +520,6 @@ Icona Pop ~ Girlfriend ~ spotify:track:6JqRzMVuX8sO5huQpG1vbi
 Icona Pop ~ Mind Your Manners - feat. Icona Pop ~ https://www.youtube.com/watch?v=w0lLNuEL7jU
 Icona Pop ~ We Got The World - Radio Edit ~ https://www.youtube.com/watch?v=vG649VIouI0
 Icona Pop ~ We Got The World ~ https://www.youtube.com/watch?v=vG649VIouI0
-Icona Pop+Charli XCX ~ I Love It (feat. Charli XCX) - Original Version ~ https://www.youtube.com/watch?v=UxxajLWwzqY
 In Flames ~ Suburban Me ~ https://www.youtube.com/watch?v=ZqyypB4YNHA
 In Flames ~ Gyroscope ~ spotify:track:24PJ6BnS5SXOBLVSl3GAQj
 In Flames ~ The Jester´s Dance ~ https://www.youtube.com/watch?v=I2gw5OfRgb8
@@ -546,10 +541,10 @@ Iron Maiden ~ Phantom Of The Opera - 1998 Remastered Version ~ https://www.youtu
 Iron Maiden ~ Run to the Hills - 1998 Remastered Version ~ https://www.youtube.com/watch?v=86URGgqONvA
 Iron Maiden ~ Running Free - 1998 Remastered Version ~ https://www.youtube.com/watch?v=c84qWOO0GIA
 Iron Maiden ~ The Number Of The Beast - 1998 Remastered Version ~ https://www.youtube.com/watch?v=WxnN05vOuSM
-Iron Maiden ~ The Trooper - 1998 Remastered Version ~ 
+Iron Maiden ~ The Trooper - 1998 Remastered Version ~ https://www.youtube.com/watch?v=mzhrVAUQ3gY
 Iron Maiden ~ The Wicker Man ~ spotify:track:2rKSOsF3t1Gt79h4wDanfK
 JAY Z ~ 99 Problems ~ spotify:track:7sLpSWxQazJzDVG6YGzlVs
-JAY Z ~ Empire State Of Mind ~ spotify:track:3xkxcbnc7G3XYuZt6eUnI5
+JAY Z ~ Empire State Of Mind ~ https://www.youtube.com/watch?v=haLoHOLpjLc
 JAY Z ~ Holy Grail ~ https://www.youtube.com/watch?v=3f-4wxU9hjU
 JAY Z ~ No Church In The Wild ~ https://www.youtube.com/watch?v=l1RcNpBDKVs
 JAY Z ~ Young Forever ~ https://www.youtube.com/watch?v=bet9aBpLCtM
@@ -559,7 +554,7 @@ JAY Z+Rihanna+Kanye West ~ Run This Town ~ spotify:track:2a8CtZyPdd8w2csZh7oxpc
 Jack Carroll ~ On the Road I ~ spotify:track:1bgce362zcYC31s3f2gRy7
 Jack Carroll ~ On the Road II ~ spotify:track:6ZW96jLHNZXBxjNJumvbQ4
 Jack Kerouac ~ Jack Kerouac Reads On The Road ~ 
-Jakob Hellman ~ Hon Har Ett Sätt - 1998 Digital Remaster ~ 
+Jakob Hellman ~ Hon Har Ett Sätt - 1998 Digital Remaster ~ https://www.youtube.com/watch?v=QvFljh04MU8
 Jakob Hellman ~ Vara Vänner - 1998 Digital Remaster ~ https://www.youtube.com/watch?v=9141cpBv7t4
 James Blake ~ A Case Of You ~ https://www.youtube.com/watch?v=Ri6bd4G-Aig
 James Blake ~ Fall Creek Boys Choir ~ https://www.youtube.com/watch?v=owXkZspFk24
@@ -574,7 +569,7 @@ James Blunt ~ 1973 - Acoustic ~ spotify:track:4DCHszO57DZHgvqalfoITR
 James Blunt ~ 1973 ~ spotify:track:1BV0m40U0M4t1SLIsDnwZl
 James Blunt ~ Bonfire Heart ~ spotify:track:6H2NtlZr110yO3uwphiTKk
 James Blunt ~ Carry You Home ~ spotify:track:1zVBU0PAj7ZUVmVfG2pgQG
-James Blunt ~ Dangerous - Deniz Koyu and Johan Wedel Remix ~ spotify:track:60MCrQNuYIPoXeIyggVaPq
+James Blunt ~ Dangerous - Deniz Koyu and Johan Wedel Remix ~ https://www.youtube.com/watch?v=TjGyia4k7go
 James Blunt ~ Goodbye My Lover ~ spotify:track:6gxycjJNMgmAyfzUXBN80P
 James Blunt ~ Heart To Heart ~ spotify:track:2WN7POsHfdR1w6j9W0maAL
 James Blunt ~ High ~ spotify:track:13yEuYLJYxPCLJR0KNOqpk
@@ -592,10 +587,8 @@ Janis Joplin ~ Me and Bobby McGee ~ spotify:track:1IqFh00G2kvvMm8pRMpehA
 Janis Joplin ~ Me and Bobby McGee ~ spotify:track:42zGj5bjeSI5KqRIlZPQ2j
 Janis Joplin ~ Mercedes Benz ~ spotify:track:1GLBsX2m62PudMOwgIXslV
 Janis Joplin ~ Piece of My Heart ~ spotify:track:2RWraN4ZkuqjcNQAlBNGEH
-Janis Joplin ~ Summertime - (Big Brother & The Holding Company-Janis Joplin) ~ https://www.youtube.com/watch?v=Tu6gtMjGgGw
-Janis Joplin ~ Try (Just a Little Bit Harder) ~ https://www.youtube.com/watch?v=skYfPirQHbY
 Jefferson Starship ~ Winds of Change ~ spotify:track:6zy8zpvywKufWMYTDaoE16
-Jerrico & Kic ~ Good Music (KIC Remix) (Feat. Dannu) ~ spotify:track:68tAPrpT9d06KtFsRUxzrm
+Jerrico & Kic ~ Good Music (KIC Remix) (Feat. Dannu) ~ https://www.youtube.com/watch?v=dEqxvIUVRE0
 Jessie J ~ Do It Like A Dude ~ spotify:track:6cSGSXvgioQxGQbM9VRe1G
 Jessie J ~ Domino ~ spotify:track:6MAdEUilV2p9RQUqE5bMAK
 Jessie J ~ Nobody's Perfect ~ https://www.youtube.com/watch?v=aSZVYZTze74
@@ -615,7 +608,7 @@ John Lennon ~ Imagine - 2010 - Remaster ~ spotify:track:7pKfPomDEeI4TPT6EOYjn9
 John Mayer ~ Free Fallin' - Live at the Nokia Theatre ~ spotify:track:4LloVtxNZpeh7q7xdi1DQc
 Johnossi ~ 18 Karat Gold ~ https://www.youtube.com/watch?v=L4yVAyLnHwc
 Johnossi ~ Dead End ~ https://www.youtube.com/watch?v=6RX59vZShLc
-Johnossi ~ Execution Song ~ spotify:track:5yC9oCxe1moDiKaNx421Uw
+Johnossi ~ Execution Song ~ https://www.youtube.com/watch?v=o-cgxeFbI68
 Johnossi ~ Family Values ~ https://www.youtube.com/watch?v=PAUDcKcnhJc
 Johnossi ~ For A Little While ~ https://www.youtube.com/watch?v=9MnkO6la-ME
 Johnossi ~ Gone Forever ~ spotify:track:13MQnmtBzCSzKRawRSUpit
@@ -630,10 +623,10 @@ Jonas Blue+Dakota ~ Fast Car - Radio Edit ~ spotify:track:2mCF8L0brIs88eH6Kf2h9p
 Josh Groban ~ Canto Alla Vita (feat. The Corrs) ~ https://www.youtube.com/watch?v=XuHS44B2abQ
 Joy Division ~ Love Will Tear Us Apart - 2010 Remastered Version ~ https://www.youtube.com/watch?v=CPcrSyGkStM
 Julia Westlin ~ Zombie-acapella ~ 
-Just Blaze and Baauer ~ Higher ~ spotify:track:7lrTieknx0Rp6xcUXVjRQE
+Just Blaze and Baauer ~ Higher ~ https://www.youtube.com/watch?v=P7PRL9v9gws
 Justice ~ D.A.N.C.E. ~ spotify:track:2hQCzcb3qyZirWzOD5Yzoj
 Justice ~ Genesis ~ spotify:track:3F412bLncKAopQlhpAJBrX
-Justice ~ Poetic Justice ~ spotify:track:2P3SLxeQHPqh8qKB6gtJY2
+Justice ~ Poetic Justice ~ https://www.youtube.com/watch?v=ApQuReW4vGY
 Justin Bieber ~ Love Yourself ~ spotify:track:50kpGaPAhYJ3sGmk6vplg0
 Justin Bieber ~ Sorry ~ spotify:track:09CtPGIpYB4BrO8qb1RGsF
 Jävlaranamma ~ Björnen och ejdern ~ spotify:track:37smOuYwY2vBOpTIrgVgxa
@@ -645,27 +638,26 @@ Jävlaranamma ~ Jag gör vad som helst för dig ~ spotify:track:3dOpDh2fsk5B1Nqo
 Jävlaranamma ~ Pickadulverman ~ spotify:track:0MK1PUjV8zeSuTST5KJVsY
 Jävlaranamma ~ Påskevangeliet ~ spotify:track:3wjKHlIzehqPgejRkBAQhN
 Jävlaranamma ~ Upp och hoppa ~ spotify:track:4qDi0P46gTLqx8Q8GMZclW
-Jävlaranamma ~ Äntligen Måndag ~ spotify:track:15urouKhhJWLvDnVZct6wW
-KLF ~ Justified and Ancient (7" Radio Edit) ~ spotify:track:1GOepApsxZK1dPXaKEMwd3
+Jävlaranamma ~ Äntligen Måndag ~ https://www.youtube.com/watch?v=ktHvWbEXvX8
+KLF ~ Justified and Ancient (7" Radio Edit) ~ https://www.youtube.com/watch?v=PaFXtnvQ4Rk
 Kanye West ~ Cold.1 ~ https://www.youtube.com/watch?v=SL0DfqUiqEw
 Kapten Röd ~ 1.000.000 Nollor ~ spotify:track:4WH8TAIKPIZfZjkewpMmKD
 Kapten Röd ~ Bua! (med Promoe) ~ https://www.youtube.com/watch?v=HWlfpxJTdcY
 Kapten Röd ~ Du e la go ~ https://www.youtube.com/watch?v=ICjNrdrq5nM
 Kapten Röd ~ In Kommer Ting ~ spotify:track:5M5P1RBcqx2tmzJvnpvyZE
-Kapten Röd ~ Ju Mer Dom Spottar ~ spotify:track:6809ESRbIU87qbXCeR80xA
+Kapten Röd ~ Ju Mer Dom Spottar ~ https://www.youtube.com/watch?v=tET4ae4uMb0
 Kapten Röd ~ Saknade Vänner ~ spotify:track:598BgYwZQN0sFb6m5slUDq
 Kapten Röd ~ Stjärnorna Finns Här ~ spotify:track:6CNyUhyC2ptjX6sGtvAoFS
 Kapten Röd ~ Trasig ~ https://www.youtube.com/watch?v=05EJDUv5yYk
 Karlsson & Winnberg ~ Hearts Beating Weak ~ https://www.youtube.com/watch?v=gVZsZbul3Lg
 Kate Bush ~ Army Dreamers ~ spotify:track:6OmdWLjlx4BIDGEO8BZlqH
-Kate Bush ~ Babooshka ~ spotify:track:53Mz9H5UvWMQUXHZnaZYKQ
+Kate Bush ~ Babooshka ~ https://www.youtube.com/watch?v=OmTVu5bNXtc
 Kate Bush ~ Running Up That Hill (A Deal With God) ~ https://www.youtube.com/watch?v=zxqZYe90--c
 Kate Bush ~ Snowflake ~ https://www.youtube.com/watch?v=PXI8iB_TTuM
 Kate Bush ~ The Man With The Child In His Eyes ~ spotify:track:4xjVfArXNQRxAvsUpjmfMt
 Kate Bush ~ This Woman's Work ~ https://www.youtube.com/watch?v=iEHqPCA_lzQ
 Kate Bush ~ Wuthering Heights - New Vocal ~ https://www.youtube.com/watch?v=0BBOjXugBJc
 Kate Bush ~ Wuthering Heights ~ spotify:track:5YSI1311X8t31PBjkBG4CZ
-Katy Perry ~ Birthday ~ spotify:track:2xLOMHjkOK8nzxJ4r6yOKR
 Katy Perry ~ California Gurls - feat. Snoop Dogg ~ spotify:track:6tS3XVuOyu10897O3ae7bi
 Katy Perry ~ Firework ~ spotify:track:4lCv7b86sLynZbXhfScfm2
 Katy Perry ~ Part Of Me ~ https://www.youtube.com/watch?v=uuwfgXD8qV8
@@ -689,7 +681,7 @@ Ke$ha ~ Die Young ~ https://www.youtube.com/watch?v=76nuBsqPRLg
 Ke$ha ~ Right Round ~ https://www.youtube.com/watch?v=oGTBax-Cu4Q
 Ke$ha ~ Take It Off ~ https://www.youtube.com/watch?v=wGJ_-JT8FYA
 Ke$ha ~ Tik Tok (Ke$ha) - Instrumental Version ~ https://www.youtube.com/watch?v=uepRditEq0s
-Ke$ha ~ We R Who We R (Ke$ha Tribute) ~ spotify:track:1oFtsE6okIbMIl39Q7tF5P
+Ke$ha ~ We R Who We R (Ke$ha Tribute) ~ https://www.youtube.com/watch?v=ABnh0ye-Oe8
 Ke$ha ~ Your Love Is My Drug - Ke$ha (Kesha) ~ https://www.youtube.com/watch?v=QR_qa3Ohwls
 Kenny Rogers & The First Edition ~ Just Dropped In (To See What Condition My Condition Is In) ~ https://www.youtube.com/watch?v=BCNORo_tmKs
 Kent ~ 999 ~ spotify:track:4Mnab55p5RSU9ldpZWMVfk
@@ -708,7 +700,7 @@ Kic ~ Californ-I-A ~ spotify:track:2GPSeLkvMBH0WT8GUyfXib
 Kic ~ Stop Sign ~ spotify:track:0J5dpc2euwfnesRVe1bWqi
 Kim Cesarion ~ Brains Out ~ https://www.youtube.com/watch?v=2ghj8_DpDfU
 Kim Cesarion ~ Can't Love Nobody ~ https://www.youtube.com/watch?v=KySAzCI4B1E
-Kim Cesarion ~ Girls ~ 
+Kim Cesarion ~ Girls ~ https://www.youtube.com/watch?v=kwdCambKKJU
 Kim Cesarion ~ I Love This Life ~ https://www.youtube.com/watch?v=nf98IhhHSFA
 Kim Cesarion ~ One True Lover ~ https://www.youtube.com/watch?v=pdo31x3sFJ8
 Kim Cesarion ~ Trade Ya ~ https://www.youtube.com/watch?v=eNSKJIzaVdU
@@ -812,14 +804,14 @@ Lars Winnerbäck ~ Jag är hos dig igen ~ spotify:track:2m0hasRoPdaQdB6w1Cb00P
 Lars Winnerbäck ~ Kom änglar ~ 
 Lars Winnerbäck ~ Om du lämnade mig nu ~ https://www.youtube.com/watch?v=9pk3J9-1-UA
 Lars Winnerbäck ~ Som jag hade dig förut - med Lars Winnerbäck ~ https://www.youtube.com/watch?v=jC9jlV8iaLc
-Lars Winnerbäck ~ Stackars ~ spotify:track:7qbtulLYpwZPXqdgnsCSdb
+Lars Winnerbäck ~ Stackars ~ https://www.youtube.com/watch?v=oMsbvJBGVzk
 Lars Winnerbäck ~ Söndermarken ~ https://www.youtube.com/watch?v=qtlcqBGhwAI
 Lars Winnerbäck ~ Utkast till ett brev ~ https://www.youtube.com/watch?v=Xbht5ku_zts
 Lars Winnerbäck ~ Vi åkte aldrig ut till havet ~ https://www.youtube.com/watch?v=MNniZEhvBcQ
 Led Zeppelin ~ Stairway To Heaven ~ spotify:track:51pQ7vY7WXzxskwloaeqyj
 Led Zeppelin ~ Whole Lotta Love ~ spotify:track:0hCB0YR03f6AmQaHbwWDe8
-Lee Perry ~ Disco Devil ~ spotify:track:5f6gehIomAIKvCd4TBBKm8
-Lee Perry ~ Used To Drive A Tractor In Negrille ~ spotify:track:5j7Cw4m3CjBN1YgMZlkHjF
+Lee Perry ~ Disco Devil ~ https://www.youtube.com/watch?v=TsVkxujFiQI
+Lee Perry ~ Used To Drive A Tractor In Negrille ~ https://www.youtube.com/watch?v=I33KVktgmxI
 Leila K ~ Electric - Short Version ~ spotify:track:1qIhCupn4tcJWCQWoomnv7
 Lena Philipsson ~ Dansa I Neon ~ spotify:track:4N0NK4lCncys6hwWhtXRit
 Lena Philipsson ~ Det Gör Ont ~ spotify:track:2aeVGqdsF7WbKZkwhcCeqm
@@ -841,7 +833,7 @@ Limp Bizkit ~ Break Stuff ~ https://www.youtube.com/watch?v=ZpUYjpKg9KY
 Limp Bizkit ~ Faith ~ https://www.youtube.com/watch?v=l-EdCNjumvI
 Limp Bizkit ~ Gold Cobra ~ https://www.youtube.com/watch?v=196ZWrX_iD0
 Limp Bizkit ~ Hot Dog ~ spotify:track:6Zj3YsYfj8YTY9aGMDnpn8
-Limp Bizkit ~ My Generation ~ spotify:track:1P3Qh4gJeZQ3kPkWxLqCRR
+Limp Bizkit ~ My Generation ~ https://www.youtube.com/watch?v=BE9CXWV1alg
 Limp Bizkit ~ My Way ~ https://www.youtube.com/watch?v=MGFmu-4NTUk
 Limp Bizkit ~ Nookie ~ spotify:track:1TEZWG1FdjzDdercCguTwj
 Limp Bizkit ~ Rollin' (Air Raid Vehicle) ~ https://www.youtube.com/watch?v=RYnFIRc0k6E
@@ -855,7 +847,7 @@ Linkin Park ~ In The End ~ https://www.youtube.com/watch?v=5BMD9OZF_Kg
 Linkin Park ~ New Divide ~ spotify:track:6Wx88Mv6b9ofjKMKkdwOJd
 Linkin Park ~ Numb ~ spotify:track:2nLtzopw4rPReszdYBJU6h
 Linkin Park ~ One Step Closer ~ spotify:track:3K4HG9evC7dg3N0R9cYqk4
-Linkin Park ~ Papercut ~ spotify:track:1Vej0qeQ3ioKwpI6FUbRv1
+Linkin Park ~ Papercut ~ https://www.youtube.com/watch?v=o1Wklh5P00A
 Linnea Henriksson ~ Alice ~ https://www.youtube.com/watch?v=4n0buUxVpaU
 Linnea Henriksson ~ Cecilia (John De Sohn Remix) ~ https://www.youtube.com/watch?v=vFdpTzMxuBE
 Linnea Henriksson ~ Cecilia ~ spotify:track:7JZwhkSeU628zhN8MPxiOj
@@ -863,10 +855,10 @@ Linnea Henriksson ~ Ensamheten ~ https://www.youtube.com/watch?v=CQxx8E7LNGE
 Linnea Henriksson ~ Halmstad ~ https://www.youtube.com/watch?v=VOIXeGGFH0A
 Linnea Henriksson ~ Jag vet nåt som inte du vet ~ https://www.youtube.com/watch?v=Tu2AlSQhlGc
 Linnea Henriksson ~ Lyckligare nu ~ https://www.youtube.com/watch?v=RRppbWKdoNE
-Linnea Henriksson ~ Mitt rum i ditt hjärta ~ spotify:track:3EOO2VrhduNw7rqCxIXsA3
+Linnea Henriksson ~ Mitt rum i ditt hjärta ~ https://www.youtube.com/watch?v=aFjqpQFH_FM
 Linnea Henriksson ~ Väldigt kär/Obegripligt ensam ~ https://www.youtube.com/watch?v=ZBAXCF9XQ8E
 Liquido ~ Agree To Stay ~ https://www.youtube.com/watch?v=bgcNzWuMBGw
-Liquido ~ Amie ~ spotify:track:6PUQvoJ2KtuwIzR0Cy37uO
+Liquido ~ Amie ~ https://www.youtube.com/watch?v=hfr5QfxEw-E
 Liquido ~ Doubledecker ~ https://www.youtube.com/watch?v=Lzet8j0To9E
 Liquido ~ Narcotic - Long Version ~ https://www.youtube.com/watch?v=PJ7E40Ec5ec
 Liquido ~ Narcotic - Radio Edit ~ spotify:track:1H5VQuShs4qfwBXyHF0PeH
@@ -888,7 +880,7 @@ Lisa Ekdahl ~ Sanningen I Vitögat ~ https://www.youtube.com/watch?v=pAViJ4oXXFk
 Lisa Ekdahl ~ Sing & Dance ~ https://www.youtube.com/watch?v=eHZceORG2G0
 Lisa Ekdahl ~ Vem vet? ~ https://www.youtube.com/watch?v=42JOswXMm64
 Lisa Ekdahl ~ When Did You Leave Heaven ~ https://www.youtube.com/watch?v=xnKAlVoKHXs
-Lisa Ekdahl ~ Öppna upp ditt fönster ~ 
+Lisa Ekdahl ~ Öppna upp ditt fönster ~ https://www.youtube.com/watch?v=mvdtE5fq1OE
 Lisa Ekdahl+Lars Winnerbäck ~ Dom Band Som Binder Mig ~ spotify:track:44Mq01PnV6qFCzX6UI0KgY
 Little Eva ~ The Locomotion ~ spotify:track:53UXqZaarqFPAFEy7dT1m1
 Little Majorette ~ Bite the Bullet ~ https://www.youtube.com/watch?v=Z0wElwBaeTY
@@ -945,7 +937,7 @@ M.I.A. ~ Bad Girls ~ spotify:track:6nzXkCBOhb2mxctNihOqbb
 M.I.A. ~ Double Bubble Trouble ~ https://www.youtube.com/watch?v=96uLWBcHFAI
 M.I.A. ~ Mamma Mia - From "Mamma Mia!" Soundtrack ~ https://www.youtube.com/watch?v=r8cbJjnNwCQ
 M.I.A. ~ Mamma Mia - feat. Prophet of 7Lions ~ https://www.youtube.com/watch?v=r9eFPAIAYzk
-M.I.A. ~ Our Last Summer - From "Mamma Mia!" Soundtrack ~ spotify:track:7bFmXanwZQm6BMV9Nka6Hk
+M.I.A. ~ Our Last Summer - From "Mamma Mia!" Soundtrack ~ https://www.youtube.com/watch?v=QX5ZCzumz8s
 M.I.A. ~ Paper Planes ~ spotify:track:1kusepF3AacIEtUTYrw4GV
 M.I.A. ~ Y.A.L.A. ~ https://www.youtube.com/watch?v=EyIoqRyPtLw
 MC Hammer ~ U Can't Touch This ~ spotify:track:1B75hgRqe7A4fwee3g3Wmu
@@ -980,7 +972,7 @@ Marie Fredriksson ~ Kantat nr 1 ~ https://www.youtube.com/watch?v=ZG4d0au4xTM
 Marie Fredriksson ~ Minnena ser mig ~ https://www.youtube.com/watch?v=N5MJ9GiS77k
 Marie Fredriksson ~ The Change - Orchestra ~ spotify:track:3EofVA8v2aD1aOz1we3gut
 Marilyn Manson ~ Killing Strangers ~ https://www.youtube.com/watch?v=eNTjM3_0N80
-Marilyn Manson ~ Personal Jesus ~ spotify:track:0Y3uvjA2ssDylY2h5oiB7T
+Marilyn Manson ~ Personal Jesus ~ https://www.youtube.com/watch?v=Rl6fyhZ0G5E
 Marilyn Manson ~ Rock Is Dead ~ https://www.youtube.com/watch?v=vEc9nXErU-Y
 Marilyn Manson ~ Sweet Dreams (Are Made Of This) ~ https://www.youtube.com/watch?v=QUvVdTlA23w
 Marilyn Manson ~ Tainted Love ~ https://www.youtube.com/watch?v=cRCOclPIGHc
@@ -993,7 +985,7 @@ Marilyn Manson ~ This Is The New Shit ~ spotify:track:4b4eQqhpgmJsy4dP07V7cG
 Marilyn Manson ~ This Is The New Shit ~ spotify:track:7GM7CgaIvzAOEyP0iOlk8T
 Marina and The Diamonds ~ Primadonna ~ spotify:track:5tFMuAw6X2R4NLx97g7n9q
 Marina and the Diamonds ~ Are You Satisfied? ~ https://www.youtube.com/watch?v=F-PzxnZCls8
-Marina and the Diamonds ~ Bubblegum Bitch ~ spotify:track:0ZFBKLOZLIM16RAUb5eomN
+Marina and the Diamonds ~ Bubblegum Bitch ~ https://www.youtube.com/watch?v=rVE9ErbtJ88
 Marina and the Diamonds ~ How To Be A Heartbreaker ~ spotify:track:2Ow4Pmi0VOOLvbmJ8V70qo
 Marina and the Diamonds ~ I Am Not A Robot ~ https://www.youtube.com/watch?v=GlTrINCcPAs
 Marina and the Diamonds ~ Lies ~ spotify:track:2k4yzd3YejgP3kqOo0FOnS
@@ -1005,7 +997,7 @@ Martin Garrix ~ Animals - Original Mix ~ spotify:track:5AGTIWWLasdnpe5yvriQNA
 Martin Garrix ~ Animals - Radio Edit ~ https://www.youtube.com/watch?v=CkRyaG4Mjik
 Martin Garrix ~ Backlash - Martin Garrix Radio Edit ~ https://www.youtube.com/watch?v=g08nBBotv4c
 Martin Garrix ~ Crackin - Martin Garrix Edit ~ https://www.youtube.com/watch?v=kzAzyH6dG8o
-Martin Garrix ~ Helicopter - Original Edit ~ 
+Martin Garrix ~ Helicopter - Original Edit ~ https://www.youtube.com/watch?v=TgqMI1AtcTI
 Martin Garrix ~ Project T - Martin Garrix Edit ~ https://www.youtube.com/watch?v=FAjD-Kdutb8
 Martin Garrix ~ Proxy - Original Mix ~ https://www.youtube.com/watch?v=NWB6-PJw4Mk
 Martin Garrix ~ Wizard - Radio Edit ~ https://www.youtube.com/watch?v=mapu45t_OZE
@@ -1017,7 +1009,7 @@ Men At Work ~ Down Under ~ https://www.youtube.com/watch?v=XfR9iY5y94s
 Metallica ~ Blackened ~ spotify:track:0Zx5fEgwEjyljQsuZYPYj8
 Metallica ~ Don't Tread On Me ~ https://www.youtube.com/watch?v=CZv_lvvIVoI
 Metallica ~ Enter Sandman ~ spotify:track:1hKdDCpiI9mqz1jVHRKG0E
-Metallica ~ Fade To Black (Remastered) ~ spotify:track:0dqGfCMAGyDgpUAgLNOjWd
+Metallica ~ Fade To Black (Remastered) ~ https://www.youtube.com/watch?v=ad53IDPTn8k
 Metallica ~ For Whom The Bell Tolls (Remastered) ~ https://www.youtube.com/watch?v=nQjrFZxKpg8
 Metallica ~ Harvester Of Sorrow ~ spotify:track:6tVjcfkg648NG5bXrstJij
 Metallica ~ Master Of Puppets ~ https://www.youtube.com/watch?v=xnKhsTXoKCI
@@ -1027,7 +1019,7 @@ Metallica ~ Sad But True ~ https://www.youtube.com/watch?v=A8MO7fkZc5o
 Metallica ~ The Unforgiven ~ https://www.youtube.com/watch?v=Ckom3gf57Yw
 Metallica ~ Wherever I May Roam ~ https://www.youtube.com/watch?v=dHUHxTiPFUU
 Metallica ~ Whiskey In The Jar ~ spotify:track:77gY3WsOnEsq9JOWgBmdLj
-Michael Bolton ~ Fields Of Gold - featuring Eva Cassidy ~ 
+Michael Bolton ~ Fields Of Gold - featuring Eva Cassidy ~ https://www.youtube.com/watch?v=mm4VvIpLn_U
 Michael Bolton+Eva Cassidy ~ Fields Of Gold - featuring Eva Cassidy ~ 
 Michael Jackson ~ ABC ~ spotify:track:0oubcb5bvMbIotoXub5Ye0
 Michael Jackson ~ Beat It - Single Version ~ spotify:track:1OOtq8tRnDM8kG2gqUPjAj
@@ -1035,12 +1027,12 @@ Michael Jackson ~ Billie Jean - Single Version ~ spotify:track:5ChkMS8OtdzJeqyyb
 Michael Jackson ~ Dirty Diana - 2012 Remaster ~ spotify:track:3yBlJtq86wROQpHi1goEKT
 Michael Jackson ~ Hold My Hand ~ https://www.youtube.com/watch?v=zGp8unyt0kA
 Michael Jackson ~ Love Never Felt so Good ~ https://www.youtube.com/watch?v=oG08ukJPtR8
-Michael Jackson ~ Man in the Mirror - Remastered Version ~ spotify:track:1nl09AjkuO7BBRF3BFAPsC
+Michael Jackson ~ Man in the Mirror - Remastered Version ~ https://www.youtube.com/watch?v=Zqe5NP86OCc
 Michael Jackson ~ Smooth Criminal - Remastered Radio Edit ~ https://www.youtube.com/watch?v=mWGNEHGhkn4
 Michelle Williams ~ Say Yes (ft. Beyoncé & Kelly Rowland) ~ https://www.youtube.com/watch?v=RM2XV6M8cBU
 Midnight Oil ~ Beds Are Burning - Remastered ~ spotify:track:6Nabz5Gsy80XL0MJoOmgF8
 Mikael Rickfors ~ Vingar ~ 
-Mike Patton ~ 29-The Snow Angel ~ spotify:track:2iYoacr76KtnkG1oP3T1bF
+Mike Patton ~ 29-The Snow Angel ~ https://www.youtube.com/watch?v=w_W17Yb1tPU
 Mike Patton ~ Deep Down ~ https://www.youtube.com/watch?v=Z3mpIjswvRs
 Mike Patton ~ Il Cielo In Una Stanza ~ spotify:track:2V5cxuQK2Uil81hSifzG0X
 Mike Patton ~ Ore D'Amore ~ https://www.youtube.com/watch?v=wQyxPppSCEM
@@ -1050,7 +1042,7 @@ Miriam Bryant ~ Allt jag behöver ~
 Miriam Bryant ~ Push Play - Filip Jenven & Mike Perry Remix - Radio Edit ~ 
 Miriam Bryant ~ Stationen ~ 
 Moby ~ Extreme Ways ~ spotify:track:1RoV2hHbjzFbo9uKe2cvGs
-Moby ~ Flower ~ spotify:track:60rIdEPDrzyLiLC0icp3xz
+Moby ~ Flower ~ https://www.youtube.com/watch?v=G-QRSr3Oo_A
 Moby ~ Honey ~ spotify:track:52tILLw5fRKqPbe5ps1QLL
 Moby ~ In My Heart ~ https://www.youtube.com/watch?v=qp7KX1h3i_w
 Moby ~ In This World ~ spotify:track:0b8ZSXdo7myljIez3A889l
@@ -1118,7 +1110,7 @@ Mustasch ~ Speed Metal ~ spotify:track:6Ao15Gn6lCejlvhxASCgCQ
 Mustasch ~ Thank You for the Demon ~ spotify:track:3pK6IqDO4RMb0KEN8W2HNW
 Mylène Farmer ~ Mad World - Live / Lyon / 2013 ~ https://www.youtube.com/watch?v=E1WrJAD46T0
 Naomi & Her Handsome Devils ~ Goody Goody ~ spotify:track:6ruP5hqQD9dYEvLivkTzND
-Nationalorkestern ~ Bängen trålar ~ spotify:track:1ejKxG7YbJqSTmW0fEMvrG
+Nationalorkestern ~ Bängen trålar ~ https://www.youtube.com/watch?v=UXX3ITT1K50
 Nationalorkestern ~ Hanna från Arlöv ~ spotify:track:0oAT2kjoL4xOemkRAFOR7D
 Nationalorkestern ~ Livet är en fest ~ spotify:track:1GPDWtNTfViJAO9NjIrD3H
 Nationalteatern ~ Bängen trålar (Inspelad för SR Tonkraft 1975) ~ spotify:track:3yLkAM7xeZuXFYL3w0vuEg
@@ -1139,8 +1131,7 @@ Nause ~ Mellow - Radio Edit ~ https://www.youtube.com/watch?v=pCBUSqKRfdo
 Nause ~ Move - Radio Edit ~ https://www.youtube.com/watch?v=p3eCBvD7HGI
 Nause ~ This Is The Song - Radio Edit ~ https://www.youtube.com/watch?v=jRKQJMNzK3U
 Nause ~ Tomorrow's Just Begun - Radio Edit ~ https://www.youtube.com/watch?v=zm2z5dNL3RQ
-New Tribute Kings ~ With Every Heartbeat Originally Performed By Robyn Feat. Kleerup - Tribute Version ~ spotify:track:6WdQ5SoKdXCJRbCKiRWPcq
-New Vaudeville Band ~ Winchester Cathedral ~ https://www.youtube.com/watch?v=Wv_RfFmJ5nA
+New Vaudeville Band ~ Winchester Cathedral ~ https://www.youtube.com/watch?v=jKc1OCJ7iXk
 Nic & The Family ~ Hej Monica ~ 
 Nickelback ~ Burn It To The Ground ~ spotify:track:1jq28NGw6wdtFKx8MBPy6C
 Nickelback ~ Edge Of A Revolution ~ https://www.youtube.com/watch?v=IYnuSsM7tRw
@@ -1165,7 +1156,7 @@ Nina Simone ~ Love Me or Leave Me: My Baby Just Cares For Me ~ spotify:track:6bF
 Nine Inch Nails ~ Came Back Haunted ~ spotify:track:0jem8KSDqhiOoIWIqrJZbI
 Nine Inch Nails ~ Closer ~ spotify:track:39tLc4Xp58Lu4KcWHggeE2
 Nine Inch Nails ~ Dead Souls ~ spotify:track:12s8P9IFXjJWwVnX7u26ca
-Nine Inch Nails ~ Discipline ~ spotify:track:0Z4pLlygCvkTHmeQtYAbNH
+Nine Inch Nails ~ Discipline ~ https://www.youtube.com/watch?v=PQYVX84BlSQ
 Nine Inch Nails ~ Head Like A Hole ~ https://www.youtube.com/watch?v=ao-Sahfy7Hg
 Nine Inch Nails ~ Hurt ~ spotify:track:4pFnV6aV1bnEDqPDGBlrNp
 Nine Inch Nails ~ Right Where It Belongs ~ spotify:track:586rOcAzOHkpJTA4POqO2c
@@ -1173,13 +1164,13 @@ Nine Inch Nails ~ The Hand That Feeds ~ spotify:track:5ugzDiilhy6ILKmKfhEzd7
 Nirvana Bleach ~ About A Girl ~ https://www.youtube.com/watch?v=eTx4UuPtskg
 Nirvana Bleach ~ Blew ~ https://www.youtube.com/watch?v=bWxHceJRcXc
 Nirvana Bleach ~ Downer ~ https://www.youtube.com/watch?v=Sc67atweLKI
-Nirvana Bleach ~ Floyd The Barber ~ spotify:track:6dggfzIg2EYOH1CCxdrAyI
-Nirvana Bleach ~ Love Buzz ~ spotify:track:3FUsMXBxA4V7eUwQ7B0HQO
+Nirvana Bleach ~ Floyd The Barber ~ https://www.youtube.com/watch?v=StlAOun5YKc
+Nirvana Bleach ~ Love Buzz ~ https://www.youtube.com/watch?v=wERTpVeAau8
 Nirvana Bleach ~ Mr. Moustache ~ https://www.youtube.com/watch?v=kVL7r-I_fWY
 Nirvana Bleach ~ Negative Creep ~ https://www.youtube.com/watch?v=-5ijtz6Du_s
-Nirvana Bleach ~ Paper Cuts ~ spotify:track:2ilmU6mieDn7ztBKjYCxdf
+Nirvana Bleach ~ Paper Cuts ~ https://www.youtube.com/watch?v=pH-Lq-gTU3M
 Nirvana Bleach ~ School ~ https://www.youtube.com/watch?v=FwoGeIQhlik
-Nirvana Bleach ~ Scoff ~ spotify:track:5d409rEqdjGaBrApZQyNjK
+Nirvana Bleach ~ Scoff ~ https://www.youtube.com/watch?v=w5lWFywjucU
 Nirvana In Utero ~ All Apologies ~ https://www.youtube.com/watch?v=Qc7qsOwPS3E
 Nirvana In Utero ~ Dumb ~ https://www.youtube.com/watch?v=DC4-_0hd4CE
 Nirvana In Utero ~ Frances Farmer Will Have Her Revenge On Seattle ~ https://www.youtube.com/watch?v=boZq2gBlyNs
@@ -1195,12 +1186,12 @@ Nirvana Incesticide ~ Mexican Seafood ~ https://www.youtube.com/watch?v=bBOMZBxQ
 Nirvana Incesticide ~ Molly's Lips - BBC John Peel Session 1990 ~ https://www.youtube.com/watch?v=eejoCFgQz9E
 Nirvana Incesticide ~ Son Of A Gun - BBC John Peel Session 1990 ~ https://www.youtube.com/watch?v=eejoCFgQz9E
 Nirvana Incesticide ~ Turnaround - BBC John Peel Session 1990 ~ 
-Nirvana Nevermind ~ Breed ~ spotify:track:5mJGLBNJM0GULqAoL5mb9C
+Nirvana Nevermind ~ Breed ~ https://www.youtube.com/watch?v=FQoOEejKeiQ
 Nirvana Nevermind ~ Come As You Are ~ https://www.youtube.com/watch?v=JepC-jVaXA8
 Nirvana Nevermind ~ Drain You ~ https://www.youtube.com/watch?v=Lv0JHHFZOfM
 Nirvana Nevermind ~ In Bloom - Nevermind Version ~ https://www.youtube.com/watch?v=PbgKEjNBHqM
 Nirvana Nevermind ~ Lithium ~ https://www.youtube.com/watch?v=L28XyoVdLmY
-Nirvana Nevermind ~ Lounge Act ~ spotify:track:7glld4kxYHp61zIPtSVHNk
+Nirvana Nevermind ~ Lounge Act ~ https://www.youtube.com/watch?v=wZuoMR-rXOg
 Nirvana Nevermind ~ Polly ~ https://www.youtube.com/watch?v=iqm8eRoCgng
 Nirvana Nevermind ~ Smells Like Teen Spirit ~ https://www.youtube.com/watch?v=pnAqyC8i_l4
 Nirvana Nevermind ~ Something In The Way ~ https://www.youtube.com/watch?v=HxPCkfdiT3g
@@ -1238,10 +1229,10 @@ Oskar Linnros ~ Från och med Du ~ https://www.youtube.com/watch?v=hh3WCzKDQbU
 Oskar Linnros ~ Genom eld ~ spotify:track:6Re80TWVf2qIT6xk0LVcch
 Oskar Linnros ~ Gå hem ~ https://www.youtube.com/watch?v=UT_6BR6J6aI
 Oskar Linnros ~ Hur Dom Än ~ https://www.youtube.com/watch?v=r6FATW9Pf2w
-Oskar Linnros ~ Kan jag få ett vittne? ~ 
+Oskar Linnros ~ Kan jag få ett vittne? ~ https://www.youtube.com/watch?v=EyVy6moMdB8
 Oskar Linnros ~ Plåster ~ https://www.youtube.com/watch?v=fo6CkGsPTT8
 Otis Redding ~ (Sittin' On) The Dock Of The Bay ~ https://www.youtube.com/watch?v=7eHzcrSzfZE
-Otto Knows+Lindsey Stirling+Alex Aris ~ Dying for You (feat. Alex Aris) ~ spotify:track:59A6lBd9QmcD8rQTZPj1xD
+Otto Knows+Lindsey Stirling+Alex Aris ~ Dying for You (feat. Alex Aris) ~ https://www.youtube.com/watch?v=pW0NDsrvlF8
 P!nk ~ Blow Me (One Last Kiss) ~ https://www.youtube.com/watch?v=DZ8tcmQrL2Q
 P!nk ~ F**kin' Perfect ~ https://www.youtube.com/watch?v=gNpW_dzGALg
 P!nk ~ Get The Party Started ~ spotify:track:4bk78jvK8Fe9YHqruOJW0v
@@ -1283,8 +1274,7 @@ Pearl Jam ~ Just Breathe ~ spotify:track:3k9qjgu8zVKTEuJVJIYyc0
 Pearl Jam ~ Sirens ~ spotify:track:1cAMXz9mnvrqyQLSG4KeeE
 Peg Parnevik ~ Ain't No Saint ~ spotify:track:2c1EGwagV1sT73NimGsqIh
 Pema Dechen ~ 21 Tara Lullaby - Instrumental ~ spotify:track:4ymcezpky8D10kGFxFM7mR
-Pema Dechen ~ 21 Tara Lullaby - Lounge ~ spotify:track:3QiVJaiRGOSH62HSlz3Mi7
-Pernilla Wahlgren ~ Picadilly Circus - 2006 Remastered Version ~ spotify:track:5IdaNGlyp4KKQHlKQcARl8
+Pernilla Wahlgren ~ Picadilly Circus - 2006 Remastered Version ~ https://www.youtube.com/watch?v=ZqSXcfwM2BI
 Pet Shop Boys ~ West End Girls - 2001 Remastered Version ~ spotify:track:7FlwylpJSe3ea6m1IrkizS
 Petter ~ Baksmälla ~ https://www.youtube.com/watch?v=z5pJH01_xVY
 Petter ~ Fredrik Snortare och Cecilia Synd ~ spotify:track:0I7B4cDM2Rqh6uxn00BU7m
@@ -1299,10 +1289,10 @@ Pharrell Williams ~ Happy ~ https://www.youtube.com/watch?v=y6Sxv-sUYtM
 Pink Floyd ~ Another Brick In The Wall - 2001 Remastered Version ~ 
 Pink Floyd ~ Another Brick In The Wall, Pt. 2 - 2011 Remastered Version ~ https://www.youtube.com/watch?v=HrxX9TBj2zY
 Pink Floyd ~ Breathe (In The Air) [2011 - Remaster] ~ https://www.youtube.com/watch?v=3mtOeIZfQqo
-Pink Floyd ~ Comfortably Numb - 2011 Remastered Version ~ 
-Pink Floyd ~ Hey You - 2011 Remastered Version ~ 
+Pink Floyd ~ Comfortably Numb - 2011 Remastered Version ~ https://www.youtube.com/watch?v=XpqjEnRU6uM
+Pink Floyd ~ Hey You - 2011 Remastered Version ~ https://www.youtube.com/watch?v=TFjmvfRvjTc
 Pink Floyd ~ Money - 2011 Remastered Version ~ https://www.youtube.com/watch?v=sndo_wdc384
-Pink Floyd ~ Shine On You Crazy Diamond (Parts 1 - 5) [Edit] (2011 - Remaster) ~ 
+Pink Floyd ~ Shine On You Crazy Diamond (Parts 1 - 5) [Edit] (2011 - Remaster) ~ https://www.youtube.com/watch?v=01Ja-eHOYMM
 Pink Floyd ~ Time - 2011 Remastered Version ~ https://www.youtube.com/watch?v=-EzURpTF5c8
 Pink Floyd ~ Wish You Were Here - 2011 Remastered Version ~ https://www.youtube.com/watch?v=217JOBWTolg
 Pitbull ~ Hey Baby (Drop It To the Floor) ~ https://www.youtube.com/watch?v=v5nVXq3H41A
@@ -1315,7 +1305,7 @@ Promoe ~ Mammas gata ~ https://www.youtube.com/watch?v=hEsRDMR_jNY
 Promoe ~ Svennebanan ~ https://www.youtube.com/watch?v=BWKLeBLAEwA
 Promoe ~ These Walls Don't Lie ~ https://www.youtube.com/watch?v=YLAcO3r5Xjs
 Promoe+Partiet ~ Supervalåret (med Promoe) ~ https://www.youtube.com/watch?v=0nVvx2NKG5o
-Pugh Rogefeldt ~ Visan Om Bo (feat. Stefan Sundström) ~ spotify:track:4idkhw1F8Sr2KVjskvp8Pe
+Pugh Rogefeldt ~ Visan Om Bo (feat. Stefan Sundström) ~ https://www.youtube.com/watch?v=GZRuLalbNrc
 Pulp No Pulp ~ C'est la vie (You Never Can Tell) [From "Pulp Fiction"] ~ https://www.youtube.com/watch?v=OmAWUxw5PQE
 Pulp ~ Common People ~ https://www.youtube.com/watch?v=yuTMWgOduFM
 Queen ~ Another One Bites The Dust - Remastered 2011 ~ 
@@ -1361,7 +1351,7 @@ Rage Against The Machine ~ Wake Up - Remastered ~ spotify:track:2QiqwOVUctPRVggO
 Rammstein ~ Du Riechst So Gut ~ https://www.youtube.com/watch?v=9z1CwyBTTj8
 Rammstein ~ Du hast ~ spotify:track:1dS1SUD3vr0McKwez9MqAY
 Rammstein ~ I Am Rammstein (Live Version) ~ https://www.youtube.com/watch?v=j6euF0VGMGg
-Rammstein ~ Rammstein ruht ~ spotify:track:4tL8hNK2EbOInd987Zp1rs
+Rammstein ~ Rammstein ruht ~ https://www.youtube.com/watch?v=boshCbLXhs4
 Rammstein ~ STIMMEN AUS DEM KISSEN - VARIATIONEN ÜBER RAMMSTEIN ~ https://www.youtube.com/watch?v=3iC7if5lYLw
 Rammstein ~ Sonne ~ spotify:track:4w3R0GZ2rScJMKlgPJzHRq
 Rammstein ~ What The Hell - Back To Rammstein RMX ~ https://www.youtube.com/watch?v=FuLfa8c8bUM
@@ -1370,7 +1360,7 @@ Rancid ~ Journey to the End of the East Bay ~ https://www.youtube.com/watch?v=pp
 Rancid ~ Maxwell Murder ~ spotify:track:0vNGbGK1pl5SrV6SHUh06H
 Rancid ~ Old Friend ~ https://www.youtube.com/watch?v=SSpsBvF5qhQ
 Rancid ~ Olympia WA ~ spotify:track:0TE5Q3XEPkEfmyNtr47wWa
-Rancid ~ Radio ~ spotify:track:6tlRgNME7ULlY5OcvRdgYn
+Rancid ~ Radio ~ http://www.youtube.com/watch?v=5qEov1icFi0
 Rancid ~ Red Hot Moon ~ spotify:track:3a0PmAzfzQfCZFGWkqQ2vi
 Rancid ~ Roots Radical ~ https://www.youtube.com/watch?v=wpzkGQhftMw
 Rancid ~ Ruby Soho ~ https://www.youtube.com/watch?v=0P9QMkm9Eew
@@ -1390,7 +1380,7 @@ Red Hot Chili Peppers ~ Snow (Hey Oh) ~ https://www.youtube.com/watch?v=yuFI5KSP
 Red Hot Chili Peppers ~ Under The Bridge ~ spotify:track:3d9DChrdc6BOeFsbrZ3Is0
 Red Hot Chili Peppers ~ We Turn Red ~ spotify:track:0cv2LgkvEoQiGgFWcZaAMA
 Red Hot Chili Peppers ~ We Turn Red ~ https://www.youtube.com/watch?v=I7rlCyvHejY
-Reel 2 Real+The Mad Stuntman+Visnadi+Alex Natale DJ ~ I Like To Move It (feat. The Mad Stuntman) [Radio Mix] - Radio Mix ~ spotify:track:48XTrEbn0R7YbCB6BSSIUW
+Reel 2 Real+The Mad Stuntman+Visnadi+Alex Natale DJ ~ I Like To Move It (feat. The Mad Stuntman) [Radio Mix] - Radio Mix ~ https://www.youtube.com/watch?v=8KtPN__Pclg
 Reel Big Fish ~ Beer - Best Of ~ spotify:track:6olm7fr2ohigkPOQ3jA4dh
 Reel Big Fish ~ Beer ~ spotify:track:7rDOSQkStxj28M4GRM6Xbs
 Reel Big Fish ~ Brown Eyed Girl ~ spotify:track:2lbAU3IQytWjl9b0LLuztk
@@ -1401,9 +1391,9 @@ Reel Big Fish ~ Take On Me - Best Of ~ https://www.youtube.com/watch?v=QHpU0ZfXZ
 Rhymes & Riddim ~ Andra Sidan ~ https://www.youtube.com/watch?v=wuYgwvhfxvQ
 Rhymes & Riddim ~ Enkel Matematik ~ https://www.youtube.com/watch?v=kqT31BvBcLk
 Rhymes & Riddim ~ Fri (feat. Robert Athill) ~ https://www.youtube.com/watch?v=kFnseu8ss7A
-Rhymes & Riddim ~ Galen värld ~ 
+Rhymes & Riddim ~ Galen värld ~ https://www.youtube.com/watch?v=FvMe1S-M8hk
 Rhymes & Riddim ~ Likadant ~ spotify:track:7ghbl9klH7MAjvofXyuGkb
-Rhymes & Riddim ~ Spelar ingen roll ~ 
+Rhymes & Riddim ~ Spelar ingen roll ~ https://www.youtube.com/watch?v=paJUTGzLdRw
 Rhymes & Riddim ~ Spola tillbaks (feat. Shivano) ~ https://www.youtube.com/watch?v=kouNfM5a-M0
 Rhymes & Riddim ~ Titta på mig nu ~ https://www.youtube.com/watch?v=0KXks8cp62A
 Rihanna ~ Bitch Better Have My Money ~ spotify:track:0NTMtAO2BV4tnGvw9EgBVq
@@ -1418,7 +1408,7 @@ Rihanna+Mikky Ekko ~ Stay ~ spotify:track:1dEy9Pl81QopSxNsPxXQxv
 Rise Against ~ Give It All ~ https://www.youtube.com/watch?v=dhldbymXK-8
 Rise Against ~ Hero Of War ~ https://www.youtube.com/watch?v=_DboMAghWcA
 Rise Against ~ I Don’t Want To Be Here Anymore ~ https://www.youtube.com/watch?v=FqQsZ8g8KHQ
-Rise Against ~ Make It Stop (September's Children) ~ spotify:track:0wHNrrefyaeVewm4NxjxrX
+Rise Against ~ Make It Stop (September's Children) ~ https://www.youtube.com/watch?v=XP4clbHc4Xg
 Rise Against ~ People Live Here ~ spotify:track:3YsbKbo8m5Uv5zAG2hqOrN
 Rise Against ~ Prayer Of The Refugee ~ spotify:track:3wTyLh0vhP3dN5yv0Mti17
 Rise Against ~ Satellite ~ spotify:track:5sG3G54H21hNfd5etlheoe
@@ -1430,7 +1420,6 @@ Robyn ~ Call Your Girlfriend ~ spotify:track:2sCoROOlNQyFpRQEe6A5lv
 Robyn ~ Dancing On My Own ~ spotify:track:3Rc2ajBMInxeNGVkMPC92Y
 Robyn ~ Hang With Me - Acoustic Version ~ 
 Robyn ~ Hang With Me - Edit ~ 
-Robyn ~ Indestructible - Radio Edit ~ https://www.youtube.com/watch?v=pIz61hshFgU
 Robyn ~ Indestructible ~ spotify:track:4CZ8nFoCsNNXuaX0qBm8LX
 Rockabye Baby! ~ We Are Never Ever Getting Back Together ~ spotify:track:57MBAMog95bS4z4hvo3ZL9
 Romeo Santos ~ Eres Mía ~ spotify:track:6I86RF3odBlcuZA9Vfjzeq
@@ -1440,7 +1429,7 @@ Roxette ~ It Must Have Been Love ~ https://www.youtube.com/watch?v=k2C5TjS2sh4
 Roxette ~ Joyride ~ https://www.youtube.com/watch?v=xCorJG9mubk
 Roxette ~ Sleeping In My Car - Single Version ~ spotify:track:1so8akeTSdZB80OcrZUcii
 Roxette ~ The Look ~ spotify:track:0ZfM5XfJTtFPhOxAERRnNY
-Roy Orbison ~ I Drove All Night ~ spotify:track:0FoYHGrCnI8zF4utpPiHWx
+Roy Orbison ~ I Drove All Night ~ https://www.youtube.com/watch?v=m5N9IHqqGcA
 Roy Orbison ~ Oh, Pretty Woman ~ https://www.youtube.com/watch?v=ssXAkg0bV6o
 Roy Orbison ~ Unchained Melody - Remastered 2015 ~ https://www.youtube.com/watch?v=XTicB2BYaew
 Royal Philharmonic Orchestra ~ Bright Eyes (as made famous by Simon & Garfunkle) ~ https://www.youtube.com/watch?v=WY50cM80GHc
@@ -1462,8 +1451,6 @@ Rymdreglage ~ Zombie Pace - Radio Edit ~ https://www.youtube.com/watch?v=U5zyYXf
 Rymdreglage ~ Åka Epa ~ spotify:track:3b87s1GWx0PIDu6faUueLM
 Rymdreglage+Ninjamoped ~ Anatoliy Shishkov ~ spotify:track:3w9h5aeOWSYetvLXWgaYLv
 Rymdreglage+Ninjamoped ~ Christopher Gough ~ spotify:track:2nwuKbg3YXunzcEhrG7JIa
-Röyksopp & Robyn ~ Do It Again ~ https://www.youtube.com/watch?v=hE6dWX1FFac
-Röyksopp+Robyn ~ Monument - The Inevitable End Version ~ spotify:track:616ddBwW0LpyhCpLE5BpIP
 SNAP! ~ Rhythm Is A Dancer - Original 12" ~ https://www.youtube.com/watch?v=uBBQZhdPzJQ
 Sabaton ~ Carolus Rex (English Version) ~ https://www.youtube.com/watch?v=WnAvNdVyJB0
 Sabaton ~ En Livstid I Krig ~ spotify:track:5jIMpR1H0TwFrb4PBQQ4Wn
@@ -1477,7 +1464,6 @@ Sabaton ~ Soldier of 3 Armies ~ https://www.youtube.com/watch?v=Gblr07yKLBQ
 Sabaton ~ To Hell and Back ~ spotify:track:3RVg6RZvfOLrw4pqjVNbQr
 Sade ~ By Your Side - Remastered ~ https://www.youtube.com/watch?v=PDr56LgDqXM
 Sade ~ No Ordinary Love - Remastered ~ https://www.youtube.com/watch?v=Ya99RmANEqE
-Sade ~ Nothing Can Come Between Us - Remastered Version ~ https://www.youtube.com/watch?v=_oVI0GW-Xd4
 Sade ~ Smooth Operator - Remastered ~ https://www.youtube.com/watch?v=vmaFg5fSiUY
 Sade ~ The Sweetest Taboo - Remastered ~ https://www.youtube.com/watch?v=tdWizSaJWsA
 Sade ~ Your Love Is King - Remastered ~ spotify:track:1RakvnhYMIBVFNJSjN2NWb
@@ -1489,7 +1475,6 @@ Samir & Viktor ~ Bada nakna ~ spotify:track:68jkh9nqSjpmRtkkA9f0ld
 Sanna Nielsen ~ Empty Room ~ 
 Sanna Nielsen ~ Rainbow ~ spotify:track:30Mkr0pLt3WJzLB7gIRLpC
 Sanna Nielsen ~ Undo ~ https://www.youtube.com/watch?v=ybJfXFDKfGY
-Sanna Nielsen ~ Utan dina andetag ~ https://www.youtube.com/watch?v=2PblHiAoDLg
 Schoolboy Q+A$AP Rocky ~ Hands On The Wheel ~ spotify:track:2kfpH2OAAdpk5J3JaraAIh
 Scorpions ~ Always Somewhere ~ spotify:track:6Ok4D4w117mSi9OP8tmrpg
 Scorpions ~ No One Like You - 2011 Version ~ https://www.youtube.com/watch?v=cC0YG7XrUjI
@@ -1515,11 +1500,11 @@ Sean Banan ~ Skaka Rumpa ~ spotify:track:2q5WLigZE4cxOnNO7Le0So
 Sean Kingston+Nicki Minaj ~ Letting Go (Dutty Love) featuring Nicki Minaj ~ spotify:track:0wDbYIl4fN2mccHczCJqEf
 Sean Paul ~ Other Side Of Love ~ spotify:track:4RdUpI3iTwqzCQe9ttKB5Q
 Sean Paul ~ She Doesn't Mind ~ spotify:track:1zZIGnXIcDKU8QIUkR20nK
-Sean Paul ~ She Makes Me Go - Radio feat. Sean Paul ~ 
+Sean Paul ~ She Makes Me Go - Radio feat. Sean Paul ~ https://www.youtube.com/watch?v=v-kM9W6nWBQ
 Sean Paul ~ Temperature ~ https://www.youtube.com/watch?v=dW2MmuA1nI4
 Sean Paul+Alexis Jordan ~ Got 2 Luv U (feat. Alexis Jordan) ~ https://www.youtube.com/watch?v=tDq3fNew1rU
 September ~ Cry for You - UK Radio Edit ~ 
-September ~ Kärlekens tunga ~ 
+September ~ Kärlekens tunga ~ https://www.youtube.com/watch?v=EHjaNsJNmbk
 September ~ Mikrofonkåt ~ spotify:track:6iZVv78KUv8sKv92JvoiqB
 September ~ Party In My Head ~ https://www.youtube.com/watch?v=5Ir99dnctoA
 September ~ Satellites - US Mix ~ spotify:track:7iZuR1XsziH1CN5xYp4H18
@@ -1542,7 +1527,7 @@ Sixteen Horsepower ~ Haw ~ https://www.youtube.com/watch?v=r_ACfcpC1OI
 Sixteen Horsepower ~ Heel On The Shovel ~ https://www.youtube.com/watch?v=8AqtAd2LpZA
 Sixteen Horsepower ~ I Seen What I Saw ~ https://www.youtube.com/watch?v=6VDGb8hDDv8
 Sixteen Horsepower ~ Nobody 'Cept You ~ https://www.youtube.com/watch?v=EUSvPuNcUgo
-Sixteen Horsepower ~ Scrawled In Sap ~ spotify:track:7esMcjyZVhZfFyv7VYxVA6
+Sixteen Horsepower ~ Scrawled In Sap ~ https://www.youtube.com/watch?v=yf_sUaYoLvg
 Ska-P ~ Cannabis ~ https://www.youtube.com/watch?v=m-jELpAdFyA
 Skrillex ~ Bangarang (feat. Sirah) ~ https://www.youtube.com/watch?v=YJVmu6yttiw
 Skrillex ~ First Of The Year (Equinox) ~ https://www.youtube.com/watch?v=SAXpBgkXt60
@@ -1579,11 +1564,11 @@ Stefan Sundström ~ Malena ~ https://www.youtube.com/watch?v=80hCcZ_ilAw
 Stefan Sundström ~ Nog ~ https://www.youtube.com/watch?v=hnDDeD7Ky9c
 Stefan Sundström ~ Resa med lätt bagage ~ https://www.youtube.com/watch?v=pW3WMUDOols
 Stefan Sundström ~ Söder ska resa sej (igen) ~ https://www.youtube.com/user/stefansundstrom/videos?sort=da%26view=0%26flow=grid&amp;sa=U&amp;ved=0ahUKEwj-paSE1q_fAhWFGCwKHVu6CYgQFggnMAU&amp;usg=AOvVaw03AzoGuW_ULNl0rv9yp8ek"><b>stefan sundström</b> - YouTube</a></h3><div class="s"><div class="hJND5c" style="margin-bottom:2px"><cite>https://www.youtube.com/user/<b>stefansundstrom</b>/videos?sort=da...0...</cite></div><span class="st"><b>Stefan Sundströms</b> officiella YouTube kanal.</span><br></div></div><div class="g"><table class="ts"><tr><td colspan="2"><h3 class="r"><a href="/url?q=http://www.youtube.com/watch?v=PFPKvpJyL8Q%26sns=tw
-Stefans Matlåtar ~ Kompisar ~ spotify:track:37ty6hzqMYNss2UaXBxikl
+Stefans Matlåtar ~ Kompisar ~ https://www.youtube.com/watch?v=jySNLGIqWgQ
 Stefans Matlåtar ~ Macka ~ https://www.youtube.com/watch?v=e5XkU8a9zZ0
 Stefans Matlåtar ~ Matlåten ~ https://www.youtube.com/watch?v=e5XkU8a9zZ0
 Stefans Matlåtar ~ Matlåten ~ spotify:track:6T0bKHuZVKcbnF4OckavC3
-Stefans Matlåtar ~ Restaurang Vals ~ spotify:track:2emMiFerbidRDrDpgueFsy
+Stefans Matlåtar ~ Restaurang Vals ~ https://m.youtube.com/watch?v=J7GYxH2acls
 Stevie Wonder ~ Superstition - Single Version ~ spotify:track:5BxUIRd7eVYJ5YColCSdpB
 Strafe Run ~ Ode to Rammstein ~ spotify:track:0UwYWTcMxcPOkf3aMRobmA
 Stress ~ Tystas ner - RMH Remix ~ https://www.youtube.com/watch?v=L9DcqaF4MKo
@@ -1604,7 +1589,7 @@ Swedish House Mafia ~ One - Radio Edit ~ spotify:track:41KPpw0EZCytxNkmEMJVgr
 Swedish House Mafia ~ Save the World - Radio Mix ~ https://www.youtube.com/watch?v=-bt94yKsKHQ
 Swedish House Mafia+John Martin ~ Don't You Worry Child (Acoustic Version) [feat. John Martin] ~ https://www.youtube.com/watch?v=RLaSjeCFnlE
 Swedish House Mafia+John Martin ~ Don't You Worry Child (Radio Edit) [feat. John Martin] ~ https://www.youtube.com/watch?v=1y6smkh6c-0
-Swedish House Mafia+Pharrell Williams ~ One (Your Name) [feat. Pharrell] [Radio Edit] ~ spotify:track:6iznpTNBnljkbP0WtAfn50
+Swedish House Mafia+Pharrell Williams ~ One (Your Name) [feat. Pharrell] [Radio Edit] ~ https://www.youtube.com/watch?v=tSYUThOhCzI
 Swedish House Mafia+Tinie Tempah+Axwell+Steve Angello+Sebastian Ingrosso ~ Miami 2 Ibiza - (Swedish House Mafia vs. Tinie Tempah) ~ https://www.youtube.com/watch?v=zLsYPU2hh88
 System of a Down ~ Aerials ~ spotify:track:4e9eGQYsOiBcftrWXwsVco
 System of a Down ~ B.Y.O.B. ~ spotify:track:0EYOdF5FCkgOJJla8DI2Md
@@ -1614,7 +1599,6 @@ System of a Down ~ Hypnotize ~ https://www.youtube.com/watch?v=0lsTgvDx9NU
 System of a Down ~ Lonely Day ~ https://www.youtube.com/watch?v=DnGdoEa1tPg
 System of a Down ~ Lost In Hollywood ~ https://www.youtube.com/watch?v=bJhAOsTsLXI
 System of a Down ~ Radio/Video ~ spotify:track:41pOIT2t1rvr2Trg1HQChZ
-System of a Down ~ Sugar ~ https://www.youtube.com/watch?v=5vBGOrI6yBk
 System of a Down ~ Toxicity ~ spotify:track:0snQkGI5qnAmohLE7jTsTn
 System of a Down ~ Violent Pornography ~ spotify:track:249Z7XT6mf8B2zuI0RaeS0
 Syster Sol ~ Kärleksrevolt! ~ https://www.youtube.com/watch?v=w5KFH1iBLZ0
@@ -1640,7 +1624,7 @@ Teddybears ~ Cobrastyle ~ spotify:track:45sdD9GjryujVOcRJ4YQRQ
 Teddybears ~ Get Mama A House - feat. B.o.B ~ http://www.youtube.com/watch?v=imCBwVs5vHM
 Teddybears ~ Hey Boy ~ spotify:track:191WWeKEl9FKuTaSdJOqco
 Teddybears ~ Little Stereo ~ spotify:track:3iPPpKw775rCOiFd2aMT8F
-Teddybears ~ No More Michael Jackson ~ 
+Teddybears ~ No More Michael Jackson ~ https://www.youtube.com/watch?v=cpFmI4U-Gwo
 Teddybears ~ Sunshine ~ https://www.youtube.com/watch?v=m66bhJ9T8iA
 Teddybears ~ Yours To Keep - feat. Neneh Cherry ~ spotify:track:46QtaRwLuWe5vRrNBm5iby
 Tegan And Sara ~ Everything Is AWESOME!!! - Originally Performed By Tegan and Sara feat. The Lonely Island ~ https://www.youtube.com/watch?v=PI1A_p7jBlQ
@@ -1669,7 +1653,7 @@ The Beatles ~ Yesterday - Remastered ~ https://www.youtube.com/watch?v=haWRUpPw_
 The Black Eyed Peas ~ Boom Boom Pow ~ spotify:track:5MeZ3VxmtSv1O8PcekvLTn
 The Black Eyed Peas ~ I Gotta Feeling ~ https://www.youtube.com/watch?v=uSD4vsh1zDA
 The Black Eyed Peas ~ Just Can’t Get Enough ~ spotify:track:3JA9Jsuxr4xgHXEawAdCp4
-The Black Eyed Peas ~ Meet Me Halfway ~ spotify:track:3evTG0FJEHFYmgOeFgPo0s
+The Black Eyed Peas ~ Meet Me Halfway ~ https://www.youtube.com/watch?v=I7HahVwYpwo
 The Black Eyed Peas ~ My Humps ~ spotify:track:19JdbdEwQI7bCxefMokZO8
 The Black Eyed Peas ~ Pump It ~ https://www.youtube.com/watch?v=ZaI2IlHwmgQ
 The Black Eyed Peas ~ The Time (Dirty Bit) ~ https://www.youtube.com/watch?v=gXac8pehnC4
@@ -1705,7 +1689,7 @@ The Doors ~ Love Her Madly ~ https://www.youtube.com/watch?v=SLdvnQD_eio
 The Doors ~ People Are Strange ~ https://www.youtube.com/watch?v=K3CHi_9sxj0
 The Doors ~ Soul Kitchen ~ https://www.youtube.com/watch?v=2W7TfJRj7fI
 The Doors ~ The End ~ spotify:track:5UgT7w6zVZjP3oyawMzbiK
-The Dust Brothers ~ Alive Alone ~ spotify:track:6dgFhHtleZmYABhqiX8MKV
+The Dust Brothers ~ Alive Alone ~ https://www.youtube.com/watch?v=CZIXItHqTLI
 The Dust Brothers ~ Chemical Beats ~ https://www.youtube.com/watch?v=gknXdDLJDMc
 The Dust Brothers ~ Here Comes the Sun ~ https://www.youtube.com/watch?v=VcjpdhL_Nsg
 The Dust Brothers ~ In Dust We Trust ~ https://www.youtube.com/watch?v=I1_md9pfgy4
@@ -1740,8 +1724,8 @@ The Offspring ~ Want You Bad ~ spotify:track:09ZEB3X2oswrIBBuzuVLEt
 The Offspring ~ Why Don't You Get a Job? ~ spotify:track:5JzF2iymNwCyFz9MTmojd0
 The Offspring ~ You're Gonna Go Far, Kid ~ spotify:track:1FMm3wG5WOhi7js35KR7Ea
 The Prodigy ~ Smack My Bitch Up ~ spotify:track:3tehrxZR8eaANHov4cEctL
-The Qemists ~ Lost Weekend ~ spotify:track:1cflU1Z14wbWK20b3LoWzy
-The Rolling Stones ~ (I Can't Get No) Satisfaction - (Original Single Mono Version) ~ spotify:track:1b6AW6uDrtrUN0Y6GJR45j
+The Qemists ~ Lost Weekend ~ https://www.youtube.com/watch?v=DIcMNfd3H4s
+The Rolling Stones ~ (I Can't Get No) Satisfaction - (Original Single Mono Version) ~ https://www.youtube.com/watch?v=MSSxnv1_J2g
 The Rolling Stones ~ Angie - Remastered ~ spotify:track:08wtAjPetTm2pNcIVKSdzN
 The Rolling Stones ~ Brown Sugar - Remastered 2009 ~ spotify:track:61UuPxxYUvacEH6SHIK3sU
 The Rolling Stones ~ Gimme Shelter ~ https://www.youtube.com/watch?v=QI77OWd6n94
@@ -1752,7 +1736,7 @@ The Rolling Stones ~ Start Me Up - Remastered ~ https://www.youtube.com/watch?v=
 The Rolling Stones ~ Sympathy For The Devil ~ spotify:track:1iDcKYNvo6gglrOG6lvnHL
 The Ronettes ~ Be My Baby ~ spotify:track:2G2YzndIA6jeWFPBXhUjh5
 The Saturdays ~ What About Us ~ https://www.youtube.com/watch?v=-6YLi0GNBTk
-The Searchers ~ Needles And Pins ~ spotify:track:33kviElUoS7ScNB40GPD8t
+The Searchers ~ Needles And Pins ~ https://www.youtube.com/watch?v=_uJBPCQv20E
 The Shangri-Las ~ Leader of the Pack ~ spotify:track:3AS1YQTXfmoGoXtrRSzwUQ
 The Smashing Pumpkins ~ 1979 ~ spotify:track:3Y8Ff1nH44jFywAtpgmleZ
 The Smashing Pumpkins ~ Bullet With Butterfly Wings ~ https://www.youtube.com/watch?v=8-r-V0uK4u0
@@ -1760,13 +1744,13 @@ The Smashing Pumpkins ~ Cherub Rock ~ spotify:track:0fIC59ZyS8ThtUF0Um6zuD
 The Smashing Pumpkins ~ Disarm ~ spotify:track:2lXHg7BtTNoP39AezyCSfL
 The Smashing Pumpkins ~ Landslide ~ https://www.youtube.com/watch?v=ReUq5B3XT8g
 The Smashing Pumpkins ~ Today ~ https://www.youtube.com/watch?v=xmUZ6nCFNoU
-The Smashing Pumpkins ~ Tonight, Tonight ~ spotify:track:4iCGSi1RonREsPtfEKYj5b
+The Smashing Pumpkins ~ Tonight, Tonight ~ https://www.youtube.com/watch?v=NOG3eus4ZSo
 The Smashing Pumpkins ~ Zero ~ spotify:track:1o2jjiTtiVJEtQyYzcRHnm
 The Sounds ~ Living in America ~ spotify:track:4lXFRXIbhmiCBlkugTm7Po
 The Sounds ~ No One Sleeps When I’m Awake ~ https://www.youtube.com/watch?v=3Muci-5Yt0o
 The Sounds ~ Painted By Numbers ~ spotify:track:1jnggDvEm0OUskPxHmIUml
 The Sounds ~ Rock 'N' Roll Pest Control ~ https://www.youtube.com/watch?v=J83YWgLjyD4
-The Sounds ~ Seven Days A Week ~ 
+The Sounds ~ Seven Days A Week ~ https://www.youtube.com/watch?v=WcHPw5YbN48
 The Sounds ~ Tony The Beat ~ https://www.youtube.com/watch?v=dpCggp19LgA
 The Supremes ~ Baby Love - Juke Box Single Version ~ spotify:track:2F3Yu4N3RBvBET9qaE1quT
 The Supremes ~ Stop! In The Name Of Love - Stereo Version ~ 
@@ -1801,7 +1785,7 @@ Timbuktu ~ Resten av ditt liv ~ spotify:track:4PDKasAgIhWHJZfCx5KJA2
 Timbuktu ~ Spring ~ spotify:track:4CXaUIb88Gw2OA8nMDv20N
 Timbuktu ~ The botten is nådd ~ https://www.youtube.com/watch?v=ssg9SpkAwio
 Tina Turner ~ What's Love Got to Do with It ~ spotify:track:4kOfxxnW1ukZdsNbCKY9br
-Tinashe ~ Pretend ~ spotify:track:6phKkVuSzTNEriX3uciCb5
+Tinashe ~ Pretend ~ https://www.youtube.com/watch?v=ZufMWAp-tKE
 Tom Jones ~ Delilah ~ spotify:track:2ext9IdNLicfa7EYYcf4wb
 Tom Jones ~ Green Green Grass Of Home ~ https://www.youtube.com/watch?v=nYjBpgz2lus
 Tom Jones ~ It's Not Unusual - 2nd Studio Version ~ https://www.youtube.com/watch?v=zydIvSDXS7Y
@@ -1810,7 +1794,7 @@ Tom Jones+Mousse T. ~ Sex Bomb ~ spotify:track:47TOpx16LwqnL9ff2uWTef
 Tom Jones+The Cardigans ~ Burning Down The House ~ spotify:track:3v3EGRQ6bywgEaeBRYhpcN
 Townes Van Zandt ~ Dead Flowers ~ 
 Tracy Chapman ~ Across The Lines ~ spotify:track:3XkXJNMHJB0UiKiVz83yD7
-Tracy Chapman ~ Ain't No Sunshine featuring Tracy Chapman ~ spotify:track:1amH1FjaNDAaZVpHWzcztW
+Tracy Chapman ~ Ain't No Sunshine featuring Tracy Chapman ~ https://www.youtube.com/watch?v=-L9onfQS1_c
 Tracy Chapman ~ Baby Can I Hold You ~ https://www.youtube.com/watch?v=DqoLMGSBGYc
 Tracy Chapman ~ Behind The Wall ~ spotify:track:00OMaIm4VEsUcXad5Pf1Qe
 Tracy Chapman ~ Fast Car ~ spotify:track:2M9ro2krNb7nr7HSprkEgo
@@ -1849,7 +1833,7 @@ Veronica Maggio ~ Låtsas som det regnar ~
 Veronica Maggio ~ Mitt hjärta blöder ~ spotify:track:7cgo7045JzywlitlUuG6SM
 Veronica Maggio ~ Sergels torg ~ https://www.youtube.com/watch?v=h-_UQVsoLQQ
 Veronica Maggio ~ Snälla bli min ~ spotify:track:35yrPjlYNotXUXAV0tjIM8
-Veronica Maggio ~ Trädgården en fredag ~ 
+Veronica Maggio ~ Trädgården en fredag ~ https://www.youtube.com/watch?v=F-KjuFYgJDI
 Veronica Maggio ~ Välkommen in ~ spotify:track:3O56xDyPRTBeiqaijnUA1b
 Vigiland ~ Pong Dance ~ spotify:track:3AVnIi6HvEiHGlIj4c6ok2
 Village People ~ YMCA - Original Version 1978 ~ 
@@ -1870,7 +1854,7 @@ Within Temptation ~ In The Middle Of The Night ~ spotify:track:2mxZKXsHBWqm5Oz8D
 Within Temptation ~ Paradise (What About Us?) [feat. Tarja] - Single Version ~ https://www.youtube.com/watch?v=Dy6MpsDPKts
 Within Temptation ~ Shot In The Dark ~ spotify:track:1Pw3TwAjDb1oS0F9x4dGdQ
 Within Temptation ~ Sinéad ~ spotify:track:6agaR8uXdeycsvlxtZvKMW
-Within Temptation ~ What Have You Done (feat. Keith Caputo) ~ spotify:track:48cflKh8744H5azTEGO6zV
+Within Temptation ~ What Have You Done (feat. Keith Caputo) ~ https://www.youtube.com/watch?v=dpMJOYOJ1d4
 Woe, Is Me ~ We R who we R [Kesha Cover] ~ https://www.youtube.com/watch?v=86RQS74CxxE
 Wolfman Jack ~ Six Days On The Road ~ spotify:track:2DcvXAQySA60isrjaRFGGg
 Woodkid ~ Baltimore’s Fireflies ~ spotify:track:3QBdVIlkKnc6SGPpwyg3zm
@@ -1941,7 +1925,6 @@ Kjell Höglund ~ Lugnare vatten ~ https://www.youtube.com/watch?v=W_kH-PY1gqA
 Kjell Höglund ~ Maskinerna är våra vänner ~ https://www.youtube.com/watch?v=I8ZotnO_vTA
 zoby ~ zoby ~ https://www.youtube.com/watch?v=AEITQ3-VBbc
 zoby ~ zoby 2011 ~ https://www.youtube.com/watch?v=BHBME0ZUnAA
-zoby ~ Zoby Builds Vintage Craft Episode 1 The Creeping ~ https://www.youtube.com/watch?v=-uTC2D5tn_4
 Zomby ~ Zomby ~ https://www.youtube.com/watch?v=Q6JJ-bLGc0c
 Zomby ~ It's Time ~ https://www.youtube.com/watch?v=8FEl7QabYTM
 Zomby ~ With Love ~ https://www.youtube.com/watch?v=E5fccx15b2k
@@ -1968,3 +1951,22 @@ Bass ~ Bass ~
 Usher ~ Yeah! ft. Lil Jon, Ludacris ~ https://youtube.com/watch?v=GxBSyx85Kp8
 4 Non Blondes ~ What's Up ~ https://youtube.com/watch?v=6NXnxTNIWkc
 Slow Motion! Hot Light ~ Dynamite ~ https://www.youtube.com/watch?v=mqc9PR3ztCU
+Beethoven (Klutch Remix) ~ Fur Elise ~ https://www.youtube.com/watch?v=Mf_Dmmj8Eeo&list=RDDGxYlLKEI4w&index=9
+Dyroth ~ Destruction VIP ~ https://www.youtube.com/watch?v=l355SOxmefw&list=RDDGxYlLKEI4w&index=10
+Pandorum (WH†TE Remix) ~ Haunt ~ https://www.youtube.com/watch?v=X13VybDt3Hw&list=RDDGxYlLKEI4w&index=23
+Lady Gaga, Bradley Cooper ~ Shallow ~ https://www.youtube.com/watch?v=I8R5gUe52yw
+The Trashmen ~ Surfin Bird ~ https://www.youtube.com/watch?v=9Gc4QTqslN4
+Nea ~ Some Say ~ https://www.youtube.com/watch?v=w8AYmSdaQZI
+Miss Li ~ Komplicerad ~ https://www.youtube.com/watch?v=tRzy31NBTCs
+Darin ~ Tvillingen ~ https://www.youtube.com/watch?v=QrsKUdkd_4Y
+LOUD ~ Thoughts ~ https://www.youtube.com/watch?v=uy5pWDFq0vI
+BB Songs ~ Tokyo Drift ~ https://www.youtube.com/watch?v=4vUtXdXmnRE
+Top Tunes ~ Coffin Dance Remix ~ https://www.youtube.com/watch?v=jl9xKw_xEas
+Indila ~ Dernière Danse ~ https://www.youtube.com/watch?v=K5KAc5CoCuk
+Indila ~ Parle à ta tête ~ https://www.youtube.com/watch?v=ZthUo-Z97uw
+Indila ~ Tourner Dans Le Vide ~ https://www.youtube.com/watch?v=vtNJMAyeP0s
+Indila ~ Love Story ~ https://www.youtube.com/watch?v=DF3XjEhJ40Y
+Indila ~ S.O.S ~ https://www.youtube.com/watch?v=m65jhGwtWrg
+Stromae ~ Tous Les Mêmes ~ https://www.youtube.com/watch?v=CAMWdvo71ls
+Stromae ~ Papaoutai ~ https://www.youtube.com/watch?v=oiKj0Z_Xnjc
+Benny Benassi ~ Satisfaction ~ https://www.youtube.com/watch?v=a0fkNdPiIL4
