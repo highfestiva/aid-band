@@ -639,7 +639,7 @@ if __name__ == '__main__':
     netpeeker.init(handle_login, handle_keys)
     keypeeker.init(handle_keys)
     spotify_init()
-    if not options.webserve:
+    if options.webserve:
         import htmlserver
         htmlserver.run_threaded()
     raw_play_list(hotoptions.Favorites, doplay=False)
