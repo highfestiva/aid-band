@@ -120,7 +120,7 @@ def play_url(url, cachewildcard):
             url = cachename
             ok = True
             if did_download:
-                add_song(verbose=False)
+                add_song()
     if not proc:
         if url.startswith('spotify') and not options.only_cache:
             if muzaks:
@@ -198,7 +198,7 @@ def raw_play_list(name, doplay=True):
     doshuffle = useshuffle
     if listname == hotoptions.Hit:
         ishits = True
-        playlist = [ABSong(s['name'], s['artists'][0]['name'], s['uri']) for s in  load_pop_songs()]
+        playlist = [ABSong(s['name'], s['artists'][0]['name'], s['uri']) for s in load_pop_songs()]
         playqueue = playlist[:]
         doshuffle = False
     else:
@@ -369,21 +369,21 @@ def bkg_save_song(song, cachewildcard):
         playlist += [song]
         save_list(playlist)
 
-def add_song(verbose=True):
+def add_song():
     global playlist,playqueue
     if shuffleidx[playidx:playidx+1]:
         song = playqueue[shuffleidx[playidx]]
         if song not in playlist:
             playlist += [song]
             save_list(playlist)
-            if verbose:
+            if options.verbose:
                 avoutput('%s added to %s.' % (song.name,_simple_listname()))
             return True
         else:
-            if verbose:
+            if options.verbose:
                 avoutput('%s already in %s.' % (song.name,_simple_listname()))
     else:
-        if verbose:
+        if options.verbose:
             avoutput('Play queue is empty, no song to add.')
     _validate()
 
@@ -610,6 +610,7 @@ parser.add_argument('--offline', action='store_true', default=False, help='only 
 parser.add_argument('--webserve', action='store_true', default=False, help='serve html playing')
 parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
 parser.add_argument('--bg-convert-wav', action='store_true', help='convert .wav to .ogg in the background')
+parser.add_argument('-v', '--verbose', action='store_true')
 options = parser.parse_args()
 options.nosp = not options.with_spotify
 options.offline = 1e8 if options.offline else 0
@@ -618,6 +619,13 @@ if not options.volume:
         options.volume = os.environ['CON_VOLUME']
     else:
         options.volume = '100'
+if options.verbose:
+    import logging
+    logging.basicConfig()
+    logging.getLogger().setLevel(logging.DEBUG)
+    requests_log = logging.getLogger('urllib3')
+    requests_log.setLevel(logging.DEBUG)
+    requests_log.propagate = True
 
 datadir = options.datadir
 try: os.mkdir(os.path.join(datadir,'cache'))
@@ -658,6 +666,8 @@ if __name__ == '__main__':
                 if not stopped:
                     poll()
                 cmd = keypeeker.peekstr() + netpeeker.peekstr()
+            if options.verbose:
+                print('running cmd:', cmd)
             if cmd in ('<quit>','<softquit>'):
                 vorbis_encoder.quit()
                 stop()
