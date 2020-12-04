@@ -609,6 +609,7 @@ parser.add_argument('--foreground-download', action='store_true', default=False,
 parser.add_argument('--offline', action='store_true', default=False, help='only play from disk cache')
 parser.add_argument('--webserve', action='store_true', default=False, help='serve html playing')
 parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
+parser.add_argument('--no-remote-control', action='store_true', help='skip listening to tcp port for remote connects')
 parser.add_argument('--bg-convert-wav', action='store_true', help='convert .wav to .ogg in the background')
 parser.add_argument('-v', '--verbose', action='store_true')
 options = parser.parse_args()
@@ -619,6 +620,13 @@ if not options.volume:
         options.volume = os.environ['CON_VOLUME']
     else:
         options.volume = '100'
+if options.no_remote_control:
+    class Dummy:
+        def dummy(self, *args, **kwargs):
+            return ''
+        def __getattr__(self, _):
+            return self.dummy
+    netpeeker = Dummy()
 if options.verbose:
     import logging
     logging.basicConfig()
