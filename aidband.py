@@ -440,8 +440,7 @@ def toggle_shuffle():
     _validate()
     return useshuffle
 
-def run_command(cmd):
-    global options
+def run_command(cmd, options):
     if cmd.startswith('!'):
         cmd = cmd[1:].strip()
     if cmd.startswith('volume'):
