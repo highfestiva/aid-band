@@ -1,5 +1,8 @@
 #!/usr/bin/env pythonw
 
+import sys
+sys.stdout = sys.stderr = open('gui.log', 'w')
+print('guiband running')
 import aidband
 from functools import partial
 import killable
