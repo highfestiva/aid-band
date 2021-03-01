@@ -28,6 +28,10 @@ def update_song_title(root, song):
 class App(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
+        self.next_song = self.cmd_clr_f(aidband.next_song)
+        self.prev_song = self.cmd_clr_f(aidband.prev_song)
+        self.add_song  = self.cmd_clr_f(aidband.add_song)
+        self.drop_song = self.cmd_clr_f(aidband.drop_song)
         self.master.bind("<Button-1>", self.next_song)
         self.master.bind("<Button-3>", self.prev_song)
         self.quit = False
@@ -84,25 +88,22 @@ class App(tk.Frame):
             shuffle = aidband.toggle_shuffle()
             root.title(current_title + (' [shuffled]' if shuffle else ' [playing in order]'))
 
-    def next_song(self, *args, **kwargs):
-        self.cmd.set('')
-        aidband.next_song()
-
-    def prev_song(self, *args, **kwargs):
-        self.cmd.set('')
-        aidband.prev_song()
-
-    def drop_song(self, *args, **kwargs):
-        self.cmd.set('')
-        aidband.drop_song()
+    def cmd_clr_f(self, f):
+        def internal(*args, **kwargs):
+            self.cmd.set('')
+            f()
+        return internal
 
     def poll(self):
         while not self.quit:
             sleep(1)
             aidband.poll()
             cmd = self.cmd.get()
+            print(cmd)
             if cmd == ' ':
                 self.next_song()
+            elif cmd == '+':
+                self.add_song()
             elif cmd == '-':
                 self.drop_song()
 

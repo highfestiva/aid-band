@@ -24,7 +24,7 @@ clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 def search(s, verbose=False):
     param = urllib.parse.urlencode({'q': 'site:youtube.com %s' % s})
     url = 'https://www.google.se/search?%s' % param
-    body = subprocess.check_output('curl -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
+    body = subprocess.check_output('curl -k -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
     artist = ''
     songs = []
     urls = set()

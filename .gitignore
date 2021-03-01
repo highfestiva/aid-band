@@ -22,3 +22,4 @@ libspotify.dll
 *.so
 *.so.*
 *.pem
+*.log

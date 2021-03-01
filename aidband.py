@@ -369,10 +369,22 @@ def bkg_save_song(song, cachewildcard):
         playlist += [song]
         save_list(playlist)
 
+def ext_add_to_favorites():
+    '''Add+save song to favorites.'''
+    song = playqueue[shuffleidx[playidx]]
+    fn = os.path.join(datadir, hotoptions.Favorites+'.txt')
+    f = codecs.open(fn, 'a', 'utf-8')
+    f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri or ''))
+
+
 def add_song():
     global playlist,playqueue
     if shuffleidx[playidx:playidx+1]:
         song = playqueue[shuffleidx[playidx]]
+        if on_realtime_playlist():
+            ext_add_to_favorites()
+            avoutput('Hit %s added to %s.' % (song.name, hotoptions.Favorites))
+            return
         if song not in playlist:
             playlist += [song]
             save_list(playlist)
@@ -561,7 +573,7 @@ def save_list(songlist):
     f = codecs.open(fn, 'w', 'utf-8')
     f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.\n')
     for song in songlist:
-        f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri))
+        f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri or ''))
 
 def output(*args):
     s = util.str2prt(*args)
