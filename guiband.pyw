@@ -73,8 +73,6 @@ class App(tk.Frame):
             else:
                 aidband.stop()
         elif len(event.keysym) >= 2 and event.keysym[0] == 'F':
-            if event.state != 8:
-                return
             fkey_idx = int(event.keysym[1:]) - 1
             self.cmd.set('')
             if len(aidband.hotoptions.all) > fkey_idx:
