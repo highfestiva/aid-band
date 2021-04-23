@@ -8,9 +8,10 @@ import pafy
 import re
 import subprocess
 import urllib.parse
+from urllib.parse import urlencode, unquote as urldecode
 
 
-pages = re.compile(r'q=(https://[a-z\.-_]*?youtube\.com/watch%3Fv%3D.+?)&.*?>(.*?</a>.*?)</div>')
+pages = re.compile(r'"nofollow" .+(https.*?youtube\.com%2Fwatch.+?)&.*?>(.*?)</a>')
 tags = re.compile(r'<.*?>')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
@@ -22,16 +23,18 @@ clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 
 
 def search(s, verbose=False):
-    param = urllib.parse.urlencode({'q': 'site:youtube.com %s' % s})
-    url = 'https://www.google.se/search?%s' % param
+    param = urlencode({'q': 'site:youtube.com %s' % s})
+    url = 'https://html.duckduckgo.com/html/?%s' % param
     body = subprocess.check_output('curl -k -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
+    if verbose:
+        print(body)
     artist = ''
     songs = []
     urls = set()
     names = set()
     hits = []
     for pagelink in pages.finditer(body):
-        url = pagelink.group(1).replace('%3F','?').replace('%3D', '=').partition('%26')[0]
+        url = urldecode(pagelink.group(1).partition('%26')[0])
         name = html.unescape(pagelink.group(2))
         name = name.encode().partition(b'\xe2')[0].decode()
         name = tags.sub(' ', name)
@@ -169,7 +172,8 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('Darin - Tvillingen', verbose=True)
+    songs = search('Blind Guardian - Bright Eyes', verbose=True)
+    # songs = search('Darin - Tvillingen', verbose=True)
     # songs = search('Victor Crone - Yes, I Will Wait', verbose=True)
     # songs = search('Miss Li - Komplicerad', verbose=True)
     # songs = search('Gym Class Heroes - Stereo Hearts', verbose=True)
