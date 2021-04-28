@@ -2,6 +2,12 @@
 
 import sys
 sys.stdout = sys.stderr = open('gui.log', 'w')
+oldwrite = sys.stderr.write
+def flushwrite(d):
+    r = oldwrite(d)
+    sys.stderr.flush()
+    return r
+sys.stderr.write = flushwrite
 print('guiband running')
 import aidband
 from functools import partial
@@ -97,7 +103,8 @@ class App(tk.Frame):
             sleep(1)
             aidband.poll()
             cmd = self.cmd.get()
-            print(cmd)
+            if cmd:
+                print(cmd)
             if cmd == ' ':
                 self.next_song()
             elif cmd == '+':

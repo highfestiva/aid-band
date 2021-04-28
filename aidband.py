@@ -452,7 +452,7 @@ def toggle_shuffle():
     _validate()
     return useshuffle
 
-def run_command(cmd, options):
+def run_command(cmd):
     if cmd.startswith('!'):
         cmd = cmd[1:].strip()
     if cmd.startswith('volume'):
@@ -728,7 +728,7 @@ if __name__ == '__main__':
                 onrepeat = False
                 toggle_shuffle()
             elif cmd.startswith('!'):
-                run_command(cmd, options)
+                run_command(cmd)
             elif cmd.endswith('\r'):
                 onrepeat = False
                 cmd = cmd.strip()
