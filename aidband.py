@@ -587,7 +587,7 @@ def avoutput(*args):
 
 def run_ext_cmd(cmd):
     cmd = cmd.split()
-    print('running ext_cmd', cmd)
+    output('running ext_cmd' + str(cmd))
     cmd,args = cmd[0],cmd[1:]
     try:
         exec(open('ext/'+cmd.strip()).read(), {'args':args})
