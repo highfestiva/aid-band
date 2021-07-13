@@ -455,16 +455,26 @@ def toggle_shuffle():
 def run_command(cmd):
     if cmd.startswith('!'):
         cmd = cmd[1:].strip()
-    if cmd.startswith('volume'):
-        options.volume = cmd.partition(' ')[2]
+    ocmd,args = cmd, [c.strip() for c in cmd.split()]
+    cmd,args = args[0],args[1:]
+    if cmd == 'say':
+        speech.say(' '.join(args))
+    elif cmd == 'pwr' and args == ['off']:
+        import win32api
+        win32api.ExitWindowsEx(24,0)
+    elif cmd == 'fg':
+        options.foreground_download = args in ([], ['true'], ['on'], ['1'])
+        avoutput('Playing in %s.' % ('foreground' if options.foreground_download else 'background'))
+    elif cmd == 'volume':
+        options.volume = args[0]
         avoutput('Volume set to %s.' % options.volume)
-    elif cmd.startswith('timer'):
+    elif cmd == 'timer':
         global timer_stop_t
-        minutes = float(cmd.partition(' ')[2])
+        minutes = int(args[0])
         timer_stop_t = minutes * 60 + time.time()
         avoutput('Timer set to %s minutes.' % minutes)
     else:
-        run_ext_cmd(cmd.lstrip('!'))
+        run_ext_cmd(ocmd)
 
 def update_url():
     global playqueue,playidx,playlist,options,stopped
@@ -496,14 +506,6 @@ def update_url():
                 save_list(playlist)
                 return True
     return False
-
-def execute(cmd):
-    cmd,params = [c.strip() for c in cmd.split(':')]
-    if cmd == 'say':
-        speech.say(params)
-    if cmd == 'pwr' and params == 'off':
-        import win32api
-        win32api.ExitWindowsEx(24,0)
 
 def queue_songs(songs):
     songs = list(songs)
@@ -737,10 +739,7 @@ if __name__ == '__main__':
                     output('Too short search string "%s".' % cmd)
                     continue
                 output(cmd)
-                if ':' not in cmd:
-                    play_search(cmd)
-                else:
-                    execute(cmd)
+                play_search(cmd)
         except Exception as e:
             try:
                 traceback.print_exc()
