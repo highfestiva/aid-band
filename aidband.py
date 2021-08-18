@@ -207,7 +207,7 @@ def raw_play_list(name, doplay=True):
         playqueue = playlist[:]
         if 'radio' in listname:
             doshuffle = False
-    shuffleidx = list(range(len(playqueue)))
+    shuffleidx = list(range(len(playqueue)-1, 0-1, -1))
     if doshuffle:
         random.shuffle(shuffleidx)
     playidx = 0
@@ -444,7 +444,7 @@ def toggle_shuffle():
     global useshuffle,playidx,shuffleidx
     useshuffle = not useshuffle
     curidx = shuffleidx[playidx]
-    shuffleidx = list(range(len(playqueue)))
+    shuffleidx = list(range(len(playqueue)-1, 0-1, -1))
     if useshuffle:
         random.shuffle(shuffleidx)
     playidx = shuffleidx.index(curidx)

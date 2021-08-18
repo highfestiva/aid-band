@@ -28,6 +28,7 @@ def update_song_title(root, song):
         current_title = '[Stopped]'
     else:
         current_title = song.artist + ' - ' + song.name
+    current_title += ' - AidBand'
     root.title(current_title)
 
 
