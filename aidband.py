@@ -41,7 +41,7 @@ onrepeat = False
 listname = None
 playlist = []
 playqueue = []
-playing_callbacks = []
+playing_callbacks = [print]
 shuffleidx = []
 ishits = False
 playidx = 0
@@ -169,7 +169,8 @@ def play_idx(error_step=+1):
             if do_play_idx():
                 return True
         except Exception as e:
-            output('play_idx cmd "%s" crash: %s' % (cmd, str(e)))
+            output('play_idx cmd "%s" crash: %s %s' % (cmd, type(e), str(e)))
+            traceback.print_exc()
             time.sleep(1)
         playidx += error_step
         if playidx < 0:
@@ -529,6 +530,7 @@ def requeue_songs(songs):
     if len(songs) == 1 and not useshuffle:
         # move "song pointer" to that position
         pq_idx = playqueue.index(songs[0])
+        pq_idx = len(playqueue) - 1 - pq_idx # reversed order
         playidx = pq_idx-1 if pq_idx > 0 else len(playqueue)-1
     else:
         in_idx = playidx + 1
