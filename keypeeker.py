@@ -16,6 +16,7 @@ keysleep = Timeout()
 oldtcs = None
 iswin = 'win' in platform
 last_key = None
+esc_char = ''
 
 
 try:
@@ -42,15 +43,17 @@ if not getch:
         oldtcs = termios.tcgetattr(sys.stdin)
         tty.setraw(sys.stdin.fileno())
     except:
-        def getch():
-            s = ''
-            while not s:
-                sleep(0.01)
-                s = sys.stdin.read(1)
-                if not s:
-                    sleep(0.1)
-            print(s, end='', flush=True)
-            return s,ord(s)
+        # def getch():
+            # s = ''
+            # while not s:
+                # sleep(0.01)
+                # s = sys.stdin.read(1)
+                # if not s:
+                    # sleep(0.1)
+            # print(s, end='', flush=True)
+            # return s,ord(s)
+        pass
+
 
 if not getch:
     emuchars = ''
@@ -113,6 +116,20 @@ def peekstr(timeout=10):
     # Possibly hotkey or such.
     return getstr()
 
+def do_getch(idx):
+    global esc_char
+    if idx == 1 and esc_char:
+        e = esc_char
+        esc_char = ''
+        return e
+    c = getch()
+    if idx == 0 and ord(c) == 0:
+        esc_char = getch()
+    if ord(c) == 0 and ord(esc_char) in (72, 75, 77, 79, 80, 133, 134):
+        c = chr(0xE0) # old-school cmd.com uses 0xE0 for arrows' escape
+    # print(c)
+    return c
+
 def getstr():
     global keys
     ks,keys = keys,''
@@ -123,15 +140,16 @@ def readkeys(handle_keys):
     global keys
     while True:
         sleep(0.01)
-        ch = getch()
+        ch = do_getch(0)
         if ord(ch) == 0:
-            ch = getch()
+            ch = do_getch(1)
             if ord(ch) >= 59 and ord(ch) <= 68:
                 ch = '<F%i>' % (ord(ch)-58)
             else:
+                print('Unknown function escape key:', ch)
                 continue
         elif ord(ch) == 0xE0:
-            ch = getch()
+            ch = do_getch(1)
             if   ord(ch) ==  75: ch = '<Left>'
             elif ord(ch) ==  77: ch = '<Right>'
             elif ord(ch) ==  72: ch = '<Up>'
@@ -139,7 +157,9 @@ def readkeys(handle_keys):
             elif ord(ch) == 133: ch = '<F11>'
             elif ord(ch) == 134: ch = '<F12>'
             elif ord(ch) ==  79: ch = '<End>'
-            else: continue
+            else:
+                print('Unknown arrow escape key:', ch)
+                continue
         elif ord(ch) == 3:
             ch,keys = '<quit>',''
         ch = ch if type(ch) == str else ch.decode('cp850' if iswin else 'utf-8')
@@ -147,6 +167,7 @@ def readkeys(handle_keys):
             keys = keys[:len(keys)-1] if keys else ''
         else:
             keys += ch
+        # print(keys)
         if handle_keys:
             handle_keys(keys)
         keytimeout.reset()

@@ -25,7 +25,7 @@ def ilikeradio(client=11197927, channel=3):
     result = []
     for s in requests.get(url).json():
         track = s['song']
-        print(f"{track['artist_name']} - {track['title']}")
+        # print(f"{track['artist_name']} - {track['title']}")
         result += [{    'name':         track['title'],
                         'artists':      [{'name':track['artist_name']}],
                         'uri':          None }]
