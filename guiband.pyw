@@ -12,6 +12,7 @@ print('guiband running')
 import aidband
 from functools import partial
 import killable
+import os
 import tkinter as tk
 from time import sleep
 
@@ -19,6 +20,16 @@ from time import sleep
 aidband.raw_play_list(aidband.hotoptions.Favorites, doplay=False)
 aidband.popen_kwargs = dict(creationflags=aidband.subprocess.CREATE_NO_WINDOW)
 current_title = ''
+
+
+def init_proxy():
+    try:
+        s = open('proxy_settings.txt', 'rt').read().strip()
+        os.environ['http_proxy'] = s
+        os.environ['https_proxy'] = s
+        print('set proxy')
+    except:
+        pass
 
 
 @killable.single_threaded
@@ -119,6 +130,7 @@ class App(tk.Frame):
         aidband.stop()
         self.master.destroy()
 
+init_proxy()
 root = tk.Tk()
 app = App(master=root)
 app.mainloop()
