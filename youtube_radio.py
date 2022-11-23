@@ -25,9 +25,14 @@ clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 def search(s, verbose=False):
     param = urlencode({'q': 'site:youtube.com %s' % s})
     url = 'https://html.duckduckgo.com/html/?%s' % param
-    body = subprocess.check_output('curl -k -H "user-agent: Mozilla/5.0" %s' % url, shell=True, stderr=subprocess.DEVNULL).decode()
+    if verbose:
+      print(url)
+    user_agent = 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'
+    accept = 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    body = subprocess.check_output(f'curl -k -H "{user_agent}" -H "{accept}" {url}', shell=True, stderr=subprocess.DEVNULL)
     if verbose:
         print(body)
+    body = body.decode()
     artist = ''
     songs = []
     urls = set()
@@ -172,11 +177,12 @@ def _match_words(s, words):
 
 
 if __name__ == '__main__':
-    songs = search('Blind Guardian - Bright Eyes', verbose=True)
+    # songs = search('Blind Guardian - Bright Eyes', verbose=True)
     # songs = search('Darin - Tvillingen', verbose=True)
     # songs = search('Victor Crone - Yes, I Will Wait', verbose=True)
     # songs = search('Miss Li - Komplicerad', verbose=True)
     # songs = search('Gym Class Heroes - Stereo Hearts', verbose=True)
     # songs = search('Oskar Linnros - Plåster', verbose=True)
     # songs = search('Liquido - Swing It', verbose=True)
+    songs = search('Mr. Probz - Waves', verbose=True)
     #cache_song(songs[0].uri, './something.*')
