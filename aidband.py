@@ -106,12 +106,12 @@ def play_url(url, cachewildcard):
                 options.offline -= 1
                 return False
             foreground = ishits or options.foreground_download
+            song = playqueue[shuffleidx[playidx]]
             if not foreground:
-                song = playqueue[shuffleidx[playidx]]
                 background_thread = threading.Thread(target=partial(bkg_save_song, song, cachewildcard))
                 background_thread.start()
                 return False
-            cachename = youtube_radio.cache_song(url, cachewildcard)
+            cachename = youtube_cache_song(song, cachewildcard)
             did_download = True
         if mplayer and cachename:
             if not options.only_cache:
@@ -159,8 +159,7 @@ def do_play_idx():
         if not glob(wildcard):
             update_url()
         output(song.artist, '-', song.name, '-', song.uri, '-', _confixs(wildcard))
-        if play_url(song.uri, wildcard):
-            return True
+        return play_url(song.uri, wildcard)
 
 def play_idx(error_step=+1):
     global playqueue,playidx,stopped
@@ -365,10 +364,20 @@ def threshold_search(search):
 
 def bkg_save_song(song, cachewildcard):
     global playlist
-    youtube_radio.cache_song(song.uri, cachewildcard)
+    youtube_cache_song(song, cachewildcard)
     if song not in playlist:
         playlist += [song]
         save_list(playlist)
+
+def youtube_cache_song(song, cachewildcard):
+    try:
+        youtube_radio.cache_song(song.uri, cachewildcard)
+    except Exception as e:
+        print('cache_song after exception')
+        if any(s in str(e) for s in ('unavailable', 'no longer available')):
+            print('Updating url')
+            song.uri = ''
+            update_url()
 
 def ext_add_to_favorites():
     '''Add+save song to favorites.'''

@@ -156,7 +156,7 @@ def search(s, verbose=False):
 
 
 def cache_song(url, wildcard):
-    if 'youtube.com' in url:
+    if 'youtu' in url:
         video = pafy.new(url)
         audiostream = max(video.audiostreams, key=lambda audio: abs(audio.rawbitrate-131072))
         fsize = audiostream.get_filesize()
