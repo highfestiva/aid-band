@@ -1,5 +1,6 @@
 #!/usr/bin/env pythonw
 
+# do print -> logging
 import sys
 sys.stdout = sys.stderr = open('gui.log', 'w')
 oldwrite = sys.stderr.write
@@ -9,6 +10,19 @@ def flushwrite(d):
     return r
 sys.stderr.write = flushwrite
 print('guiband running')
+
+# do proxy
+import os
+try:
+    s = open('proxy_settings.txt', 'rt').read().strip()
+    os.environ['http_proxy'] = s
+    os.environ['https_proxy'] = s
+    print('set proxy')
+except:
+    pass
+
+
+# no further funny business required, business as usual
 import aidband
 from functools import partial
 import killable
@@ -20,16 +34,6 @@ from time import sleep
 aidband.raw_play_list(aidband.hotoptions.Favorites, doplay=False)
 aidband.popen_kwargs = dict(creationflags=aidband.subprocess.CREATE_NO_WINDOW)
 current_title = ''
-
-
-def init_proxy():
-    try:
-        s = open('proxy_settings.txt', 'rt').read().strip()
-        os.environ['http_proxy'] = s
-        os.environ['https_proxy'] = s
-        print('set proxy')
-    except:
-        pass
 
 
 @killable.single_threaded
@@ -130,7 +134,6 @@ class App(tk.Frame):
         aidband.stop()
         self.master.destroy()
 
-init_proxy()
 root = tk.Tk()
 app = App(master=root)
 app.mainloop()

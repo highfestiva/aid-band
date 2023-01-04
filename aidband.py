@@ -49,7 +49,8 @@ datadir = '.'
 mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mpv'
 mplayer_volume = '-volume' if 'win' in sys.platform.lower() else '--volume'
 last_yt_search = 0
-timer_stop_t = None
+default_timeout = 6*60*60
+timer_stop_t = time.time() + default_timeout
 popen_kwargs = {}
 
 
@@ -220,6 +221,8 @@ def raw_play_list(name, doplay=True):
     return playqueue
 
 def play_list(name):
+    global timer_stop_t
+    timer_stop_t = None if options.no_timeout else time.time()+default_timeout
     pq = raw_play_list(name)
     if pq:
         avoutput(_simple_listname())
@@ -333,7 +336,7 @@ def search_music(search):
 
 def play_search(search):
     global timer_stop_t
-    timer_stop_t = None
+    timer_stop_t = None if options.no_timeout else time.time()+default_timeout
     if 'radio' in listname:
         songs = sr_radio.search(search)
     else:
@@ -373,11 +376,13 @@ def youtube_cache_song(song, cachewildcard):
     try:
         youtube_radio.cache_song(song.uri, cachewildcard)
     except Exception as e:
-        print('cache_song after exception')
+        print('youtube_cache_song handling exception')
         if any(s in str(e) for s in ('unavailable', 'no longer available')):
             print('Updating url')
             song.uri = ''
             update_url()
+        else:
+            traceback.print_exc()
 
 def ext_add_to_favorites():
     '''Add+save song to favorites.'''
@@ -472,7 +477,7 @@ def run_command(cmd):
     elif cmd == 'pwr' and args == ['off']:
         import win32api
         win32api.ExitWindowsEx(24,0)
-    elif cmd == 'fg':
+    elif cmd in ('fg', 'foreground'):
         options.foreground_download = args in ([], ['true'], ['on'], ['1'])
         avoutput('Playing in %s.' % ('foreground' if options.foreground_download else 'background'))
     elif cmd == 'volume':
@@ -635,6 +640,7 @@ parser.add_argument('--offline', action='store_true', default=False, help='only 
 parser.add_argument('--webserve', action='store_true', default=False, help='serve html playing')
 parser.add_argument('--volume', help='pass volume to mplayer, alt. use $CON_VOLUME')
 parser.add_argument('--no-remote-control', action='store_true', help='skip listening to tcp port for remote connects')
+parser.add_argument('--no-timeout', action='store_true', help='never turn off music automatically')
 parser.add_argument('--bg-convert-wav', action='store_true', help='convert .wav to .ogg in the background')
 parser.add_argument('-v', '--verbose', action='store_true')
 options = parser.parse_args()
@@ -652,6 +658,8 @@ if options.no_remote_control:
         def __getattr__(self, _):
             return self.dummy
     netpeeker = Dummy()
+if options.no_timeout:
+    timer_stop_t = None
 if options.verbose:
     import logging
     logging.basicConfig()
