@@ -469,7 +469,7 @@ def toggle_shuffle():
 
 def run_command(cmd):
     if cmd.startswith('!'):
-        cmd = cmd[1:].strip()
+        cmd = cmd.strip('!').strip()
     ocmd,args = cmd, [c.strip() for c in cmd.split()]
     cmd,args = args[0],args[1:]
     if cmd == 'say':
