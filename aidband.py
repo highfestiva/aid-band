@@ -47,7 +47,7 @@ ishits = False
 playidx = 0
 datadir = '.'
 mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mpv'
-mplayer_volume = '-volume' if 'win' in sys.platform.lower() else '--volume'
+mplayer_volume = lambda vol: ['-volume', vol] if 'win' in sys.platform.lower() else ['--volume='+vol]
 last_yt_search = 0
 default_timeout = 6*60*60
 timer_stop_t = time.time() + default_timeout
@@ -116,7 +116,7 @@ def play_url(url, cachewildcard):
             did_download = True
         if mplayer and cachename:
             if not options.only_cache:
-                cmd = [mplayer, mplayer_volume, options.volume, cachename]
+                cmd = [mplayer] + mplayer_volume(options.volume) + [cachename]
                 proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **popen_kwargs)
             url = cachename
             ok = True
@@ -131,7 +131,7 @@ def play_url(url, cachewildcard):
                 output("Won't play over spotify.")
         elif mplayer and url:
             if not options.only_cache:
-                cmd = [mplayer, mplayer_volume, options.volume, _confixs(url)]
+                cmd = [mplayer] + mplayer_volume(options.volume) + [_confixs(url)]
                 proc = subprocess.Popen(cmd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **popen_kwargs)
             ok = True
         elif url:
