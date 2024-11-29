@@ -2,20 +2,18 @@
 # -*- coding:utf-8 -*-
 
 from absong import ABSong
-import html
+from glob import glob
 import os
-import pafy
 import re
 import subprocess
-import urllib.parse
-from urllib.parse import urlencode, unquote as urldecode
+from urllib.parse import urlencode
 
 
-pages = re.compile(r'"nofollow" .+(https.*?youtube\.com%2Fwatch.+?)&.*?>(.*?)</a>')
-tags = re.compile(r'<.*?>')
+user_agent = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.6533.103 Mobile Safari/537.36'
+pages = re.compile(r'title:"(.*?)",url:"(https://.*?youtube.com/watch.+?)"')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
-bad_names = 'review'.split()
+bad_names = 'review reaction'.split()
 drop_words = 'album official video music youtube https'.split()
 like_words = 'lyrics'.split()
 dislike_words = 'cover'.split()
@@ -24,10 +22,9 @@ clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 
 def search(s, verbose=False):
     param = urlencode({'q': 'site:youtube.com %s' % s})
-    url = 'https://html.duckduckgo.com/html/?%s' % param
+    url = f'https://search.brave.com/search?{param}'
     if verbose:
-      print(url)
-    user_agent = 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'
+        print(url)
     accept = 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
     body = subprocess.check_output(f'curl -k -H "{user_agent}" -H "{accept}" {url}', shell=True, stderr=subprocess.DEVNULL)
     if verbose:
@@ -39,10 +36,10 @@ def search(s, verbose=False):
     names = set()
     hits = []
     for pagelink in pages.finditer(body):
-        url = urldecode(pagelink.group(1).partition('%26')[0])
-        name = html.unescape(pagelink.group(2))
-        name = name.encode().partition(b'\xe2')[0].decode()
-        name = tags.sub(' ', name)
+        name = pagelink.group(1)
+        url,_,_ = pagelink.group(2).partition('&')
+        if ' ' in url or ',' in url:
+            continue
         name = name.replace('~', ' - ').replace(':', ' - ').replace('"', ' ').replace('`', "'")
         name = ''.join((ch if ord(ch)<10000 else ' ') for ch in name)
         if verbose:
@@ -155,7 +152,7 @@ def search(s, verbose=False):
     return songs
 
 
-def cache_song(url, wildcard):
+def cache_song_with_pafy(url, wildcard):
     if 'youtu' in url:
         video = pafy.new(url)
         audiostream = max(video.audiostreams, key=lambda audio: abs(audio.rawbitrate-131072))
@@ -172,6 +169,31 @@ def cache_song(url, wildcard):
         return dst_filename
 
 
+def cache_song(url, wildcard, verbose=True):
+    if 'youtu' not in url:
+        return
+    cmd = f'youtube-dl -x --user-agent "{user_agent}" "{url}"'
+    body = subprocess.check_output(cmd, shell=True, stderr=subprocess.DEVNULL)
+    if verbose:
+        print(body)
+    src_filename = None
+    _,_,yid = url.partition('?v=')
+    yid,_,_ = yid.partition('&')
+    for src_filename in glob(f'*{yid}*'):
+        # if verbose:
+        #     print(f'found file {src_filename}')
+        break
+    if not src_filename:
+        print(f'ERROR: no file containing {yid} were downloaded')
+        return
+    if verbose:
+        print(f'downloaded {src_filename}')
+    _,ext = os.path.splitext(src_filename)
+    dst_filename = wildcard.replace('.*', ext)
+    os.rename(src_filename, dst_filename)
+    return dst_filename
+
+
 def _match_words(s, words):
     return any((word in s.lower()) for word in words)
 
@@ -184,5 +206,7 @@ if __name__ == '__main__':
     # songs = search('Gym Class Heroes - Stereo Hearts', verbose=True)
     # songs = search('Oskar Linnros - Plåster', verbose=True)
     # songs = search('Liquido - Swing It', verbose=True)
-    songs = search('Mr. Probz - Waves', verbose=True)
+    # songs = search('Mr. Probz - Waves', verbose=True)
     #cache_song(songs[0].uri, './something.*')
+    songs = search('Fine Young Canibals - She Drives Me Crazy', verbose=True)
+    # cache_song(songs[0].uri, './something.*', verbose=True)
