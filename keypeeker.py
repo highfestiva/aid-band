@@ -4,7 +4,7 @@
 from killable import KillableThread
 import re
 from select import select
-from sys import platform
+import sys
 from time import sleep
 from timeout import Timeout
 
@@ -14,7 +14,7 @@ keys = ''
 keytimeout = Timeout()
 keysleep = Timeout()
 oldtcs = None
-iswin = 'win' in platform
+iswin = 'win32' in sys.platform
 last_key = None
 esc_char = ''
 
@@ -41,7 +41,7 @@ if not getch:
     import sys,tty,termios
     try:
         oldtcs = termios.tcgetattr(sys.stdin)
-        tty.setraw(sys.stdin.fileno())
+        tty.setcbreak(sys.stdin.fileno())
     except:
         # def getch():
             # s = ''

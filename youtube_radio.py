@@ -9,7 +9,11 @@ import subprocess
 from urllib.parse import urlencode
 
 
-user_agent = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.6533.103 Mobile Safari/537.36'
+user_agent = 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36'
+accept = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept_encoding = 'Accept-Encoding: gzip, deflate, br, zstd'
+accept_language = 'Accept-Language: en,en-US;q=0.9,sv;q=0.8'
+referrer = 'Referer: https://search.brave.com/'
 pages = re.compile(r'title:"(.*?)",url:"(https://.*?youtube.com/watch.+?)"')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
@@ -25,8 +29,7 @@ def search(s, verbose=False):
     url = f'https://search.brave.com/search?{param}'
     if verbose:
         print(url)
-    accept = 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
-    body = subprocess.check_output(f'curl -k -H "{user_agent}" -H "{accept}" {url}', shell=True, stderr=subprocess.DEVNULL)
+    body = subprocess.check_output(f'curl -k -H "{user_agent}" -H "{accept}" -H "{accept_encoding}" -H "{accept_language}" {url}', shell=True, stderr=subprocess.DEVNULL)
     if verbose:
         print(body)
     body = body.decode()

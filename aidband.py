@@ -38,7 +38,7 @@ muzaks = None
 allowcache = True
 useshuffle = True
 onrepeat = False
-listname = None
+listname = ''
 playlist = []
 playqueue = []
 playing_callbacks = []
@@ -46,8 +46,8 @@ shuffleidx = []
 ishits = False
 playidx = 0
 datadir = '.'
-mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win' in sys.platform.lower() else 'mpv'
-mplayer_volume = lambda vol: ['-volume', vol] if 'win' in sys.platform.lower() else ['--volume='+vol]
+mplayer = ('mplayer.exe' if os.path.exists('mplayer.exe') else '') if 'win32' in sys.platform.lower() else 'mpv'
+mplayer_volume = lambda vol: ['-volume', vol] if 'win32' in sys.platform.lower() else ['--volume='+vol]
 last_yt_search = 0
 default_timeout = 6*60*60
 timer_stop_t = time.time() + default_timeout
@@ -363,7 +363,7 @@ def threshold_search(search):
         time.sleep(t)
     global last_yt_search
     last_yt_search = time.time()
-    return youtube_radio.search(search)
+    return youtube_radio.search(search, verbose=options.verbose)
 
 def bkg_save_song(song, cachewildcard):
     global playlist
@@ -374,7 +374,7 @@ def bkg_save_song(song, cachewildcard):
 
 def youtube_cache_song(song, cachewildcard):
     try:
-        youtube_radio.cache_song(song.uri, cachewildcard)
+        return youtube_radio.cache_song(song.uri, cachewildcard)
     except Exception as e:
         print('youtube_cache_song handling exception')
         if any(s in str(e) for s in ('unavailable', 'no longer available')):
