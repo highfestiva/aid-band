@@ -5,8 +5,8 @@ from absong import ABSong
 from glob import glob
 import os
 import re
+import requests
 import subprocess
-from urllib.parse import urlencode
 
 
 user_agent = 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36'
@@ -24,7 +24,31 @@ dislike_words = 'cover'.split()
 clean_ends = lambda s: s.strip(' \t-+"\'=!.')
 
 
-def search(s, verbose=False):
+def clean_hit(name, url, names, urls, verbose=False):
+    if ' ' in url or ',' in url:
+        return None, None
+    name = name.replace('~', ' - ').replace(':', ' - ').replace('"', ' ').replace('`', "'")
+    name = ''.join((ch if ord(ch)<10000 else ' ') for ch in name)
+    if verbose:
+        print(name, url)
+    if _match_words(url, bad_urls) or _match_words(name, bad_names):
+        return None, None
+    assert len(url) <= 60, 'url too long: '+url
+    words = [w for w in name.split() if not [b for b in drop_words if b in w.lower()]]
+    name = ' '.join(words).strip()
+    name = clean_ends(name)
+    if not name:
+        return None, None
+    exists = (url in urls or name in names)
+    urls.add(url)
+    names.add(name)
+    if exists:
+        return None, None
+    return name, url
+
+
+def brave_hits(s, verbose=False):
+    from urllib.parse import urlencode
     param = urlencode({'q': 'site:youtube.com %s' % s})
     url = f'https://search.brave.com/search?{param}'
     if verbose:
@@ -33,34 +57,56 @@ def search(s, verbose=False):
     if verbose:
         print(body)
     body = body.decode()
-    artist = ''
-    songs = []
     urls = set()
     names = set()
     hits = []
     for pagelink in pages.finditer(body):
         name = pagelink.group(1)
         url,_,_ = pagelink.group(2).partition('&')
-        if ' ' in url or ',' in url:
-            continue
-        name = name.replace('~', ' - ').replace(':', ' - ').replace('"', ' ').replace('`', "'")
-        name = ''.join((ch if ord(ch)<10000 else ' ') for ch in name)
-        if verbose:
-            print(name, url)
-        if _match_words(url, bad_urls) or _match_words(name, bad_names):
-            continue
-        assert len(url) <= 60, 'url too long: '+url
-        words = [w for w in name.split() if not [b for b in drop_words if b in w.lower()]]
-        name = ' '.join(words).strip()
-        name = clean_ends(name)
+        name, url = clean_hit(name, url, names, urls, verbose=verbose)
         if not name:
             continue
-        exists = (url in urls or name in names)
-        urls.add(url)
-        names.add(name)
-        if exists:
+        hits.append([name,url])
+    return hits
+
+
+def google_hits(s, verbose=False):
+    from googlesearch import search as gsearch
+    urls = set()
+    names = set()
+    hits = []
+    for hit in gsearch('site:youtube.com ' + s, advanced=True):
+        name, url = clean_hit(hit.title, hit.url, names, urls, verbose=verbose)
+        if not name:
             continue
         hits.append([name,url])
+    return hits
+
+
+def langsearch_hits(s, verbose=False):
+    url = 'https://api.langsearch.com/v1/web-search'
+    if verbose:
+        print(url, 'POST', s)
+    auth = open('.langsearch.key', 'rt').read().strip()
+    json_data = {'query': f'site:youtube.com {s}'}
+    r = requests.post(url, headers={'Authorization': auth, 'Accept': 'application/json'}, json=json_data).json()
+    urls = set()
+    names = set()
+    hits = []
+    for hit in r['data']['webPages']['value']:
+        name = hit['name']
+        url = hit['url']
+        name, url = clean_hit(name, url, names, urls, verbose=verbose)
+        if not name:
+            continue
+        hits.append([name,url])
+    return hits
+
+
+def search(s, verbose=False):
+    # hits = brave_hits(s, verbose=verbose)
+    # hits = google_hits(s, verbose=verbose)
+    hits = langsearch_hits(s, verbose=verbose)
     # sort by length
     score = {h:len(h)*2 for h,u in hits}
     if verbose:
@@ -117,6 +163,9 @@ def search(s, verbose=False):
     if verbose:
         print('post cleanup')
         print('\n'.join(str(h) for h in hits))
+
+    artist = ''
+    songs = []
     # 1st pick artist if present in any hit
     artists = [] # ordered; don't use set()
     for name,url in hits:
@@ -175,7 +224,7 @@ def cache_song_with_pafy(url, wildcard):
 def cache_song(url, wildcard, verbose=True):
     if 'youtu' not in url:
         return
-    cmd = f'youtube-dl -x --user-agent "{user_agent}" "{url}"'
+    cmd = f'yt-dlp -x "{url}"'
     body = subprocess.check_output(cmd, shell=True, stderr=subprocess.DEVNULL)
     if verbose:
         print(body)
@@ -211,5 +260,10 @@ if __name__ == '__main__':
     # songs = search('Liquido - Swing It', verbose=True)
     # songs = search('Mr. Probz - Waves', verbose=True)
     #cache_song(songs[0].uri, './something.*')
-    songs = search('Fine Young Canibals - She Drives Me Crazy', verbose=True)
+    #songs = search('Fine Young Canibals - She Drives Me Crazy', verbose=True)
     # cache_song(songs[0].uri, './something.*', verbose=True)
+    while True:
+        term = input('enter artist - song: ')
+        songs = search(term, verbose=True)
+        for song in songs:
+            print(song)
