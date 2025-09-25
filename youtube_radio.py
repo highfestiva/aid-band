@@ -83,19 +83,48 @@ def google_hits(s, verbose=False):
     return hits
 
 
+def google_cse_hits(s, verbose=False):
+    from googleapiclient.discovery import build
+    api_key = open('.google-api.key', 'rt').read().strip()
+    cse_id = open('.google-cse.key', 'rt').read().strip()
+    service = build("customsearch", "v1", developerKey=api_key)
+    res = service.cse().list(q=s, cx=cse_id).execute()
+    urls = set()
+    names = set()
+    hits = []
+    if verbose:
+        import pprint
+        pprint.pprint(res)
+    for hit in res['items']:
+        name = hit['title']
+        url = hit['formattedUrl']
+        if 'youtu' not in url:
+            continue
+        name, url = clean_hit(name, url, names, urls, verbose=verbose)
+        if not name:
+            continue
+        hits.append([name,url])
+    return hits
+
+
 def langsearch_hits(s, verbose=False):
     url = 'https://api.langsearch.com/v1/web-search'
-    if verbose:
-        print(url, 'POST', s)
     auth = open('.langsearch.key', 'rt').read().strip()
-    json_data = {'query': f'site:youtube.com {s}'}
+    json_data = {'query': f'List youtube videos of: {s}', 'summary': False}
+    if verbose:
+        print(url, 'POST', json_data)
     r = requests.post(url, headers={'Authorization': auth, 'Accept': 'application/json'}, json=json_data).json()
     urls = set()
     names = set()
     hits = []
+    if verbose:
+        import pprint
+        pprint.pprint(r)
     for hit in r['data']['webPages']['value']:
         name = hit['name']
         url = hit['url']
+        if 'youtu' not in url:
+            continue
         name, url = clean_hit(name, url, names, urls, verbose=verbose)
         if not name:
             continue
@@ -106,7 +135,8 @@ def langsearch_hits(s, verbose=False):
 def search(s, verbose=False):
     # hits = brave_hits(s, verbose=verbose)
     # hits = google_hits(s, verbose=verbose)
-    hits = langsearch_hits(s, verbose=verbose)
+    hits = google_cse_hits(s, verbose=verbose)
+    # hits = langsearch_hits(s, verbose=verbose)
     # sort by length
     score = {h:len(h)*2 for h,u in hits}
     if verbose:
