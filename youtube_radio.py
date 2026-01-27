@@ -9,6 +9,8 @@ import requests
 import subprocess
 
 
+USE_SEARCH_ENGINE_ORDER = True
+
 user_agent = 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36'
 accept = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
 accept_encoding = 'Accept-Encoding: gzip, deflate, br, zstd'
@@ -17,7 +19,7 @@ referrer = 'Referer: https://search.brave.com/'
 pages = re.compile(r'title:"(.*?)",url:"(https://.*?youtube.com/watch.+?)"')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
-bad_names = 'review reaction'.split()
+bad_names = 'review reaction tutorial'.split()
 drop_words = 'album official video music youtube https'.split()
 like_words = 'lyrics'.split()
 dislike_words = 'cover'.split()
@@ -135,7 +137,7 @@ def langsearch_hits(s, verbose=False):
 def search(s, verbose=False):
     # hits = brave_hits(s, verbose=verbose)
     # hits = google_hits(s, verbose=verbose)
-    hits = google_cse_hits(s, verbose=verbose)
+    orig_hits = hits = google_cse_hits(s, verbose=verbose)
     # hits = langsearch_hits(s, verbose=verbose)
     # sort by length
     score = {h:len(h)*2 for h,u in hits}
@@ -176,6 +178,8 @@ def search(s, verbose=False):
     if verbose:
         print(score)
     hits = sorted(hits, key=lambda nu: score[nu[0]])
+    if USE_SEARCH_ENGINE_ORDER:
+        hits = orig_hits
     if verbose:
         print('post score sort')
         print('\n'.join(str(h) for h in hits))
