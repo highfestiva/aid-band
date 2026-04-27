@@ -24,3 +24,4 @@ libspotify.dll
 *.pem
 *.log
 .*.key
+.aider*

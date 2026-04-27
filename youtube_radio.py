@@ -9,7 +9,7 @@ import requests
 import subprocess
 
 
-USE_SEARCH_ENGINE_ORDER = True
+USE_SEARCH_ENGINE_ORDER = False
 
 user_agent = 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36'
 accept = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
@@ -19,7 +19,7 @@ referrer = 'Referer: https://search.brave.com/'
 pages = re.compile(r'title:"(.*?)",url:"(https://.*?youtube.com/watch.+?)"')
 parenths = re.compile(r'(.*?)\((.*?)\)(.*)')
 bad_urls = 'list= /channel/'.split()
-bad_names = 'review reaction tutorial'.split()
+bad_names = 'review reaction tutorial lesson beginner'.split()
 drop_words = 'album official video music youtube https'.split()
 like_words = 'lyrics'.split()
 dislike_words = 'cover'.split()
@@ -281,7 +281,8 @@ def cache_song(url, wildcard, verbose=True):
 
 
 def _match_words(s, words):
-    return any((word in s.lower()) for word in words)
+    sl = s.lower()
+    return any((word in sl) for word in words)
 
 
 if __name__ == '__main__':

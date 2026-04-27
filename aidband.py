@@ -3,7 +3,6 @@
 
 from absong import ABSong
 import argparse
-import codecs
 import difflib
 from functools import partial
 from glob import glob
@@ -388,7 +387,7 @@ def ext_add_to_favorites():
     '''Add+save song to favorites.'''
     song = playqueue[shuffleidx[playidx]]
     fn = os.path.join(datadir, hotoptions.Favorites+'.txt')
-    f = codecs.open(fn, 'a', 'utf-8')
+    f = open(fn, 'a', encoding='utf-8')
     f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri or ''))
 
 
@@ -577,7 +576,7 @@ def load_list():
         except:
             pass
     else:
-        for line in codecs.open(fn, 'r', 'utf-8'):
+        for line in open(fn, 'r', encoding='utf-8'):
             try:
                 songs += [ABSong(line)]
             except:
@@ -588,7 +587,7 @@ def save_list(songlist):
     if on_realtime_playlist():
         return
     fn = os.path.join(datadir,listname+'.txt')
-    f = codecs.open(fn, 'w', 'utf-8')
+    f = open(fn, 'w', encoding='utf-8')
     f.write('Playlist for AidBand. Each line contains artist, song name and URL. The first two can be left empty if file:// and otherwise the URL may be left empty if varying.\n')
     for song in songlist:
         f.write('%s ~ %s ~ %s\n' % (song.artist, song.name, song.uri or ''))
